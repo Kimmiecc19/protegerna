@@ -236,7 +236,6 @@ First register for a free account at COSMIC at https://cancer.sanger.ac.uk/cosmi
 - exonGeTrInfo.tab
 - genomeParameters.txt
 - sjdbList.out.tab
-```
 
 # Troubleshooting
 
