@@ -1,7 +1,7 @@
-```markdown
-# The rnafusion pipeline needs references for the fusion detection tools, so downloading these is a requirement.
-# This step was run on a local device to create the references needed to run nf-core/rnafusion
-# Reference files were then transferred to hemera (University sever) and CHPC using rsync
+# Creating rnafusion references
+### The rnafusion pipeline needs references for the fusion detection tools, so downloading these is a requirement.
+### This step was run on a local device to create the references needed to run nf-core/rnafusion
+### Reference files were then transferred to hemera (University sever) and CHPC using rsync
 
 ```nextflow
 nextflow run main.nf \
