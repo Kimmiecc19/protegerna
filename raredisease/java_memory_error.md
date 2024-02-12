@@ -2,7 +2,7 @@
 
 This error was encountered on the hemera server while running nf-core/raredisease with one WES file as input
 
-```markdown
+```
 
 **ERROR ~ Error executing process > 'NFCORE_RAREDISEASE:RAREDISEASE:QC_BAM:PICARD_COLLECTHSMETRICS (SRR15174692)'**
 
@@ -11,7 +11,6 @@ This error was encountered on the hemera server while running nf-core/rarediseas
 
 **Command executed:**
 
-```bash
 picard \
     -Xmx4915M \
     CollectHsMetrics \
@@ -21,9 +20,7 @@ picard \
     --TARGET_INTERVALS home_target.interval_list \
     --INPUT SRR15174692_sorted_md.bam \
     --OUTPUT SRR15174692_hsmetrics.CollectHsMetrics.coverage_metrics
-```
 
-```bash
 cat <<-END_VERSIONS > versions.yml
 "NFCORE_RAREDISEASE:RAREDISEASE:QC_BAM:PICARD_COLLECTHSMETRICS":
     picard: $(echo $(picard CollectHsMetrics --version 2>&1) | grep -o 'Version:.*' | cut -f2- -d:)
@@ -58,7 +55,49 @@ END_VERSIONS
 
 ```
 
-# Solution
+# Possible Solutions
 
-**ADD:** `export _JAVA_OPTIONS="-Xms32g -Xmx32g"` before running command or add to config file.
+**1. ADD:** `export _JAVA_OPTIONS="-Xms32g -Xmx32g"` before running command or add to config file. -> Did not work
+
+**2. ADD:** `NXF_OPTS='-Xms1g -Xmx16g'` to ~/.bashrc file -> Did not work
+
+**3. ADD:** `process {
+    executor = 'local'
+    max_memory = '100 GB'
+    max_cpus = '8'
+}` To config file -> Did not work
+
+**4. ADD:** from: ~/nf/nf-core-raredisease_1.1.1/configs/conf/pipeline/raredisease/hasta.config add the following to personal config file before running again
+
+```
+process {
+    withName:'PICARD_MARKDUPLICATES' {
+        memory = { check_max( 90.GB  * task.attempt, 'memory' ) }
+    }
+    withName:'DEEPVARIANT' {
+        cpus   = { check_max( 16      * task.attempt, 'cpus' ) }
+        memory = { check_max( 80.GB   * task.attempt, 'memory' ) }
+    }
+    withLabel:'sentieon' {
+        beforeScript = { "export PATH=\$PATH:\$SENTIEON_INSTALL_DIR/sentieon-genomics-202112.02/bin" }
+    }
+    withName: 'BCFTOOLS_VIEW' {
+        if (params.genome == 'GRCh37') {
+            ext.args = '--output-type z --apply-filters PASS --exclude "INFO/clinical_genomics_mipAF > 0.40 | INFO/swegenAF > 0.40 |>        } else if (params.genome == 'GRCh38') {
+            ext.args = '--output-type z --apply-filters PASS --exclude "INFO/swegen_FRQ > 0.40"'
+        }
+        publishDir = [
+            enabled: false,
+        ]
+    }
+
+     // Java memory fixes
+    withName:'QUALIMAP_BAMQC' {
+        clusterOptions = { "-A $params.priority ${params.clusterOptions ?: ''} ${task.memory ? "--mem ${task.memory.mega * 1.15 as l>    }
+    withName:'PICARD_MARKDUPLICATES' {
+        clusterOptions = { "-A $params.priority ${params.clusterOptions ?: ''} ${task.memory ? "--mem ${task.memory.mega * 1.15 as l>    }
+
+}
+```
+
 ```
