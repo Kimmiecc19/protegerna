@@ -86,5 +86,13 @@ process {
     }
 }
 ```
+# Final solution (that worked)
 
+Add the following to the config file:
+
+```
+    withName: "NFCORE_RAREDISEASE:RAREDISEASE:QC_BAM:PICARD_COLLECTHSMETRICS" {
+        memory = 90.GB #Must be 90 (30 didn't work)
+    }
+```
 ```
