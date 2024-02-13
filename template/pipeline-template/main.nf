@@ -1,13 +1,11 @@
 #!/usr/bin/env nextflow
 /*
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    {{ name }}
+    nf-core/protegerna
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-    Github : https://github.com/{{ name }}
-{% if branded %}
-    Website: https://nf-co.re/{{ short_name }}
-    Slack  : https://nfcore.slack.com/channels/{{ short_name }}
-{% endif -%}
+    Github : https://github.com/nf-core/protegerna
+    Website: https://nf-co.re/protegerna
+    Slack  : https://nfcore.slack.com/channels/protegerna
 ----------------------------------------------------------------------------------------
 */
 
@@ -35,13 +33,21 @@ WorkflowMain.initialise(workflow, params, log)
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 */
 
-include { {{ short_name|upper }} } from './workflows/{{ short_name }}'
+//include { {{ short_name|upper }} } from './workflows/{{ short_name }}'
+
+include { RAREDISEASE }			from './workflows/raredisease'
+include { RNASEQ }			from './workflows/rnaseq'
+include { RNAFUSION }			from './workflows/rnafusion'
+include { RNASPLICE }			from './workflows/rnasplice'
+include { QUANTMS }			from './workflows/quantms'
+include { DIFFERENTIALABUNDANCE }	from './workflows/differentialabundance'
+include { PROTEGERNA }			from './workflows/protegerna'
 
 //
-// WORKFLOW: Run main {{ name }} analysis pipeline
+// WORKFLOW: Run main nf-core/protegerna analysis pipeline
 //
-workflow {{ prefix_nodash|upper }}_{{ short_name|upper }} {
-    {{ short_name|upper }} ()
+workflow NFCORE_PROTEGERNA {
+    PROTEGERNA ()
 }
 
 /*
@@ -55,7 +61,7 @@ workflow {{ prefix_nodash|upper }}_{{ short_name|upper }} {
 // See: https://github.com/nf-core/rnaseq/issues/619
 //
 workflow {
-    {{ prefix_nodash|upper }}_{{ short_name|upper }} ()
+    NFCORE_PROTEGERNA()
 }
 
 /*
