@@ -16,12 +16,13 @@ https://raw.githubusercontent.com/Clinical-Genomics/stranger/master/stranger/res
 https://ftp.ensembl.org/pub/release-107/variation/indexed_vep_cache/homo_sapiens_merged_vep_107_GRCh38.tar.gz
 
 tar xf homo_sapiens_merged_vep_107_GRCh38.tar.gz
+change name to vep_cache
 
 # VEP plugins (v107)
-https://raw.githubusercontent.com/nf-core/test-datasets/raredisease/reference/vep_cache_and_plugins.tar.gz
+
 At least the plugin pLI is required in order to run the SNV annotation (ADD_MOST_SEVERE_PLI). Other plugins are definitely needed to run the ranking steps in GENMOD processes. Plugins are installed into the vep_cache dir using the following script. Internet access and singularity is required.
 
-bash install-vep-plugins.sh
+bash install-vep-plugins.sh # Change script to correct file paths
 
 (https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/107/pLI_values.txt, https://raw.githubusercontent.com/Ensembl/VEP_plugins/release/107/LoFtool_scores.txt, http://hollywood.mit.edu/burgelab/maxent/download/fordownload.tar.gz)
 
