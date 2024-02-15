@@ -94,6 +94,13 @@ The script make-gnomad-af-file.sh creates a combined VCF file
 The gnomad_af argument expects a tab.gz file, not a VCF. Run:
 bash convert-gnomad-to-tsv.sh
 
+You also need an index of the tab file:
+
+```
+tabix -p vcf gnomad.genomes.v3.1.2.sites.af.tab.gz
+```
+This file can then be specified as --gnomad_af_idx in the yml params file.
+
 # gnomAD SV
 https://ftp.ncbi.nlm.nih.gov/pub/dbVar/data/Homo_sapiens/by_study/vcf/nstd166.GRCh38.variant_call.vcf.gz
 
