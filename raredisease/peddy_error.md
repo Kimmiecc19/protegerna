@@ -1,5 +1,5 @@
-```markdown
-# RareDisease pipeline peddy error
+# RareDisease Pipeline Peddy Error
+
 This is most likely an issue with the `samplesheet.csv` file.
 
 **ERROR**:
@@ -62,8 +62,18 @@ Command error:
   ped_parser.exceptions.PedigreeError: Parent is not in family.
 ```
 
-**Possible solutions**:
+# Possible Solutions:
 
+```
 1. Remove `case_id` from samplesheet -> Did not work
 2. Add zero to `paternal_id` and `maternal_id` -> Did not work
+```
+
+# Actual Solution:
+
+```
+Change the samplesheet to: 
+
+sample,lane,fastq_1,fastq_2,sex,phenotype,paternal_id,maternal_id,case_id
+SRR15174692,1,/home/kcoetzer/SD/SRR15174692_1.fastq.gz,/home/kcoetzer/SD/SRR15174692_2.fastq.gz,other,2,0,0,SD1
 ```
