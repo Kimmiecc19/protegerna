@@ -54,6 +54,7 @@ https://ftp.ncbi.nlm.nih.gov/pub/clinvar/vcf_GRCh38/clinvar.vcf.gz.tbi
 The ClinVar files have annotations in the latin1 charset. There are characters outside the generally compatible ASCII subset, like é, which upsets the python scripts used in the pipeline. The script convert-clinvar-charset.sh converts the vcf file to UTF-8. The converted file is used in the pipeline.
 
 #CADD
+
 CADD doesn't like chr? chromosome names. I've fixed it in a hacky way; needs to be done properly but I don't have much time now Replace the entire cadd process file:
 
 cp -b scripts/cadd-process-fix-main.nf ~/nf-core-raredisease_1.1.1/1_1_1/modules/nf-core/cadd/main.nf
