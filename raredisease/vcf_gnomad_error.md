@@ -57,9 +57,6 @@ Command exit status:
 
 Command output:
   (empty)
-```
-
-# Possible solutions
 
 Command error:
   INFO:    Environment variable SINGULARITYENV_NXF_TASK_WORKDIR is set, but APPTAINERENV_NXF_TASK_WORKDIR is preferred
@@ -67,3 +64,5 @@ Command error:
   Failed to read from SD1.vcf.gz: unknown file type
 ```
 
+# Solution
+The vcfanno_config.toml and vcfanno_functions.lua must point to the gnomad.af.vcf.gz file not the tab file. Only gnomad_af refers to the tab file. 
