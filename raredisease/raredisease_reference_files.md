@@ -28,9 +28,14 @@ bash install-vep-plugins.sh # Change script to correct file paths
 
 Place these in vep_cache dir. The vep config ext.args is defined in the workflow repo <raredisease>/conf/modules/annotate_snvs.config. The override in medGenConfigs/process-overrides.conf sets the following paths.
 
+Download link: https://basespace.illumina.com/analyses/194103939/files?projectId=66029966 (Files are very large)
+
 spliceai_scores.raw.indel.hg38.vcf.gz
+
 spliceai_scores.raw.indel.hg38.vcf.gz.tbi
+
 spliceai_scores.raw.snv.hg38.vcf.gz
+
 spliceai_scores.raw.snv.hg38.vcf.gz.tbi
 
 # Intervals files
