@@ -1,4 +1,4 @@
-# Troubleshoot for common nf-core/rnasplice errors
+# Troubleshoot for unrecognized parameter name error
 
 Caused by:
   Process `NFCORE_RNASPLICE:RNASPLICE:ALIGN_STAR:STAR_ALIGN_IGENOMES (ERR188428)` terminated with an error exit status (102)
