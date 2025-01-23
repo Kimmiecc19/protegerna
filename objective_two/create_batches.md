@@ -2,13 +2,13 @@
 
 Since I have many samples, I need to create batches of these samples for running the nf-core pipelines. 
 
-This is especially important when running nf-core/rnasplice, nf-core/differentialabundance, and nf-core/rnafusion, nf-core/sarek or nf-core/raredisease and nf-core/quantms as I need to compare disease to healthy/disease controls.
+This is especially important when running nf-core/rnasplice, nf-core/differentialabundance, nf-core/rnafusion, nf-core/rnaseq, and nf-core/quantms as I need to compare disease to healthy/disease controls.
 
 **NB:** The AnswerALS team have reported 50 protein samples with high batch effects.
 
 [Data Information](https://dataportal.answerals.org/data-information). 
 
-These samples were therefore removed from the matched samples, leaving *347/396* samples left over.
+These samples were therefore removed from the matched samples, leaving *347* samples.
 
 I have the following relevant information for the data that I want to use:
 - participant	
