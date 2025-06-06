@@ -44,9 +44,16 @@ According to [`nf-core/rnafusion`](https://github.com/nf-core/rnafusion), you ne
 
 ## Ensembl FASTA & GTF Files
 
+* Most updated release:
 ```text
 FASTA: https://ftp.ensembl.org/pub/current_fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz  
 GTF:   https://ftp.ensembl.org/pub/current_gtf/homo_sapiens/Homo_sapiens.GRCh38.114.gtf.gz
+```
+
+* Old release that rnafusion uses:
+```text
+FASTA: https://ftp.ensembl.org/pub/release-102/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
+GTF: https://ftp.ensembl.org/pub/release-102/gtf/homo_sapiens/Homo_sapiens.GRCh38.102.gtf.gz
 ```
 
 ---
