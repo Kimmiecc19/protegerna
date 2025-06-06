@@ -203,10 +203,20 @@ conda install -c bioconda fusion-report=2.1.4
 
 ---
 
-## Extra: HGNC (Gene Symbols)
+## Extra (downloaded when using --build_references but not explicitly stated anywhere): 
+
+1. HGNC (Gene Symbols)
 
 * [HGNC Download Page](https://www.genenames.org/download/)
 
 File Type   Path
 Complete set old TSV   ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt
 Complete set new TSV   storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
+
+2. convert2bed: Homo_sapiens.GRCh38.102.bed
+
+3. rrna: Homo_sapiens.GRCh38.102_rrna_intervals.gtf
+
+4. GATK: Homo_sapiens.GRCh38.102.all.dict
+
+---
