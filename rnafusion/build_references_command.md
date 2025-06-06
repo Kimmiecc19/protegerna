@@ -1,4 +1,4 @@
-# Creating rnafusion references
+# Creating rnafusion references automatically using nf-core --build_references
 ### The rnafusion pipeline needs references for the fusion detection tools, so downloading these is a requirement.
 ### This step was run on a local device to create the references needed to run nf-core/rnafusion
 ### Reference files were then transferred to hemera (University sever) and CHPC using rsync
