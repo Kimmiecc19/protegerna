@@ -1,6 +1,7 @@
-# Troubleshooting for common RNAfusion errors
+# Troubleshooting for common `nf-core/rnafusion` errors
 
 ## Overview
+
 This document provides tips and solutions for common problems encountered with nf-core/rnafusion.
 
 ---
@@ -11,7 +12,7 @@ This document provides tips and solutions for common problems encountered with n
 
 If you encounter the following error message:
 
-```
+```Groovy
 ERROR:
 Command exit status:
   2
@@ -21,24 +22,24 @@ Command error:
   ** Error, not able to find file: fusion_annot_lib.idx **  at /usr/local/src/STAR-Fusion/util/validate_ctat_genome_lib.pl line 28.
 ```
 
-**OR**
+**OR:**
 
-```
+```groovy
 Fatal INPUT FILE error, no valid exon lines in the GTF file: Homo_sapiens.GRCh38.102.chr.gtf
 Solution: Check the formatting of the GTF file. One likely cause is the difference in chromosome naming between the GTF and FASTA file.
 ```
 
-#### Solution:
+#### Solution 1
 
 1. Check if it is a memory issue (e.g., error 104). Try adding the following to the config file:
-   
-```bash
-process {
-    withName: 'NFCORE_RNAFUSION:RNAFUSION:STARFUSION_WORKFLOW:STAR_FOR_STARFUSION' {
+
+  ```groovy
+  process {
+      withName:     'NFCORE_RNAFUSION:RNAFUSION:STARFUSION_WORKFLOW:STAR_FOR_STARFUSION' {
         memory = 200.GB  // Increase this value as needed
-    }
-}
-```
+      }
+  }
+  ```
 
 2. If that doesn't work, try rebuilding indices. Visit [this link](https://github.com/STAR-Fusion/STAR-Fusion/wiki/rebuild_ctat_genome_lib_indices) for more details.
 
@@ -84,18 +85,19 @@ ${STAR_Fusion_BASEDIR}/ctat-genome-lib-builder/util/rebuild_indices.pl .
 singularity exec -e star-fusion.v1.13.0.simg STAR-Fusion.v1.14.0/ctat-genome-lib-builder/util/rebuild_indices.pl .
 ```
 
-**Don't forget the final dot (`.`) in the rebuild command!** 
+**Don't forget the final dot (`.`) in the rebuild command!**
 
 This step can take over an hour.
 
 After re-running nf-core/rnafusion, if you get the error:
 
-```
+```groovy
 Command error:
   Error, cannot locate genome_lib_dir: ctat_genome_lib_build_dir at /usr/local/src/STAR-Fusion/STAR-Fusion line 508.
 ```
 
-#### Solution:
+#### Solution 2
+
 Manually move the correct reference to a new directory named `starfusion`:
 
 ```bash
@@ -106,6 +108,3 @@ cp -r ctat_genome_lib_build_dir/ ../starfusion/
 ```
 
 Re-run the pipeline.
-
-
-
