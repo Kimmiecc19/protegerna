@@ -19,7 +19,7 @@ nextflow run nf-core/rnafusion \
 
 ---
 
-## Manually Building References
+## Manually Building References (version < 4.0.0)
 
 According to [`nf-core/rnafusion`](https://github.com/nf-core/rnafusion), you need the following:
 
@@ -44,16 +44,9 @@ According to [`nf-core/rnafusion`](https://github.com/nf-core/rnafusion), you ne
 
 ## Ensembl FASTA & GTF Files
 
-* Most updated release:
 ```text
 FASTA: https://ftp.ensembl.org/pub/current_fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz  
 GTF:   https://ftp.ensembl.org/pub/current_gtf/homo_sapiens/Homo_sapiens.GRCh38.114.gtf.gz
-```
-
-* Old release that rnafusion uses:
-```text
-FASTA: https://ftp.ensembl.org/pub/release-102/fasta/homo_sapiens/dna/Homo_sapiens.GRCh38.dna.primary_assembly.fa.gz
-GTF: https://ftp.ensembl.org/pub/release-102/gtf/homo_sapiens/Homo_sapiens.GRCh38.102.gtf.gz
 ```
 
 ---
@@ -101,7 +94,7 @@ cd arriba_v2.5.0 && make
 
 > ⚠️ Reference build is only supported for **Ensembl v102**.
 
-### Install & Download Options:
+### Install & Download Options
 
 #### Method 1: Python Bootstrap
 
@@ -137,11 +130,11 @@ cd ../data
 
 * [STAR-Fusion GitHub](https://github.com/STAR-Fusion/STAR-Fusion)
 * [Manual](https://github.com/STAR-Fusion/STAR-Fusion/wiki)
-* Haas *et al.*, Genome Biol. 2019 [Link](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1842-9)
+* [Haas *et al.*, Genome Biol. 2019](https://genomebiology.biomedcentral.com/articles/10.1186/s13059-019-1842-9)
 
 ### Download & Install
 
-#### Option 1: Recommended (FULL release with submodules):
+#### Option 1: Recommended (FULL release with submodules)
 
 ```bash
 wget https://github.com/STAR-Fusion/STAR-Fusion/releases/download/STAR-Fusion-v1.15.0/STAR-Fusion.v1.15.0.FULL.tar.gz
@@ -150,7 +143,7 @@ cd STAR-Fusion.v1.15.0
 make
 ```
 
-#### Option two: From GitHub Clone:
+#### Option two: From GitHub Clone
 
 ```bash
 git clone --recursive https://github.com/STAR-Fusion/STAR-Fusion.git
@@ -210,20 +203,38 @@ conda install -c bioconda fusion-report=2.1.4
 
 ---
 
-## Extra (downloaded when using --build_references but not explicitly stated anywhere): 
+## Extra
 
 1. HGNC (Gene Symbols)
 
-* [HGNC Download Page](https://www.genenames.org/download/)
+  [HGNC Download Page](https://www.genenames.org/download/)
 
-File Type   Path
-Complete set old TSV   ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt
-Complete set new TSV   storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
+  > Complete set old TSV   ftp.ebi.ac.uk/pub/databases/genenames/hgnc/tsv/hgnc_complete_set.txt
+  > Complete set new TSV   storage.googleapis.com/public-download-files/hgnc/tsv/tsv/hgnc_complete_set.txt
 
-2. convert2bed: Homo_sapiens.GRCh38.102.bed
+1. convert2bed: Homo_sapiens.GRCh38.102.bed
 
-3. rrna: Homo_sapiens.GRCh38.102_rrna_intervals.gtf
+2. rrna: Homo_sapiens.GRCh38.102_rrna_intervals.gtf
 
-4. GATK: Homo_sapiens.GRCh38.102.all.dict
+3. GATK: Homo_sapiens.GRCh38.102.all.dict
+
+---
+
+## Manually Building References (version 4.0.0)
+
+Download the references from the S3 bucket (recommended)
+
+> Important: this has to be done with each new release
+
+```bash
+conda activate whatever_env
+
+# https://github.com/aws/aws-cli
+pip install awscli 
+
+aws --no-sign-request s3 sync s3://nf-core-awsmegatests/rnafusion/references/ <path_to_references>
+```
+
+The `<path_to_references>` can then be provided to the pipeline with the --genomes_base parameter.
 
 ---
