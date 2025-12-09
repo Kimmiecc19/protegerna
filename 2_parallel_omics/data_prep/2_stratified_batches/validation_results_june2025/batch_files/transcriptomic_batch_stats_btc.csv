@@ -1,0 +1,7 @@
+artificial_batch,n_samples,n_participants,n_btc,n_bdc,n_case,n_control,n_female,n_male,n_batches
+1.0,7,1,7,0,0,7,7,0,2
+2.0,4,1,4,0,0,4,4,0,2
+3.0,7,1,7,0,0,7,7,0,2
+4.0,6,1,6,0,0,6,6,0,2
+5.0,4,1,4,0,0,4,4,0,2
+6.0,8,1,8,0,0,8,8,0,2
