@@ -49,7 +49,7 @@ Solution: Check the formatting of the GTF file. One likely cause is the differen
 
 To rebuild the indices locally using STAR-Fusion and ctat_genome_lib:
 
-1. Download the latest STAR-Fusion release from [here](https://github.com/STAR-Fusion/STAR-Fusion/releases) or use the [Singularity image](https://data.broadinstitute.org/Trinity/CTAT_SINGULARITY/STAR-Fusion/star-fusion.v1.13.0.simg) (recommended).
+1. Download the latest STAR-Fusion release from [GitHub](https://github.com/STAR-Fusion/STAR-Fusion/releases) or use the [Singularity image](https://data.broadinstitute.org/Trinity/CTAT_SINGULARITY/STAR-Fusion/star-fusion.v1.13.0.simg) (recommended).
 
 2. Navigate to the STAR-Fusion directory and run `make` in the base directory. Install missing R packages if needed:
 
@@ -108,3 +108,5 @@ cp -r ctat_genome_lib_build_dir/ ../starfusion/
 ```
 
 Re-run the pipeline.
+
+---
