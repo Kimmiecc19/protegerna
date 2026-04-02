@@ -1,0 +1,143 @@
+graph TD
+    category_Operator["Operator"]
+    category_Process["Process"]
+    category_Workflow["Workflow"]
+    source_https___www_nextflow_io_docs_stable_module_html["https://www.nextflow.io/docs/stable/module.html"]
+    source_https___www_nextflow_io_docs_stable_process_html["https://www.nextflow.io/docs/stable/process.html"]
+    source_https___www_nextflow_io_docs_stable_reference_config_html["https://www.nextflow.io/docs/stable/reference/config.html"]
+    source_https___www_nextflow_io_docs_stable_reference_operator_html["https://www.nextflow.io/docs/stable/reference/operator.html"]
+    source_https___www_nextflow_io_docs_stable_reference_process_html["https://www.nextflow.io/docs/stable/reference/process.html"]
+    source_https___www_nextflow_io_docs_stable_reference_syntax_html["https://www.nextflow.io/docs/stable/reference/syntax.html"]
+    source_https___www_nextflow_io_docs_stable_workflow_html["https://www.nextflow.io/docs/stable/workflow.html"]
+    source_https___www_nextflow_io_docs_stable_working_with_files_html["https://www.nextflow.io/docs/stable/working-with-files.html"]
+    term_accelerator["accelerator"]
+    term_afterScript["afterScript"]
+    term_And__["And &"]
+    term_arch["arch"]
+    term_array["array"]
+    term_beforeScript["beforeScript"]
+    term_branch["branch"]
+    term_buffer["buffer"]
+    term_cache["cache"]
+    term_Calling_processes_and_workflows["Calling processes and workflows"]
+    term_clusterOptions["clusterOptions"]
+    term_collate["collate"]
+    term_collect["collect"]
+    term_collectFile["collectFile"]
+    term_combine["combine"]
+    term_concat["concat"]
+    term_conda["conda"]
+    term_Conditional_scripts["Conditional scripts"]
+    term_container["container"]
+    term_containerOptions["containerOptions"]
+    term_count["count"]
+    term_countFasta["countFasta"]
+    term_countFastq["countFastq"]
+    term_countJson["countJson"]
+    term_Environment_Variables["Environment Variables"]
+    term_Files["Files"]
+    term_Modules["Modules"]
+    term_Output["Output"]
+    term_Params["Params"]
+    term_Workflow["Workflow"]
+    category_Operator -->|contains| term_branch
+    category_Operator -->|contains| term_buffer
+    category_Operator -->|contains| term_collate
+    category_Operator -->|contains| term_collect
+    category_Operator -->|contains| term_collectFile
+    category_Operator -->|contains| term_combine
+    category_Operator -->|contains| term_concat
+    category_Operator -->|contains| term_count
+    category_Operator -->|contains| term_countFasta
+    category_Operator -->|contains| term_countFastq
+    category_Operator -->|contains| term_countJson
+    category_Process -->|contains| term_Conditional_scripts
+    category_Process -->|contains| term_Environment_Variables
+    category_Process -->|contains| term_Files
+    category_Process -->|contains| term_Modules
+    category_Process -->|contains| term_accelerator
+    category_Process -->|contains| term_afterScript
+    category_Process -->|contains| term_arch
+    category_Process -->|contains| term_array
+    category_Process -->|contains| term_beforeScript
+    category_Process -->|contains| term_cache
+    category_Process -->|contains| term_clusterOptions
+    category_Process -->|contains| term_conda
+    category_Process -->|contains| term_container
+    category_Process -->|contains| term_containerOptions
+    category_Workflow -->|contains| term_And__
+    category_Workflow -->|contains| term_Calling_processes_and_workflows
+    category_Workflow -->|contains| term_Output
+    category_Workflow -->|contains| term_Params
+    category_Workflow -->|contains| term_Workflow
+    term_And__ -->|from_source| source_https___www_nextflow_io_docs_stable_workflow_html
+    term_Calling_processes_and_workflows -->|from_source| source_https___www_nextflow_io_docs_stable_workflow_html
+    term_Calling_processes_and_workflows -->|references| term_Workflow
+    term_Conditional_scripts -->|from_source| source_https___www_nextflow_io_docs_stable_process_html
+    term_Environment_Variables -->|from_source| source_https___www_nextflow_io_docs_stable_process_html
+    term_Files -->|from_source| source_https___www_nextflow_io_docs_stable_process_html
+    term_Files -->|from_source| source_https___www_nextflow_io_docs_stable_working_with_files_html
+    term_Files -->|references| term_array
+    term_Modules -->|from_source| source_https___www_nextflow_io_docs_stable_module_html
+    term_Modules -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_Modules -->|references| term_Files
+    term_Modules -->|references| term_Params
+    term_Modules -->|references| term_Workflow
+    term_Output -->|from_source| source_https___www_nextflow_io_docs_stable_process_html
+    term_Output -->|from_source| source_https___www_nextflow_io_docs_stable_reference_syntax_html
+    term_Output -->|from_source| source_https___www_nextflow_io_docs_stable_workflow_html
+    term_Output -->|references| term_Files
+    term_Output -->|references| term_Workflow
+    term_Params -->|from_source| source_https___www_nextflow_io_docs_stable_reference_syntax_html
+    term_Params -->|from_source| source_https___www_nextflow_io_docs_stable_workflow_html
+    term_Params -->|references| term_Files
+    term_Params -->|references| term_Workflow
+    term_Workflow -->|from_source| source_https___www_nextflow_io_docs_stable_reference_config_html
+    term_Workflow -->|from_source| source_https___www_nextflow_io_docs_stable_reference_syntax_html
+    term_Workflow -->|from_source| source_https___www_nextflow_io_docs_stable_workflow_html
+    term_Workflow -->|references| term_Output
+    term_Workflow -->|references| term_Params
+    term_Workflow -->|references| term_collect
+    term_accelerator -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_afterScript -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_arch -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_arch -->|references| term_container
+    term_array -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_array -->|references| term_accelerator
+    term_array -->|references| term_clusterOptions
+    term_array -->|references| term_collect
+    term_array -->|references| term_conda
+    term_array -->|references| term_container
+    term_array -->|references| term_containerOptions
+    term_beforeScript -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_beforeScript -->|references| term_container
+    term_branch -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_branch -->|references| term_Output
+    term_buffer -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_buffer -->|references| term_collate
+    term_cache -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_clusterOptions -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_collate -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_collate -->|references| term_buffer
+    term_collect -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_collectFile -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_collectFile -->|references| term_Files
+    term_collectFile -->|references| term_collect
+    term_combine -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_concat -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_concat -->|references| term_Output
+    term_conda -->|from_source| source_https___www_nextflow_io_docs_stable_reference_config_html
+    term_conda -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_container -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_containerOptions -->|from_source| source_https___www_nextflow_io_docs_stable_reference_process_html
+    term_containerOptions -->|references| term_container
+    term_count -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_countFasta -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_countFasta -->|references| term_Files
+    term_countFasta -->|references| term_count
+    term_countFastq -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_countFastq -->|references| term_Files
+    term_countFastq -->|references| term_count
+    term_countJson -->|from_source| source_https___www_nextflow_io_docs_stable_reference_operator_html
+    term_countJson -->|references| term_Files
+    term_countJson -->|references| term_count
