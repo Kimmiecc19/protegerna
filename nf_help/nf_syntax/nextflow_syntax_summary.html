@@ -1,0 +1,1431 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Nextflow Syntax Summary</title>
+    <style>
+        :root {
+            color-scheme: light;
+            --bg: #f8fafc;
+            --panel: #ffffff;
+            --text: #0f172a;
+            --muted: #475569;
+            --border: #dbe4ee;
+            --accent: #0ea5e9;
+            --accent-soft: #e0f2fe;
+        }
+        body {
+            margin: 0;
+            font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+            background: linear-gradient(180deg, #eef6ff 0%, var(--bg) 220px);
+            color: var(--text);
+        }
+        .layout {
+            max-width: 1600px;
+            margin: 0 auto;
+            padding: 20px 16px 40px;
+            display: grid;
+            grid-template-columns: 280px minmax(0, 1fr);
+            gap: 20px;
+        }
+        .sidebar {
+            position: sticky;
+            top: 16px;
+            align-self: start;
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 18px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+        }
+        .sidebar h1 {
+            font-size: 1.25rem;
+            margin: 0 0 6px;
+        }
+        .sidebar p {
+            margin: 0 0 14px;
+            color: var(--muted);
+            line-height: 1.5;
+        }
+        .searchbox {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: #fff;
+            font: inherit;
+            color: var(--text);
+            margin-bottom: 14px;
+        }
+        .nav { display: grid; gap: 6px; margin-bottom: 16px; }
+        .nav a {
+            display: block;
+            text-decoration: none;
+            color: var(--text);
+            padding: 8px 10px;
+            border-radius: 10px;
+            border: 1px solid transparent;
+        }
+        .nav a:hover {
+            background: var(--accent-soft);
+            border-color: #bae6fd;
+        }
+        .sidebar .meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        .sidebar .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: #eff6ff;
+            color: #075985;
+            font-size: 0.86rem;
+        }
+        .content {
+            background: var(--panel);
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            padding: 24px;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.04);
+        }
+        .content img { max-width: 100%; height: auto; }
+        .content pre { overflow: auto; padding: 16px; background: #0f172a; color: #e2e8f0; border-radius: 12px; }
+        .content code { background: #e2e8f0; padding: 0.15rem 0.35rem; border-radius: 6px; }
+        .content pre code { background: transparent; padding: 0; }
+        .content table { border-collapse: collapse; width: 100%; margin: 1rem 0 1.5rem; background: #ffffff; }
+        .content th, .content td { border: 1px solid var(--border); padding: 8px 10px; vertical-align: top; }
+        .content thead th { background: #eff6ff; }
+        .content a { color: var(--accent); }
+        .content h2 { border-bottom: 2px solid #e2e8f0; padding-bottom: 6px; margin-top: 2rem; }
+        .content h3 { margin-top: 1.4rem; }
+        .content blockquote { border-left: 4px solid var(--accent); margin: 1rem 0; padding: 0.5rem 1rem; background: #f8fbff; color: #334155; }
+        .content details { background: #f8fafc; border: 1px solid var(--border); border-radius: 12px; padding: 12px 14px; margin: 1rem 0; }
+        .content summary { cursor: pointer; font-weight: 600; color: #0f172a; }
+        .content mark { background: #fde68a; color: #111827; padding: 0 2px; border-radius: 3px; }
+        .content .hidden-by-search { display: none !important; }
+        @media (max-width: 980px) {
+            .layout { grid-template-columns: 1fr; }
+            .sidebar { position: static; }
+        }
+    </style>
+</head>
+<body>
+    <div class="layout" id="top">
+        <aside class="sidebar">
+            <h1>Syntax Summary</h1>
+            <p>Category-first report with live search and quick jumps to each section.</p>
+            <input id="summary-search" class="searchbox" type="search" placeholder="Search terms, synopses..." aria-label="Search summary">
+            <div class="nav"><a href="#top">Summary</a>
+<a href="#summary-category-snapshot">Category Snapshot</a>
+<a href="#summary-category-index">Category Index</a>
+<a href="#summary-workflow">Workflow</a>
+<a href="#summary-process">Process</a>
+<a href="#summary-channel">Channel</a>
+<a href="#summary-operator">Operator</a>
+<a href="#summary-cli">CLI</a>
+<a href="#summary-config">Config</a>
+<a href="#summary-types">Types</a>
+<a href="#summary-script-language">Script Language</a>
+<a href="#summary-modules">Modules</a>
+<a href="#summary-files">Files</a>
+<a href="#summary-other">Other</a></div>
+            <div class="meta">
+                <span class="pill">Markdown + HTML</span>
+                <span class="pill">Live filter</span>
+                <span class="pill">Sticky nav</span>
+            </div>
+        </aside>
+        <main class="content" id="summary-content">
+            <h1>Nextflow Syntax Summary</h1>
+<p>A concise, category-first overview of grouped terms with short synopses and quick lookup links.</p>
+<p><img alt="Total Terms" src="https://img.shields.io/badge/Total%20Terms-247-0f172a?style=for-the-badge"> <img alt="Categories" src="https://img.shields.io/badge/Categories-10-0ea5e9?style=for-the-badge"></p>
+<h2><a id="summary-category-snapshot"></a>Category Snapshot</h2>
+<table>
+<thead>
+<tr>
+<th>Category</th>
+<th>Count</th>
+<th>Top Terms</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="#workflow">Workflow</a></td>
+<td>13</td>
+<td>Workflow, Params, Output, ...</td>
+</tr>
+<tr>
+<td><a href="#process">Process</a></td>
+<td>49</td>
+<td>Modules, accelerator, afterScript, ...</td>
+</tr>
+<tr>
+<td><a href="#channel">Channel</a></td>
+<td>12</td>
+<td>empty, from, fromFilePairs, ...</td>
+</tr>
+<tr>
+<td><a href="#operator">Operator</a></td>
+<td>48</td>
+<td>branch, buffer, collate, ...</td>
+</tr>
+<tr>
+<td><a href="#cli">CLI</a></td>
+<td>23</td>
+<td>Config, auth, clean, ...</td>
+</tr>
+<tr>
+<td><a href="#config">Config</a></td>
+<td>29</td>
+<td>apptainer, aws, azure, ...</td>
+</tr>
+<tr>
+<td><a href="#types">Types</a></td>
+<td>16</td>
+<td>Channel, Bag, Boolean, ...</td>
+</tr>
+<tr>
+<td><a href="#script-language">Script Language</a></td>
+<td>48</td>
+<td>Process, Function, Enum, ...</td>
+</tr>
+<tr>
+<td><a href="#modules">Modules</a></td>
+<td>2</td>
+<td>Multiple inclusions, Sharing modules</td>
+</tr>
+<tr>
+<td><a href="#files">Files</a></td>
+<td>7</td>
+<td>Files, Copying files, Filesystem operations, ...</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-category-index"></a>Category Index</h2>
+<table>
+  <tr><td>
+<strong>[WF] Workflow</strong><br/>
+<a href="#workflow">Jump to section</a><br/>
+<em>Terms:</em> 13<br/>
+<em>Preview:</em> Workflow, Params, Output, And &amp;amp;, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[PR] Process</strong><br/>
+<a href="#process">Jump to section</a><br/>
+<em>Terms:</em> 49<br/>
+<em>Preview:</em> Modules, accelerator, afterScript, arch, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[CH] Channel</strong><br/>
+<a href="#channel">Jump to section</a><br/>
+<em>Terms:</em> 12<br/>
+<em>Preview:</em> empty, from, fromFilePairs, fromLineage, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[OP] Operator</strong><br/>
+<a href="#operator">Jump to section</a><br/>
+<em>Terms:</em> 48<br/>
+<em>Preview:</em> branch, buffer, collate, collect, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[CLI] CLI</strong><br/>
+<a href="#cli">Jump to section</a><br/>
+<em>Terms:</em> 23<br/>
+<em>Preview:</em> Config, auth, clean, clone, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[CFG] Config</strong><br/>
+<a href="#config">Jump to section</a><br/>
+<em>Terms:</em> 29<br/>
+<em>Preview:</em> apptainer, aws, azure, charliecloud, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[TY] Types</strong><br/>
+<a href="#types">Jump to section</a><br/>
+<em>Terms:</em> 16<br/>
+<em>Preview:</em> Channel, Bag, Boolean, Duration, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[SC] Script</strong><br/>
+<a href="#script-language">Jump to section</a><br/>
+<em>Terms:</em> 48<br/>
+<em>Preview:</em> Process, Function, Enum, Variable, ...
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[MD] Modules</strong><br/>
+<a href="#modules">Jump to section</a><br/>
+<em>Terms:</em> 2<br/>
+<em>Preview:</em> Multiple inclusions, Sharing modules
+  </td></tr>
+</table>
+
+<table>
+  <tr><td>
+<strong>[FL] Files</strong><br/>
+<a href="#files">Jump to section</a><br/>
+<em>Terms:</em> 7<br/>
+<em>Preview:</em> Files, Copying files, Filesystem operations, Listing directories, ...
+  </td></tr>
+</table>
+
+<h2><a id="summary-workflow"></a>Workflow</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Workflow</td>
+<td>A workflow can be a named workflow or an entry workflow .</td>
+</tr>
+<tr>
+<td>Params</td>
+<td>The params block consists of one or more parameter declarations .</td>
+</tr>
+<tr>
+<td>Output</td>
+<td>The output block consists of one or more output declarations .</td>
+</tr>
+<tr>
+<td>And &amp;</td>
+<td>Reference for And &amp;.</td>
+</tr>
+<tr>
+<td>Calling processes and workflows</td>
+<td>Reference for Calling processes and workflows.</td>
+</tr>
+<tr>
+<td>Index files</td>
+<td>Each output can create an index file of the values that were published.</td>
+</tr>
+<tr>
+<td>Legacy parameters</td>
+<td>Reference for Legacy parameters.</td>
+</tr>
+<tr>
+<td>Named workflows</td>
+<td>Reference for Named workflows.</td>
+</tr>
+<tr>
+<td>Parameters</td>
+<td>Parameters can be declared in a Nextflow script with the params block or with legacy parameter declarations.</td>
+</tr>
+<tr>
+<td>Pipe</td>
+<td></td>
+</tr>
+<tr>
+<td>Publishing files</td>
+<td>Reference for Publishing files.</td>
+</tr>
+<tr>
+<td>Special operators</td>
+<td>The following operators have a special meaning when used in a workflow with process and workflow calls.</td>
+</tr>
+<tr>
+<td>Takes and emits</td>
+<td>Reference for Takes and emits.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-process"></a>Process</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Modules</td>
+<td>Environment Modules is a package manager that allows you to dynamically configure your execution environment and easily switch between multiple versions of the same software tool.</td>
+</tr>
+<tr>
+<td>accelerator</td>
+<td>The accelerator directive allows you to request hardware accelerators (e.g.</td>
+</tr>
+<tr>
+<td>afterScript</td>
+<td>The afterScript directive allows you to execute a custom (Bash) snippet immediately after the main process has run.</td>
+</tr>
+<tr>
+<td>arch</td>
+<td>The arch directive allows you to define the CPU architecture to build the software in use by the processa task.</td>
+</tr>
+<tr>
+<td>array</td>
+<td>The array directive allows you to submit tasks as job arrays for executors that support it.</td>
+</tr>
+<tr>
+<td>beforeScript</td>
+<td>The beforeScript directive allows you to execute a custom (Bash) snippet before the main process script is run.</td>
+</tr>
+<tr>
+<td>cache</td>
+<td>The cache directive allows you to store the process results to a local cache.</td>
+</tr>
+<tr>
+<td>clusterOptions</td>
+<td>The clusterOptions directive allows the usage of any native configuration option accepted by your cluster submit command.</td>
+</tr>
+<tr>
+<td>conda</td>
+<td>The conda directive allows for the definition of the process dependencies using the Conda package manager.</td>
+</tr>
+<tr>
+<td>container</td>
+<td>The container directive allows you to execute the process script in a Docker container.</td>
+</tr>
+<tr>
+<td>containerOptions</td>
+<td>The containerOptions directive allows you to specify any container execution option supported by the underlying container engine (ie.</td>
+</tr>
+<tr>
+<td>cpus</td>
+<td>Reference for cpus.</td>
+</tr>
+<tr>
+<td>debug</td>
+<td>By default the stdout produced by the commands executed in all processes is ignored.</td>
+</tr>
+<tr>
+<td>Directives</td>
+<td>Reference for Directives.</td>
+</tr>
+<tr>
+<td>disk</td>
+<td>The disk directive allows you to define how much local disk storage the process is allowed to use.</td>
+</tr>
+<tr>
+<td>echo</td>
+<td>Reference for echo.</td>
+</tr>
+<tr>
+<td>errorStrategy</td>
+<td>The errorStrategy directive allows you to define how the process manages an error condition.</td>
+</tr>
+<tr>
+<td>executor</td>
+<td>The executor defines the underlying system where processes are executed.</td>
+</tr>
+<tr>
+<td>ext</td>
+<td>The ext is a special directive used as namespace for user custom process directives.</td>
+</tr>
+<tr>
+<td>fair</td>
+<td>The fair directive, when enabled, guarantees that process outputs will be emitted in the order in which they were received.</td>
+</tr>
+<tr>
+<td>Generic options</td>
+<td>Reference for Generic options.</td>
+</tr>
+<tr>
+<td>Inputs</td>
+<td>Reference for Inputs.</td>
+</tr>
+<tr>
+<td>Inputs and outputs (legacy)</td>
+<td>Reference for Inputs and outputs (legacy).</td>
+</tr>
+<tr>
+<td>Inputs and outputs (typed)</td>
+<td>Reference for Inputs and outputs (typed).</td>
+</tr>
+<tr>
+<td>label</td>
+<td>The label directive allows the annotation of processes with mnemonic identifier of your choice.</td>
+</tr>
+<tr>
+<td>machineType</td>
+<td>The machineType can be used to specify a predefined Google Compute Platform machine type when running using the Google Batch , or when using the autopools feature of the Azure Batch executor .</td>
+</tr>
+<tr>
+<td>maxErrors</td>
+<td>The maxErrors directive allows you to specify the maximum number of times a process can fail when using the retry error strategy.</td>
+</tr>
+<tr>
+<td>maxForks</td>
+<td>The maxForks directive allows you to define the maximum number of process instances that can be executed in parallel.</td>
+</tr>
+<tr>
+<td>maxRetries</td>
+<td>The maxRetries directive allows you to define the maximum number of times a process instance can be re-submitted in case of failure.</td>
+</tr>
+<tr>
+<td>maxSubmitAwait</td>
+<td>The maxSubmitAwait directive allows you to specify how long a task can remain in submission queue without being executed.</td>
+</tr>
+<tr>
+<td>memory</td>
+<td>The memory directive allows you to define how much memory the process is allowed to use.</td>
+</tr>
+<tr>
+<td>Outputs</td>
+<td>Reference for Outputs.</td>
+</tr>
+<tr>
+<td>penv</td>
+<td>The penv directive allows you to define the parallel environment to be used when submitting a parallel task to the SGE resource manager.</td>
+</tr>
+<tr>
+<td>pod</td>
+<td>The pod directive allows the definition of pod specific settings, such as environment variables, secrets, and config maps, when using the Kubernetes executor.</td>
+</tr>
+<tr>
+<td>publishDir</td>
+<td>The publishDir directive allows you to publish the process output files to a specified folder.</td>
+</tr>
+<tr>
+<td>queue</td>
+<td>The queue directive allows you to set the queue where jobs are scheduled when using a grid based executor in your pipeline.</td>
+</tr>
+<tr>
+<td>resourceLabels</td>
+<td>The resourceLabels directive allows you to specify custom name-value pairs that Nextflow applies to the computing resource used to carry out the process execution.</td>
+</tr>
+<tr>
+<td>resourceLimits</td>
+<td>The resourceLimits directive allows you to specify environment-specific limits for task resource requests.</td>
+</tr>
+<tr>
+<td>scratch</td>
+<td>The scratch directive allows you to execute the process in a temporary folder that is local to the execution node.</td>
+</tr>
+<tr>
+<td>secret</td>
+<td>The secret directive allows a process to access secrets.</td>
+</tr>
+<tr>
+<td>shell</td>
+<td>The shell directive allows you to define a custom shell command for process scripts.</td>
+</tr>
+<tr>
+<td>spack</td>
+<td>The spack directive allows for the definition of the process dependencies using the Spack package manager.</td>
+</tr>
+<tr>
+<td>Stage directives</td>
+<td>Reference for Stage directives.</td>
+</tr>
+<tr>
+<td>stageInMode</td>
+<td>The stageInMode directive defines how input files are staged into the process work directory.</td>
+</tr>
+<tr>
+<td>stageOutMode</td>
+<td>The stageOutMode directive defines how output files are staged out from the scratch directory to the process work directory.</td>
+</tr>
+<tr>
+<td>storeDir</td>
+<td>The storeDir directive allows you to define a directory that is used as a permanent cache for your process results.</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>The tag directive allows you to associate each process execution with a custom label, so that it will be easier to identify them in the log file or in the trace execution report.</td>
+</tr>
+<tr>
+<td>Task properties</td>
+<td>Reference for Task properties.</td>
+</tr>
+<tr>
+<td>time</td>
+<td>The time directive allows you to define how long a process is allowed to run.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-channel"></a>Channel</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>empty</td>
+<td>The channel.empty factory method, by definition, creates a channel that doesn't emit any value.</td>
+</tr>
+<tr>
+<td>from</td>
+<td>Reference for from.</td>
+</tr>
+<tr>
+<td>fromFilePairs</td>
+<td>The channel.fromFilePairs method creates a channel emitting the file pairs matching a glob pattern provided by the user.</td>
+</tr>
+<tr>
+<td>fromLineage</td>
+<td>Reference for fromLineage.</td>
+</tr>
+<tr>
+<td>fromList</td>
+<td>Reference for fromList.</td>
+</tr>
+<tr>
+<td>fromPath</td>
+<td>You can create a channel emitting one or more file paths by using the channel.fromPath method and specifying a path string as an argument.</td>
+</tr>
+<tr>
+<td>fromSRA</td>
+<td>The channel.fromSRA method queries the NCBI SRA database and returns a channel emitting the FASTQ files matching the specified criteria i.e project or accession number(s).</td>
+</tr>
+<tr>
+<td>interval</td>
+<td>The interval method emits an incrementing index (starting from zero) at a periodic interval.</td>
+</tr>
+<tr>
+<td>of</td>
+<td>Reference for of.</td>
+</tr>
+<tr>
+<td>topic</td>
+<td>A topic channel is a channel that can receive values from many sources implicitly based on a matching topic name .</td>
+</tr>
+<tr>
+<td>value</td>
+<td>The channel.value function creates a dataflow value bound to the given argument.</td>
+</tr>
+<tr>
+<td>watchPath</td>
+<td>The channel.watchPath method watches a folder for one or more files matching a specified pattern.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-operator"></a>Operator</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>branch</td>
+<td>Returns: multiple channels</td>
+</tr>
+<tr>
+<td>buffer</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>collate</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>collect</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>collectFile</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>combine</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>concat</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>count</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>countFasta</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>countFastq</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>countJson</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>countLines</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>cross</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>distinct</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>dump</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>filter</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>first</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>flatMap</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>flatten</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>groupTuple</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>ifEmpty</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>join</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>last</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>map</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>max</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>merge</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>min</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>mix</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>multiMap</td>
+<td>Returns: multiple channels</td>
+</tr>
+<tr>
+<td>randomSample</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>reduce</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>set</td>
+<td>Returns: nothing</td>
+</tr>
+<tr>
+<td>splitCsv</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>splitFasta</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>splitFastq</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>splitJson</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>splitText</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>subscribe</td>
+<td>Returns: nothing</td>
+</tr>
+<tr>
+<td>sum</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>take</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>tap</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>toInteger</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>toList</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>toSortedList</td>
+<td>Returns: dataflow value</td>
+</tr>
+<tr>
+<td>transpose</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>unique</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>until</td>
+<td>Returns: channel</td>
+</tr>
+<tr>
+<td>view</td>
+<td>Returns: channel</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-cli"></a>CLI</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Config</td>
+<td>Print the resolved pipeline configuration.</td>
+</tr>
+<tr>
+<td>auth</td>
+<td>Manage Seqera Platform authentication.</td>
+</tr>
+<tr>
+<td>clean</td>
+<td>Clean up cache and work directories.</td>
+</tr>
+<tr>
+<td>clone</td>
+<td>Clone a remote project into a folder.</td>
+</tr>
+<tr>
+<td>Commands</td>
+<td>Reference for Commands.</td>
+</tr>
+<tr>
+<td>console</td>
+<td>Launch the Nextflow interactive console.</td>
+</tr>
+<tr>
+<td>drop</td>
+<td>Delete the local copy of a project.</td>
+</tr>
+<tr>
+<td>fs</td>
+<td>Perform basic filesystem operations.</td>
+</tr>
+<tr>
+<td>help</td>
+<td>Print the top-level help or specific help for a command.</td>
+</tr>
+<tr>
+<td>info</td>
+<td>Print project or system runtime information.</td>
+</tr>
+<tr>
+<td>inspect</td>
+<td>Inspect process settings in a pipeline project.</td>
+</tr>
+<tr>
+<td>kuberun</td>
+<td>Launch a Nextflow pipeline on a Kubernetes cluster.</td>
+</tr>
+<tr>
+<td>launch</td>
+<td>Launch a workflow in Seqera Platform .</td>
+</tr>
+<tr>
+<td>lineage</td>
+<td>Inspect lineage metadata for Nextflow runs.</td>
+</tr>
+<tr>
+<td>lint</td>
+<td>Lint Nextflow scripts and config files.</td>
+</tr>
+<tr>
+<td>list</td>
+<td>List all downloaded projects.</td>
+</tr>
+<tr>
+<td>log</td>
+<td>Print the execution history and log information.</td>
+</tr>
+<tr>
+<td>Options</td>
+<td>The top-level options are meant to be invoked in relation to the core Nextflow application and are applied to all commands.</td>
+</tr>
+<tr>
+<td>plugin</td>
+<td>Manage plugins and run plugin-specific commands.</td>
+</tr>
+<tr>
+<td>pull</td>
+<td>Download or update a project.</td>
+</tr>
+<tr>
+<td>run</td>
+<td>Execute a pipeline.</td>
+</tr>
+<tr>
+<td>secrets</td>
+<td>Manage pipeline secrets .</td>
+</tr>
+<tr>
+<td>self-update</td>
+<td>Update the nextflow runtime to the latest available version.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-config"></a>Config</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>apptainer</td>
+<td>The apptainer scope controls how Apptainer containers are executed by Nextflow.</td>
+</tr>
+<tr>
+<td>aws</td>
+<td>The aws scope controls the interactions with AWS, including AWS Batch and S3.</td>
+</tr>
+<tr>
+<td>azure</td>
+<td>The azure scope allows you to configure the interactions with Azure, including Azure Batch and Azure Blob Storage.</td>
+</tr>
+<tr>
+<td>charliecloud</td>
+<td>The charliecloud scope controls how Charliecloud containers are executed by Nextflow.</td>
+</tr>
+<tr>
+<td>dag</td>
+<td>The dag scope controls the workflow diagram generated by Nextflow.</td>
+</tr>
+<tr>
+<td>docker</td>
+<td>The docker scope controls how Docker containers are executed by Nextflow.</td>
+</tr>
+<tr>
+<td>env</td>
+<td>The env scope allows the definition one or more variables that will be exported into the environment where workflow tasks are executed.</td>
+</tr>
+<tr>
+<td>Executor-specific defaults</td>
+<td>Some executor settings have different default values depending on the executor.</td>
+</tr>
+<tr>
+<td>fusion</td>
+<td>The fusion scope provides advanced configuration for the use of the Fusion file system .</td>
+</tr>
+<tr>
+<td>google</td>
+<td>The google scope allows you to configure the interactions with Google Cloud, including Google Cloud Batch and Google Cloud Storage.</td>
+</tr>
+<tr>
+<td>Java settings</td>
+<td>Reference for Java settings.</td>
+</tr>
+<tr>
+<td>k8s</td>
+<td>The k8s scope controls the deployment and execution of workflow applications in a Kubernetes cluster.</td>
+</tr>
+<tr>
+<td>mail</td>
+<td>The mail scope controls the mail server used to send email notifications.</td>
+</tr>
+<tr>
+<td>manifest</td>
+<td>The manifest scope allows you to define some metadata that is useful when publishing or running your pipeline.</td>
+</tr>
+<tr>
+<td>nextflow</td>
+<td>Reference for nextflow.</td>
+</tr>
+<tr>
+<td>Nextflow settings</td>
+<td>Reference for Nextflow settings.</td>
+</tr>
+<tr>
+<td>notification</td>
+<td>The notification scope controls the automatic sending of an email notification on workflow completion.</td>
+</tr>
+<tr>
+<td>Other settings</td>
+<td>Reference for Other settings.</td>
+</tr>
+<tr>
+<td>podman</td>
+<td>The podman scope controls how Podman containers are executed by Nextflow.</td>
+</tr>
+<tr>
+<td>report</td>
+<td>The report scope allows you to configure the workflow Execution report .</td>
+</tr>
+<tr>
+<td>sarus</td>
+<td>The sarus scope controls how Sarus containers are executed by Nextflow.</td>
+</tr>
+<tr>
+<td>Seqera Platform settings</td>
+<td>Reference for Seqera Platform settings.</td>
+</tr>
+<tr>
+<td>shifter</td>
+<td>The shifter scope controls how Shifter containers are executed by Nextflow.</td>
+</tr>
+<tr>
+<td>singularity</td>
+<td>The singularity scope controls how Singularity containers are executed by Nextflow.</td>
+</tr>
+<tr>
+<td>timeline</td>
+<td>The timeline scope controls the execution timeline report generated by Nextflow.</td>
+</tr>
+<tr>
+<td>tower</td>
+<td>The tower scope controls the settings for Seqera Platform (formerly Tower Cloud).</td>
+</tr>
+<tr>
+<td>trace</td>
+<td>The trace scope controls the layout of the execution trace file generated by Nextflow.</td>
+</tr>
+<tr>
+<td>Unscoped options</td>
+<td>Reference for Unscoped options.</td>
+</tr>
+<tr>
+<td>wave</td>
+<td>The wave scope provides advanced configuration for the use of Wave containers .</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-types"></a>Types</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Channel</td>
+<td>A channel (also known as a dataflow channel or queue channel ) is an asynchronous sequence of values of type E .</td>
+</tr>
+<tr>
+<td>Bag</td>
+<td>Implements the Iterable&lt;E&gt; trait.</td>
+</tr>
+<tr>
+<td>Boolean</td>
+<td>Reference for Boolean.</td>
+</tr>
+<tr>
+<td>Duration</td>
+<td>A Duration represents a duration of time with millisecond precision.</td>
+</tr>
+<tr>
+<td>Float</td>
+<td>A float is a floating-point number (i.e.</td>
+</tr>
+<tr>
+<td>Integer</td>
+<td>An integer is a whole number that can be positive or negative.</td>
+</tr>
+<tr>
+<td>Iterable</td>
+<td>Implemented by the following types: Bag&lt;E&gt; , List&lt;E&gt; , Set&lt;E&gt;</td>
+</tr>
+<tr>
+<td>List</td>
+<td>Implements the Iterable&lt;E&gt; trait.</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>A map associates or maps keys of type K to values of type V .</td>
+</tr>
+<tr>
+<td>MemoryUnit</td>
+<td>A MemoryUnit represents a quantity of bytes.</td>
+</tr>
+<tr>
+<td>Operations</td>
+<td>A Path is a handle for hierarchichal paths such as local files and directories, HTTP/FTP URLs, and object storage paths (e.g.</td>
+</tr>
+<tr>
+<td>Set</td>
+<td>Implements the Iterable&lt;E&gt; trait.</td>
+</tr>
+<tr>
+<td>String</td>
+<td>Reference for String.</td>
+</tr>
+<tr>
+<td>Tuple</td>
+<td>A tuple is a fixed sequence of values, where each value can have its own type.</td>
+</tr>
+<tr>
+<td>Value</td>
+<td>A dataflow value (also known as a value channel ) is an asynchronous value of type V .</td>
+</tr>
+<tr>
+<td>VersionNumber</td>
+<td>A VersionNumber represents a semantic or calendar version number.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-script-language"></a>Script Language</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Process</td>
+<td>A process consists of a name and a body.</td>
+</tr>
+<tr>
+<td>Function</td>
+<td>Reference for Function.</td>
+</tr>
+<tr>
+<td>Enum</td>
+<td>An enum type declaration consists of a name and a body.</td>
+</tr>
+<tr>
+<td>Variable</td>
+<td>Reference for Variable declaration.</td>
+</tr>
+<tr>
+<td>Assignment</td>
+<td>Reference for Assignment.</td>
+</tr>
+<tr>
+<td>Include</td>
+<td>Reference for Include.</td>
+</tr>
+<tr>
+<td>Feature flag</td>
+<td>A feature flag declaration is an assignment.</td>
+</tr>
+<tr>
+<td>Shebang</td>
+<td>Reference for Shebang.</td>
+</tr>
+<tr>
+<td>assert</td>
+<td>Reference for assert.</td>
+</tr>
+<tr>
+<td>Binary expressions</td>
+<td>Reference for Binary expressions.</td>
+</tr>
+<tr>
+<td>Capturing groups</td>
+<td>You can match a pattern that includes groups.</td>
+</tr>
+<tr>
+<td>Closure</td>
+<td>Reference for Closure.</td>
+</tr>
+<tr>
+<td>Closures</td>
+<td>A closure is a function that can be used like a regular value.</td>
+</tr>
+<tr>
+<td>Comments</td>
+<td>A line comment starts with // and includes the rest of the line.</td>
+</tr>
+<tr>
+<td>Conditional execution</td>
+<td>One of the most important features of any programming language is the ability to execute different code under different conditions.</td>
+</tr>
+<tr>
+<td>Constructor call</td>
+<td>Reference for Constructor call.</td>
+</tr>
+<tr>
+<td>Deprecations</td>
+<td>Reference for Deprecations.</td>
+</tr>
+<tr>
+<td>Dynamic string</td>
+<td>Reference for Dynamic string.</td>
+</tr>
+<tr>
+<td>Expression statement</td>
+<td>Any expression can be a statement.</td>
+</tr>
+<tr>
+<td>Expressions</td>
+<td>An expression represents a value.</td>
+</tr>
+<tr>
+<td>Hello world</td>
+<td>Reference for Hello world.</td>
+</tr>
+<tr>
+<td>if/else</td>
+<td>An if/else statement consists of an if branch and an optional else branch .</td>
+</tr>
+<tr>
+<td>Index expression</td>
+<td>Reference for Index expression.</td>
+</tr>
+<tr>
+<td>List</td>
+<td>Reference for List.</td>
+</tr>
+<tr>
+<td>Lists</td>
+<td>Reference for Lists.</td>
+</tr>
+<tr>
+<td>Map</td>
+<td>A map literal consists of a comma-separated list of one or more map entries , enclosed in square brackets.</td>
+</tr>
+<tr>
+<td>Maps</td>
+<td>Maps are used to store associative arrays (also known as dictionaries ).</td>
+</tr>
+<tr>
+<td>Multi-line strings</td>
+<td>Reference for Multi-line strings.</td>
+</tr>
+<tr>
+<td>Null</td>
+<td>The null literal is specified as null .</td>
+</tr>
+<tr>
+<td>Number</td>
+<td>A number literal can be an integer or floating-point number, and can be positive or negative.</td>
+</tr>
+<tr>
+<td>Operators</td>
+<td>Operators are symbols that perform specific functions on one or more values, and generally make code easier to read.</td>
+</tr>
+<tr>
+<td>Parentheses</td>
+<td>Reference for Parentheses.</td>
+</tr>
+<tr>
+<td>Precedence</td>
+<td>Reference for Precedence.</td>
+</tr>
+<tr>
+<td>Property expression</td>
+<td>Reference for Property expression.</td>
+</tr>
+<tr>
+<td>Regular expressions</td>
+<td>Regular expressions are the Swiss Army knife of text processing.</td>
+</tr>
+<tr>
+<td>return</td>
+<td>Reference for return.</td>
+</tr>
+<tr>
+<td>Script declarations</td>
+<td>Reference for Script declarations.</td>
+</tr>
+<tr>
+<td>Script definitions</td>
+<td>So far, we have been focusing on the basic building blocks of Nextflow code, like variables, lists, strings, and closures.</td>
+</tr>
+<tr>
+<td>Statements</td>
+<td>Reference for Statements.</td>
+</tr>
+<tr>
+<td>String interpolation</td>
+<td>There is an important difference between single-quoted and double-quoted strings: Double-quoted strings support variable interpolations, while single-quoted strings do not.</td>
+</tr>
+<tr>
+<td>String replacement</td>
+<td>Reference for String replacement.</td>
+</tr>
+<tr>
+<td>Strings</td>
+<td>Reference for Strings.</td>
+</tr>
+<tr>
+<td>Ternary expression</td>
+<td>Reference for Ternary expression.</td>
+</tr>
+<tr>
+<td>throw</td>
+<td>Reference for throw.</td>
+</tr>
+<tr>
+<td>try/catch</td>
+<td>Reference for try/catch.</td>
+</tr>
+<tr>
+<td>Tuples</td>
+<td>Tuples are used to store a fixed sequence of heterogeneous values.</td>
+</tr>
+<tr>
+<td>Unary expressions</td>
+<td>Reference for Unary expressions.</td>
+</tr>
+<tr>
+<td>Variables</td>
+<td>Reference for Variables.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-modules"></a>Modules</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Multiple inclusions</td>
+<td>A Nextflow script can include any number of modules, and an include statement can import any number of definitions from a module.</td>
+</tr>
+<tr>
+<td>Sharing modules</td>
+<td>Modules are designed to be easy to share and re-use across different pipelines, which helps eliminate duplicate work and spread improvements throughout the community.</td>
+</tr>
+</tbody>
+</table>
+<h2><a id="summary-files"></a>Files</h2>
+<table>
+<thead>
+<tr>
+<th>Term</th>
+<th>Synopsis</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Files</td>
+<td>Reference for Getting file attributes.</td>
+</tr>
+<tr>
+<td>Copying files</td>
+<td>Reference for Copying files.</td>
+</tr>
+<tr>
+<td>Filesystem operations</td>
+<td>Methods for performing filesystem operations such as copying, deleting, and directory listing are documented in the Path reference.</td>
+</tr>
+<tr>
+<td>Listing directories</td>
+<td>Reference for Listing directories.</td>
+</tr>
+<tr>
+<td>Opening files</td>
+<td>Reference for Opening files.</td>
+</tr>
+<tr>
+<td>Reading and writing</td>
+<td>Reference for Reading and writing.</td>
+</tr>
+<tr>
+<td>Remote files</td>
+<td>Nextflow works with many types of remote files and objects using the same interface as for local files.</td>
+</tr>
+</tbody>
+</table>
+        </main>
+    </div>
+    <script>
+        const searchInput = document.getElementById('summary-search');
+        const content = document.getElementById('summary-content');
+
+        function normalize(text) {
+            return (text || '').toLowerCase();
+        }
+
+        function applySearch() {
+            const query = normalize(searchInput.value).trim();
+            const rows = content.querySelectorAll('table tr');
+            const items = content.querySelectorAll('li');
+
+            rows.forEach((row) => {
+                if (row.querySelector('th')) {
+                    row.classList.remove('hidden-by-search');
+                    return;
+                }
+                const match = !query || normalize(row.textContent).includes(query);
+                row.classList.toggle('hidden-by-search', !match);
+            });
+
+            items.forEach((item) => {
+                const match = !query || normalize(item.textContent).includes(query);
+                item.classList.toggle('hidden-by-search', !match);
+            });
+        }
+
+        searchInput.addEventListener('input', applySearch);
+    </script>
+</body>
+</html>

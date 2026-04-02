@@ -1,0 +1,716 @@
+{
+  "nodes": [
+    {
+      "id": "category:Operator",
+      "label": "Operator",
+      "type": "category"
+    },
+    {
+      "id": "category:Process",
+      "label": "Process",
+      "type": "category"
+    },
+    {
+      "id": "category:Workflow",
+      "label": "Workflow",
+      "type": "category"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/module.html",
+      "label": "https://www.nextflow.io/docs/stable/module.html",
+      "type": "source"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/process.html",
+      "label": "https://www.nextflow.io/docs/stable/process.html",
+      "type": "source"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/reference/config.html",
+      "label": "https://www.nextflow.io/docs/stable/reference/config.html",
+      "type": "source"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "label": "https://www.nextflow.io/docs/stable/reference/operator.html",
+      "type": "source"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "label": "https://www.nextflow.io/docs/stable/reference/process.html",
+      "type": "source"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/reference/syntax.html",
+      "label": "https://www.nextflow.io/docs/stable/reference/syntax.html",
+      "type": "source"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/workflow.html",
+      "label": "https://www.nextflow.io/docs/stable/workflow.html",
+      "type": "source"
+    },
+    {
+      "id": "source:https://www.nextflow.io/docs/stable/working-with-files.html",
+      "label": "https://www.nextflow.io/docs/stable/working-with-files.html",
+      "type": "source"
+    },
+    {
+      "id": "term:accelerator",
+      "label": "accelerator",
+      "type": "term"
+    },
+    {
+      "id": "term:afterScript",
+      "label": "afterScript",
+      "type": "term"
+    },
+    {
+      "id": "term:And &",
+      "label": "And &",
+      "type": "term"
+    },
+    {
+      "id": "term:arch",
+      "label": "arch",
+      "type": "term"
+    },
+    {
+      "id": "term:array",
+      "label": "array",
+      "type": "term"
+    },
+    {
+      "id": "term:beforeScript",
+      "label": "beforeScript",
+      "type": "term"
+    },
+    {
+      "id": "term:branch",
+      "label": "branch",
+      "type": "term"
+    },
+    {
+      "id": "term:buffer",
+      "label": "buffer",
+      "type": "term"
+    },
+    {
+      "id": "term:cache",
+      "label": "cache",
+      "type": "term"
+    },
+    {
+      "id": "term:Calling processes and workflows",
+      "label": "Calling processes and workflows",
+      "type": "term"
+    },
+    {
+      "id": "term:clusterOptions",
+      "label": "clusterOptions",
+      "type": "term"
+    },
+    {
+      "id": "term:collate",
+      "label": "collate",
+      "type": "term"
+    },
+    {
+      "id": "term:collect",
+      "label": "collect",
+      "type": "term"
+    },
+    {
+      "id": "term:collectFile",
+      "label": "collectFile",
+      "type": "term"
+    },
+    {
+      "id": "term:combine",
+      "label": "combine",
+      "type": "term"
+    },
+    {
+      "id": "term:concat",
+      "label": "concat",
+      "type": "term"
+    },
+    {
+      "id": "term:conda",
+      "label": "conda",
+      "type": "term"
+    },
+    {
+      "id": "term:Conditional scripts",
+      "label": "Conditional scripts",
+      "type": "term"
+    },
+    {
+      "id": "term:container",
+      "label": "container",
+      "type": "term"
+    },
+    {
+      "id": "term:containerOptions",
+      "label": "containerOptions",
+      "type": "term"
+    },
+    {
+      "id": "term:count",
+      "label": "count",
+      "type": "term"
+    },
+    {
+      "id": "term:countFasta",
+      "label": "countFasta",
+      "type": "term"
+    },
+    {
+      "id": "term:countFastq",
+      "label": "countFastq",
+      "type": "term"
+    },
+    {
+      "id": "term:countJson",
+      "label": "countJson",
+      "type": "term"
+    },
+    {
+      "id": "term:Environment Variables",
+      "label": "Environment Variables",
+      "type": "term"
+    },
+    {
+      "id": "term:Files",
+      "label": "Files",
+      "type": "term"
+    },
+    {
+      "id": "term:Modules",
+      "label": "Modules",
+      "type": "term"
+    },
+    {
+      "id": "term:Output",
+      "label": "Output",
+      "type": "term"
+    },
+    {
+      "id": "term:Params",
+      "label": "Params",
+      "type": "term"
+    },
+    {
+      "id": "term:Workflow",
+      "label": "Workflow",
+      "type": "term"
+    }
+  ],
+  "edges": [
+    {
+      "source": "category:Operator",
+      "target": "term:branch",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:buffer",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:collate",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:collect",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:collectFile",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:combine",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:concat",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:count",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:countFasta",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:countFastq",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Operator",
+      "target": "term:countJson",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:Conditional scripts",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:Environment Variables",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:Files",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:Modules",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:accelerator",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:afterScript",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:arch",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:array",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:beforeScript",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:cache",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:clusterOptions",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:conda",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:container",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Process",
+      "target": "term:containerOptions",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Workflow",
+      "target": "term:And &",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Workflow",
+      "target": "term:Calling processes and workflows",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Workflow",
+      "target": "term:Output",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Workflow",
+      "target": "term:Params",
+      "relationship": "contains"
+    },
+    {
+      "source": "category:Workflow",
+      "target": "term:Workflow",
+      "relationship": "contains"
+    },
+    {
+      "source": "term:And &",
+      "target": "source:https://www.nextflow.io/docs/stable/workflow.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Calling processes and workflows",
+      "target": "source:https://www.nextflow.io/docs/stable/workflow.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Calling processes and workflows",
+      "target": "term:Workflow",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Conditional scripts",
+      "target": "source:https://www.nextflow.io/docs/stable/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Environment Variables",
+      "target": "source:https://www.nextflow.io/docs/stable/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Files",
+      "target": "source:https://www.nextflow.io/docs/stable/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Files",
+      "target": "source:https://www.nextflow.io/docs/stable/working-with-files.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Files",
+      "target": "term:array",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Modules",
+      "target": "source:https://www.nextflow.io/docs/stable/module.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Modules",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Modules",
+      "target": "term:Files",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Modules",
+      "target": "term:Params",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Modules",
+      "target": "term:Workflow",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Output",
+      "target": "source:https://www.nextflow.io/docs/stable/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Output",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/syntax.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Output",
+      "target": "source:https://www.nextflow.io/docs/stable/workflow.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Output",
+      "target": "term:Files",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Output",
+      "target": "term:Workflow",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Params",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/syntax.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Params",
+      "target": "source:https://www.nextflow.io/docs/stable/workflow.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Params",
+      "target": "term:Files",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Params",
+      "target": "term:Workflow",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Workflow",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/config.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Workflow",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/syntax.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Workflow",
+      "target": "source:https://www.nextflow.io/docs/stable/workflow.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:Workflow",
+      "target": "term:Output",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Workflow",
+      "target": "term:Params",
+      "relationship": "references"
+    },
+    {
+      "source": "term:Workflow",
+      "target": "term:collect",
+      "relationship": "references"
+    },
+    {
+      "source": "term:accelerator",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:afterScript",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:arch",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:arch",
+      "target": "term:container",
+      "relationship": "references"
+    },
+    {
+      "source": "term:array",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:array",
+      "target": "term:accelerator",
+      "relationship": "references"
+    },
+    {
+      "source": "term:array",
+      "target": "term:clusterOptions",
+      "relationship": "references"
+    },
+    {
+      "source": "term:array",
+      "target": "term:collect",
+      "relationship": "references"
+    },
+    {
+      "source": "term:array",
+      "target": "term:conda",
+      "relationship": "references"
+    },
+    {
+      "source": "term:array",
+      "target": "term:container",
+      "relationship": "references"
+    },
+    {
+      "source": "term:array",
+      "target": "term:containerOptions",
+      "relationship": "references"
+    },
+    {
+      "source": "term:beforeScript",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:beforeScript",
+      "target": "term:container",
+      "relationship": "references"
+    },
+    {
+      "source": "term:branch",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:branch",
+      "target": "term:Output",
+      "relationship": "references"
+    },
+    {
+      "source": "term:buffer",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:buffer",
+      "target": "term:collate",
+      "relationship": "references"
+    },
+    {
+      "source": "term:cache",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:clusterOptions",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:collate",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:collate",
+      "target": "term:buffer",
+      "relationship": "references"
+    },
+    {
+      "source": "term:collect",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:collectFile",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:collectFile",
+      "target": "term:Files",
+      "relationship": "references"
+    },
+    {
+      "source": "term:collectFile",
+      "target": "term:collect",
+      "relationship": "references"
+    },
+    {
+      "source": "term:combine",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:concat",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:concat",
+      "target": "term:Output",
+      "relationship": "references"
+    },
+    {
+      "source": "term:conda",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/config.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:conda",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:container",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:containerOptions",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/process.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:containerOptions",
+      "target": "term:container",
+      "relationship": "references"
+    },
+    {
+      "source": "term:count",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:countFasta",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:countFasta",
+      "target": "term:Files",
+      "relationship": "references"
+    },
+    {
+      "source": "term:countFasta",
+      "target": "term:count",
+      "relationship": "references"
+    },
+    {
+      "source": "term:countFastq",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:countFastq",
+      "target": "term:Files",
+      "relationship": "references"
+    },
+    {
+      "source": "term:countFastq",
+      "target": "term:count",
+      "relationship": "references"
+    },
+    {
+      "source": "term:countJson",
+      "target": "source:https://www.nextflow.io/docs/stable/reference/operator.html",
+      "relationship": "from_source"
+    },
+    {
+      "source": "term:countJson",
+      "target": "term:Files",
+      "relationship": "references"
+    },
+    {
+      "source": "term:countJson",
+      "target": "term:count",
+      "relationship": "references"
+    }
+  ]
+}
