@@ -1,0 +1,44 @@
+# Specific transcriptomics evidence; generic RNA/expression terms are intentionally absent.
+transcriptomics
+transcriptomic analysis
+transcriptome
+transcriptome analysis
+gene expression
+expression profiling
+differential gene expression
+differential expression
+rna-seq
+rna sequencing
+single-cell rna-seq
+single cell rna-seq
+scrna-seq
+single-cell transcriptomics
+spatial transcriptomics
+metatranscriptomics
+transcript assembly
+transcript quantification
+transcript abundance
+isoform analysis
+isoform quantification
+alternative splicing
+rna splicing
+splice junction
+fusion transcript
+gene fusion
+non-coding rna
+noncoding rna
+long non-coding rna
+lncrna
+microrna
+mirna
+small rna
+regulatory rna
+coding rna
+ribosome profiling
+ribo-seq
+rna editing
+rna structure analysis
+rna-protein interaction
+clip-seq
+rip-seq
+microarray gene expression

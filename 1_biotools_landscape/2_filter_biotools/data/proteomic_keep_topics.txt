@@ -1,0 +1,48 @@
+# Specific proteomics evidence; generic protein/peptide terms are intentionally absent.
+proteomics
+proteomic analysis
+quantitative proteomics
+comparative proteomics
+clinical proteomics
+structural proteomics
+functional proteomics
+shotgun proteomics
+bottom-up proteomics
+top-down proteomics
+targeted proteomics
+discovery proteomics
+single-cell proteomics
+spatial proteomics
+metaproteomics
+proteogenomics
+mass spectrometry
+tandem mass spectrometry
+ms/ms
+lc-ms
+lc-ms/ms
+maldi
+maldi-tof
+peptide identification
+protein identification
+protein inference
+peptide-spectrum match
+spectrum matching
+spectral library
+peptide quantification
+protein quantification
+label-free quantification
+isobaric labelling
+itraq
+tmt
+silac
+post-translational modification
+phosphoproteomics
+glycoproteomics
+ubiquitinomics
+acetylomics
+protein expression profiling
+protein interaction proteomics
+affinity purification mass spectrometry
+ap-ms
+cross-linking mass spectrometry
+xl-ms
