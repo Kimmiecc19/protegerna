@@ -1,0 +1,51 @@
+# Conservative out-of-scope signals. These never override positive omics evidence.
+bioimaging
+biological imaging
+medical imaging
+microscopy
+light microscopy
+electron microscopy
+echography
+magnetic resonance imaging
+tomography
+cytometry
+flow cytometry
+image analysis
+image processing
+image registration
+image segmentation
+cheminformatics
+chemical informatics
+medicinal chemistry
+synthetic chemistry
+compound libraries and screening
+small molecule design
+molecular docking
+virtual screening
+pharmacokinetics
+pharmacodynamics
+pharmacovigilance
+clinical trials
+clinical decision support
+electronic health records
+patient management
+laboratory information management
+data security
+data governance
+software engineering
+pure mathematics
+applied mathematics
+biomolecular simulation
+molecular dynamics
+ecological modelling
+ecoinformatics
+biodiversity informatics
+anatomy
+physiology
+dentistry
+dermatology
+cardiology
+neurology
+psychiatry
+surgery
+veterinary medicine
