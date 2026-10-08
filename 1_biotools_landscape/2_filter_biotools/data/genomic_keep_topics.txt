@@ -1,0 +1,48 @@
+# Specific genomics evidence; generic DNA/gene/sequence terms are intentionally absent.
+genomics
+genomic analysis
+functional genomics
+comparative genomics
+population genomics
+structural genomics
+clinical genomics
+cancer genomics
+viral genomics
+microbial genomics
+metagenomics
+paleogenomics
+pharmacogenomics
+epigenomics
+genome sequencing
+whole genome sequencing
+whole-genome sequencing
+exome sequencing
+whole exome sequencing
+genome assembly
+sequence assembly
+genome annotation
+variant calling
+variant detection
+variant annotation
+genetic variation
+sequence variation
+single nucleotide variant
+single nucleotide polymorphism
+copy number variation
+structural variation
+genotyping
+genome-wide association study
+gwas
+haplotyping
+linkage analysis
+read mapping
+dna sequencing
+high-throughput sequencing
+next generation sequencing
+next-generation sequencing
+bisulfite sequencing
+dna methylation
+chromatin accessibility
+chip-seq
+atac-seq
+chromosome conformation capture

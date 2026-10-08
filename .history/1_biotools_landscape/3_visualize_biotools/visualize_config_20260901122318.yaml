@@ -1,0 +1,44 @@
+# Reproducible defaults for the revised bio.tools analysis.
+# Authentication is never stored here. Set GITHUB_TOKEN in the environment.
+analysis_date: "2026-08-31"
+random_seed: 42
+
+inputs:
+  filter_results_dir: "../../3_filter_biotools/results"
+  mapped_operations: "../../3_filter_biotools/results/all_edam_operations_mapped.tsv"
+  validation_sample: "../../3_filter_biotools/results/edam_function_validation_sample.tsv"
+  github_cache: "../data/github_commit_cache_jan2026.csv"
+
+populations:
+  full_suffix: "_all_records_quality_flags.tsv"
+  candidate_suffix: "_candidate_tools.tsv"
+  domains:
+    genomic: "Genomics"
+    transcriptomic: "Transcriptomics"
+    proteomic: "Proteomics"
+    multiomic: "Multiomics"
+
+edam:
+  source: "bio.tools function.operation"
+  ontology: "EDAM"
+  ontology_snapshot: "../../3_filter_biotools/data/edam/EDAM.owl"
+  hierarchy_relation: "rdfs:subClassOf"
+  aggregation_depth: 1
+  valid_status: "Valid EDAM operation"
+  missing_label: "No valid EDAM operation annotation"
+  top_groups: 12
+
+maintenance:
+  recently_active_months: 18
+  intermediate_activity_months: 36
+
+github:
+  token_environment_variable: "GITHUB_TOKEN"
+  refresh_by_default: true
+  engagement_components:
+    - stars
+    - forks
+    - watchers
+  include_open_issues_in_engagement: false
+  missing_github_treatment: "Unknown"
+

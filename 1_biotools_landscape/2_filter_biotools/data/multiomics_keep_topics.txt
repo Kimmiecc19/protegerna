@@ -1,0 +1,28 @@
+# Explicit multi-omics evidence only; integration/pathway/network alone are insufficient.
+multiomics
+multi-omics
+multiomic
+multi-omic
+multi omics
+integrative omics
+integrated omics
+omics integration
+cross-omics
+cross omics
+panomics
+pan-omics
+trans-omics
+transomics
+multi-layer omics
+multimodal omics
+multi-view omics
+multi-view biological data
+joint omics analysis
+joint multi-omics analysis
+multi-omics factor analysis
+multi-omics data integration
+genome-transcriptome integration
+transcriptome-proteome integration
+proteogenomics
+proteogenomic analysis
+systems genomics
