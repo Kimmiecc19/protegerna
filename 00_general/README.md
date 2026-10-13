@@ -6,10 +6,6 @@ The scripts support preparation and organization of data. They do not download o
 
 ## Workflow overview
 
-<p align="center">
-  <img src="figures\objective1_methods_flowchart.png" alt="Objective One Flowchart" width="800">
-</p>
-
 The numbered directories indicate the broad order of work:
 
 1. **Filter and match participants** — select participants with the required omics availability, exclude listed proteomics batch-effect samples, link metadata to sample-mapping records, and join participants to released-file paths.

@@ -6,6 +6,11 @@ The goal is to describe how these tool ecosystems differ and where their coverag
 
 ## Workflow
 
+<p align="center">
+  <img src="../00_general/figures/objective1_methods_flowchart.png" alt="Objective One Flowchart" width="800">
+</p>
+
+
 The numbered folders reflect the intended order:
 
 1. **Fetch registry records** — `01_fetch_biotools/` queries bio.tools for four omics domains and exports tool tables, function and publication audit tables, and retrieval manifests.
