@@ -41,8 +41,10 @@ To develop a reproducible framework for multi-omics analysis that facilitates th
 ## Framework and approach
 
 <p align="center">
-  <img src="figures/protegerna_flowchart_october2025.png" alt="Protegerna multi-omics integration flowchart" width="800">
+  <img src="00_general/figures/archive/protegerna_flowchart_october2025.png" alt="Protegerna multi-omics integration flowchart" width="800">
 </p>
+
+> **NOTE:** This figure is outdated.
 
 ```text
  Objective 1: Tool landscape (bio.tools metadata) informs tool selection
@@ -95,13 +97,12 @@ To develop a reproducible framework for multi-omics analysis that facilitates th
 
 | Directory | Contents |
 | --- | --- |
-| `0_general/` | Participant filtering, cross-omic sample matching, stratified batching and shared plotting helpers |
-| `1_omics_tool_landscape/` | Objective 1: bio.tools retrieval, filtering, EDAM mapping and landscape analysis |
-| `2_SV_analysis/` | Objective 2: Sarek configuration, OctopuSV merging, AnnotSV annotation, SV prioritisation and the Shiny dashboard |
-| `4_proteogenomic_nextflow/` | Objective 3: the `nf-core/protegerna` Nextflow pipeline |
-| `5_ALS_case_study/` | Objective 4: genomics, transcriptomics, proteomics and integration code for the ALS case study |
-
-Most stages follow a `code_*` / `data_*` / `results_*` layout. Individual components include their own README or usage notes.
+| `00_general/` | Participant filtering, cross-omic sample matching, stratified batching and shared plotting helpers |
+| `01_omics_tool_landscape/` | Objective 1: bio.tools retrieval, filtering, EDAM mapping and landscape analysis |
+| `02_SV_analysis/` | Objective 2: Sarek configuration, OctopuSV merging, AnnotSV annotation, SV prioritisation and the Shiny dashboard |
+| `03_proteomics/` | Objective 3: DIA quantification and differential abundance testing |
+| `04_proteogenomic_nextflow/` | Objective 3: the `nf-core/protegerna` Nextflow pipeline |
+| `05_ALS_case_study/` | Objective 4: genomics, transcriptomics, proteomics and integration code for the ALS case study |
 
 ## Reproducibility principles
 
@@ -119,7 +120,7 @@ This work uses controlled-access data from [Answer ALS](https://www.answerals.or
 
 <h2 align="center">Contributors</h2>
 
-- **Kimberly Coetzer**<sup>1</sup>, PhD candidate
+- **Kimberly Christine Coetzer**<sup>1</sup>, PhD candidate
 - **Professor Gian van der Spuy**<sup>1,2,3</sup>, supervisor
 - **Professor Gerard Tromp**<sup>1,2,3</sup>, co-supervisor
 
