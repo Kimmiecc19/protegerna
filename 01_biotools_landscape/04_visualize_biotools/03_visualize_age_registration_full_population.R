@@ -9,19 +9,6 @@
 #          filter_biotools.R, i.e. every retrieved record before
 #          any eligibility gate (populations$full_suffix in the config).
 #
-# Configuration, palette, publication metrics, trend helpers and figure builders
-# are shared with 01_visualize_biotools.R so the two sets of outputs are
-# directly comparable. The only differences are:
-#   * figure titles say "retrieved" instead of "candidate", and the trend
-#     caption does not claim that the citation filter created the step at the
-#     boundary (no filter is applied to this population);
-#   * a registration-delay summary table is written (it supports the
-#     publication-vs-registration table in the chapter);
-#   * `populations.registration_population` in YAML controls which records enter
-#     the registration analyses: "all_records" uses every retrieved record
-#     (default); "with_citations" requires an eligible citation count and
-#     publication year. Age-citation analyses require both under either setting.
-#
 # Run: Rscript 03_visualize_age_registration_full_population.R [--config=path/to/visualize_config.yaml]
 
 main <- function() {
@@ -80,6 +67,7 @@ main <- function() {
   name_suffix <- "_full_population"
 
   # 2. Input: the full retrieved population -----------------------------------------
+  # The population is one record per biotools_id and omic_type, with all quality flags
 
   filter_results_dir <- resolve_config_path(config$inputs$filter_results_dir, config_file, must_work = TRUE)
   omic_files <- population_files(filter_results_dir, unlist(config$populations$domains, use.names = TRUE),
@@ -117,6 +105,7 @@ main <- function() {
   )
 
   # 3. Registration: records added to bio.tools per year ------------------------
+  # The registration analysis is applied to the full retrieved population, not just the candidate-filtered population.
 
   added_per_year <- df_registration %>%
     filter(!is.na(added)) %>%
@@ -193,6 +182,8 @@ main <- function() {
   save_output(citation_summary, "citation_summary_full_population")
 
   # 7. Figure audit and reproducibility manifest -------------------------------
+  # The figure-level audit counts the number of records plotted in each figure, by omics domain,
+  # and compares it to the number of eligible records in the full retrieved population.
 
   full_audit <- function(figure_name, plotted_records) {
     df_all %>% count(omic_type, name = "eligible_tools") %>% transmute(

@@ -5,9 +5,15 @@
 # GitHub authentication is read from the configured environment variable.
 # Frozen-cache runs use previously retrieved repository metadata.
 
+# Sys.setenv(
+#   GITHUB_TOKEN = rstudioapi::askForPassword("")
+# )
+# nzchar(Sys.getenv("GITHUB_TOKEN"))
+
 main <- function() {
 
   # 1. Packages, configuration and shared helpers -------------------------------
+  # Load required R packages and set up the analysis environment.
 
   pkgs <- c("tidyverse", "httr", "jsonlite", "yaml", "glue", "scales", "ggrepel", "patchwork",
     "lubridate", "ggridges", "conflicted")
@@ -43,6 +49,7 @@ main <- function() {
   domain_levels <- names(omic_palette)
 
   # 2. Output paths and exporters ------------------------------------------------
+  # Create a timestamped output folder and define functions to save plots and tables with consistent naming. The exporters also record the paths of all written outputs for later reference.
 
   run_date <- Sys.Date()
   run_tag <- format(run_date, "%Y%m%d")
@@ -61,6 +68,7 @@ main <- function() {
   save_plot <- exporters$save_plot
 
   # 3. Load the candidate population --------------------------------------------
+  # Load the candidate tool-domain population from the filter results, augment it with GitHub metadata, and save intermediate tables for later analysis.
 
   filter_results_dir <- resolve_config_path(config$inputs$filter_results_dir, config_file, must_work = TRUE)
   domain_map <- unlist(config$populations$domains, use.names = TRUE)
@@ -73,6 +81,7 @@ main <- function() {
   save_output(tools_cleaned, "tools_cleaned_cache", "rds")
 
   # 4. GitHub metadata -------------------------------------------------------------
+  # Augment the candidate population with GitHub metadata, using a cached retrieval if available. The cache is updated with any new repositories found in the candidate population.
 
   tools_with_github <- tools_cleaned %>%
     mutate(github_url = str_extract(paste(homepage, documentation, sep = " "), "https?://github\\.com/[^/\\s]+/[^/\\s]+"),
@@ -108,6 +117,8 @@ main <- function() {
   set.seed(as.integer(config$random_seed))
 
   # 5. Figure wording and palettes -------------------------------------------------
+  # Define consistent axis and legend labels for all figures, and save the color palettes used in the analysis for reproducibility. 
+  # The palettes include colors for omics domains, license classes, maintenance status, and primary/secondary thesis colors.
 
   # Axis wording used by every figure. log1p = log(1 + x).
   axis_labels <- list(
@@ -131,6 +142,8 @@ main <- function() {
   message(glue("Wrote palettes → {basename(palette_path)}"))
 
   # 6. Working tables ------------------------------------------------------------------
+  # Create working tables for the analysis. These get referenced in the figures and tables of the dissertation. 
+  # The tables include the candidate tool-domain records, the filtered adoption candidate population, and the top tools by composite score (GitHub-observable records only).
 
   # One row per tool-domain record. The listed columns are moved to the end.
   df_for_plots <- tools_augmented_github %>%
@@ -177,6 +190,7 @@ main <- function() {
   save_output(df_expanded_omics, "expanded_omics")
 
   # 7. Registration figures --------------------------------------------------------
+  # Create figures showing the number of candidate tool-domain records added to bio.tools per year, both as counts and percentages, and a scatter plot comparing publication year to year added. The figures are saved with consistent naming and dimensions.
 
   added_per_year <- df_for_plots %>%
     filter(!is.na(added)) %>%
@@ -194,6 +208,7 @@ main <- function() {
     "publication_vs_year_added_scatter", width = 10, height = 6, dpi = 300)
 
   # 8. Age-citation figures -----------------------------------------------------------
+  # Create figures showing the relationship between the age of a tool-domain record (years since earliest linked publication) and its citation count, both as raw counts and normalized by age. The figures include LOESS trend lines fitted separately on either side of the citation-filter boundary, with 95% confidence intervals. Outliers are identified and reported.
 
   # The candidate filter keeps every record published from citation_filter_year
   # onward regardless of citations, but applies a citation threshold to older
@@ -216,6 +231,7 @@ main <- function() {
     records_label = "candidate tool-domain records")
 
   # 9. Tool types ------------------------------------------------------------------------
+  # Create figures showing the distribution of tool types across omics domains, including prevalence and bar plots. 
 
   # "Ontology" describes a data resource, not software, so it is not shown.
   tools_type <- df_for_plots %>%
@@ -250,6 +266,7 @@ main <- function() {
     "tool_type_distribution_by_omics_bars", width = 12, height = 9, dpi = 300)
 
   # 10. Licence, language and operating system ---------------------------------------
+  # Create figures showing the distribution of licence classes, programming languages, and operating systems across omics domains.
 
   p_license <- ggplot(df_license, aes(x = fct_reorder(license_class, pct), y = pct, fill = license_class)) +
     geom_col(show.legend = FALSE) +
@@ -393,6 +410,8 @@ main <- function() {
   }
 
   # 12. EDAM Operation coverage and independent curation analysis ---------------
+  # The EDAM curation analysis is independent of the candidate filter and uses the full population of bio.tools records with EDAM Operation annotations. It is run in a separate script (02_edam_curation_analysis.R) and the results are saved in the output folder. 
+  # The analysis includes a summary of EDAM Operation coverage, a heatmap of EDAM Operation prevalence by omics domain, and a comparison of curation outcomes between the candidate filter and independent EDAM curation.
 
   edam_results <- run_edam_curation_analysis(config, config_file, save_output, save_plot)
 
@@ -428,11 +447,11 @@ main <- function() {
 
   # 14. Repository commit-recency status ---------------------------------------------
 
-  # Source field: GitHub API `pushed_at` (most recent push to any branch).
+  # Source field: GitHub API pushed_at (most recent push to any branch).
   # Thresholds (calendar months before maintenance_ref_date) come from the config:
-  #   Active   = last push within `recently_active_months`
-  #   Stale    = more than that, up to `intermediate_activity_months`
-  #   Inactive = more than `intermediate_activity_months`
+  #   Active   = last push within recently_active_months
+  #   Stale    = more than that, up to intermediate_activity_months
+  #   Inactive = more than intermediate_activity_months
   #   Unknown  = no usable GitHub repository or push date
   # This is the ONLY place status is assigned.
   active_months <- as.numeric(config$maintenance$recently_active_months)
@@ -459,7 +478,7 @@ main <- function() {
     tidyr::complete(maintenance = factor(allowed_statuses, levels = allowed_statuses), fill = list(n = 0))
 
   # 15. Descriptive summaries and rank correlations -----------------------------
-  # Status summaries use the same `maintenance` column as the figures.
+  # Status summaries use the same maintenance column as the figures.
 
   stats_base <- df_for_maint %>%
     mutate(total_citations = as.numeric(total_citations),
@@ -588,7 +607,7 @@ main <- function() {
         save_plot(p_cpy_by_maintenance, "maintenance_citations_per_year", width = 10, height = 6, dpi = 300)
       }
 
-      # Main-text figure: (A) age distribution and (B) citations per year by status.
+      # Main dissertation figure: (A) age distribution and (B) citations per year by status.
       p_maintenance_combined <- patchwork::wrap_plots(
         p_ridge_age + labs(title = NULL, subtitle = NULL),
         p_cpy_by_maintenance + labs(title = NULL, subtitle = NULL),
@@ -640,6 +659,8 @@ main <- function() {
     "tool_type_status_pct", width = 11, height = 8, dpi = 300)
 
   # 17. Citation visibility versus GitHub engagement ----------------------------------
+  # The main figure shows the log1p-transformed citations per year (age-adjusted) versus the log1p-transformed sum of GitHub stars, forks and watchers. 
+  # The companion figure shows the same data with a loess trend line and 95% confidence interval.
 
   engagement_df <- df_for_maint %>%
     transmute(biotools_id, omic_type, name, maintenance, github_repo,
@@ -663,8 +684,10 @@ main <- function() {
     width = 14, height = 10, dpi = 300)
 
   # 18. Figure-level audit and reproducibility manifest ---------------------------
+  # The figure-level audit records the number of plotted records per omics domain for each figure, and the number of missing or unobserved records. 
+  # The reproducibility manifest records the inputs used to generate the figures and tables, including the script path, helper paths, configuration file, population files, and cache file.
 
-  # Records per domain where `condition` holds.
+  # Records per domain where condition holds.
   count_by_domain <- function(df, condition) {
     df %>% mutate(.hit = {{ condition }}) %>% group_by(omic_type) %>%
       summarise(n = sum(.hit, na.rm = TRUE), .groups = "drop") %>%

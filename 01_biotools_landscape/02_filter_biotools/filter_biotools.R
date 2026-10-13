@@ -13,6 +13,7 @@
 main <- function() {
 
   # 1. Packages and command-line options ----------------------------------------
+  # The script requires the following packages; if any are missing, rerun with --install-packages to install them.
 
   pkgs <- c("dplyr", "curl", "jsonlite", "purrr", "readr", "stringr", "tidyr", "janitor", "yaml")
   args <- commandArgs(trailingOnly = TRUE)
@@ -32,9 +33,10 @@ main <- function() {
   }
 
   # 2. Resolve project paths and analysis settings ------------------------------
+  # The script path is used to locate the project root and the shared analysis_helpers.R script.
 
   file_arg <- grep("^--file=", commandArgs(), value = TRUE)
-  if (!length(file_arg)) stop("Run with Rscript: Rscript filter_biotools_final2026.R [options]")
+  if (!length(file_arg)) stop("Run with Rscript: Rscript filter_biotools.R [options]")
   script_path <- normalizePath(sub("^--file=", "", file_arg[1]), mustWork = TRUE)
   filter_dir <- dirname(script_path)
   project_root <- dirname(filter_dir)
@@ -57,8 +59,9 @@ main <- function() {
   if (!check_urls) message("Live URL audit disabled (default). Use --check-urls for the separate network-dependent audit.")
 
   # 3. Configure domain inputs and output paths ---------------------------------
+  # The fetch results are in 01_fetch_biotools/results_fetch_biotools; the filter results are written to a new folder.
 
-  fetch_dir <- file.path(project_root, "01_fetch_biotools", "results_fetch_biotools_final")
+  fetch_dir <- file.path(project_root, "01_fetch_biotools", "results_fetch_biotools")
   output_dir <- resolve_config_path(config$inputs$filter_results_dir, config_file)
   exclusion_file <- file.path(filter_dir, "data_filter_biotools", "general_exclusion_terms_2026.txt")
   dir.create(output_dir, recursive = TRUE, showWarnings = FALSE)
@@ -79,6 +82,7 @@ main <- function() {
   }
 
   # 4. Text, identifier, and table-export helpers -------------------------------
+  # The functions below are used to read and process the fetch results, function annotations, and publication metadata.
 
   read_terms <- function(path) {
     x <- trimws(readLines(path, warn = FALSE, encoding = "UTF-8"))
@@ -126,9 +130,11 @@ main <- function() {
     "[),.;]+$"))
 
   # 5. URL availability audit -----------------------------------------------------
+  # The URL audit is performed on the homepage and documentation URLs of each tool, to check whether they are accessible. 
+  # The audit uses concurrent HTTP requests with a timeout and retries, and caches results to avoid redundant checks.
   # The audit is network-bound, so it is run (1) only on citation-eligible
   # records, i.e. after every metadata gate, 
-  # (2) concurrently with the curl multi interface, and 
+  # (2) concurrently with curl, and 
   # (3) with a results cache on disk, so an interrupted run resumes where
   # it stopped and a rerun on the same analysis date does not
   # re-query URLs that were already checked.
@@ -220,6 +226,10 @@ main <- function() {
   }
 
   # 6. Audit and filter one omics population ------------------------------------
+  # The audit_publications() function checks the publication metadata for each tool, 
+  # ensuring that the citation counts and publication identifiers are consistent with the fetched data. 
+  # It reads the fetch table, validates the schema, and extracts relevant information from the publication metadata JSON. 
+  # The function also checks for missing DOIs and other identifiers, and compares reported citation totals with audited totals to ensure consistency.
 
   audit_publications <- function(input) {
     tools_raw <- read_fetch_table(input) |>
@@ -274,6 +284,9 @@ main <- function() {
       summarise(function_scope_text = str_squish(paste(function_scope_row, collapse = "; ")), .by = biotools_id)
     list(records = function_records, scope = function_scope)
   }
+
+  # Derive scope classification and accessibility flags for each tool, based on the function annotations, omics layer evidence, and exclusion terms.
+  # The function returns a data frame with the original tool records and additional columns for scope classification, reason, and various accessibility flags.
 
   derive_scope_access_flags <- function(tools_raw, function_scope, omic, keep_re, exclude_re) {
     tools_raw |> left_join(function_scope, by = "biotools_id") |> mutate(
@@ -452,6 +465,7 @@ main <- function() {
     }
 
     # 6.1 Citation coverage and independent quality summaries -------------------
+    # The citation coverage summary reports the number of tools with traceable publications, the number of tools with missing DOIs, and the number of tools that require manual review due to conflicting or incomplete citation data. The independent quality statistics report the number and proportion of tools with missing function metadata, missing operation URIs, and other quality flags.
 
     write_output(filter(p$publication_traceable, citation_filter_decision == "Review"), "_citation_review.tsv")
     write_output(publication_coverage_summary(p$unique_records), "_citation_coverage.tsv")
@@ -476,6 +490,8 @@ main <- function() {
       .by = registry_update_age_group), "_registry_age_completeness.tsv")
 
     # 6.2 Model registry update age and metadata completeness ---------------------
+    # The linear regression model predicts the metadata completeness score based on the number of years since the last registry update. The model is only fitted if there are at least 10 records and at least 2 distinct values for years since the last registry update. The model summary includes coefficients, standard errors, t-statistics, p-values, number of observations, and R-squared value.
+    # NOTE: Metadata completeness is currently not reported in dissertation results and were just included as an additional quality metric for the audit. The model is not used to filter candidates.
 
     model_data <- filter(tools_audited, !is.na(years_since_registry_update), !is.na(metadata_completeness_score))
     models <- tibble()
@@ -490,7 +506,8 @@ main <- function() {
     write_output(models, "_registry_age_completeness_model.tsv")
 
     # 6.3 Filter counts and the reproducibility manifest -------------------------
-
+    # The manifest is a JSON file that records the inputs, outputs, and parameters of the analysis for reproducibility.
+    
     counts <- c(initial_load = nrow(tools_audited),
       unique_records = nrow(p$unique_records),
       scope_included = nrow(p$scope_included),
@@ -539,6 +556,7 @@ main <- function() {
   }
 
   # 7. Process one omics dataset ---------------------------------------------------
+  # The `pwalk()` call below iterates over the rows of `domain_config`, passing each row's values to this function.
 
   process_omic <- function(omic, keep, stem, input, function_input) {
     message("Processing ", omic)

@@ -1,5 +1,6 @@
 # thesis_palette.R ------------------------------------------------------------
 # University brand colours for every figure in the dissertation.
+# https://files.su.ac.za/public/doctoral-office/documents/2025-09/output-su-style-guide.pdf
 # Source this file at the top of any plotting script:
 #     source("thesis_palette.R")
 #

@@ -1,5 +1,5 @@
-# Table and figure builders shared by both visualisation workflows. Sourced
-# locally into each workflow, which also sources thesis_palette.R.
+# Table and figure builders shared by both visualisation workflows. 
+# Sourced locally into each workflow, which also sources thesis_palette.R.
 
 # 1. Shared classification and summary helpers ----------------------------------
 
@@ -102,6 +102,7 @@ annotation_theme <- function(...) {
 }
 
 # 3. Registration figures (candidate and full-population workflows) -------------
+# This section builds and saves the registration figures from registration_analysis().
 
 build_added_year_plot <- function(added_per_year, axis_labels, n_records, records_label, title_suffix = "") {
   ggplot(added_per_year, aes(x = added, y = n, fill = omic_type)) +
@@ -251,6 +252,7 @@ save_age_citation_figures <- function(ac, save_plot, axis_labels, legend_labels,
 }
 
 # 5. Candidate-only figures -------------------------------------------------------
+# This section builds and saves the candidate-only figures from candidate_analysis().
 
 make_stack_faceted_bars <- function(summary_df, panel_title, domain_sizes) {
   # Missingness is shown in headings, not as a declared feature. Keep all
