@@ -1,4 +1,6 @@
 # GitHub repository retrieval and incremental snapshot caching.
+# This script is sourced by the main visualization workflow (01_visualize_biotools.R) to retrieve GitHub metrics for tools with a GitHub repository listed in the Biotools metadata. 
+# The metrics are cached in a CSV file so that repeated runs of the workflow do not re-query GitHub unnecessarily.
 
 empty_github_metadata <- list(stars = NA, forks = NA, watchers = NA, open_issues = NA, last_push_at = NA)
 

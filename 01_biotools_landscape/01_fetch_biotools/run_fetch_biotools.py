@@ -4,6 +4,9 @@ This script is a launcher for fetch_biotools.py, which does the actual fetching 
 Publication options (--citation-source, --publication-cache, --cache-days,
 --no-publication-enrichment) are passed through to fetch_biotools.py;
 run that script with --help to list them.
+
+Example usage:
+    python run_fetch_biotools.py --omics genomics transcriptomics --output-tag 20240601
 """
 
 from __future__ import annotations

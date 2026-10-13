@@ -1,4 +1,4 @@
-"""Fetch bio.tools records with auditable, per-publication enrichment.
+"""Fetch bio.tools records with auditable publication enrichment.
 This script retrieves bio.tools records matching a query, extracts and normalises
 publication metadata, and optionally enriches it with citation counts from
 Europe PMC, Crossref, and Dimensions. The output includes a TSV file of all
@@ -13,6 +13,10 @@ Distinct preprints and articles are retained.
 Original registry entries are retained.
 Duplicate identifiers are grouped within each tool, and conflicts are flagged.
 See the .publications.tsv audit table and contribution fields.
+
+Example usage:
+    python fetch_biotools.py "query1,query2" output.tsv
+    or use the run_fetch_biotools.sh script to fetch multiple queries and save to a single output file.
 """
 
 
@@ -301,10 +305,8 @@ class PublicationClient:
 
 def audit_publication_duplicates(publication_records):
     """Group matching identifiers within one tool; retain every original row.
-
-    Connected identifier matches support DOI-only/PMID-only bridge records.
-    Conflicting identifiers or counts are flagged and withheld from totals,
-    rather than guessing which record is correct. Titles never establish identity.
+    Each group has one representative row, which receives the total citation 
+    contribution from one selected source. Conflicts are flagged.
     """
     parents = list(range(len(publication_records)))
     def root(i):
@@ -566,10 +568,9 @@ def iter_biotools_pages(query: str, max_retries: int = 3, timeout: int = 30) -> 
                     break
                 except RequestException as e:
                     status_code = getattr(getattr(e, "response", None), "status_code", None)
-                    # bio.tools returns 404 when requesting a page beyond the last
-                    # page. Treat it as an end boundary only if the prior response
-                    # did not explicitly promise another page and no advertised
-                    # total remains outstanding.
+                    # bio.tools returns 404 when requesting a page beyond the last paginator page, 
+                    # even if the previous page was full. If we have already received all expected 
+                    # records, treat this as a successful end-of-query signal.
                     count_outstanding = expected_count is not None and records_received < expected_count
                     if (status_code == 404 and page > 1 and records_received > 0
                             and previous_response_indicated_next is not True
@@ -769,7 +770,7 @@ def parse_args() -> argparse.Namespace:
 
 
 def main() -> None:
-    """Example: fetch_biotools_final2026.py "query1,query2" output.tsv"""
+    """Example: fetch_biotools.py "query1,query2" output.tsv"""
     args = parse_args()
     all_tools = []
     queries = [q.strip() for q in args.queries.split(',') if q.strip()]

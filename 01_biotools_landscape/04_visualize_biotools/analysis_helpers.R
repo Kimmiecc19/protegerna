@@ -2,6 +2,7 @@
 # and statistics. Sourced locally by the filter and both visualisation workflows
 # after their packages are loaded.
 
+# A helper function to provide a default value if the first is NULL.
 if (!exists("%||%")) `%||%` <- function(value, fallback) if (is.null(value)) fallback else value
 
 # 1. Configuration --------------------------------------------------------------
@@ -149,6 +150,7 @@ publication_coverage_summary <- function(records) {
 }
 
 # 3. Population loading ---------------------------------------------------------
+# Load population data from TSV or RDS files, preferring the latter if it exists and is more recent.  
 
 # Prefer the lossless RDS snapshot when it is at least as new as the TSV.
 prefer_rds_population <- function(paths) {
@@ -157,7 +159,7 @@ prefer_rds_population <- function(paths) {
   ifelse(use_rds %in% TRUE, rds_paths, paths)
 }
 
-# `files` is named by omics domain; the name becomes omic_type.
+# files is named by omics domain; the name becomes omic_type.
 read_omic_tables <- function(files, required_columns = "biotools_id") {
   populations <- lapply(names(files), function(domain) {
     path <- files[[domain]]
@@ -188,6 +190,7 @@ read_population_files <- function(filter_results_dir, domains, suffix, populatio
 }
 
 # 4. Publication age and citation rate ------------------------------------------
+# This function calculates publication age and citation rate for each record.
 
 # Inclusive publication age (years since earliest linked publication, minimum 1).
 derive_publication_metrics <- function(records, analysis_date, domain_levels = NULL) {
@@ -214,6 +217,7 @@ derive_publication_metrics <- function(records, analysis_date, domain_levels = N
 }
 
 # 5. Trend models and statistical intervals ---------------------------------------
+# This section provides functions to fit trend models and calculate statistical intervals.
 
 fit_lm_band <- function(x, y, grid) {
   pred <- stats::predict(stats::lm(y ~ x), newdata = data.frame(x = grid), interval = "confidence")
@@ -245,9 +249,9 @@ predict_trend_values <- function(x, y, span = 0.75) {
 }
 
 # Fits one trend per group and per side of the filter boundary.
-# * Fewer than `min_loess_n` records on a side -> straight line (lm) instead
+# * Fewer than min_loess_n records on a side -> straight line (lm) instead
 #   of LOESS, so a handful of points cannot bend the curve.
-# * The line stops at the `tail_quantile` of x on the thresholded side, so it is
+# * The line stops at the tail_quantile of x on the thresholded side, so it is
 #   not extrapolated through the last few very old tools.
 build_banded_trend <- function(df, x, y, group_col = NULL, boundary,
   span = 0.75, n_points = 100, min_loess_n = 50L, tail_quantile = 0.97) {
@@ -287,7 +291,7 @@ spearman_row <- function(x, y) {
 }
 
 # Spearman correlation of age and total citations: pooled, by domain and by
-# citation-filter band (`filter_band` column).
+# citation-filter band (filter_band column).
 age_citation_spearman <- function(stats_base) {
   bind_rows(
     stats_base %>% summarise(spearman_row(years_since_pub, total_citations)) %>% mutate(group = "All domains"),

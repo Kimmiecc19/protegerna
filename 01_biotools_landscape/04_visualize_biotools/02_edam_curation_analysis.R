@@ -13,6 +13,8 @@ run_edam_curation_analysis <- function(config, config_file, save_output, save_pl
   top_n <- as.integer(config$edam$top_groups)
 
   # 2. Load and validate analysis populations ----------------------------------
+  # The full retrieved population is the set of all bio.tools records with EDAM Operation annotations, and the filtered adoption-candidate population is the subset of those records that passed the candidate filter. 
+  # Both populations are read from the filter_biotools.R results.
 
   full_population <- read_population_files(
     filter_results_dir, domains, config$populations$full_suffix, "Full retrieved population"
@@ -40,7 +42,7 @@ run_edam_curation_analysis <- function(config, config_file, save_output, save_pl
   # EDAM Operation coverage: valid ontology annotations only, aggregated to
   # parent groups and deduplicated once per tool, domain and group.
 
-  # 4. Summarise valid operation groups and Wilson intervals -------------------
+  # 4. Summarise valid operation groups and Wilson confidence intervals -------------------
 
   valid_edam_groups <- mapped_operations %>%
     filter(operation_annotation_status == valid_status,
@@ -157,10 +159,7 @@ run_edam_curation_analysis <- function(config, config_file, save_output, save_pl
       scales::comma(missing_visibility), ")")) %>%
     { setNames(.$label, .$omic_type) }
 
-  # One prespecified threshold sensitivity analysis: compare the primary upper
-  # quartile definition with a within-domain median definition.
-
-  # 8. Compare upper-quartile and median thresholds ----------------------------
+  # 8. Comparison of upper-quartile and median thresholds ----------------------------
 
   curation_sensitivity <- curation_records %>%
     group_by(omic_type) %>%
@@ -183,11 +182,6 @@ run_edam_curation_analysis <- function(config, config_file, save_output, save_pl
     group_by(threshold_definition, omic_type, adoption_visibility_group) %>%
     mutate(denominator = sum(n), proportion = n / denominator) %>% ungroup()
   save_output(curation_sensitivity, "edam_curation_adoption_threshold_sensitivity")
-
-  # Valid annotations make up 89-98% of every group, so a stacked 100% bar
-  # hides the differences. The figure instead shows the share of records
-  # WITHOUT a valid EDAM Operation annotation (split by reason), with a Wilson
-  # 95% CI on that total, on an axis zoomed to the range of the data.
 
   # 9. Plot annotation gaps and uncertainty ------------------------------------
 
