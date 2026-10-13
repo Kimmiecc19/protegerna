@@ -1,0 +1,90 @@
+Column	Description	Category
+AnnotSV_ID	Unique identifier for the variant	Variant and coordinates
+SV_chrom	Chromosome containing the structural variant	Variant and coordinates
+SV_start	Start position of the variant	Variant and coordinates
+SV_end	End position of the variant	Variant and coordinates
+SV_length	Length of the variant	Variant and coordinates
+SV_type	Type of SV (DEL, DUP, INS, INV)	Variant and coordinates
+Samples_ID	Sample(s) carrying this variant	Other
+ID	VCF variant ID	Variant and coordinates
+REF	Reference allele	Variant and coordinates
+ALT	Alternate allele	Variant and coordinates
+QUAL	Variant quality score	Variant and coordinates
+FILTER	Filter status (e.g., PASS)	Variant and coordinates
+INFO	VCF INFO field content	Variant and coordinates
+FORMAT	VCF FORMAT field content	Variant and coordinates
+Annotation_mode	Annotation mode used (full, split, gene)	Other
+Gene_name	Gene affected by the SV	Gene and transcript
+Closest_left	Closest gene upstream	Gene and transcript
+Closest_right	Closest gene downstream	Gene and transcript
+Gene_count	Number of overlapping genes	Gene and transcript
+Tx	Transcript ID	Gene and transcript
+Tx_version	Transcript version	Gene and transcript
+Tx_start	Transcript start position	Gene and transcript
+Tx_end	Transcript end position	Gene and transcript
+Overlapped_tx_length	Length of transcript affected	Gene and transcript
+Overlapped_CDS_length	Length of CDS affected	Gene and transcript
+Overlapped_CDS_percent	Percent of CDS overlapped	Gene and transcript
+Frameshift	Whether the variant causes a frameshift	Gene and transcript
+Exon_count	Number of exons affected	Gene and transcript
+Location	Region type (intronic, exonic, etc.)	Gene and transcript
+Location2	Detailed location info	Gene and transcript
+Dist_nearest_SS	Distance to nearest splice site	Gene and transcript
+Nearest_SS_type	Type of nearest splice site	Gene and transcript
+Intersect_start	Overlap start coordinate with gene	Gene and transcript
+Intersect_end	Overlap end coordinate with gene	Gene and transcript
+RE_gene	Regulatory element gene	Gene and transcript
+P_gain_phen	Phenotypes associated with predicted gain	Pathogenic/benign evidence
+P_gain_hpo	HPO terms for gain	Pathogenic/benign evidence
+P_gain_source	Source of gain prediction	Pathogenic/benign evidence
+P_gain_coord	Coordinates of predicted gain	Pathogenic/benign evidence
+P_loss_phen	Phenotypes associated with predicted loss	Pathogenic/benign evidence
+P_loss_hpo	HPO terms for loss	Pathogenic/benign evidence
+P_loss_source	Source of loss prediction	Pathogenic/benign evidence
+P_loss_coord	Coordinates of predicted loss	Pathogenic/benign evidence
+P_ins_phen	Phenotypes associated with predicted insertion	Pathogenic/benign evidence
+P_ins_hpo	HPO terms for insertion	Pathogenic/benign evidence
+P_ins_source	Source of insertion prediction	Pathogenic/benign evidence
+P_ins_coord	Coordinates of predicted insertion	Pathogenic/benign evidence
+po_P_gain_phen	Phenotypes for partial gain overlap	Pathogenic/benign evidence
+po_P_gain_hpo	HPO terms for partial gain	Pathogenic/benign evidence
+po_P_gain_source	Source for partial gain	Pathogenic/benign evidence
+po_P_gain_coord	Coordinates for partial gain	Pathogenic/benign evidence
+po_P_gain_percent	Percent region affected by partial gain	Pathogenic/benign evidence
+po_P_loss_phen	Phenotypes for partial loss	Pathogenic/benign evidence
+po_P_loss_hpo	HPO terms for partial loss	Pathogenic/benign evidence
+po_P_loss_source	Source for partial loss	Pathogenic/benign evidence
+po_P_loss_coord	Coordinates for partial loss	Pathogenic/benign evidence
+po_P_loss_percent	Percent region affected by partial loss	Pathogenic/benign evidence
+P_snvindel_nb	Number of pathogenic SNVs/indels nearby	Pathogenic/benign evidence
+P_snvindel_phen	Phenotypes linked to SNVs/indels	Pathogenic/benign evidence
+B_gain_source	Source for known pathogenic gains	Pathogenic/benign evidence
+B_gain_coord	Coordinates for known gains	Pathogenic/benign evidence
+B_gain_AFmax	Max allele frequency for gains	Pathogenic/benign evidence
+B_loss_source	Source for known losses	Pathogenic/benign evidence
+B_loss_coord	Coordinates for known losses	Pathogenic/benign evidence
+B_loss_AFmax	Max allele frequency for losses	Pathogenic/benign evidence
+po_B_gain_allG_source	Partial overlap gain (all genes) source	Pathogenic/benign evidence
+po_B_gain_allG_coord	Partial overlap gain (all genes) coord	Pathogenic/benign evidence
+po_B_gain_someG_source	Partial overlap gain (some genes) source	Pathogenic/benign evidence
+po_B_gain_someG_coord	Partial overlap gain (some genes) coord	Pathogenic/benign evidence
+po_B_loss_allG_coord	Partial overlap loss (all genes) coord	Pathogenic/benign evidence
+po_B_loss_someG_source	Partial overlap loss (some genes) source	Pathogenic/benign evidence
+po_B_loss_someG_coord	Partial overlap loss (some genes) coord	Pathogenic/benign evidence
+ACMG	ACMG rule code	Classification
+HI	Haploinsufficiency score	Phenotype and constraint
+TS	Triplosensitivity score	Phenotype and constraint
+DDD_HI_percent	Deciphering Developmental Disorders (DDD) dataset haploinsufficiency %	Phenotype and constraint
+NCBI_gene_ID	NCBI Entrez gene ID	Other
+OMIM_ID	OMIM ID	Phenotype and constraint
+OMIM_phenotype	OMIM phenotype	Phenotype and constraint
+OMIM_inheritance	OMIM inheritance pattern	Phenotype and constraint
+OMIM_morbid	Gene is OMIM morbid	Phenotype and constraint
+OMIM_morbid_candidate	OMIM morbid candidate flag	Phenotype and constraint
+LOEUF_bin	Loss-of-function constraint bin	Phenotype and constraint
+GnomAD_pLI	gnomAD pLI score	Phenotype and constraint
+AnnotSV_ranking_score	AnnotSV ranking score	Classification
+AnnotSV_ranking_criteria	Criteria supporting the ranking - based on ACMG and ClinGen criteria (Riggs et al., 2020)	Classification
+ACMG_class	Final ACMG classification (1–5)	Classification
+Exomiser_gene_pheno_score	Exomiser gene-to-phenotype prioritisation score	Phenotype and constraint
+Human_pheno_evidence	Human phenotype evidence supporting the gene or variant	Phenotype and constraint
