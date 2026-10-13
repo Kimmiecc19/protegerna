@@ -1,0 +1,13 @@
+figure_name,population,omic_type,eligible_tools,plotted_tools,missing_or_unobserved,audit_date,registration_population
+age_vs_citations_combined_full_population,Full retrieved population,Genomics,21953,19319,2634,2026-09-30,all_records
+age_vs_citations_combined_full_population,Full retrieved population,Transcriptomics,10976,9936,1040,2026-09-30,all_records
+age_vs_citations_combined_full_population,Full retrieved population,Proteomics,9577,8834,743,2026-09-30,all_records
+age_vs_citations_combined_full_population,Full retrieved population,Multiomics,9007,8175,832,2026-09-30,all_records
+tools_added_per_year_by_omics_full_population,Full retrieved population,Genomics,21953,21953,0,2026-09-30,all_records
+tools_added_per_year_by_omics_full_population,Full retrieved population,Transcriptomics,10976,10976,0,2026-09-30,all_records
+tools_added_per_year_by_omics_full_population,Full retrieved population,Proteomics,9577,9577,0,2026-09-30,all_records
+tools_added_per_year_by_omics_full_population,Full retrieved population,Multiomics,9007,9007,0,2026-09-30,all_records
+publication_vs_year_added_scatter_full_population,Full retrieved population,Genomics,21953,19711,2242,2026-09-30,all_records
+publication_vs_year_added_scatter_full_population,Full retrieved population,Transcriptomics,10976,10034,942,2026-09-30,all_records
+publication_vs_year_added_scatter_full_population,Full retrieved population,Proteomics,9577,8890,687,2026-09-30,all_records
+publication_vs_year_added_scatter_full_population,Full retrieved population,Multiomics,9007,8254,753,2026-09-30,all_records

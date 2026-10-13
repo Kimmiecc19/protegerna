@@ -1,0 +1,16 @@
+combination,n
+Genomics,3301
+Transcriptomics,2433
+Genomics & Transcriptomics,1036
+Proteomics,907
+Genomics & Transcriptomics & Multiomics,151
+Transcriptomics & Proteomics,113
+Transcriptomics & Proteomics & Multiomics,104
+Genomics & Proteomics,98
+Transcriptomics & Multiomics,98
+Proteomics & Multiomics,81
+Multiomics,55
+Genomics & Proteomics & Multiomics,39
+Genomics & Multiomics,32
+Genomics & Transcriptomics & Proteomics & Multiomics,31
+Genomics & Transcriptomics & Proteomics,18

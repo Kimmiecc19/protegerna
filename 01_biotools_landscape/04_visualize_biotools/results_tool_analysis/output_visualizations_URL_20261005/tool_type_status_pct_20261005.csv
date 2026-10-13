@@ -1,0 +1,73 @@
+omic_type,tool_type,maintenance,n,total_by_tool,bar_n,share
+Genomics,Command-line tool,Active,375,3522,1876,0.19989339019189764
+Genomics,Command-line tool,Stale,234,3522,1876,0.12473347547974413
+Genomics,Command-line tool,Inactive,659,3522,1876,0.35127931769722814
+Genomics,Command-line tool,Unknown,608,3522,1876,0.32409381663113007
+Genomics,Database portal,Active,5,1072,430,0.011627906976744186
+Genomics,Database portal,Inactive,9,1072,430,0.020930232558139535
+Genomics,Database portal,Unknown,416,1072,430,0.9674418604651163
+Genomics,Library,Active,109,2365,809,0.13473423980222496
+Genomics,Library,Stale,94,2365,809,0.1161928306551298
+Genomics,Library,Inactive,254,2365,809,0.31396786155747836
+Genomics,Library,Unknown,352,2365,809,0.43510506798516685
+Genomics,Script,Active,33,609,241,0.13692946058091288
+Genomics,Script,Stale,19,609,241,0.07883817427385892
+Genomics,Script,Inactive,144,609,241,0.5975103734439834
+Genomics,Script,Unknown,45,609,241,0.18672199170124482
+Genomics,Web application,Active,9,687,274,0.032846715328467155
+Genomics,Web application,Stale,3,687,274,0.010948905109489052
+Genomics,Web application,Inactive,15,687,274,0.05474452554744526
+Genomics,Web application,Unknown,247,687,274,0.9014598540145985
+Transcriptomics,Command-line tool,Active,170,3522,1121,0.15165031222123104
+Transcriptomics,Command-line tool,Stale,114,3522,1121,0.1016949152542373
+Transcriptomics,Command-line tool,Inactive,426,3522,1121,0.3800178412132025
+Transcriptomics,Command-line tool,Unknown,411,3522,1121,0.3666369313113292
+Transcriptomics,Database portal,Inactive,8,1072,413,0.01937046004842615
+Transcriptomics,Database portal,Unknown,405,1072,413,0.9806295399515739
+Transcriptomics,Library,Active,146,2365,1083,0.1348107109879963
+Transcriptomics,Library,Stale,106,2365,1083,0.09787626962142197
+Transcriptomics,Library,Inactive,363,2365,1083,0.33518005540166207
+Transcriptomics,Library,Unknown,468,2365,1083,0.43213296398891965
+Transcriptomics,Script,Active,23,609,250,0.092
+Transcriptomics,Script,Stale,23,609,250,0.092
+Transcriptomics,Script,Inactive,171,609,250,0.684
+Transcriptomics,Script,Unknown,33,609,250,0.132
+Transcriptomics,Web application,Active,5,687,245,0.02040816326530612
+Transcriptomics,Web application,Stale,1,687,245,0.004081632653061225
+Transcriptomics,Web application,Inactive,12,687,245,0.04897959183673469
+Transcriptomics,Web application,Unknown,227,687,245,0.926530612244898
+Proteomics,Command-line tool,Active,64,3522,401,0.1596009975062344
+Proteomics,Command-line tool,Stale,26,3522,401,0.06483790523690773
+Proteomics,Command-line tool,Inactive,127,3522,401,0.3167082294264339
+Proteomics,Command-line tool,Unknown,184,3522,401,0.45885286783042395
+Proteomics,Database portal,Stale,1,1072,157,0.006369426751592357
+Proteomics,Database portal,Inactive,2,1072,157,0.012738853503184714
+Proteomics,Database portal,Unknown,154,1072,157,0.9808917197452229
+Proteomics,Library,Active,62,2365,331,0.18731117824773413
+Proteomics,Library,Stale,34,2365,331,0.1027190332326284
+Proteomics,Library,Inactive,71,2365,331,0.21450151057401812
+Proteomics,Library,Unknown,164,2365,331,0.4954682779456193
+Proteomics,Script,Active,13,609,91,0.14285714285714285
+Proteomics,Script,Stale,11,609,91,0.12087912087912088
+Proteomics,Script,Inactive,50,609,91,0.5494505494505495
+Proteomics,Script,Unknown,17,609,91,0.18681318681318682
+Proteomics,Web application,Active,7,687,120,0.058333333333333334
+Proteomics,Web application,Stale,1,687,120,0.008333333333333333
+Proteomics,Web application,Inactive,1,687,120,0.008333333333333333
+Proteomics,Web application,Unknown,111,687,120,0.925
+Multiomics,Command-line tool,Active,21,3522,124,0.1693548387096774
+Multiomics,Command-line tool,Stale,11,3522,124,0.08870967741935484
+Multiomics,Command-line tool,Inactive,45,3522,124,0.3629032258064516
+Multiomics,Command-line tool,Unknown,47,3522,124,0.3790322580645161
+Multiomics,Database portal,Inactive,1,1072,72,0.013888888888888888
+Multiomics,Database portal,Unknown,71,1072,72,0.9861111111111112
+Multiomics,Library,Active,24,2365,142,0.16901408450704225
+Multiomics,Library,Stale,19,2365,142,0.13380281690140844
+Multiomics,Library,Inactive,30,2365,142,0.2112676056338028
+Multiomics,Library,Unknown,69,2365,142,0.4859154929577465
+Multiomics,Script,Active,4,609,27,0.14814814814814814
+Multiomics,Script,Stale,1,609,27,0.037037037037037035
+Multiomics,Script,Inactive,18,609,27,0.6666666666666666
+Multiomics,Script,Unknown,4,609,27,0.14814814814814814
+Multiomics,Web application,Inactive,2,687,48,0.041666666666666664
+Multiomics,Web application,Unknown,46,687,48,0.9583333333333334

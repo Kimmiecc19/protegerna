@@ -1,0 +1,918 @@
+operation_uri	operation_term	obsolete	ontology_depth	operation_group_uri	operation_group_term	operation_group_depth
+http://edamontology.org/operation_0004	Operation	False	0	http://edamontology.org/operation_0004	Operation	0
+http://edamontology.org/operation_0224	Query and retrieval	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0226	Annotation	False	1	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_0227	Indexing	False	1	http://edamontology.org/operation_0227	Indexing	1
+http://edamontology.org/operation_0230	Sequence generation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0230	Sequence generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0231	Sequence editing	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0231	Sequence editing	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0232	Sequence merging	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0232	Sequence merging	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0233	Sequence conversion	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0233	Sequence conversion	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0233	Sequence conversion	False	2	http://edamontology.org/operation_3434	Conversion	1
+http://edamontology.org/operation_0234	Sequence complexity calculation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0234	Sequence complexity calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0235	Sequence ambiguity calculation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0235	Sequence ambiguity calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0236	Sequence composition calculation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0236	Sequence composition calculation	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0237	Repeat sequence analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0238	Sequence motif discovery	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0238	Sequence motif discovery	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0239	Sequence motif recognition	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0239	Sequence motif recognition	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0240	Sequence motif comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0240	Sequence motif comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0244	Simulation analysis	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0244	Simulation analysis	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0245	Structural motif discovery	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0245	Structural motif discovery	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0246	Protein domain recognition	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0246	Protein domain recognition	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0247	Protein architecture analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0248	Residue interaction calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0248	Residue interaction calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0249	Protein geometry calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0249	Protein geometry calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0250	Protein property calculation	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0250	Protein property calculation	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0252	Peptide immunogenicity prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0252	Peptide immunogenicity prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0252	Peptide immunogenicity prediction	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0253	Sequence feature detection	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0253	Sequence feature detection	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0256	Sequence feature comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0256	Sequence feature comparison	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0258	Sequence alignment analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0259	Sequence alignment comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0259	Sequence alignment comparison	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0260	Sequence alignment conversion	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0260	Sequence alignment conversion	False	2	http://edamontology.org/operation_3434	Conversion	1
+http://edamontology.org/operation_0262	Nucleic acid property calculation	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0264	Alternative splicing prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0264	Alternative splicing prediction	False	3	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0264	Alternative splicing prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0265	Frameshift detection	False	4	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0265	Frameshift detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0266	Vector sequence detection	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0266	Vector sequence detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0267	Protein secondary structure prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0267	Protein secondary structure prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0268	Protein super-secondary structure prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0268	Protein super-secondary structure prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0269	Transmembrane protein prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0269	Transmembrane protein prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0270	Transmembrane protein analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0271	Structure prediction	True	0	http://edamontology.org/operation_0271	Structure prediction	0
+http://edamontology.org/operation_0272	Residue contact prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0272	Residue contact prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0272	Residue contact prediction	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0276	Protein interaction network analysis	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0276	Protein interaction network analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0277	Pathway or network comparison	True	0	http://edamontology.org/operation_0277	Pathway or network comparison	0
+http://edamontology.org/operation_0278	RNA secondary structure prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0278	RNA secondary structure prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0279	Nucleic acid folding analysis	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0279	Nucleic acid folding analysis	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0279	Nucleic acid folding analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0282	Genetic mapping	False	3	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_0282	Genetic mapping	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0283	Linkage analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0284	Codon usage table generation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0284	Codon usage table generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0285	Codon usage table comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0285	Codon usage table comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0286	Codon usage analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0287	Base position variability plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0287	Base position variability plotting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0288	Sequence word comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0288	Sequence word comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0289	Sequence distance matrix generation	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0289	Sequence distance matrix generation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0289	Sequence distance matrix generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0290	Sequence redundancy removal	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0290	Sequence redundancy removal	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0291	Sequence clustering	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0291	Sequence clustering	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0291	Sequence clustering	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0291	Sequence clustering	False	2	http://edamontology.org/operation_3432	Clustering	1
+http://edamontology.org/operation_0292	Sequence alignment	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0292	Sequence alignment	False	2	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0292	Sequence alignment	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0294	Structure-based sequence alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0294	Structure-based sequence alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0294	Structure-based sequence alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0295	Structure alignment	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0295	Structure alignment	False	2	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0295	Structure alignment	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0296	Sequence profile generation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0296	Sequence profile generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0297	3D profile generation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0297	3D profile generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0300	Sequence profile alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0300	Sequence profile alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0300	Sequence profile alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0302	Protein threading	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0302	Protein threading	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0302	Protein threading	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0302	Protein threading	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0303	Fold recognition	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0303	Fold recognition	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0303	Fold recognition	False	2	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0303	Fold recognition	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0305	Literature search	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0306	Text mining	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0306	Text mining	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0307	Virtual PCR	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0308	PCR primer design	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0308	PCR primer design	False	3	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_0308	PCR primer design	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0309	Microarray probe design	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0309	Microarray probe design	False	2	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_0309	Microarray probe design	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0310	Sequence assembly	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0313	Expression profile clustering	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0313	Expression profile clustering	False	2	http://edamontology.org/operation_3432	Clustering	1
+http://edamontology.org/operation_0314	Gene expression profiling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0315	Expression profile comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0319	Protein secondary structure assignment	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0319	Protein secondary structure assignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0320	Protein structure assignment	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0320	Protein structure assignment	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0321	Protein structure validation	False	2	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_0321	Protein structure validation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0322	Molecular model refinement	False	2	http://edamontology.org/operation_2425	Optimisation and refinement	1
+http://edamontology.org/operation_0322	Molecular model refinement	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0323	Phylogenetic inference	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0323	Phylogenetic inference	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0324	Phylogenetic analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0325	Phylogenetic tree comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0325	Phylogenetic tree comparison	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0326	Phylogenetic tree editing	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0326	Phylogenetic tree editing	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0327	Phylogenetic footprinting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0327	Phylogenetic footprinting	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0331	Variant effect prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0334	Enzyme kinetics calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0334	Enzyme kinetics calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0335	Data formatting	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0336	Format validation	False	2	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_0337	Visualisation	False	1	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0338	Sequence database search	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0338	Sequence database search	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0339	Structure database search	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0346	Sequence similarity search	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0346	Sequence similarity search	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0346	Sequence similarity search	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0349	Sequence database search (by property)	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0349	Sequence database search (by property)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0360	Structural similarity search	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0360	Structural similarity search	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0360	Structural similarity search	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0361	Sequence annotation	False	2	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_0362	Genome annotation	False	3	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_0362	Genome annotation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0363	Reverse complement	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0363	Reverse complement	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0364	Random sequence generation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0364	Random sequence generation	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0365	Restriction digest	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0365	Restriction digest	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0365	Restriction digest	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0366	Protein sequence cleavage	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0366	Protein sequence cleavage	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0367	Sequence mutation and randomisation	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0367	Sequence mutation and randomisation	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0368	Sequence masking	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0368	Sequence masking	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0369	Sequence cutting	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0369	Sequence cutting	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0371	DNA translation	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0371	DNA translation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0371	DNA translation	False	3	http://edamontology.org/operation_3434	Conversion	1
+http://edamontology.org/operation_0372	DNA transcription	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_0372	DNA transcription	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0372	DNA transcription	False	3	http://edamontology.org/operation_3434	Conversion	1
+http://edamontology.org/operation_0379	Repeat sequence detection	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0379	Repeat sequence detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0380	Repeat sequence organisation analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0380	Repeat sequence organisation analysis	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0384	Accessible surface calculation	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0386	Protein dipole moment calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0386	Protein dipole moment calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0387	Molecular surface calculation	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0389	Protein-nucleic acid interaction analysis	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0389	Protein-nucleic acid interaction analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0390	Protein peeling	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0390	Protein peeling	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0391	Protein distance matrix calculation	False	5	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0391	Protein distance matrix calculation	False	5	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0392	Contact map calculation	False	6	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0392	Contact map calculation	False	6	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0393	Residue cluster calculation	False	5	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0393	Residue cluster calculation	False	5	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0394	Hydrogen bond calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0394	Hydrogen bond calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0398	Protein molecular weight calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0398	Protein molecular weight calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0399	Protein extinction coefficient calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0399	Protein extinction coefficient calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0400	Protein pKa calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0400	Protein pKa calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0401	Protein hydropathy calculation (from sequence)	True	0	http://edamontology.org/operation_0401	Protein hydropathy calculation (from sequence)	0
+http://edamontology.org/operation_0402	Protein titration curve plotting	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0402	Protein titration curve plotting	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0402	Protein titration curve plotting	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0403	Protein isoelectric point calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0403	Protein isoelectric point calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0404	Protein hydrogen exchange rate calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0404	Protein hydrogen exchange rate calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0405	Protein hydrophobic region calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0405	Protein hydrophobic region calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0406	Protein aliphatic index calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0406	Protein aliphatic index calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0407	Protein hydrophobic moment plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0407	Protein hydrophobic moment plotting	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0407	Protein hydrophobic moment plotting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0407	Protein hydrophobic moment plotting	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0408	Protein globularity prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0408	Protein globularity prediction	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0409	Protein solubility prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0409	Protein solubility prediction	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0410	Protein crystallizability prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0410	Protein crystallizability prediction	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0415	Nucleic acid feature detection	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0415	Nucleic acid feature detection	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0416	Epitope mapping	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0416	Epitope mapping	False	2	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_0416	Epitope mapping	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0417	Post-translational modification site prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0417	Post-translational modification site prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0418	Protein signal peptide detection	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0418	Protein signal peptide detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0420	Nucleic acids-binding site prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0420	Nucleic acids-binding site prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0422	Protein cleavage site prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0422	Protein cleavage site prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0427	Transposon prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0427	Transposon prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0428	PolyA signal detection	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0428	PolyA signal detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0429	Quadruplex formation site detection	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0429	Quadruplex formation site detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0430	CpG island and isochore detection	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0430	CpG island and isochore detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0431	Restriction site recognition	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0431	Restriction site recognition	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0432	Nucleosome position prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0432	Nucleosome position prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0433	Splice site prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0433	Splice site prediction	False	3	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0433	Splice site prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0435	Operon prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0436	Coding region prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0437	SECIS element prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0438	Transcriptional regulatory element prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0439	Translation initiation site prediction	False	6	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0440	Promoter prediction	False	6	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0441	cis-regulatory element prediction	False	6	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0443	trans-regulatory element prediction	False	6	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0444	S/MAR prediction	False	6	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0445	Transcription factor binding site prediction	False	7	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0446	Exonic splicing enhancer prediction	False	7	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0447	Sequence alignment validation	False	2	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_0447	Sequence alignment validation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0448	Sequence alignment analysis (conservation)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0449	Sequence alignment analysis (site correlation)	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0449	Sequence alignment analysis (site correlation)	False	2	http://edamontology.org/operation_3465	Correlation	1
+http://edamontology.org/operation_0450	Chimera detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0451	Recombination detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0452	Indel detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0455	Nucleic acid thermodynamic property calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0456	Nucleic acid melting profile plotting	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0456	Nucleic acid melting profile plotting	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0457	Nucleic acid stitch profile plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0457	Nucleic acid stitch profile plotting	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0458	Nucleic acid melting curve plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0458	Nucleic acid melting curve plotting	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0459	Nucleic acid probability profile plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0459	Nucleic acid probability profile plotting	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0460	Nucleic acid temperature profile plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0460	Nucleic acid temperature profile plotting	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0461	Nucleic acid curvature calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_0463	miRNA target prediction	False	7	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0464	tRNA gene prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0465	siRNA binding specificity prediction	False	7	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0468	Protein secondary structure prediction (helices)	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0468	Protein secondary structure prediction (helices)	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0469	Protein secondary structure prediction (turns)	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0469	Protein secondary structure prediction (turns)	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0470	Protein secondary structure prediction (coils)	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0470	Protein secondary structure prediction (coils)	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0471	Disulfide bond prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0471	Disulfide bond prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0472	GPCR prediction	True	0	http://edamontology.org/operation_0472	GPCR prediction	0
+http://edamontology.org/operation_0474	Protein structure prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0474	Protein structure prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0475	Nucleic acid structure prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0475	Nucleic acid structure prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0476	Ab initio structure prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0476	Ab initio structure prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0477	Protein modelling	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0477	Protein modelling	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0477	Protein modelling	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0478	Molecular docking	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0478	Molecular docking	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0479	Backbone modelling	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0479	Backbone modelling	False	3	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0479	Backbone modelling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0480	Side chain modelling	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0480	Side chain modelling	False	3	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0480	Side chain modelling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0481	Loop modelling	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0481	Loop modelling	False	3	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0481	Loop modelling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0482	Protein-ligand docking	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0482	Protein-ligand docking	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0483	RNA inverse folding	False	3	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_0483	RNA inverse folding	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0484	SNP detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0485	Radiation Hybrid Mapping	False	4	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_0487	Haplotype mapping	False	4	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_0487	Haplotype mapping	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0488	Linkage disequilibrium calculation	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0489	Genetic code prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_0489	Genetic code prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0490	Dot plot plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0490	Dot plot plotting	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0490	Dot plot plotting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0491	Pairwise sequence alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0491	Pairwise sequence alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0491	Pairwise sequence alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0492	Multiple sequence alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0492	Multiple sequence alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0492	Multiple sequence alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0495	Local alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0495	Local alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0495	Local alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0496	Global alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0496	Global alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0496	Global alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0499	Tree-based sequence alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0499	Tree-based sequence alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0499	Tree-based sequence alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0502	RNA secondary structure alignment	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0502	RNA secondary structure alignment	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0503	Pairwise structure alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0503	Pairwise structure alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0503	Pairwise structure alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0504	Multiple structure alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0504	Multiple structure alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0504	Multiple structure alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0509	Local structure alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0509	Local structure alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0509	Local structure alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0510	Global structure alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0510	Global structure alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_0510	Global structure alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0523	Mapping assembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0524	De-novo assembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0525	Genome assembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0526	EST assembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0527	Sequence tag mapping	False	2	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_0527	Sequence tag mapping	False	2	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_0531	Heat map generation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0531	Heat map generation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0531	Heat map generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0533	Expression profile pathway mapping	False	2	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_0533	Expression profile pathway mapping	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0538	Phylogenetic inference (data centric)	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0538	Phylogenetic inference (data centric)	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0539	Phylogenetic inference (method centric)	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0539	Phylogenetic inference (method centric)	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0540	Phylogenetic inference (from molecular sequences)	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0540	Phylogenetic inference (from molecular sequences)	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0542	Phylogenetic inference (from gene frequencies)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0542	Phylogenetic inference (from gene frequencies)	False	4	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0543	Phylogenetic inference (from polymorphism data)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0543	Phylogenetic inference (from polymorphism data)	False	4	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0544	Species tree construction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0544	Species tree construction	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0545	Phylogenetic inference (parsimony methods)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0545	Phylogenetic inference (parsimony methods)	False	4	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0546	Phylogenetic inference (minimum distance methods)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0546	Phylogenetic inference (minimum distance methods)	False	4	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0547	Phylogenetic inference (maximum likelihood and Bayesian methods)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0547	Phylogenetic inference (maximum likelihood and Bayesian methods)	False	4	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0548	Phylogenetic inference (quartet methods)	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0548	Phylogenetic inference (quartet methods)	False	4	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0550	DNA substitution modelling	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_0550	DNA substitution modelling	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0551	Phylogenetic tree topology analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0552	Phylogenetic tree bootstrapping	False	2	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_0552	Phylogenetic tree bootstrapping	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0553	Gene tree construction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0553	Gene tree construction	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0554	Allele frequency distribution analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0555	Consensus tree construction	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0555	Consensus tree construction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0555	Consensus tree construction	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_0556	Phylogenetic sub/super tree construction	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0556	Phylogenetic sub/super tree construction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0557	Phylogenetic tree distances calculation	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_0557	Phylogenetic tree distances calculation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0558	Phylogenetic tree annotation	False	2	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_0560	DNA vaccine design	False	3	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_0560	DNA vaccine design	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0564	Sequence visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0564	Sequence visualisation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0566	Sequence cluster visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0567	Phylogenetic tree visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0567	Phylogenetic tree visualisation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0570	Structure visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0570	Structure visualisation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0571	Expression data visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0571	Expression data visualisation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_0573	Map drawing	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0575	Restriction map drawing	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0578	Plasmid map drawing	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_0579	Operon drawing	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_1777	Protein function prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1777	Protein function prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1778	Protein function comparison	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1778	Protein function comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_1778	Protein function comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1781	Gene regulatory network analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1812	Data parsing	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_1816	Surface rendering	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_1816	Surface rendering	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1829	Cysteine bridge detection	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1829	Cysteine bridge detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1830	Free cysteine detection	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1830	Free cysteine detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1831	Metal-bound cysteine detection	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1831	Metal-bound cysteine detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1831	Metal-bound cysteine detection	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_1834	Protein-metal contact calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1834	Protein-metal contact calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_1839	Salt bridge calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1839	Salt bridge calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_1843	Residue packing validation	False	3	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_1843	Residue packing validation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1844	Protein geometry validation	False	3	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_1844	Protein geometry validation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_1850	Protein cysteine and disulfide bond assignment	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_1850	Protein cysteine and disulfide bond assignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2008	siRNA duplex prediction	False	7	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2089	Sequence alignment refinement	False	2	http://edamontology.org/operation_2425	Optimisation and refinement	1
+http://edamontology.org/operation_2089	Sequence alignment refinement	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2121	Sequence file editing	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_2121	Sequence file editing	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2233	Representative sequence identification	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2233	Representative sequence identification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2238	Statistical calculation	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_2239	3D-1D scoring matrix generation	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2239	3D-1D scoring matrix generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_2239	3D-1D scoring matrix generation	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_2241	Transmembrane protein visualisation	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2241	Transmembrane protein visualisation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2284	Nucleic acid density plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2284	Nucleic acid density plotting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2284	Nucleic acid density plotting	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_2403	Sequence analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2404	Sequence motif analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2406	Protein structure analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2409	Data handling	False	1	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_2414	Protein function analysis	True	0	http://edamontology.org/operation_2414	Protein function analysis	0
+http://edamontology.org/operation_2415	Protein folding analysis	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_2415	Protein folding analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2416	Protein secondary structure analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2419	Primer and probe design	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2419	Primer and probe design	False	2	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_2419	Primer and probe design	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2421	Database search	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_2422	Data retrieval	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_2422	Data retrieval	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2422	Data retrieval	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2423	Prediction and recognition	False	1	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2424	Comparison	False	1	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2425	Optimisation and refinement	False	1	http://edamontology.org/operation_2425	Optimisation and refinement	1
+http://edamontology.org/operation_2426	Modelling and simulation	False	1	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_2428	Validation	False	1	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_2429	Mapping	False	1	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_2430	Design	False	1	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_2436	Gene-set enrichment analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2437	Gene regulatory network prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2437	Gene regulatory network prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2439	RNA secondary structure analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2441	RNA structure prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2441	RNA structure prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2442	DNA structure prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2442	DNA structure prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2451	Sequence comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2451	Sequence comparison	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2454	Gene prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2464	Protein-protein binding site prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2464	Protein-protein binding site prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2474	Protein architecture comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2474	Protein architecture comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2475	Protein architecture recognition	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2475	Protein architecture recognition	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2475	Protein architecture recognition	False	2	http://edamontology.org/operation_2990	Classification	1
+http://edamontology.org/operation_2476	Molecular dynamics	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2476	Molecular dynamics	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_2476	Molecular dynamics	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2478	Nucleic acid sequence analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2479	Protein sequence analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2480	Structure analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2481	Nucleic acid structure analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2483	Structure comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2483	Structure comparison	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2485	Helical wheel drawing	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2485	Helical wheel drawing	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2486	Topology diagram drawing	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2486	Topology diagram drawing	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2487	Protein structure comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2487	Protein structure comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2488	Protein secondary structure comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2488	Protein secondary structure comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2489	Subcellular localisation prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2489	Subcellular localisation prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2492	Protein interaction prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2492	Protein interaction prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2495	Expression analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2497	Pathway or network analysis	True	0	http://edamontology.org/operation_2497	Pathway or network analysis	0
+http://edamontology.org/operation_2499	Splicing analysis	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2499	Splicing analysis	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_2499	Splicing analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2502	Protein analysis	True	0	http://edamontology.org/operation_2502	Protein analysis	0
+http://edamontology.org/operation_2513	Sequence generation (nucleic acid)	True	0	http://edamontology.org/operation_2513	Sequence generation (nucleic acid)	0
+http://edamontology.org/operation_2514	Sequence generation (protein)	True	0	http://edamontology.org/operation_2514	Sequence generation (protein)	0
+http://edamontology.org/operation_2518	Nucleic acid structure comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2518	Nucleic acid structure comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2520	DNA mapping	False	2	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_2574	Protein hydropathy calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2574	Protein hydropathy calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_2575	Binding site prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2575	Binding site prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2844	Structure clustering	False	2	http://edamontology.org/operation_3432	Clustering	1
+http://edamontology.org/operation_2871	Sequence tagged site (STS) mapping	False	4	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_2928	Alignment	False	1	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_2929	Protein fragment weight comparison	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2929	Protein fragment weight comparison	False	4	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2929	Protein fragment weight comparison	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_2930	Protein property comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2935	Clustering profile plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2935	Clustering profile plotting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2936	Dendrograph plotting	True	0	http://edamontology.org/operation_2936	Dendrograph plotting	0
+http://edamontology.org/operation_2937	Proximity map plotting	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2937	Proximity map plotting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2938	Dendrogram visualisation	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2938	Dendrogram visualisation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2939	Principal component visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2940	Scatter plot plotting	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2942	Treemap visualisation	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2942	Treemap visualisation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2943	Box-Whisker plot plotting	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_2944	Physical mapping	False	3	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_2945	Data analysis	False	1	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2949	Protein-protein interaction analysis	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2949	Protein-protein interaction analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2950	Residue distance calculation	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_2950	Residue distance calculation	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_2962	Codon usage bias calculation	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2963	Codon usage bias plotting	True	0	http://edamontology.org/operation_2963	Codon usage bias plotting	0
+http://edamontology.org/operation_2964	Codon usage fraction calculation	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2990	Classification	False	1	http://edamontology.org/operation_2990	Classification	1
+http://edamontology.org/operation_2995	Sequence classification	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2995	Sequence classification	False	2	http://edamontology.org/operation_2990	Classification	1
+http://edamontology.org/operation_2996	Structure classification	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_2996	Structure classification	False	2	http://edamontology.org/operation_2990	Classification	1
+http://edamontology.org/operation_2997	Protein comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_2998	Nucleic acid comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3023	Prediction and recognition (protein)	True	0	http://edamontology.org/operation_3023	Prediction and recognition (protein)	0
+http://edamontology.org/operation_3024	Prediction and recognition (nucleic acid)	True	0	http://edamontology.org/operation_3024	Prediction and recognition (nucleic acid)	0
+http://edamontology.org/operation_3080	Structure editing	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3081	Sequence alignment editing	False	3	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3083	Pathway or network visualisation	True	0	http://edamontology.org/operation_3083	Pathway or network visualisation	0
+http://edamontology.org/operation_3092	Protein feature detection	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3092	Protein feature detection	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3094	Protein interaction network prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3094	Protein interaction network prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3095	Nucleic acid design	False	2	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_3095	Nucleic acid design	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3096	Data editing	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3180	Sequence assembly validation	False	2	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_3180	Sequence assembly validation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3182	Genome alignment	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3182	Genome alignment	False	3	http://edamontology.org/operation_2928	Alignment	1
+http://edamontology.org/operation_3182	Genome alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3183	Localised reassembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3184	Sequence assembly visualisation	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3184	Sequence assembly visualisation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3185	Base-calling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3185	Base-calling	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3186	Bisulfite mapping	False	4	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_3186	Bisulfite mapping	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3187	Sequence contamination filtering	False	3	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_3187	Sequence contamination filtering	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3192	Sequence trimming	False	5	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3192	Sequence trimming	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3194	Genome feature comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3194	Genome feature comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3195	Sequencing error detection	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3195	Sequencing error detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3196	Genotyping	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3197	Genetic variation analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3198	Read mapping	False	4	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_3198	Read mapping	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3199	Split read mapping	False	5	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_3199	Split read mapping	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3200	DNA barcoding	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3202	Polymorphism detection	True	0	http://edamontology.org/operation_3202	Polymorphism detection	0
+http://edamontology.org/operation_3203	Chromatogram visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3204	Methylation analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3206	Whole genome methylation analysis	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3207	Gene methylation analysis	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3208	Genome visualisation	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3208	Genome visualisation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3209	Genome comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3209	Genome comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3211	Genome indexing	False	2	http://edamontology.org/operation_0227	Indexing	1
+http://edamontology.org/operation_3211	Genome indexing	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3214	Spectral analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3215	Peak detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3216	Scaffolding	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3216	Scaffolding	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3217	Scaffold gap completion	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3217	Scaffold gap completion	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3218	Sequencing quality control	False	2	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_3218	Sequencing quality control	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3219	Read pre-processing	False	3	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_3219	Read pre-processing	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3221	Species frequency estimation	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3222	Peak calling	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3222	Peak calling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3223	Differential gene expression profiling	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3224	Gene set testing	True	0	http://edamontology.org/operation_3224	Gene set testing	0
+http://edamontology.org/operation_3225	Variant classification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3225	Variant classification	False	3	http://edamontology.org/operation_2990	Classification	1
+http://edamontology.org/operation_3226	Variant prioritisation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3227	Variant calling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3228	Structural variation detection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3229	Exome assembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3230	Read depth analysis	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3232	Gene expression QTL analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3233	Copy number estimation	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3237	Primer removal	False	5	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3237	Primer removal	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3258	Transcriptome assembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3267	Sequence coordinate conversion	False	2	http://edamontology.org/operation_3434	Conversion	1
+http://edamontology.org/operation_3278	Document similarity calculation	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3279	Document clustering	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3279	Document clustering	False	2	http://edamontology.org/operation_3432	Clustering	1
+http://edamontology.org/operation_3280	Named-entity and concept recognition	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3280	Named-entity and concept recognition	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3282	ID mapping	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3282	ID mapping	False	2	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_3283	Anonymisation	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3348	Sequence checksum generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3349	Bibliography generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3350	Protein quaternary structure prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3351	Molecular surface analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3352	Ontology comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3357	Format detection	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3359	Splitting	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3429	Generation	False	1	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3431	Data deposition	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3432	Clustering	False	1	http://edamontology.org/operation_3432	Clustering	1
+http://edamontology.org/operation_3434	Conversion	False	1	http://edamontology.org/operation_3434	Conversion	1
+http://edamontology.org/operation_3435	Standardisation and normalisation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3436	Aggregation	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3437	Article comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3438	Calculation	False	1	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3439	Pathway or network prediction	True	0	http://edamontology.org/operation_3439	Pathway or network prediction	0
+http://edamontology.org/operation_3441	Plotting	True	0	http://edamontology.org/operation_3441	Plotting	0
+http://edamontology.org/operation_3443	Image analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3445	Diffraction data analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3446	Cell migration analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3447	Diffraction data reduction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3450	Neurite measurement	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3453	Diffraction data integration	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3454	Phasing	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3455	Molecular replacement	False	3	http://edamontology.org/operation_2425	Optimisation and refinement	1
+http://edamontology.org/operation_3455	Molecular replacement	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3456	Rigid body refinement	False	3	http://edamontology.org/operation_2425	Optimisation and refinement	1
+http://edamontology.org/operation_3456	Rigid body refinement	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3457	Single particle analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3458	Single particle alignment and classification	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3458	Single particle alignment and classification	False	2	http://edamontology.org/operation_2990	Classification	1
+http://edamontology.org/operation_3459	Functional clustering	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3459	Functional clustering	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3459	Functional clustering	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3459	Functional clustering	False	3	http://edamontology.org/operation_3432	Clustering	1
+http://edamontology.org/operation_3460	Taxonomic classification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3460	Taxonomic classification	False	3	http://edamontology.org/operation_2990	Classification	1
+http://edamontology.org/operation_3461	Virulence prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3461	Virulence prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3463	Expression correlation analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3463	Expression correlation analysis	False	2	http://edamontology.org/operation_3465	Correlation	1
+http://edamontology.org/operation_3465	Correlation	False	1	http://edamontology.org/operation_3465	Correlation	1
+http://edamontology.org/operation_3469	RNA structure covariance model generation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3469	RNA structure covariance model generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3472	k-mer counting	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3472	k-mer counting	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3478	Phylogenetic reconstruction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3478	Phylogenetic reconstruction	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3480	Probabilistic data generation	False	2	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3481	Probabilistic sequence generation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3481	Probabilistic sequence generation	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3482	Antimicrobial resistance prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3482	Antimicrobial resistance prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3501	Enrichment analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3502	Chemical similarity enrichment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3503	Incident curve plotting	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3504	Variant pattern analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3552	Microscope image visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3553	Image annotation	False	2	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_3557	Imputation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3559	Ontology visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3561	Database comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3561	Database comparison	False	2	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_3562	Network simulation	True	0	http://edamontology.org/operation_3562	Network simulation	0
+http://edamontology.org/operation_3563	RNA-seq read count analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3564	Chemical redundancy removal	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3564	Chemical redundancy removal	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3565	RNA-seq time series data analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3566	Simulated gene expression data generation	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_3625	Relation extraction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3625	Relation extraction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3627	Mass spectra calibration	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3628	Chromatographic alignment	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3629	Deisotoping	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3630	Protein quantification	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3630	Protein quantification	False	2	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3631	Peptide identification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3632	Isotopic distributions calculation	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3633	Retention time prediction	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3634	Label-free quantification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3634	Label-free quantification	False	3	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3635	Labeled quantification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3635	Labeled quantification	False	3	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3636	MRM/SRM	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3636	MRM/SRM	False	3	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3637	Spectral counting	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3637	Spectral counting	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3638	SILAC	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3638	SILAC	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3639	iTRAQ	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3639	iTRAQ	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3640	18O labeling	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3640	18O labeling	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3641	TMT-tag	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3641	TMT-tag	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3642	Stable isotope dimethyl labelling	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3642	Stable isotope dimethyl labelling	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3643	Tag-based peptide identification	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3644	de Novo sequencing	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3644	de Novo sequencing	False	3	http://edamontology.org/operation_3429	Generation	1
+http://edamontology.org/operation_3645	PTM identification	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3646	Peptide database search	False	4	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3646	Peptide database search	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3647	Blind peptide database search	False	5	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3647	Blind peptide database search	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3648	Validation of peptide-spectrum matches	True	0	http://edamontology.org/operation_3648	Validation of peptide-spectrum matches	0
+http://edamontology.org/operation_3649	Target-Decoy	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3649	Target-Decoy	False	2	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_3649	Target-Decoy	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3658	Statistical inference	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3659	Regression analysis	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3660	Metabolic network modelling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3661	SNP annotation	False	3	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_3662	Ab-initio gene prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3663	Homology-based gene prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3664	Statistical modelling	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3666	Molecular surface comparison	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3666	Molecular surface comparison	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3672	Gene functional annotation	False	3	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_3675	Variant filtering	False	3	http://edamontology.org/operation_2428	Validation	1
+http://edamontology.org/operation_3675	Variant filtering	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3677	Differential binding analysis	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3677	Differential binding analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3680	RNA-Seq analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3694	Mass spectrum visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3695	Data filtering	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3703	Reference identification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3704	Ion counting	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3704	Ion counting	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3705	Isotope-coded protein label	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3705	Isotope-coded protein label	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3715	Metabolic labeling	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3715	Metabolic labeling	False	4	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3730	Cross-assembly	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3731	Sample comparison	False	2	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3741	Differential protein expression profiling	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3741	Differential protein expression profiling	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3744	Multiple sample visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3745	Ancestral reconstruction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3755	PTM localisation	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3760	Service management	False	1	http://edamontology.org/operation_3760	Service management	1
+http://edamontology.org/operation_3761	Service discovery	False	2	http://edamontology.org/operation_3760	Service management	1
+http://edamontology.org/operation_3762	Service composition	False	2	http://edamontology.org/operation_3760	Service management	1
+http://edamontology.org/operation_3763	Service invocation	False	2	http://edamontology.org/operation_3760	Service management	1
+http://edamontology.org/operation_3766	Weighted correlation network analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3767	Protein identification	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3767	Protein identification	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3778	Text annotation	False	2	http://edamontology.org/operation_0226	Annotation	1
+http://edamontology.org/operation_3791	Collapsing methods	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3792	miRNA expression analysis	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3793	Read summarisation	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3795	In vitro selection	False	3	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_3795	In vitro selection	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3797	Rarefaction	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3798	Read binning	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3799	Quantification	False	1	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3800	RNA-Seq quantification	False	2	http://edamontology.org/operation_3799	Quantification	1
+http://edamontology.org/operation_3801	Spectral library search	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3802	Data sorting	False	2	http://edamontology.org/operation_2409	Data handling	1
+http://edamontology.org/operation_3803	Natural product identification	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3809	DMR identification	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3840	Multilocus sequence typing	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3860	Spectrum calculation	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3860	Spectrum calculation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3860	Spectrum calculation	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3890	Trajectory visualization	False	3	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3890	Trajectory visualization	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3891	Essential dynamics	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3891	Essential dynamics	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3891	Essential dynamics	False	4	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3893	Forcefield parameterisation	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_3894	DNA profiling	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3896	Active site prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3896	Active site prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3897	Ligand-binding site prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3897	Ligand-binding site prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3898	Metal-binding site prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3898	Metal-binding site prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3899	Protein-protein docking	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3899	Protein-protein docking	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3900	DNA-binding protein prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3900	DNA-binding protein prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3901	RNA-binding protein prediction	False	4	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3901	RNA-binding protein prediction	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3902	RNA binding site prediction	False	5	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3902	RNA binding site prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3903	DNA binding site prediction	False	5	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3903	DNA binding site prediction	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3904	Protein disorder prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3904	Protein disorder prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3907	Information extraction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3907	Information extraction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3908	Information retrieval	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3908	Information retrieval	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3918	Genome analysis	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3919	Methylation calling	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3920	DNA testing	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3921	Sequence read processing	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3925	Network visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3925	Network visualisation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3926	Pathway visualisation	False	2	http://edamontology.org/operation_0337	Visualisation	1
+http://edamontology.org/operation_3926	Pathway visualisation	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3927	Network analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3928	Pathway analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3929	Metabolic pathway prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3929	Metabolic pathway prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3933	Demultiplexing	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3935	Dimensionality reduction	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3936	Feature selection	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3937	Feature extraction	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3938	Virtual screening	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3938	Virtual screening	False	3	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_3938	Virtual screening	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3942	Tree dating	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3946	Ecological modelling	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_3946	Ecological modelling	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3947	Phylogenetic tree reconciliation	False	3	http://edamontology.org/operation_2424	Comparison	1
+http://edamontology.org/operation_3947	Phylogenetic tree reconciliation	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3950	Selection detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3960	Principal component analysis	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_3961	Copy number variation detection	False	4	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3962	Deletion detection	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3963	Duplication detection	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3964	Complex CNV detection	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3965	Amplification detection	False	5	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_3968	Adhesin prediction	False	2	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_3968	Adhesin prediction	False	2	http://edamontology.org/operation_2429	Mapping	1
+http://edamontology.org/operation_3968	Adhesin prediction	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_4008	Protein design	False	2	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_4009	Small molecule design	False	2	http://edamontology.org/operation_2430	Design	1
+http://edamontology.org/operation_4031	Power test	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_4032	DNA modification prediction	False	3	http://edamontology.org/operation_2423	Prediction and recognition	1
+http://edamontology.org/operation_4032	DNA modification prediction	False	3	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_4033	Disease transmission analysis	False	2	http://edamontology.org/operation_2426	Modelling and simulation	1
+http://edamontology.org/operation_4033	Disease transmission analysis	False	2	http://edamontology.org/operation_2945	Data analysis	1
+http://edamontology.org/operation_4033	Disease transmission analysis	False	2	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_4034	Multiple testing correction	False	3	http://edamontology.org/operation_3438	Calculation	1
+http://edamontology.org/operation_4043	Data digitisation	False	2	http://edamontology.org/operation_2409	Data handling	1

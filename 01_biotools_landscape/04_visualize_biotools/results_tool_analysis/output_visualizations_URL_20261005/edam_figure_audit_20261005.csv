@@ -1,0 +1,9 @@
+figure_name,population,omic_type,eligible_tools,plotted_tools,missing_or_unobserved
+edam_operation_group_representation_by_omic,Filtered adoption-candidate population,Genomics,4706,4706,115
+edam_operation_group_representation_by_omic,Filtered adoption-candidate population,Multiomics,591,591,30
+edam_operation_group_representation_by_omic,Filtered adoption-candidate population,Proteomics,1391,1391,60
+edam_operation_group_representation_by_omic,Filtered adoption-candidate population,Transcriptomics,3984,3984,152
+edam_curation_by_citation_visibility,Full retrieved population,Genomics,21953,21953,2634
+edam_curation_by_citation_visibility,Full retrieved population,Multiomics,9007,9007,832
+edam_curation_by_citation_visibility,Full retrieved population,Proteomics,9577,9577,743
+edam_curation_by_citation_visibility,Full retrieved population,Transcriptomics,10976,10976,1040

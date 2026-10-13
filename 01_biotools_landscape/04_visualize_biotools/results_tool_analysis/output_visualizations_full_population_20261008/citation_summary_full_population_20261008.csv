@@ -1,0 +1,4 @@
+group,n,median_total_citations,q1,q3
+Published < 2020,21781,54,17,214
+Published >= 2020,24483,12,4,32
+All records,46264,23,7,80

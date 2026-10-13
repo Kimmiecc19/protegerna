@@ -1,0 +1,65 @@
+feature,label,omic_type,n,denominator,prevalence,row_id
+Licence,Copyleft,Genomics,1117,4706,0.23735656608584785,Licence___Copyleft
+Licence,Not licensed,Genomics,242,4706,0.051423714407139824,Licence___Not licensed
+Licence,Other specified,Genomics,252,4706,0.05354866128346791,Licence___Other specified
+Licence,Permissive,Genomics,1058,4706,0.22481937951551212,Licence___Permissive
+Licence,Not reported,Genomics,2037,4706,0.4328516787080323,Licence___Not reported
+Licence,Copyleft,Multiomics,120,591,0.20304568527918782,Licence___Copyleft
+Licence,Not licensed,Multiomics,30,591,0.050761421319796954,Licence___Not licensed
+Licence,Other specified,Multiomics,30,591,0.050761421319796954,Licence___Other specified
+Licence,Permissive,Multiomics,106,591,0.1793570219966159,Licence___Permissive
+Licence,Not reported,Multiomics,305,591,0.5160744500846024,Licence___Not reported
+Licence,Copyleft,Proteomics,269,1391,0.19338605319913732,Licence___Copyleft
+Licence,Not licensed,Proteomics,67,1391,0.04816678648454349,Licence___Not licensed
+Licence,Other specified,Proteomics,78,1391,0.056074766355140186,Licence___Other specified
+Licence,Permissive,Proteomics,328,1391,0.2358015815959741,Licence___Permissive
+Licence,Not reported,Proteomics,649,1391,0.46657081236520487,Licence___Not reported
+Licence,Copyleft,Transcriptomics,836,3984,0.20983935742971888,Licence___Copyleft
+Licence,Not licensed,Transcriptomics,265,3984,0.0665160642570281,Licence___Not licensed
+Licence,Other specified,Transcriptomics,206,3984,0.051706827309236945,Licence___Other specified
+Licence,Permissive,Transcriptomics,841,3984,0.21109437751004015,Licence___Permissive
+Licence,Not reported,Transcriptomics,1836,3984,0.4608433734939759,Licence___Not reported
+Programming language,C++,Genomics,561,4706,0.11920951976200594,Programming language___C++
+Programming language,Other,Genomics,795,4706,0.1689332766680833,Programming language___Other
+Programming language,Perl,Genomics,381,4706,0.0809604759881003,Programming language___Perl
+Programming language,Python,Genomics,1710,4706,0.3633659158521037,Programming language___Python
+Programming language,R,Genomics,1207,4706,0.25648108797280067,Programming language___R
+Programming language,Shell,Genomics,395,4706,0.08393540161495963,Programming language___Shell
+Programming language,Not reported,Genomics,1166,4706,0.2477688057798555,Programming language___Not reported
+Programming language,C++,Transcriptomics,237,3984,0.05948795180722891,Programming language___C++
+Programming language,Other,Transcriptomics,455,3984,0.11420682730923695,Programming language___Other
+Programming language,Perl,Transcriptomics,160,3984,0.040160642570281124,Programming language___Perl
+Programming language,Python,Transcriptomics,1334,3984,0.3348393574297189,Programming language___Python
+Programming language,R,Transcriptomics,1503,3984,0.3772590361445783,Programming language___R
+Programming language,Shell,Transcriptomics,207,3984,0.051957831325301206,Programming language___Shell
+Programming language,Not reported,Transcriptomics,970,3984,0.24347389558232932,Programming language___Not reported
+Programming language,C++,Proteomics,81,1391,0.058231488138030196,Programming language___C++
+Programming language,Other,Proteomics,233,1391,0.16750539180445723,Programming language___Other
+Programming language,Perl,Proteomics,67,1391,0.04816678648454349,Programming language___Perl
+Programming language,Python,Proteomics,493,1391,0.35442127965492454,Programming language___Python
+Programming language,R,Proteomics,429,1391,0.308411214953271,Programming language___R
+Programming language,Shell,Proteomics,31,1391,0.02228612508986341,Programming language___Shell
+Programming language,Not reported,Proteomics,367,1391,0.26383896477354424,Programming language___Not reported
+Programming language,C++,Multiomics,20,591,0.0338409475465313,Programming language___C++
+Programming language,Other,Multiomics,73,591,0.12351945854483926,Programming language___Other
+Programming language,Perl,Multiomics,29,591,0.049069373942470386,Programming language___Perl
+Programming language,Python,Multiomics,171,591,0.2893401015228426,Programming language___Python
+Programming language,R,Multiomics,231,591,0.39086294416243655,Programming language___R
+Programming language,Shell,Multiomics,13,591,0.021996615905245348,Programming language___Shell
+Programming language,Not reported,Multiomics,195,591,0.3299492385786802,Programming language___Not reported
+Operating system,Linux,Genomics,2213,4706,0.47025074373140674,Operating system___Linux
+Operating system,Mac,Genomics,1857,4706,0.3946026349341267,Operating system___Mac
+Operating system,Not reported,Genomics,2462,4706,0.5231619209519762,Operating system___Not reported
+Operating system,Windows,Genomics,1569,4706,0.3334041648958776,Operating system___Windows
+Operating system,Linux,Transcriptomics,1786,3984,0.4482931726907631,Operating system___Linux
+Operating system,Mac,Transcriptomics,1665,3984,0.41792168674698793,Operating system___Mac
+Operating system,Not reported,Transcriptomics,2166,3984,0.5436746987951807,Operating system___Not reported
+Operating system,Windows,Transcriptomics,1550,3984,0.3890562248995984,Operating system___Windows
+Operating system,Linux,Proteomics,629,1391,0.4521926671459382,Operating system___Linux
+Operating system,Mac,Proteomics,592,1391,0.42559309849029475,Operating system___Mac
+Operating system,Not reported,Proteomics,746,1391,0.5363048166786485,Operating system___Not reported
+Operating system,Windows,Proteomics,549,1391,0.3946800862688713,Operating system___Windows
+Operating system,Linux,Multiomics,214,591,0.36209813874788493,Operating system___Linux
+Operating system,Mac,Multiomics,207,591,0.350253807106599,Operating system___Mac
+Operating system,Not reported,Multiomics,372,591,0.6294416243654822,Operating system___Not reported
+Operating system,Windows,Multiomics,182,591,0.3079526226734349,Operating system___Windows

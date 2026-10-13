@@ -1,0 +1,21 @@
+omic_type,label,n,denominator,prevalence
+Genomics,Copyleft,1117,4706,0.23735656608584785
+Genomics,Not licensed,242,4706,0.051423714407139824
+Genomics,Other specified,252,4706,0.05354866128346791
+Genomics,Permissive,1058,4706,0.22481937951551212
+Genomics,Unknown,2037,4706,0.4328516787080323
+Multiomics,Copyleft,120,591,0.20304568527918782
+Multiomics,Not licensed,30,591,0.050761421319796954
+Multiomics,Other specified,30,591,0.050761421319796954
+Multiomics,Permissive,106,591,0.1793570219966159
+Multiomics,Unknown,305,591,0.5160744500846024
+Proteomics,Copyleft,269,1391,0.19338605319913732
+Proteomics,Not licensed,67,1391,0.04816678648454349
+Proteomics,Other specified,78,1391,0.056074766355140186
+Proteomics,Permissive,328,1391,0.2358015815959741
+Proteomics,Unknown,649,1391,0.46657081236520487
+Transcriptomics,Copyleft,836,3984,0.20983935742971888
+Transcriptomics,Not licensed,265,3984,0.0665160642570281
+Transcriptomics,Other specified,206,3984,0.051706827309236945
+Transcriptomics,Permissive,841,3984,0.21109437751004015
+Transcriptomics,Unknown,1836,3984,0.4608433734939759

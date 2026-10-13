@@ -1,0 +1,541 @@
+{
+  "pipeline": "bio.tools landscape visualisation with EDAM Operation analysis",
+  "analysis_date": "2026-09-30",
+  "run_date": "2026-10-05",
+  "population_unit": "biotools_id + omic_type tool-domain record",
+  "citation_policy": {
+    "source": "Dimensions",
+    "coverage": "complete and conflict-free for citation statistics and scores",
+    "raw_total": "total_citations_reported",
+    "age_denominator": "Years since earliest available linked publication, inclusive; not software release age"
+  },
+  "population_source_format": "RDS preferred; sanitized TSV fallback",
+  "populations": {
+    "full_retrieved": 51513,
+    "filtered_adoption_candidate": 10672
+  },
+  "edam": {
+    "valid_status": "Valid EDAM operation",
+    "aggregation_depth": 1
+  },
+  "github": {
+    "engagement_components": ["stars", "forks", "watchers"],
+    "open_issues_included": false,
+    "missing_treatment": "Unknown",
+    "status_measure": "Repository commit-recency status",
+    "status_source_field": "GitHub API pushed_at (most recent push to any branch)",
+    "status_reference_date": "2026-09-30",
+    "active_months": 18,
+    "stale_months": 36,
+    "retrieval_date_range": ["2026-09-27", "2026-09-30"],
+    "rows_without_retrieval_date": 0,
+    "pushes_after_reference_date": 0,
+    "cache_frozen": true,
+    "status_counts": {
+      "Active": 1661,
+      "Stale": 1068,
+      "Inactive": 3043,
+      "Unknown": 4900
+    }
+  },
+  "composite_score": {
+    "role": "exploratory supplementary ranking only",
+    "components": ["rescale(log1p(citations per year))", "rescale(commit year)", "rescale(log1p(stars + forks + watchers))"],
+    "weighting": "unweighted mean of the three components",
+    "validated_measure_of_quality_or_adoption": false
+  },
+  "loess": {
+    "role": "descriptive visualisation only",
+    "candidate_exclusion": false
+  },
+  "inputs": [
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/publication_analysis_helpers.R",
+      "md5": "a04bfb44fa0add06614b3bf365db5414",
+      "bytes": 4507
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/analysis_helpers.R",
+      "md5": "ff82d8591834a79ab5af014280d420d2",
+      "bytes": 11468
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/landscape_plot_helpers.R",
+      "md5": "2e5468c2ef24fcc4c6518f047c4bcd0d",
+      "bytes": 35001
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/github_helpers.R",
+      "md5": "691b95d5fa6cb63a8bbe662cbb30bcb8",
+      "bytes": 6585
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/visualize_biotools_final2026.R",
+      "md5": "e1ead8ef1ba8876e63371239f9d2d794",
+      "bytes": 75753
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/thesis_palette.R",
+      "md5": "fd77a94c6a1ddb113747329853e1db5d",
+      "bytes": 11487
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/visualize_config.yaml",
+      "md5": "2d35e6f012920641e87958af3f585483",
+      "bytes": 2602
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/edam_curation_analysis_final2026.R",
+      "md5": "4f66c979a9f50b92e032f890b32bec0c",
+      "bytes": 17301
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_candidate_tools.tsv",
+      "md5": "56507aaa450cbdb66400503ba68e2799",
+      "bytes": 43453151
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/transcriptomic_candidate_tools.tsv",
+      "md5": "0f48420c579ca5ebbacee177652260ee",
+      "bytes": 36383901
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/proteomic_candidate_tools.tsv",
+      "md5": "2946aea7f8fa5d32afad0a02c6ecc237",
+      "bytes": 13182738
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/multiomic_candidate_tools.tsv",
+      "md5": "02ba96b34867596cf39643351d731255",
+      "bytes": 5591762
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_all_records_quality_flags.tsv",
+      "md5": "db2b05bf91aab216b53af93ebfbb959a",
+      "bytes": 188967851
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/transcriptomic_all_records_quality_flags.tsv",
+      "md5": "934dfed23b69c17a1721ad08ca018e42",
+      "bytes": 94916749
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/proteomic_all_records_quality_flags.tsv",
+      "md5": "53fb32755c8941c0288b52792bd788f2",
+      "bytes": 86146004
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/multiomic_all_records_quality_flags.tsv",
+      "md5": "b723713edc7772cb99e8f62a9ff812ce",
+      "bytes": 79468434
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/all_edam_operations_mapped.tsv",
+      "md5": "77e61ca83d0e351c8cc7f418291fdfb5",
+      "bytes": 120709490
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/data_filter_biotools/edam/EDAM.owl",
+      "md5": "52e00fc44a902305692a92a0e733eb51",
+      "bytes": 3413870
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/data_tool_analysis/github_commit_cache_final.csv",
+      "md5": "05a636c6cb9c1e7c76fba5495c1064c2",
+      "bytes": 289003
+    }
+  ],
+  "software": {
+    "R": "R version 4.6.1 (2026-06-24 ucrt)",
+    "platform": "x86_64-w64-mingw32",
+    "packages": {
+      "dplyr": "1.2.1",
+      "readr": "2.2.0",
+      "ggplot2": "4.0.3",
+      "tidyr": "1.3.2",
+      "purrr": "1.2.2",
+      "yaml": "2.3.12",
+      "lubridate": "1.9.5",
+      "httr": "1.4.8",
+      "jsonlite": "2.0.0",
+      "glue": "1.8.1",
+      "scales": "1.4.0",
+      "ggrepel": "0.9.8",
+      "patchwork": "1.3.2",
+      "ggridges": "0.5.7",
+      "rstatix": "1.1.0"
+    }
+  },
+  "outputs": {
+    "directory": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/output_visualizations_URL_20261005",
+    "figure_audit_rows": 28,
+    "files": [
+      {
+        "file": "age_vs_citations_clean_20261005.png",
+        "md5": "6aeb9d9593cb68e92088ed4c9545f30e",
+        "bytes": 724477
+      },
+      {
+        "file": "age_vs_citations_combined_20261005.png",
+        "md5": "b2d4e7206c9b4a69b795526492e95338",
+        "bytes": 1501034
+      },
+      {
+        "file": "age_vs_citations_faceted_20261005.png",
+        "md5": "dd5ae8fbce1812c73829f1d9aac36c91",
+        "bytes": 1077589
+      },
+      {
+        "file": "age_vs_citations_faceted_clean_20261005.png",
+        "md5": "64df534894efc1153faf87f61cb8b852",
+        "bytes": 1120785
+      },
+      {
+        "file": "age_vs_citations_scatter_20261005.png",
+        "md5": "aafad23d926726f63a1ef95515280fd3",
+        "bytes": 652174
+      },
+      {
+        "file": "age_vs_citations_scatter_vs_clean_20261005.png",
+        "md5": "2f25f0f3a57182cccb9d3462a39679bf",
+        "bytes": 1248577
+      },
+      {
+        "file": "candidate_citation_coverage_20261005.csv",
+        "md5": "252659188b9fdd978897b8d5f85694b5",
+        "bytes": 87
+      },
+      {
+        "file": "citation_visibility_vs_github_engagement_20261005.png",
+        "md5": "263c34c54e1d1c335439b13e1dfa7ce0",
+        "bytes": 1522007
+      },
+      {
+        "file": "df_for_maint_github_full_20261005.csv",
+        "md5": "6cb8bfe6bafff8b6fed85790fd9586e1",
+        "bytes": 106561126
+      },
+      {
+        "file": "df_for_maint_github_full_20261005.rds",
+        "md5": "a8ec8e31a3197c60ef243825b3ed4c13",
+        "bytes": 18419210
+      },
+      {
+        "file": "df_for_plots_20261005.csv",
+        "md5": "543e4cc1f7ad43a6e99b9de89d14f443",
+        "bytes": 106359079
+      },
+      {
+        "file": "edam_curation_adoption_threshold_sensitivity_20261005.csv",
+        "md5": "a2f78bd5f4ebc7ca16e045a243709c10",
+        "bytes": 9736
+      },
+      {
+        "file": "edam_curation_by_citation_visibility_20261005.png",
+        "md5": "1d4f3965098f286ae92d7c0c423d9931",
+        "bytes": 149034
+      },
+      {
+        "file": "edam_curation_by_independent_adoption_visibility_20261005.csv",
+        "md5": "ff451a64f2c4674b9a79681268132898",
+        "bytes": 4147
+      },
+      {
+        "file": "edam_curation_not_valid_share_20261005.csv",
+        "md5": "338d6add759366fedfe8fea7edbfac4d",
+        "bytes": 1834
+      },
+      {
+        "file": "edam_figure_audit_20261005.csv",
+        "md5": "21e5e3d54dc4ce5c816ed5e55a28ea24",
+        "bytes": 876
+      },
+      {
+        "file": "edam_operation_group_prevalence_all_20261005.csv",
+        "md5": "53d1adf679e204d66856795447c1bc81",
+        "bytes": 11417
+      },
+      {
+        "file": "edam_operation_group_representation_by_omic_20261005.csv",
+        "md5": "60eb04c5d4ae466d4d9c5573e3435859",
+        "bytes": 6437
+      },
+      {
+        "file": "edam_operation_group_representation_by_omic_20261005.png",
+        "md5": "96b30e6fe9b47218bdd7828dba657bec",
+        "bytes": 205242
+      },
+      {
+        "file": "expanded_omics_20261005.csv",
+        "md5": "4756b8682eed42b7c147b9ad9c4a2228",
+        "bytes": 333009
+      },
+      {
+        "file": "figure_level_audit_20261005.csv",
+        "md5": "a96b3f807256069e1c682948ed831601",
+        "bytes": 3137
+      },
+      {
+        "file": "filtered_adoption_candidate_population_20261005.csv",
+        "md5": "bcac70c672769d49f3a02512e6d616bb",
+        "bytes": 105781416
+      },
+      {
+        "file": "filtered_adoption_candidate_population_20261005.tsv",
+        "md5": "34022fcf6cbe778ea067c0fff8dc1c78",
+        "bytes": 105648404
+      },
+      {
+        "file": "full_retrieved_population_20261005.csv",
+        "md5": "bfa85623c2e9b42ba57effed87ea54d8",
+        "bytes": 482538297
+      },
+      {
+        "file": "independent_edam_curation_records_20261005.csv",
+        "md5": "ef30367852a0e052ccf48467f7fa0dc3",
+        "bytes": 490772850
+      },
+      {
+        "file": "language_groups_20261005.csv",
+        "md5": "524ac7ff7c75b4f9fa1dd3d8538cc854",
+        "bytes": 377
+      },
+      {
+        "file": "language_multivalue_prevalence_20261005.csv",
+        "md5": "e7044fb5f69ae65d95ce514f769a488d",
+        "bytes": 2450
+      },
+      {
+        "file": "language_os_faceted_bars_20261005.png",
+        "md5": "7f2188382b5c229138f27b4d7d0aab06",
+        "bytes": 187223
+      },
+      {
+        "file": "language_os_pies_20261005.png",
+        "md5": "b7edb30ed872e3141cefdd5a62c104e3",
+        "bytes": 144442
+      },
+      {
+        "file": "license_by_omic_20261005.csv",
+        "md5": "318a20ae8f79b3b0bf3817fb8b7a24ac",
+        "bytes": 1078
+      },
+      {
+        "file": "license_counts_20261005.csv",
+        "md5": "a31fc4a63d7757efddbfc97c4eb90f7e",
+        "bytes": 253
+      },
+      {
+        "file": "license_distribution_20261005.png",
+        "md5": "073e7f06656dc1c75015e486f4cd2eb3",
+        "bytes": 67371
+      },
+      {
+        "file": "license_faceted_bars_20261005.png",
+        "md5": "3521206216672825dcaf5facbf291b69",
+        "bytes": 108266
+      },
+      {
+        "file": "maintenance_age_ridge_20261005.png",
+        "md5": "0e21eff8c68e4e227f5979658ec95326",
+        "bytes": 124111
+      },
+      {
+        "file": "maintenance_age_vs_citations_faceted_20261005.png",
+        "md5": "8d775fe685d2fa805fa1b65b7addde81",
+        "bytes": 641717
+      },
+      {
+        "file": "maintenance_age_vs_citations_faceted_clean_20261005.png",
+        "md5": "c6036893f50ff23a4aa4be13e376eac4",
+        "bytes": 646386
+      },
+      {
+        "file": "maintenance_citations_per_year_20261005.png",
+        "md5": "2a6d408a7e91fbcca9fbf1c793d6d025",
+        "bytes": 954445
+      },
+      {
+        "file": "maintenance_citations_ridge_20261005.png",
+        "md5": "f018f3adaa938bdd0e93276609f1779b",
+        "bytes": 156172
+      },
+      {
+        "file": "maintenance_distribution_all_candidates_20261005.csv",
+        "md5": "dfdabf89ec23a46b3b429d51472de97a",
+        "bytes": 811
+      },
+      {
+        "file": "maintenance_distribution_all_candidates_20261005.png",
+        "md5": "a3bdd6f618610c0db646c551a98cee98",
+        "bytes": 129441
+      },
+      {
+        "file": "maintenance_impact_combined_20261005.png",
+        "md5": "530ae57aeed0e747447f5d959513fecf",
+        "bytes": 835563
+      },
+      {
+        "file": "operating_system_multivalue_prevalence_20261005.csv",
+        "md5": "455aaeba2035d8347ba4e385a10d8b69",
+        "bytes": 1424
+      },
+      {
+        "file": "outlier_inspection_20261005.png",
+        "md5": "a06713af941d7bce6e4bed6991ccb716",
+        "bytes": 536693
+      },
+      {
+        "file": "palettes.rds",
+        "md5": "d7f29f4a7370976e84f6cd963a4a5256",
+        "bytes": 462
+      },
+      {
+        "file": "publication_vs_year_added_scatter_20261005.png",
+        "md5": "af205117abfc4377608e7563b962c931",
+        "bytes": 662285
+      },
+      {
+        "file": "stats_age_by_status_20261005.csv",
+        "md5": "96fc074d98b7ff0a03c08d242717a094",
+        "bytes": 108
+      },
+      {
+        "file": "stats_age_citations_20261005.csv",
+        "md5": "f0a1acd370349a3acb25f5ce1d81065d",
+        "bytes": 447
+      },
+      {
+        "file": "stats_cit_vs_engagement_20261005.csv",
+        "md5": "a6bab2cb6e7db93c066721994b5e437d",
+        "bytes": 582
+      },
+      {
+        "file": "stats_cpy_by_status_20261005.csv",
+        "md5": "35ea189b018df916e6445c05d788258d",
+        "bytes": 157
+      },
+      {
+        "file": "stats_dunn_20261005.csv",
+        "md5": "7fffb9688caa4d35d8b77505758925d5",
+        "bytes": 381
+      },
+      {
+        "file": "stats_kruskal_20261005.csv",
+        "md5": "622c0cd8ee9855fe38325733d1126933",
+        "bytes": 154
+      },
+      {
+        "file": "technical_stack_combined_20261005.png",
+        "md5": "b41ea80383114a2fd4109c8820c242df",
+        "bytes": 239993
+      },
+      {
+        "file": "technical_stack_faceted_20261005.png",
+        "md5": "25f8d026e31f14af661bb0b7098a1fe3",
+        "bytes": 299862
+      },
+      {
+        "file": "technical_stack_heatmap_20261005.csv",
+        "md5": "f608997562dd32a04001387dbfa28952",
+        "bytes": 5890
+      },
+      {
+        "file": "technical_stack_heatmap_20261005.png",
+        "md5": "3d8b925557f0b7c150dc9f3e76e5f30f",
+        "bytes": 215876
+      },
+      {
+        "file": "tool_domain_records_20261005.csv",
+        "md5": "4b1cc868de579716af2ecf43c5629f71",
+        "bytes": 947313
+      },
+      {
+        "file": "tool_domain_records_20261005.tsv",
+        "md5": "ae18b9ff7e773101c097e695c6634286",
+        "bytes": 947313
+      },
+      {
+        "file": "tool_type_distribution_by_omics_20261005.png",
+        "md5": "dcf82d6e88827ff4d7e781cf1cc2f703",
+        "bytes": 198548
+      },
+      {
+        "file": "tool_type_distribution_by_omics_bars_20261005.png",
+        "md5": "d89ca008fbb15bd8e18b8ca414d938db",
+        "bytes": 203337
+      },
+      {
+        "file": "tool_type_prevalence_by_omics_20261005.csv",
+        "md5": "aa5be023c6b8bd57d1c8354f7058a5b1",
+        "bytes": 5979
+      },
+      {
+        "file": "tool_type_status_20261005.png",
+        "md5": "e2080731b74366f8137bafe37dace05f",
+        "bytes": 117161
+      },
+      {
+        "file": "tool_type_status_pct_20261005.csv",
+        "md5": "94e7556ca2c1da1976684635cd0d98e6",
+        "bytes": 4565
+      },
+      {
+        "file": "tool_type_status_pct_20261005.png",
+        "md5": "2f353918cfb2ff9d6ae146cbc2445fd9",
+        "bytes": 178542
+      },
+      {
+        "file": "tools_added_per_year_by_omics_20261005.png",
+        "md5": "90d61bc1749c613492d8487ebba350a3",
+        "bytes": 117261
+      },
+      {
+        "file": "tools_added_per_year_by_omics_pct_20261005.png",
+        "md5": "3b55b06fdfd75734d2ca5cb1906b38c5",
+        "bytes": 106225
+      },
+      {
+        "file": "tools_augmented_github_full_20261005.csv",
+        "md5": "3cd71f6969ca2e1aa0e7ea8938f76dc8",
+        "bytes": 106359079
+      },
+      {
+        "file": "tools_augmented_github_full_20261005.rds",
+        "md5": "e7f875b2aff819f775cfdbead76f7dc3",
+        "bytes": 18413272
+      },
+      {
+        "file": "tools_cleaned_cache_20261005.rds",
+        "md5": "8aedb048720af438892c83b2598f94cb",
+        "bytes": 18170630
+      },
+      {
+        "file": "top_10_git_tools_composite_20261005.png",
+        "md5": "a40c197cf0163b789868479fee7393cb",
+        "bytes": 193033
+      },
+      {
+        "file": "top_by_score_git_20261005.csv",
+        "md5": "2321aff80ed0c46d663a0416cd156aaf",
+        "bytes": 539694
+      },
+      {
+        "file": "top_by_score_git_20261005.tsv",
+        "md5": "809238528e1be7ad45b111ec8d57cc85",
+        "bytes": 539170
+      },
+      {
+        "file": "upset_intersections_20261005.csv",
+        "md5": "61320e253ba5de2d39b65cdf5cfaaa79",
+        "bytes": 479
+      },
+      {
+        "file": "upset_tools_per_omic_20261005.png",
+        "md5": "2198f4822c16d90bc0f8ada858e5beaa",
+        "bytes": 130529
+      }
+    ],
+    "statistics": ["stats_age_citations_20261005.csv", "stats_cpy_by_status_20261005.csv", "stats_kruskal_20261005.csv", "stats_dunn_20261005.csv", "stats_age_by_status_20261005.csv", "stats_cit_vs_engagement_20261005.csv"]
+  }
+}

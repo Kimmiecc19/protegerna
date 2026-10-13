@@ -1,0 +1,161 @@
+{
+  "pipeline": "bio.tools age-citation and registration analyses, full retrieved population",
+  "analysis_date": "2026-09-30",
+  "run_date": "2026-10-08",
+  "population_unit": "biotools_id + omic_type tool-domain record",
+  "citation_policy": {
+    "source": "Dimensions",
+    "coverage": "complete and conflict-free for citation analyses; registration retains all records",
+    "raw_total": "total_citations_reported",
+    "age_denominator": "Years since earliest available linked publication, inclusive"
+  },
+  "registration_population": "all_records",
+  "counts": {
+    "full_retrieved_records": 51513,
+    "unique_biotools_entries": 28714,
+    "records_with_citations_and_publication_year": 46264,
+    "registration_records": 51513,
+    "publication_vs_added_records": 46889,
+    "age_citation_outliers": 1006,
+    "outlier_threshold_log1p": 4.1158
+  },
+  "trend": {
+    "span": 0.75,
+    "boundary_publication_year": 2020,
+    "min_loess_n": 50,
+    "tail_quantile": 0.97
+  },
+  "inputs": [
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_all_records_quality_flags.tsv",
+      "md5": "db2b05bf91aab216b53af93ebfbb959a"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/transcriptomic_all_records_quality_flags.tsv",
+      "md5": "934dfed23b69c17a1721ad08ca018e42"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/proteomic_all_records_quality_flags.tsv",
+      "md5": "53fb32755c8941c0288b52792bd788f2"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/multiomic_all_records_quality_flags.tsv",
+      "md5": "b723713edc7772cb99e8f62a9ff812ce"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/publication_analysis_helpers.R",
+      "md5": "a04bfb44fa0add06614b3bf365db5414"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/analysis_helpers.R",
+      "md5": "ff82d8591834a79ab5af014280d420d2"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/landscape_plot_helpers.R",
+      "md5": "2e5468c2ef24fcc4c6518f047c4bcd0d"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/visualize_config.yaml",
+      "md5": "2d35e6f012920641e87958af3f585483"
+    },
+    {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/thesis_palette.R",
+      "md5": "fd77a94c6a1ddb113747329853e1db5d"
+    }
+  ],
+  "software": {
+    "R": "R version 4.6.1 (2026-06-24 ucrt)",
+    "platform": "x86_64-w64-mingw32",
+    "packages": {
+      "dplyr": "1.2.1",
+      "readr": "2.2.0",
+      "ggplot2": "4.0.3",
+      "tidyr": "1.3.2",
+      "purrr": "1.2.2",
+      "yaml": "2.3.12",
+      "lubridate": "1.9.5",
+      "glue": "1.8.1",
+      "scales": "1.4.0",
+      "ggrepel": "0.9.8",
+      "patchwork": "1.3.2"
+    }
+  },
+  "outputs": [
+    {
+      "file": "added_per_year_full_population_20261008.csv",
+      "md5": "d6e51b420e2a941133231d2cdab22096"
+    },
+    {
+      "file": "added_per_year_pct_full_population_20261008.csv",
+      "md5": "d26b2160d419997068dc58ed17ef9855"
+    },
+    {
+      "file": "age_citation_outliers_full_population_20261008.csv",
+      "md5": "baf44a6da194e44225ca615fd870b24a"
+    },
+    {
+      "file": "age_citation_trends_full_population_20261008.csv",
+      "md5": "e535bf6f41882b07dff27f1558455d11"
+    },
+    {
+      "file": "age_vs_citations_clean_full_population_20261008.png",
+      "md5": "94ee38df71083b14807e7f36ddf3e952"
+    },
+    {
+      "file": "age_vs_citations_combined_full_population_20261008.png",
+      "md5": "e18f2ab760eabaff5cee88858f40d38b"
+    },
+    {
+      "file": "age_vs_citations_faceted_clean_full_population_20261008.png",
+      "md5": "c27004028051bf494f5904507b210f84"
+    },
+    {
+      "file": "age_vs_citations_faceted_full_population_20261008.png",
+      "md5": "891c4316e1c9135cd93077d1594e351f"
+    },
+    {
+      "file": "age_vs_citations_scatter_full_population_20261008.png",
+      "md5": "c9212f0af30bc133be40c9381d51b69c"
+    },
+    {
+      "file": "age_vs_citations_scatter_vs_clean_full_population_20261008.png",
+      "md5": "2894e8a9eb5784da4905b85b52989285"
+    },
+    {
+      "file": "citation_summary_full_population_20261008.csv",
+      "md5": "93f8ff03adfe509d4b5ca4b5973ae51d"
+    },
+    {
+      "file": "figure_level_audit_full_population_20261008.csv",
+      "md5": "52095146035eb4bd813e62989ad0a8ee"
+    },
+    {
+      "file": "full_population_citation_coverage_20261008.csv",
+      "md5": "6e9f6624da0517be38c1d1d58a051f51"
+    },
+    {
+      "file": "outlier_inspection_full_population_20261008.png",
+      "md5": "840b39fd55e4df1d95f3c9823873d355"
+    },
+    {
+      "file": "publication_vs_year_added_scatter_full_population_20261008.png",
+      "md5": "59125312c819735e7d372182f5d446c4"
+    },
+    {
+      "file": "registration_delay_summary_full_population_20261008.csv",
+      "md5": "2b4e9e804144ebf76850108391ed4a87"
+    },
+    {
+      "file": "stats_age_citations_full_population_20261008.csv",
+      "md5": "3e68790be0d6a21968addac8585573d6"
+    },
+    {
+      "file": "tools_added_per_year_by_omics_full_population_20261008.png",
+      "md5": "712556b507015aaac67fd7c05c5d28c9"
+    },
+    {
+      "file": "tools_added_per_year_by_omics_pct_full_population_20261008.png",
+      "md5": "49724dccc46c4b4f1eaf67223be9f1b7"
+    }
+  ]
+}

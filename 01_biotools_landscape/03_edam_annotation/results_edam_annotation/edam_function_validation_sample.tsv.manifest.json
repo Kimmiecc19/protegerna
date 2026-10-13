@@ -1,0 +1,40 @@
+{
+  "pipeline": "Manual EDAM function-validation sampling",
+  "run_timestamp_utc": "2026-09-30T10:39:54.108380+00:00",
+  "seed": 42,
+  "per_omic_requested": 50,
+  "sample_rows": 200,
+  "mapped_operations": {
+    "path": "/home/kcoetzer/objective_one/3_filter_biotools/results_sept2026/all_edam_operations_mapped.tsv",
+    "md5": "77e61ca83d0e351c8cc7f418291fdfb5"
+  },
+  "tool_audits": [
+    {
+      "path": "/home/kcoetzer/objective_one/3_filter_biotools/results_sept2026/genomic_all_records_quality_flags.tsv",
+      "md5": "db2b05bf91aab216b53af93ebfbb959a"
+    },
+    {
+      "path": "/home/kcoetzer/objective_one/3_filter_biotools/results_sept2026/multiomic_all_records_quality_flags.tsv",
+      "md5": "b723713edc7772cb99e8f62a9ff812ce"
+    },
+    {
+      "path": "/home/kcoetzer/objective_one/3_filter_biotools/results_sept2026/proteomic_all_records_quality_flags.tsv",
+      "md5": "53fb32755c8941c0288b52792bd788f2"
+    },
+    {
+      "path": "/home/kcoetzer/objective_one/3_filter_biotools/results_sept2026/transcriptomic_all_records_quality_flags.tsv",
+      "md5": "934dfed23b69c17a1721ad08ca018e42"
+    }
+  ],
+  "output": {
+    "path": "/home/kcoetzer/objective_one/3_filter_biotools/results_sept2026/edam_function_validation_sample.tsv",
+    "md5": "2b5a00e61cc6305dbe74fdf5700a55ff"
+  },
+  "allowed_decisions": [
+    "Correct",
+    "Partially correct",
+    "Too broad",
+    "Incorrect",
+    "Unable to determine"
+  ]
+}

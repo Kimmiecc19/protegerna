@@ -1,0 +1,174 @@
+{
+  "pipeline": "bio.tools curation audit and candidate selection",
+  "run_timestamp_utc": "2026-09-30 10:20:24 UTC",
+  "publication_policy": {
+    "source": "Dimensions",
+    "input_tag": "sept2026",
+    "traceability": "DOI or PMID or PMCID",
+    "publication_year": "Earliest available linked publication year",
+    "thresholds": "Recent records pass without citation counts; older partial totals above threshold pass, below threshold require review; conflicts require review",
+    "registry_completeness": "Original bio.tools publication evidence; enriched completeness reported separately"
+  },
+  "analysis_date": "2026-09-30",
+  "omic": "genomics",
+  "script": {
+    "path": "C:\\Users\\USER-PC\\OneDrive\\Documents\\2026 PhD\\protegerna\\1_omics_tool_landscape\\3_filter_biotools\\code_filter_biotools\\filter_biotools_final2026.R",
+    "md5": "cfbba5639cc01b8bb6b37cd0c3bf32f6"
+  },
+  "inputs": {
+    "records": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/1_fetch_biotools/results_fetch_biotools_final/genomics_fetch_biotools_sept2026.tsv",
+      "md5": "d53961093451e91872b4399685854ca4"
+    },
+    "function_records": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/1_fetch_biotools/results_fetch_biotools_final/genomics_fetch_biotools_sept2026.tsv.functions.tsv",
+      "md5": "c5042d8db89b3b0692a1715a231257d4"
+    },
+    "keep_terms": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/data_filter_biotools/genomic_keep_topics.txt",
+      "md5": "829bc172c700c54201ab7b57b98b3135"
+    },
+    "exclusion_terms": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/data_filter_biotools/general_exclusion_terms_2026.txt",
+      "md5": "c880f61f6a497a57dbeb97ecba283a36"
+    },
+    "publication_policy": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/4_tool_analysis/code/publication_analysis_helpers.R",
+      "md5": null
+    }
+  },
+  "thresholds": {
+    "recent_publication_year": 2020,
+    "citations_2015_2019": 30,
+    "citations_2010_2014": 50,
+    "citations_before_2010": 70,
+    "url_timeout_seconds": 5,
+    "url_retries": 1
+  },
+  "scope_model": {
+    "classes": ["Include", "Review", "Out of scope"],
+    "positive_sources": ["bio.tools topic", "name and description", "bio.tools function operation/input/output metadata", "at least two distinct omics layers for multiomics"],
+    "rule": "Positive omics evidence -> Include; otherwise exclusion evidence -> Out of scope; otherwise Review",
+    "exclusion_never_overrides_positive_evidence": true,
+    "review_records_excluded_from_candidate_set": true
+  },
+  "url_audit_performed": true,
+  "url_audit": {
+    "scope": "citation-eligible records only (after all metadata gates)",
+    "workers": 20,
+    "cache": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/url_audit_cache_20260930.csv",
+      "md5": "01f987fda5d1041b2316ca19915f03b7"
+    },
+    "checked_at_utc_range": ["2026-09-30 10:12:23 UTC", "2026-09-30 10:19:57 UTC"]
+  },
+  "record_counts": {
+    "initial_load": 21953,
+    "unique_records": 21953,
+    "scope_included": 8982,
+    "scope_review": 12177,
+    "scope_out_of_scope": 794,
+    "access_and_license_eligible": 8934,
+    "programmatic_scope": 7448,
+    "publication_traceable": 7017,
+    "citation_eligible": 5541,
+    "final_candidate": 4706
+  },
+  "function_classification": "bio.tools function.operation EDAM URIs; no investigator-defined keyword categories",
+  "outputs": {
+    "audit_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_all_records_quality_flags.tsv",
+      "md5": "db2b05bf91aab216b53af93ebfbb959a"
+    },
+    "audit_rds": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_all_records_quality_flags.rds",
+      "md5": "a3787d5f4753a4343d946878ac335056"
+    },
+    "candidate_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_candidate_tools.tsv",
+      "md5": "56507aaa450cbdb66400503ba68e2799"
+    },
+    "candidate_rds": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_candidate_tools.rds",
+      "md5": "24ff0ac5829a1618efed5896279ade31"
+    },
+    "scope_included_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_scope_included.tsv",
+      "md5": "04cec154b2178a02f99922d9e6cae6b8"
+    },
+    "scope_review_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_scope_review.tsv",
+      "md5": "4cd05cf2b290f8c6581a845154866a8d"
+    },
+    "scope_out_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_scope_out_of_scope.tsv",
+      "md5": "47c3d8afbcba5ee1dbcfea81f67a3e5b"
+    },
+    "legacy_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_annotated_filtered_tools_jan2026.tsv",
+      "md5": "56507aaa450cbdb66400503ba68e2799"
+    },
+    "legacy_rds": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_annotated_filtered_tools_jan2026.rds",
+      "md5": "24ff0ac5829a1618efed5896279ade31"
+    },
+    "audit_function_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_all_function_operations.tsv",
+      "md5": "a597e0594239305ac0e45583a9398806"
+    },
+    "audit_function_rds": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_all_function_operations.rds",
+      "md5": "a73c8915e81a42f53a6e6ab03c9daed7"
+    },
+    "candidate_function_tsv": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_candidate_function_operations.tsv",
+      "md5": "803efe6e0d7e5e062864065cd87f144e"
+    },
+    "candidate_function_rds": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_candidate_function_operations.rds",
+      "md5": "55db50132bf4e8cabc7cca7c633be2fb"
+    },
+    "14": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_citation_review.tsv",
+      "md5": "5e9b3c34af56405c1d4cb50171bdd59c"
+    },
+    "15": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_citation_coverage.tsv",
+      "md5": "3a1232874f31883dfa90323a19f54152"
+    },
+    "16": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_function_annotation_quality.tsv",
+      "md5": "4f0a55e8f39c81ab5a2598fc4c21ed13"
+    },
+    "17": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_independent_quality_statistics.tsv",
+      "md5": "e9a45e835f8aba581a93691b343968fe"
+    },
+    "18": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_registry_age_completeness.tsv",
+      "md5": "5c180a536d70d1ecf244fd8fa85267fe"
+    },
+    "19": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomic_registry_age_completeness_model.tsv",
+      "md5": "e9a913407dabb81c7192d6dc6ea6ba37"
+    },
+    "20": {
+      "path": "C:/Users/USER-PC/OneDrive/Documents/2026 PhD/protegerna/1_omics_tool_landscape/3_filter_biotools/results_filter_biotools/genomics_filter_summary_jan2026.tsv",
+      "md5": "66adbca435f7f23f46ae766aed6ca730"
+    }
+  },
+  "software": {
+    "R": "R version 4.6.1 (2026-06-24 ucrt)",
+    "platform": "x86_64-w64-mingw32",
+    "packages": {
+      "dplyr": "1.2.1",
+      "curl": "7.1.0",
+      "jsonlite": "2.0.0",
+      "purrr": "1.2.2",
+      "readr": "2.2.0",
+      "stringr": "1.6.0",
+      "tidyr": "1.3.2",
+      "janitor": "2.2.1"
+    }
+  }
+}

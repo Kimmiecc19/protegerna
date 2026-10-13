@@ -1,0 +1,4 @@
+maintenance,n,median_cpy,q1,q3,median_total_citations,median_age
+Active,1650,3.5,1,11,14,5
+Stale,1065,3,1,7,14,5
+Inactive,3026,2.4,0.7142857142857143,6,14,6

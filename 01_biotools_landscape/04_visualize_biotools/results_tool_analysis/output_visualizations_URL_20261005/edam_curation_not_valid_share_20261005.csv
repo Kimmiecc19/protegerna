@@ -1,0 +1,25 @@
+omic_type,adoption_visibility_group,not_valid,denominator,share_not_valid,conf_low,conf_high,visibility
+Genomics,Complete citation visibility unavailable,634,2634,0.24069855732725892,0.2247575370505503,0.2573948131476679,"Incomplete/missing
+citation data"
+Genomics,Higher age-adjusted citation visibility,153,4834,0.031650806785271,0.02707547701703923,0.03696991625556777,"Top 25%
+citations/year"
+Genomics,Other observable citation visibility,518,14485,0.035761132205730066,0.032858078777667374,0.03891035500470705,"Other
+(bottom 75%)"
+Multiomics,Complete citation visibility unavailable,338,832,0.40625,0.3733826490373536,0.439979085591001,"Incomplete/missing
+citation data"
+Multiomics,Higher age-adjusted citation visibility,169,2045,0.08264058679706601,0.07147514950513698,0.09537107344149201,"Top 25%
+citations/year"
+Multiomics,Other observable citation visibility,471,6130,0.0768352365415987,0.07042996355413633,0.0837705427958507,"Other
+(bottom 75%)"
+Proteomics,Complete citation visibility unavailable,164,743,0.22072678331090176,0.19238411617627765,0.25194239368927135,"Incomplete/missing
+citation data"
+Proteomics,Higher age-adjusted citation visibility,82,2209,0.03712086917157085,0.030006413035793454,0.04584242744559517,"Top 25%
+citations/year"
+Proteomics,Other observable citation visibility,203,6625,0.030641509433962263,0.02675576063365448,0.03507125112498955,"Other
+(bottom 75%)"
+Transcriptomics,Complete citation visibility unavailable,286,1040,0.275,0.24872804520819797,0.302928007494734,"Incomplete/missing
+citation data"
+Transcriptomics,Higher age-adjusted citation visibility,101,2484,0.04066022544283414,0.03357632194247731,0.04916265569248368,"Top 25%
+citations/year"
+Transcriptomics,Other observable citation visibility,259,7452,0.03475577026301664,0.03083107669440072,0.03915987760671647,"Other
+(bottom 75%)"

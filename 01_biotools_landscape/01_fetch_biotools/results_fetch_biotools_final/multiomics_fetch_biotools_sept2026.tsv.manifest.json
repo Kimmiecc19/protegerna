@@ -1,0 +1,62 @@
+{
+  "pipeline": "bio.tools API retrieval",
+  "script": "/home/kcoetzer/objective_one/1_fetch_biotools_json2tsv/fetch_biotools_final2026.py",
+  "run_timestamp_utc": "2026-09-29T20:28:33.991910+00:00",
+  "api_endpoint": "https://bio.tools/api/tool/",
+  "parameters": {
+    "queries": [
+      "multi-omic",
+      "multiomic",
+      "proteogenomic",
+      "integration",
+      "integrative",
+      "cross-omic",
+      "pan-omic",
+      "pathway",
+      "network"
+    ],
+    "requested_page_size": 50,
+    "timeout_seconds": 30,
+    "max_retries": 3
+  },
+  "counts": {
+    "raw_query_hits": 18155,
+    "unique_biotools_records": 9007,
+    "normalised_function_operation_rows": 23101,
+    "publication_rows": 9382,
+    "citation_coverage": {
+      "complete": 8183,
+      "partial": 26,
+      "unavailable": 325,
+      "no_publications": 473
+    }
+  },
+  "outputs": {
+    "tools": {
+      "path": "results/multiomics_fetch_biotools_sept2026.tsv",
+      "md5": "af6467b4eba992604a07c007db87277f"
+    },
+    "functions": {
+      "path": "results/multiomics_fetch_biotools_sept2026.tsv.functions.tsv",
+      "md5": "cc0b6b1dd2826b1c6b42c5671d5cd445"
+    },
+    "publications": {
+      "path": "results/multiomics_fetch_biotools_sept2026.tsv.publications.tsv",
+      "md5": "521308919bd1958c66fc2825e4399869"
+    }
+  },
+  "function_model": "bio.tools function.operation with input/output EDAM data and format metadata; no investigator-defined categories",
+  "software": {
+    "python": "3.13.2 | packaged by conda-forge | (main, Feb 17 2025, 14:10:22) [GCC 13.3.0]",
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "requests": "2.32.4"
+  },
+  "publication_parameters": {
+    "citation_source": "dimensions",
+    "enrichment_enabled": true,
+    "cache_path": "publication_cache_sept2026.json",
+    "cache_days": 1.0
+  },
+  "publication_model": "Sum one selected-provider count per distinct publication within each tool, grouped by matching normalised DOI/PMID/PMCID, including transitive matches. Original registry entries and duplicate flags retained. Conflicting identifiers or provider counts withheld and flagged for review. Publication Count counts entries; Distinct Publication Count and citation coverage use identifier groups. All publication types retained; missing is not zero; partial totals flagged; no cross-tool or unique citing-paper deduplication. Bibliographic metadata: bio.tools, then exact-identifier Europe PMC and Crossref.",
+  "dimensions_attribution": "Dimensions citation data, when requested, is sourced via the Dimensions Metrics API, subject to https://www.dimensions.ai/policies/terms/metrics/. Per-response license is retained in publication records."
+}

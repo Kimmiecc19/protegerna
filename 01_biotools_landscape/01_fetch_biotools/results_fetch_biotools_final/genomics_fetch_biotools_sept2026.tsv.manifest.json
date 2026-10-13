@@ -1,0 +1,70 @@
+{
+  "pipeline": "bio.tools API retrieval",
+  "script": "/home/kcoetzer/objective_one/1_fetch_biotools_json2tsv/fetch_biotools_final2026.py",
+  "run_timestamp_utc": "2026-09-29T19:20:01.268216+00:00",
+  "api_endpoint": "https://bio.tools/api/tool/",
+  "parameters": {
+    "queries": [
+      "genomic",
+      "genome",
+      "dna",
+      "gene",
+      "variant calling",
+      "variant",
+      "assembly",
+      "assemblies",
+      "annotation",
+      "sequencing",
+      "read alignment",
+      "vcf",
+      "snp",
+      "indel",
+      "reference genome",
+      "sequence analysis",
+      "sequence alignment"
+    ],
+    "requested_page_size": 50,
+    "timeout_seconds": 30,
+    "max_retries": 3
+  },
+  "counts": {
+    "raw_query_hits": 60147,
+    "unique_biotools_records": 21953,
+    "normalised_function_operation_rows": 54736,
+    "publication_rows": 23341,
+    "citation_coverage": {
+      "complete": 19329,
+      "partial": 331,
+      "unavailable": 830,
+      "no_publications": 1463
+    }
+  },
+  "outputs": {
+    "tools": {
+      "path": "results/genomics_fetch_biotools_sept2026.tsv",
+      "md5": "d53961093451e91872b4399685854ca4"
+    },
+    "functions": {
+      "path": "results/genomics_fetch_biotools_sept2026.tsv.functions.tsv",
+      "md5": "c5042d8db89b3b0692a1715a231257d4"
+    },
+    "publications": {
+      "path": "results/genomics_fetch_biotools_sept2026.tsv.publications.tsv",
+      "md5": "4e7f011872a2320c7a9e483b9952f903"
+    }
+  },
+  "function_model": "bio.tools function.operation with input/output EDAM data and format metadata; no investigator-defined categories",
+  "software": {
+    "python": "3.13.2 | packaged by conda-forge | (main, Feb 17 2025, 14:10:22) [GCC 13.3.0]",
+    "platform": "Linux-6.8.0-139-generic-x86_64-with-glibc2.39",
+    "requests": "2.32.4"
+  },
+  "publication_parameters": {
+    "citation_source": "dimensions",
+    "enrichment_enabled": true,
+    "cache_path": "publication_cache_sept2026.json",
+    "cache_days": 1.0
+  },
+  "publication_model": "Sum one selected-provider count per distinct publication within each tool, grouped by matching normalised DOI/PMID/PMCID, including transitive matches. Original registry entries and duplicate flags retained. Conflicting identifiers or provider counts withheld and flagged for review. Publication Count counts entries; Distinct Publication Count and citation coverage use identifier groups. All publication types retained; missing is not zero; partial totals flagged; no cross-tool or unique citing-paper deduplication. Bibliographic metadata: bio.tools, then exact-identifier Europe PMC and Crossref.",
+  "dimensions_attribution": "Dimensions citation data, when requested, is sourced via the Dimensions Metrics API, subject to https://www.dimensions.ai/policies/terms/metrics/. Per-response license is retained in publication records."
+}
