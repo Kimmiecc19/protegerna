@@ -1,26 +1,38 @@
 # Nextflow Syntax (Mapped, Combined Sources)
 
-![Nextflow Syntax Reference Banner](https://dummyimage.com/1400x220/0b3d91/ffffff&text=Nextflow+Syntax+Reference)
+![Nextflow Syntax Reference
+Banner](https://dummyimage.com/1400x220/0b3d91/ffffff&text=Nextflow+Syntax+Reference)
 
-A grouped reference of Nextflow terms extracted from multiple docs pages, rendered with quick-glance visual navigation.
+A grouped reference of Nextflow terms extracted from multiple docs pages,
+rendered with quick-glance visual navigation.
 
 ## Snapshot
 
-![Total Terms](https://img.shields.io/badge/Total%20Grouped%20Terms-247-111827?style=for-the-badge) ![Mode](https://img.shields.io/badge/Mode-full-334155?style=for-the-badge)
+![Total
+Terms](https://img.shields.io/badge/Total%20Grouped%20Terms-247-111827?style=for-the-badge)
+![Mode](https://img.shields.io/badge/Mode-full-334155?style=for-the-badge)
 
-![Workflow](https://img.shields.io/badge/Workflow-13%20terms-0ea5e9?style=flat-square) ![Process](https://img.shields.io/badge/Process-49%20terms-22c55e?style=flat-square) ![Channel](https://img.shields.io/badge/Channel-12%20terms-06b6d4?style=flat-square)
+![Workflow](https://img.shields.io/badge/Workflow-13%20terms-0ea5e9?style=flat-square)
+![Process](https://img.shields.io/badge/Process-49%20terms-22c55e?style=flat-square)
+![Channel](https://img.shields.io/badge/Channel-12%20terms-06b6d4?style=flat-square)
 
-![Operator](https://img.shields.io/badge/Operator-48%20terms-f59e0b?style=flat-square) ![CLI](https://img.shields.io/badge/CLI-23%20terms-6366f1?style=flat-square) ![Config](https://img.shields.io/badge/Config-29%20terms-ef4444?style=flat-square)
+![Operator](https://img.shields.io/badge/Operator-48%20terms-f59e0b?style=flat-square)
+![CLI](https://img.shields.io/badge/CLI-23%20terms-6366f1?style=flat-square)
+![Config](https://img.shields.io/badge/Config-29%20terms-ef4444?style=flat-square)
 
-![Types](https://img.shields.io/badge/Types-16%20terms-8b5cf6?style=flat-square) ![Script](https://img.shields.io/badge/Script-48%20terms-14b8a6?style=flat-square) ![Modules](https://img.shields.io/badge/Modules-2%20terms-eab308?style=flat-square)
+![Types](https://img.shields.io/badge/Types-16%20terms-8b5cf6?style=flat-square)
+![Script](https://img.shields.io/badge/Script-48%20terms-14b8a6?style=flat-square)
+![Modules](https://img.shields.io/badge/Modules-2%20terms-eab308?style=flat-square)
 
 ![Files](https://img.shields.io/badge/Files-7%20terms-64748b?style=flat-square)
 
 > [!TIP]
-> Start with the term index table for fast lookup, then expand details only when needed.
+> Start with the term index table for fast lookup, then expand details only when
+> needed.
 
 > [!IMPORTANT]
-> Constraints are extracted from multiple documentation pages and may vary by Nextflow version.
+> Constraints are extracted from multiple documentation pages and may vary by
+> Nextflow version.
 
 > **Category Index**
 > Each category is grouped into its own block below.
@@ -497,7 +509,8 @@ The params block consists of one or more parameter declarations .<br/>
   </td></tr>
 </table>
 
-**At a glance:** The params block consists of one or more parameter declarations .
+**At a glance:** The params block consists of one or more parameter declarations
+.
 
 #### Related Terms
 - Params block
@@ -675,7 +688,8 @@ Each output can create an index file of the values that were published.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Each output can create an index file of the values that were published.
+**At a glance:** Each output can create an index file of the values that were
+published.
 
 #### Related Terms
 - Index files
@@ -771,11 +785,13 @@ Reference for Named workflows.<br/>
 <table>
   <tr><td>
 <strong>[WF] Parameters</strong><br/>
-Parameters can be declared in a Nextflow script with the params block or with legacy parameter declarations.<br/>
+Parameters can be declared in a Nextflow script with the params block or with
+legacy parameter declarations.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Parameters can be declared in a Nextflow script with the params block or with legacy parameter declarations.
+**At a glance:** Parameters can be declared in a Nextflow script with the params
+block or with legacy parameter declarations.
 
 #### Related Terms
 - Parameters
@@ -878,11 +894,13 @@ Reference for Publishing files.<br/>
 <table>
   <tr><td>
 <strong>[WF] Special operators</strong><br/>
-The following operators have a special meaning when used in a workflow with process and workflow calls.<br/>
+The following operators have a special meaning when used in a workflow with
+process and workflow calls.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The following operators have a special meaning when used in a workflow with process and workflow calls.
+**At a glance:** The following operators have a special meaning when used in a
+workflow with process and workflow calls.
 
 #### Related Terms
 - Special operators
@@ -943,11 +961,15 @@ Reference for Takes and emits.<br/>
 <table>
   <tr><td>
 <strong>[PR] Modules</strong><br/>
-Environment Modules is a package manager that allows you to dynamically configure your execution environment and easily switch between multiple versions of the same software tool.<br/>
+Environment Modules is a package manager that allows you to dynamically
+configure your execution environment and easily switch between multiple versions
+of the same software tool.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Environment Modules is a package manager that allows you to dynamically configure your execution environment and easily switch between multiple versions of the same software tool.
+**At a glance:** Environment Modules is a package manager that allows you to
+dynamically configure your execution environment and easily switch between
+multiple versions of the same software tool.
 
 #### Related Terms
 - module
@@ -1027,7 +1049,8 @@ The accelerator directive allows you to request hardware accelerators (e.g.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The accelerator directive allows you to request hardware accelerators (e.g.
+**At a glance:** The accelerator directive allows you to request hardware
+accelerators (e.g.
 
 #### Related Terms
 - accelerator
@@ -1054,11 +1077,13 @@ The accelerator directive allows you to request hardware accelerators (e.g.<br/>
 <table>
   <tr><td>
 <strong>[PR] afterScript</strong><br/>
-The afterScript directive allows you to execute a custom (Bash) snippet immediately after the main process has run.<br/>
+The afterScript directive allows you to execute a custom (Bash) snippet
+immediately after the main process has run.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The afterScript directive allows you to execute a custom (Bash) snippet immediately after the main process has run.
+**At a glance:** The afterScript directive allows you to execute a custom (Bash)
+snippet immediately after the main process has run.
 
 #### Related Terms
 - afterScript
@@ -1083,11 +1108,13 @@ The afterScript directive allows you to execute a custom (Bash) snippet immediat
 <table>
   <tr><td>
 <strong>[PR] arch</strong><br/>
-The arch directive allows you to define the CPU architecture to build the software in use by the processa task.<br/>
+The arch directive allows you to define the CPU architecture to build the
+software in use by the processa task.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The arch directive allows you to define the CPU architecture to build the software in use by the processa task.
+**At a glance:** The arch directive allows you to define the CPU architecture to
+build the software in use by the processa task.
 
 #### Related Terms
 - arch
@@ -1127,11 +1154,13 @@ The arch directive allows you to define the CPU architecture to build the softwa
 <table>
   <tr><td>
 <strong>[PR] array</strong><br/>
-The array directive allows you to submit tasks as job arrays for executors that support it.<br/>
+The array directive allows you to submit tasks as job arrays for executors that
+support it.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The array directive allows you to submit tasks as job arrays for executors that support it.
+**At a glance:** The array directive allows you to submit tasks as job arrays
+for executors that support it.
 
 #### Related Terms
 - array
@@ -1196,11 +1225,13 @@ The array directive allows you to submit tasks as job arrays for executors that 
 <table>
   <tr><td>
 <strong>[PR] beforeScript</strong><br/>
-The beforeScript directive allows you to execute a custom (Bash) snippet before the main process script is run.<br/>
+The beforeScript directive allows you to execute a custom (Bash) snippet before
+the main process script is run.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The beforeScript directive allows you to execute a custom (Bash) snippet before the main process script is run.
+**At a glance:** The beforeScript directive allows you to execute a custom
+(Bash) snippet before the main process script is run.
 
 #### Related Terms
 - beforeScript
@@ -1233,11 +1264,13 @@ The beforeScript directive allows you to execute a custom (Bash) snippet before 
 <table>
   <tr><td>
 <strong>[PR] cache</strong><br/>
-The cache directive allows you to store the process results to a local cache.<br/>
+The cache directive allows you to store the process results to a local
+cache.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The cache directive allows you to store the process results to a local cache.
+**At a glance:** The cache directive allows you to store the process results to
+a local cache.
 
 #### Related Terms
 - cache
@@ -1266,11 +1299,13 @@ The cache directive allows you to store the process results to a local cache.<br
 <table>
   <tr><td>
 <strong>[PR] clusterOptions</strong><br/>
-The clusterOptions directive allows the usage of any native configuration option accepted by your cluster submit command.<br/>
+The clusterOptions directive allows the usage of any native configuration option
+accepted by your cluster submit command.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The clusterOptions directive allows the usage of any native configuration option accepted by your cluster submit command.
+**At a glance:** The clusterOptions directive allows the usage of any native
+configuration option accepted by your cluster submit command.
 
 #### Related Terms
 - clusterOptions
@@ -1303,11 +1338,13 @@ The clusterOptions directive allows the usage of any native configuration option
 <table>
   <tr><td>
 <strong>[PR] conda</strong><br/>
-The conda directive allows for the definition of the process dependencies using the Conda package manager.<br/>
+The conda directive allows for the definition of the process dependencies using
+the Conda package manager.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The conda directive allows for the definition of the process dependencies using the Conda package manager.
+**At a glance:** The conda directive allows for the definition of the process
+dependencies using the Conda package manager.
 
 #### Related Terms
 - conda
@@ -1341,11 +1378,13 @@ The conda directive allows for the definition of the process dependencies using 
 <table>
   <tr><td>
 <strong>[PR] container</strong><br/>
-The container directive allows you to execute the process script in a Docker container.<br/>
+The container directive allows you to execute the process script in a Docker
+container.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The container directive allows you to execute the process script in a Docker container.
+**At a glance:** The container directive allows you to execute the process
+script in a Docker container.
 
 #### Related Terms
 - container
@@ -1373,11 +1412,13 @@ The container directive allows you to execute the process script in a Docker con
 <table>
   <tr><td>
 <strong>[PR] containerOptions</strong><br/>
-The containerOptions directive allows you to specify any container execution option supported by the underlying container engine (ie.<br/>
+The containerOptions directive allows you to specify any container execution
+option supported by the underlying container engine (ie.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The containerOptions directive allows you to specify any container execution option supported by the underlying container engine (ie.
+**At a glance:** The containerOptions directive allows you to specify any
+container execution option supported by the underlying container engine (ie.
 
 #### Related Terms
 - containerOptions
@@ -1443,11 +1484,13 @@ Reference for cpus.<br/>
 <table>
   <tr><td>
 <strong>[PR] debug</strong><br/>
-By default the stdout produced by the commands executed in all processes is ignored.<br/>
+By default the stdout produced by the commands executed in all processes is
+ignored.<br/>
   </td></tr>
 </table>
 
-**At a glance:** By default the stdout produced by the commands executed in all processes is ignored.
+**At a glance:** By default the stdout produced by the commands executed in all
+processes is ignored.
 
 #### Related Terms
 - debug
@@ -1497,11 +1540,13 @@ Reference for Directives.<br/>
 <table>
   <tr><td>
 <strong>[PR] disk</strong><br/>
-The disk directive allows you to define how much local disk storage the process is allowed to use.<br/>
+The disk directive allows you to define how much local disk storage the process
+is allowed to use.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The disk directive allows you to define how much local disk storage the process is allowed to use.
+**At a glance:** The disk directive allows you to define how much local disk
+storage the process is allowed to use.
 
 #### Related Terms
 - disk
@@ -1552,11 +1597,13 @@ Reference for echo.<br/>
 <table>
   <tr><td>
 <strong>[PR] errorStrategy</strong><br/>
-The errorStrategy directive allows you to define how the process manages an error condition.<br/>
+The errorStrategy directive allows you to define how the process manages an
+error condition.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The errorStrategy directive allows you to define how the process manages an error condition.
+**At a glance:** The errorStrategy directive allows you to define how the
+process manages an error condition.
 
 #### Related Terms
 - errorStrategy
@@ -1594,7 +1641,8 @@ The executor defines the underlying system where processes are executed.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The executor defines the underlying system where processes are executed.
+**At a glance:** The executor defines the underlying system where processes are
+executed.
 
 #### Related Terms
 - executor
@@ -1624,11 +1672,13 @@ The executor defines the underlying system where processes are executed.<br/>
 <table>
   <tr><td>
 <strong>[PR] ext</strong><br/>
-The ext is a special directive used as namespace for user custom process directives.<br/>
+The ext is a special directive used as namespace for user custom process
+directives.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The ext is a special directive used as namespace for user custom process directives.
+**At a glance:** The ext is a special directive used as namespace for user
+custom process directives.
 
 #### Related Terms
 - ext
@@ -1657,11 +1707,13 @@ The ext is a special directive used as namespace for user custom process directi
 <table>
   <tr><td>
 <strong>[PR] fair</strong><br/>
-The fair directive, when enabled, guarantees that process outputs will be emitted in the order in which they were received.<br/>
+The fair directive, when enabled, guarantees that process outputs will be
+emitted in the order in which they were received.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The fair directive, when enabled, guarantees that process outputs will be emitted in the order in which they were received.
+**At a glance:** The fair directive, when enabled, guarantees that process
+outputs will be emitted in the order in which they were received.
 
 #### Related Terms
 - fair
@@ -1784,11 +1836,13 @@ Reference for Inputs and outputs (typed).<br/>
 <table>
   <tr><td>
 <strong>[PR] label</strong><br/>
-The label directive allows the annotation of processes with mnemonic identifier of your choice.<br/>
+The label directive allows the annotation of processes with mnemonic identifier
+of your choice.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The label directive allows the annotation of processes with mnemonic identifier of your choice.
+**At a glance:** The label directive allows the annotation of processes with
+mnemonic identifier of your choice.
 
 #### Related Terms
 - label
@@ -1817,11 +1871,15 @@ The label directive allows the annotation of processes with mnemonic identifier 
 <table>
   <tr><td>
 <strong>[PR] machineType</strong><br/>
-The machineType can be used to specify a predefined Google Compute Platform machine type when running using the Google Batch , or when using the autopools feature of the Azure Batch executor .<br/>
+The machineType can be used to specify a predefined Google Compute Platform
+machine type when running using the Google Batch , or when using the autopools
+feature of the Azure Batch executor .<br/>
   </td></tr>
 </table>
 
-**At a glance:** The machineType can be used to specify a predefined Google Compute Platform machine type when running using the Google Batch , or when using the autopools feature of the Azure Batch executor .
+**At a glance:** The machineType can be used to specify a predefined Google
+Compute Platform machine type when running using the Google Batch , or when
+using the autopools feature of the Azure Batch executor .
 
 #### Related Terms
 - machineType
@@ -1847,11 +1905,13 @@ The machineType can be used to specify a predefined Google Compute Platform mach
 <table>
   <tr><td>
 <strong>[PR] maxErrors</strong><br/>
-The maxErrors directive allows you to specify the maximum number of times a process can fail when using the retry error strategy.<br/>
+The maxErrors directive allows you to specify the maximum number of times a
+process can fail when using the retry error strategy.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The maxErrors directive allows you to specify the maximum number of times a process can fail when using the retry error strategy.
+**At a glance:** The maxErrors directive allows you to specify the maximum
+number of times a process can fail when using the retry error strategy.
 
 #### Related Terms
 - maxErrors
@@ -1877,11 +1937,13 @@ The maxErrors directive allows you to specify the maximum number of times a proc
 <table>
   <tr><td>
 <strong>[PR] maxForks</strong><br/>
-The maxForks directive allows you to define the maximum number of process instances that can be executed in parallel.<br/>
+The maxForks directive allows you to define the maximum number of process
+instances that can be executed in parallel.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The maxForks directive allows you to define the maximum number of process instances that can be executed in parallel.
+**At a glance:** The maxForks directive allows you to define the maximum number
+of process instances that can be executed in parallel.
 
 #### Related Terms
 - maxForks
@@ -1908,11 +1970,13 @@ The maxForks directive allows you to define the maximum number of process instan
 <table>
   <tr><td>
 <strong>[PR] maxRetries</strong><br/>
-The maxRetries directive allows you to define the maximum number of times a process instance can be re-submitted in case of failure.<br/>
+The maxRetries directive allows you to define the maximum number of times a
+process instance can be re-submitted in case of failure.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The maxRetries directive allows you to define the maximum number of times a process instance can be re-submitted in case of failure.
+**At a glance:** The maxRetries directive allows you to define the maximum
+number of times a process instance can be re-submitted in case of failure.
 
 #### Related Terms
 - maxRetries
@@ -1943,11 +2007,13 @@ The maxRetries directive allows you to define the maximum number of times a proc
 <table>
   <tr><td>
 <strong>[PR] maxSubmitAwait</strong><br/>
-The maxSubmitAwait directive allows you to specify how long a task can remain in submission queue without being executed.<br/>
+The maxSubmitAwait directive allows you to specify how long a task can remain in
+submission queue without being executed.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The maxSubmitAwait directive allows you to specify how long a task can remain in submission queue without being executed.
+**At a glance:** The maxSubmitAwait directive allows you to specify how long a
+task can remain in submission queue without being executed.
 
 #### Related Terms
 - maxSubmitAwait
@@ -1976,11 +2042,13 @@ The maxSubmitAwait directive allows you to specify how long a task can remain in
 <table>
   <tr><td>
 <strong>[PR] memory</strong><br/>
-The memory directive allows you to define how much memory the process is allowed to use.<br/>
+The memory directive allows you to define how much memory the process is allowed
+to use.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The memory directive allows you to define how much memory the process is allowed to use.
+**At a glance:** The memory directive allows you to define how much memory the
+process is allowed to use.
 
 #### Related Terms
 - memory
@@ -2036,11 +2104,14 @@ Reference for Outputs.<br/>
 <table>
   <tr><td>
 <strong>[PR] penv</strong><br/>
-The penv directive allows you to define the parallel environment to be used when submitting a parallel task to the SGE resource manager.<br/>
+The penv directive allows you to define the parallel environment to be used when
+submitting a parallel task to the SGE resource manager.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The penv directive allows you to define the parallel environment to be used when submitting a parallel task to the SGE resource manager.
+**At a glance:** The penv directive allows you to define the parallel
+environment to be used when submitting a parallel task to the SGE resource
+manager.
 
 #### Related Terms
 - penv
@@ -2068,11 +2139,15 @@ The penv directive allows you to define the parallel environment to be used when
 <table>
   <tr><td>
 <strong>[PR] pod</strong><br/>
-The pod directive allows the definition of pod specific settings, such as environment variables, secrets, and config maps, when using the Kubernetes executor.<br/>
+The pod directive allows the definition of pod specific settings, such as
+environment variables, secrets, and config maps, when using the Kubernetes
+executor.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The pod directive allows the definition of pod specific settings, such as environment variables, secrets, and config maps, when using the Kubernetes executor.
+**At a glance:** The pod directive allows the definition of pod specific
+settings, such as environment variables, secrets, and config maps, when using
+the Kubernetes executor.
 
 #### Related Terms
 - pod
@@ -2101,11 +2176,13 @@ The pod directive allows the definition of pod specific settings, such as enviro
 <table>
   <tr><td>
 <strong>[PR] publishDir</strong><br/>
-The publishDir directive allows you to publish the process output files to a specified folder.<br/>
+The publishDir directive allows you to publish the process output files to a
+specified folder.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The publishDir directive allows you to publish the process output files to a specified folder.
+**At a glance:** The publishDir directive allows you to publish the process
+output files to a specified folder.
 
 #### Related Terms
 - publishDir
@@ -2135,11 +2212,13 @@ The publishDir directive allows you to publish the process output files to a spe
 <table>
   <tr><td>
 <strong>[PR] queue</strong><br/>
-The queue directive allows you to set the queue where jobs are scheduled when using a grid based executor in your pipeline.<br/>
+The queue directive allows you to set the queue where jobs are scheduled when
+using a grid based executor in your pipeline.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The queue directive allows you to set the queue where jobs are scheduled when using a grid based executor in your pipeline.
+**At a glance:** The queue directive allows you to set the queue where jobs are
+scheduled when using a grid based executor in your pipeline.
 
 #### Related Terms
 - queue
@@ -2164,11 +2243,15 @@ The queue directive allows you to set the queue where jobs are scheduled when us
 <table>
   <tr><td>
 <strong>[PR] resourceLabels</strong><br/>
-The resourceLabels directive allows you to specify custom name-value pairs that Nextflow applies to the computing resource used to carry out the process execution.<br/>
+The resourceLabels directive allows you to specify custom name-value pairs that
+Nextflow applies to the computing resource used to carry out the process
+execution.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The resourceLabels directive allows you to specify custom name-value pairs that Nextflow applies to the computing resource used to carry out the process execution.
+**At a glance:** The resourceLabels directive allows you to specify custom
+name-value pairs that Nextflow applies to the computing resource used to carry
+out the process execution.
 
 #### Related Terms
 - resourceLabels
@@ -2208,11 +2291,13 @@ The resourceLabels directive allows you to specify custom name-value pairs that 
 <table>
   <tr><td>
 <strong>[PR] resourceLimits</strong><br/>
-The resourceLimits directive allows you to specify environment-specific limits for task resource requests.<br/>
+The resourceLimits directive allows you to specify environment-specific limits
+for task resource requests.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The resourceLimits directive allows you to specify environment-specific limits for task resource requests.
+**At a glance:** The resourceLimits directive allows you to specify
+environment-specific limits for task resource requests.
 
 #### Related Terms
 - resourceLimits
@@ -2251,11 +2336,13 @@ The resourceLimits directive allows you to specify environment-specific limits f
 <table>
   <tr><td>
 <strong>[PR] scratch</strong><br/>
-The scratch directive allows you to execute the process in a temporary folder that is local to the execution node.<br/>
+The scratch directive allows you to execute the process in a temporary folder
+that is local to the execution node.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The scratch directive allows you to execute the process in a temporary folder that is local to the execution node.
+**At a glance:** The scratch directive allows you to execute the process in a
+temporary folder that is local to the execution node.
 
 #### Related Terms
 - scratch
@@ -2320,11 +2407,13 @@ The secret directive allows a process to access secrets.<br/>
 <table>
   <tr><td>
 <strong>[PR] shell</strong><br/>
-The shell directive allows you to define a custom shell command for process scripts.<br/>
+The shell directive allows you to define a custom shell command for process
+scripts.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The shell directive allows you to define a custom shell command for process scripts.
+**At a glance:** The shell directive allows you to define a custom shell command
+for process scripts.
 
 #### Related Terms
 - shell
@@ -2350,11 +2439,13 @@ The shell directive allows you to define a custom shell command for process scri
 <table>
   <tr><td>
 <strong>[PR] spack</strong><br/>
-The spack directive allows for the definition of the process dependencies using the Spack package manager.<br/>
+The spack directive allows for the definition of the process dependencies using
+the Spack package manager.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The spack directive allows for the definition of the process dependencies using the Spack package manager.
+**At a glance:** The spack directive allows for the definition of the process
+dependencies using the Spack package manager.
 
 #### Related Terms
 - spack
@@ -2414,11 +2505,13 @@ Reference for Stage directives.<br/>
 <table>
   <tr><td>
 <strong>[PR] stageInMode</strong><br/>
-The stageInMode directive defines how input files are staged into the process work directory.<br/>
+The stageInMode directive defines how input files are staged into the process
+work directory.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The stageInMode directive defines how input files are staged into the process work directory.
+**At a glance:** The stageInMode directive defines how input files are staged
+into the process work directory.
 
 #### Related Terms
 - stageInMode
@@ -2443,11 +2536,13 @@ The stageInMode directive defines how input files are staged into the process wo
 <table>
   <tr><td>
 <strong>[PR] stageOutMode</strong><br/>
-The stageOutMode directive defines how output files are staged out from the scratch directory to the process work directory.<br/>
+The stageOutMode directive defines how output files are staged out from the
+scratch directory to the process work directory.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The stageOutMode directive defines how output files are staged out from the scratch directory to the process work directory.
+**At a glance:** The stageOutMode directive defines how output files are staged
+out from the scratch directory to the process work directory.
 
 #### Related Terms
 - stageOutMode
@@ -2473,11 +2568,13 @@ The stageOutMode directive defines how output files are staged out from the scra
 <table>
   <tr><td>
 <strong>[PR] storeDir</strong><br/>
-The storeDir directive allows you to define a directory that is used as a permanent cache for your process results.<br/>
+The storeDir directive allows you to define a directory that is used as a
+permanent cache for your process results.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The storeDir directive allows you to define a directory that is used as a permanent cache for your process results.
+**At a glance:** The storeDir directive allows you to define a directory that is
+used as a permanent cache for your process results.
 
 #### Related Terms
 - storeDir
@@ -2503,11 +2600,15 @@ The storeDir directive allows you to define a directory that is used as a perman
 <table>
   <tr><td>
 <strong>[PR] tag</strong><br/>
-The tag directive allows you to associate each process execution with a custom label, so that it will be easier to identify them in the log file or in the trace execution report.<br/>
+The tag directive allows you to associate each process execution with a custom
+label, so that it will be easier to identify them in the log file or in the
+trace execution report.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The tag directive allows you to associate each process execution with a custom label, so that it will be easier to identify them in the log file or in the trace execution report.
+**At a glance:** The tag directive allows you to associate each process
+execution with a custom label, so that it will be easier to identify them in the
+log file or in the trace execution report.
 
 #### Related Terms
 - tag
@@ -2563,11 +2664,13 @@ Reference for Task properties.<br/>
 <table>
   <tr><td>
 <strong>[PR] time</strong><br/>
-The time directive allows you to define how long a process is allowed to run.<br/>
+The time directive allows you to define how long a process is allowed to
+run.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The time directive allows you to define how long a process is allowed to run.
+**At a glance:** The time directive allows you to define how long a process is
+allowed to run.
 
 #### Related Terms
 - time
@@ -2597,11 +2700,13 @@ The time directive allows you to define how long a process is allowed to run.<br
 <table>
   <tr><td>
 <strong>[CH] empty</strong><br/>
-The channel.empty factory method, by definition, creates a channel that doesn&#x27;t emit any value.<br/>
+The channel.empty factory method, by definition, creates a channel that
+doesn&#x27;t emit any value.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The channel.empty factory method, by definition, creates a channel that doesn't emit any value.
+**At a glance:** The channel.empty factory method, by definition, creates a
+channel that doesn't emit any value.
 
 #### Related Terms
 - empty
@@ -2661,11 +2766,13 @@ Reference for from.<br/>
 <table>
   <tr><td>
 <strong>[CH] fromFilePairs</strong><br/>
-The channel.fromFilePairs method creates a channel emitting the file pairs matching a glob pattern provided by the user.<br/>
+The channel.fromFilePairs method creates a channel emitting the file pairs
+matching a glob pattern provided by the user.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The channel.fromFilePairs method creates a channel emitting the file pairs matching a glob pattern provided by the user.
+**At a glance:** The channel.fromFilePairs method creates a channel emitting the
+file pairs matching a glob pattern provided by the user.
 
 #### Related Terms
 - fromFilePairs
@@ -2755,11 +2862,13 @@ Reference for fromList.<br/>
 <table>
   <tr><td>
 <strong>[CH] fromPath</strong><br/>
-You can create a channel emitting one or more file paths by using the channel.fromPath method and specifying a path string as an argument.<br/>
+You can create a channel emitting one or more file paths by using the
+channel.fromPath method and specifying a path string as an argument.<br/>
   </td></tr>
 </table>
 
-**At a glance:** You can create a channel emitting one or more file paths by using the channel.fromPath method and specifying a path string as an argument.
+**At a glance:** You can create a channel emitting one or more file paths by
+using the channel.fromPath method and specifying a path string as an argument.
 
 #### Related Terms
 - fromPath
@@ -2805,11 +2914,15 @@ You can create a channel emitting one or more file paths by using the channel.fr
 <table>
   <tr><td>
 <strong>[CH] fromSRA</strong><br/>
-The channel.fromSRA method queries the NCBI SRA database and returns a channel emitting the FASTQ files matching the specified criteria i.e project or accession number(s).<br/>
+The channel.fromSRA method queries the NCBI SRA database and returns a channel
+emitting the FASTQ files matching the specified criteria i.e project or
+accession number(s).<br/>
   </td></tr>
 </table>
 
-**At a glance:** The channel.fromSRA method queries the NCBI SRA database and returns a channel emitting the FASTQ files matching the specified criteria i.e project or accession number(s).
+**At a glance:** The channel.fromSRA method queries the NCBI SRA database and
+returns a channel emitting the FASTQ files matching the specified criteria i.e
+project or accession number(s).
 
 #### Related Terms
 - fromSRA
@@ -2851,11 +2964,13 @@ The channel.fromSRA method queries the NCBI SRA database and returns a channel e
 <table>
   <tr><td>
 <strong>[CH] interval</strong><br/>
-The interval method emits an incrementing index (starting from zero) at a periodic interval.<br/>
+The interval method emits an incrementing index (starting from zero) at a
+periodic interval.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The interval method emits an incrementing index (starting from zero) at a periodic interval.
+**At a glance:** The interval method emits an incrementing index (starting from
+zero) at a periodic interval.
 
 #### Related Terms
 - interval
@@ -2918,11 +3033,13 @@ Reference for of.<br/>
 <table>
   <tr><td>
 <strong>[CH] topic</strong><br/>
-A topic channel is a channel that can receive values from many sources implicitly based on a matching topic name .<br/>
+A topic channel is a channel that can receive values from many sources
+implicitly based on a matching topic name .<br/>
   </td></tr>
 </table>
 
-**At a glance:** A topic channel is a channel that can receive values from many sources implicitly based on a matching topic name .
+**At a glance:** A topic channel is a channel that can receive values from many
+sources implicitly based on a matching topic name .
 
 #### Related Terms
 - topic
@@ -2951,11 +3068,13 @@ A topic channel is a channel that can receive values from many sources implicitl
 <table>
   <tr><td>
 <strong>[CH] value</strong><br/>
-The channel.value function creates a dataflow value bound to the given argument.<br/>
+The channel.value function creates a dataflow value bound to the given
+argument.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The channel.value function creates a dataflow value bound to the given argument.
+**At a glance:** The channel.value function creates a dataflow value bound to
+the given argument.
 
 #### Related Terms
 - value
@@ -2982,11 +3101,13 @@ The channel.value function creates a dataflow value bound to the given argument.
 <table>
   <tr><td>
 <strong>[CH] watchPath</strong><br/>
-The channel.watchPath method watches a folder for one or more files matching a specified pattern.<br/>
+The channel.watchPath method watches a folder for one or more files matching a
+specified pattern.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The channel.watchPath method watches a folder for one or more files matching a specified pattern.
+**At a glance:** The channel.watchPath method watches a folder for one or more
+files matching a specified pattern.
 
 #### Related Terms
 - watchPath
@@ -5316,11 +5437,13 @@ Print the execution history and log information.<br/>
 <table>
   <tr><td>
 <strong>[CLI] Options</strong><br/>
-The top-level options are meant to be invoked in relation to the core Nextflow application and are applied to all commands.<br/>
+The top-level options are meant to be invoked in relation to the core Nextflow
+application and are applied to all commands.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The top-level options are meant to be invoked in relation to the core Nextflow application and are applied to all commands.
+**At a glance:** The top-level options are meant to be invoked in relation to
+the core Nextflow application and are applied to all commands.
 
 #### Related Terms
 - Options
@@ -5530,11 +5653,13 @@ Update the nextflow runtime to the latest available version.<br/>
 <table>
   <tr><td>
 <strong>[CFG] apptainer</strong><br/>
-The apptainer scope controls how Apptainer containers are executed by Nextflow.<br/>
+The apptainer scope controls how Apptainer containers are executed by
+Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The apptainer scope controls how Apptainer containers are executed by Nextflow.
+**At a glance:** The apptainer scope controls how Apptainer containers are
+executed by Nextflow.
 
 #### Related Terms
 - apptainer
@@ -5559,11 +5684,13 @@ The apptainer scope controls how Apptainer containers are executed by Nextflow.<
 <table>
   <tr><td>
 <strong>[CFG] aws</strong><br/>
-The aws scope controls the interactions with AWS, including AWS Batch and S3.<br/>
+The aws scope controls the interactions with AWS, including AWS Batch and
+S3.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The aws scope controls the interactions with AWS, including AWS Batch and S3.
+**At a glance:** The aws scope controls the interactions with AWS, including AWS
+Batch and S3.
 
 #### Related Terms
 - aws
@@ -5588,11 +5715,13 @@ The aws scope controls the interactions with AWS, including AWS Batch and S3.<br
 <table>
   <tr><td>
 <strong>[CFG] azure</strong><br/>
-The azure scope allows you to configure the interactions with Azure, including Azure Batch and Azure Blob Storage.<br/>
+The azure scope allows you to configure the interactions with Azure, including
+Azure Batch and Azure Blob Storage.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The azure scope allows you to configure the interactions with Azure, including Azure Batch and Azure Blob Storage.
+**At a glance:** The azure scope allows you to configure the interactions with
+Azure, including Azure Batch and Azure Blob Storage.
 
 #### Related Terms
 - azure
@@ -5617,11 +5746,13 @@ The azure scope allows you to configure the interactions with Azure, including A
 <table>
   <tr><td>
 <strong>[CFG] charliecloud</strong><br/>
-The charliecloud scope controls how Charliecloud containers are executed by Nextflow.<br/>
+The charliecloud scope controls how Charliecloud containers are executed by
+Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The charliecloud scope controls how Charliecloud containers are executed by Nextflow.
+**At a glance:** The charliecloud scope controls how Charliecloud containers are
+executed by Nextflow.
 
 #### Related Terms
 - charliecloud
@@ -5650,7 +5781,8 @@ The dag scope controls the workflow diagram generated by Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The dag scope controls the workflow diagram generated by Nextflow.
+**At a glance:** The dag scope controls the workflow diagram generated by
+Nextflow.
 
 #### Related Terms
 - dag
@@ -5679,7 +5811,8 @@ The docker scope controls how Docker containers are executed by Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The docker scope controls how Docker containers are executed by Nextflow.
+**At a glance:** The docker scope controls how Docker containers are executed by
+Nextflow.
 
 #### Related Terms
 - docker
@@ -5704,11 +5837,13 @@ The docker scope controls how Docker containers are executed by Nextflow.<br/>
 <table>
   <tr><td>
 <strong>[CFG] env</strong><br/>
-The env scope allows the definition one or more variables that will be exported into the environment where workflow tasks are executed.<br/>
+The env scope allows the definition one or more variables that will be exported
+into the environment where workflow tasks are executed.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The env scope allows the definition one or more variables that will be exported into the environment where workflow tasks are executed.
+**At a glance:** The env scope allows the definition one or more variables that
+will be exported into the environment where workflow tasks are executed.
 
 #### Related Terms
 - env
@@ -5733,11 +5868,13 @@ The env scope allows the definition one or more variables that will be exported 
 <table>
   <tr><td>
 <strong>[CFG] Executor-specific defaults</strong><br/>
-Some executor settings have different default values depending on the executor.<br/>
+Some executor settings have different default values depending on the
+executor.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Some executor settings have different default values depending on the executor.
+**At a glance:** Some executor settings have different default values depending
+on the executor.
 
 #### Related Terms
 - Executor-specific defaults
@@ -5761,11 +5898,13 @@ Some executor settings have different default values depending on the executor.<
 <table>
   <tr><td>
 <strong>[CFG] fusion</strong><br/>
-The fusion scope provides advanced configuration for the use of the Fusion file system .<br/>
+The fusion scope provides advanced configuration for the use of the Fusion file
+system .<br/>
   </td></tr>
 </table>
 
-**At a glance:** The fusion scope provides advanced configuration for the use of the Fusion file system .
+**At a glance:** The fusion scope provides advanced configuration for the use of
+the Fusion file system .
 
 #### Related Terms
 - fusion
@@ -5790,11 +5929,13 @@ The fusion scope provides advanced configuration for the use of the Fusion file 
 <table>
   <tr><td>
 <strong>[CFG] google</strong><br/>
-The google scope allows you to configure the interactions with Google Cloud, including Google Cloud Batch and Google Cloud Storage.<br/>
+The google scope allows you to configure the interactions with Google Cloud,
+including Google Cloud Batch and Google Cloud Storage.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The google scope allows you to configure the interactions with Google Cloud, including Google Cloud Batch and Google Cloud Storage.
+**At a glance:** The google scope allows you to configure the interactions with
+Google Cloud, including Google Cloud Batch and Google Cloud Storage.
 
 #### Related Terms
 - google
@@ -5842,11 +5983,13 @@ Reference for Java settings.<br/>
 <table>
   <tr><td>
 <strong>[CFG] k8s</strong><br/>
-The k8s scope controls the deployment and execution of workflow applications in a Kubernetes cluster.<br/>
+The k8s scope controls the deployment and execution of workflow applications in
+a Kubernetes cluster.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The k8s scope controls the deployment and execution of workflow applications in a Kubernetes cluster.
+**At a glance:** The k8s scope controls the deployment and execution of workflow
+applications in a Kubernetes cluster.
 
 #### Related Terms
 - k8s
@@ -5875,7 +6018,8 @@ The mail scope controls the mail server used to send email notifications.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The mail scope controls the mail server used to send email notifications.
+**At a glance:** The mail scope controls the mail server used to send email
+notifications.
 
 #### Related Terms
 - mail
@@ -5900,11 +6044,13 @@ The mail scope controls the mail server used to send email notifications.<br/>
 <table>
   <tr><td>
 <strong>[CFG] manifest</strong><br/>
-The manifest scope allows you to define some metadata that is useful when publishing or running your pipeline.<br/>
+The manifest scope allows you to define some metadata that is useful when
+publishing or running your pipeline.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The manifest scope allows you to define some metadata that is useful when publishing or running your pipeline.
+**At a glance:** The manifest scope allows you to define some metadata that is
+useful when publishing or running your pipeline.
 
 #### Related Terms
 - manifest
@@ -5975,11 +6121,13 @@ Reference for Nextflow settings.<br/>
 <table>
   <tr><td>
 <strong>[CFG] notification</strong><br/>
-The notification scope controls the automatic sending of an email notification on workflow completion.<br/>
+The notification scope controls the automatic sending of an email notification
+on workflow completion.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The notification scope controls the automatic sending of an email notification on workflow completion.
+**At a glance:** The notification scope controls the automatic sending of an
+email notification on workflow completion.
 
 #### Related Terms
 - notification
@@ -6031,7 +6179,8 @@ The podman scope controls how Podman containers are executed by Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The podman scope controls how Podman containers are executed by Nextflow.
+**At a glance:** The podman scope controls how Podman containers are executed by
+Nextflow.
 
 #### Related Terms
 - podman
@@ -6060,7 +6209,8 @@ The report scope allows you to configure the workflow Execution report .<br/>
   </td></tr>
 </table>
 
-**At a glance:** The report scope allows you to configure the workflow Execution report .
+**At a glance:** The report scope allows you to configure the workflow Execution
+report .
 
 #### Related Terms
 - report
@@ -6089,7 +6239,8 @@ The sarus scope controls how Sarus containers are executed by Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The sarus scope controls how Sarus containers are executed by Nextflow.
+**At a glance:** The sarus scope controls how Sarus containers are executed by
+Nextflow.
 
 #### Related Terms
 - sarus
@@ -6141,7 +6292,8 @@ The shifter scope controls how Shifter containers are executed by Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The shifter scope controls how Shifter containers are executed by Nextflow.
+**At a glance:** The shifter scope controls how Shifter containers are executed
+by Nextflow.
 
 #### Related Terms
 - shifter
@@ -6166,11 +6318,13 @@ The shifter scope controls how Shifter containers are executed by Nextflow.<br/>
 <table>
   <tr><td>
 <strong>[CFG] singularity</strong><br/>
-The singularity scope controls how Singularity containers are executed by Nextflow.<br/>
+The singularity scope controls how Singularity containers are executed by
+Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The singularity scope controls how Singularity containers are executed by Nextflow.
+**At a glance:** The singularity scope controls how Singularity containers are
+executed by Nextflow.
 
 #### Related Terms
 - singularity
@@ -6195,11 +6349,13 @@ The singularity scope controls how Singularity containers are executed by Nextfl
 <table>
   <tr><td>
 <strong>[CFG] timeline</strong><br/>
-The timeline scope controls the execution timeline report generated by Nextflow.<br/>
+The timeline scope controls the execution timeline report generated by
+Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The timeline scope controls the execution timeline report generated by Nextflow.
+**At a glance:** The timeline scope controls the execution timeline report
+generated by Nextflow.
 
 #### Related Terms
 - timeline
@@ -6224,11 +6380,13 @@ The timeline scope controls the execution timeline report generated by Nextflow.
 <table>
   <tr><td>
 <strong>[CFG] tower</strong><br/>
-The tower scope controls the settings for Seqera Platform (formerly Tower Cloud).<br/>
+The tower scope controls the settings for Seqera Platform (formerly Tower
+Cloud).<br/>
   </td></tr>
 </table>
 
-**At a glance:** The tower scope controls the settings for Seqera Platform (formerly Tower Cloud).
+**At a glance:** The tower scope controls the settings for Seqera Platform
+(formerly Tower Cloud).
 
 #### Related Terms
 - tower
@@ -6253,11 +6411,13 @@ The tower scope controls the settings for Seqera Platform (formerly Tower Cloud)
 <table>
   <tr><td>
 <strong>[CFG] trace</strong><br/>
-The trace scope controls the layout of the execution trace file generated by Nextflow.<br/>
+The trace scope controls the layout of the execution trace file generated by
+Nextflow.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The trace scope controls the layout of the execution trace file generated by Nextflow.
+**At a glance:** The trace scope controls the layout of the execution trace file
+generated by Nextflow.
 
 #### Related Terms
 - trace
@@ -6310,11 +6470,13 @@ Reference for Unscoped options.<br/>
 <table>
   <tr><td>
 <strong>[CFG] wave</strong><br/>
-The wave scope provides advanced configuration for the use of Wave containers .<br/>
+The wave scope provides advanced configuration for the use of Wave containers
+.<br/>
   </td></tr>
 </table>
 
-**At a glance:** The wave scope provides advanced configuration for the use of Wave containers .
+**At a glance:** The wave scope provides advanced configuration for the use of
+Wave containers .
 
 #### Related Terms
 - wave
@@ -6341,11 +6503,13 @@ The wave scope provides advanced configuration for the use of Wave containers .<
 <table>
   <tr><td>
 <strong>[TY] Channel</strong><br/>
-A channel (also known as a dataflow channel or queue channel ) is an asynchronous sequence of values of type E .<br/>
+A channel (also known as a dataflow channel or queue channel ) is an
+asynchronous sequence of values of type E .<br/>
   </td></tr>
 </table>
 
-**At a glance:** A channel (also known as a dataflow channel or queue channel ) is an asynchronous sequence of values of type E .
+**At a glance:** A channel (also known as a dataflow channel or queue channel )
+is an asynchronous sequence of values of type E .
 
 #### Related Terms
 - Channel
@@ -6443,7 +6607,8 @@ A Duration represents a duration of time with millisecond precision.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A Duration represents a duration of time with millisecond precision.
+**At a glance:** A Duration represents a duration of time with millisecond
+precision.
 
 #### Related Terms
 - Duration
@@ -6679,11 +6844,13 @@ A MemoryUnit represents a quantity of bytes.<br/>
 <table>
   <tr><td>
 <strong>[TY] Operations</strong><br/>
-A Path is a handle for hierarchichal paths such as local files and directories, HTTP/FTP URLs, and object storage paths (e.g.<br/>
+A Path is a handle for hierarchichal paths such as local files and directories,
+HTTP/FTP URLs, and object storage paths (e.g.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A Path is a handle for hierarchichal paths such as local files and directories, HTTP/FTP URLs, and object storage paths (e.g.
+**At a glance:** A Path is a handle for hierarchichal paths such as local files
+and directories, HTTP/FTP URLs, and object storage paths (e.g.
 
 #### Related Terms
 - Operations
@@ -6788,11 +6955,13 @@ Reference for String.<br/>
 <table>
   <tr><td>
 <strong>[TY] Tuple</strong><br/>
-A tuple is a fixed sequence of values, where each value can have its own type.<br/>
+A tuple is a fixed sequence of values, where each value can have its own
+type.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A tuple is a fixed sequence of values, where each value can have its own type.
+**At a glance:** A tuple is a fixed sequence of values, where each value can
+have its own type.
 
 #### Related Terms
 - Tuple
@@ -6818,11 +6987,13 @@ A tuple is a fixed sequence of values, where each value can have its own type.<b
 <table>
   <tr><td>
 <strong>[TY] Value</strong><br/>
-A dataflow value (also known as a value channel ) is an asynchronous value of type V .<br/>
+A dataflow value (also known as a value channel ) is an asynchronous value of
+type V .<br/>
   </td></tr>
 </table>
 
-**At a glance:** A dataflow value (also known as a value channel ) is an asynchronous value of type V .
+**At a glance:** A dataflow value (also known as a value channel ) is an
+asynchronous value of type V .
 
 #### Related Terms
 - Value
@@ -6853,7 +7024,8 @@ A VersionNumber represents a semantic or calendar version number.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A VersionNumber represents a semantic or calendar version number.
+**At a glance:** A VersionNumber represents a semantic or calendar version
+number.
 
 #### Related Terms
 - VersionNumber
@@ -7411,7 +7583,8 @@ A line comment starts with // and includes the rest of the line.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A line comment starts with // and includes the rest of the line.
+**At a glance:** A line comment starts with // and includes the rest of the
+line.
 
 #### Related Terms
 - Comments
@@ -7436,11 +7609,13 @@ A line comment starts with // and includes the rest of the line.<br/>
 <table>
   <tr><td>
 <strong>[SC] Conditional execution</strong><br/>
-One of the most important features of any programming language is the ability to execute different code under different conditions.<br/>
+One of the most important features of any programming language is the ability to
+execute different code under different conditions.<br/>
   </td></tr>
 </table>
 
-**At a glance:** One of the most important features of any programming language is the ability to execute different code under different conditions.
+**At a glance:** One of the most important features of any programming language
+is the ability to execute different code under different conditions.
 
 #### Related Terms
 - Conditional execution
@@ -7665,7 +7840,8 @@ An if/else statement consists of an if branch and an optional else branch .<br/>
   </td></tr>
 </table>
 
-**At a glance:** An if/else statement consists of an if branch and an optional else branch .
+**At a glance:** An if/else statement consists of an if branch and an optional
+else branch .
 
 #### Related Terms
 - if/else
@@ -7781,11 +7957,13 @@ Reference for Lists.<br/>
 <table>
   <tr><td>
 <strong>[SC] Map</strong><br/>
-A map literal consists of a comma-separated list of one or more map entries , enclosed in square brackets.<br/>
+A map literal consists of a comma-separated list of one or more map entries ,
+enclosed in square brackets.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A map literal consists of a comma-separated list of one or more map entries , enclosed in square brackets.
+**At a glance:** A map literal consists of a comma-separated list of one or more
+map entries , enclosed in square brackets.
 
 #### Related Terms
 - Map
@@ -7819,7 +7997,8 @@ Maps are used to store associative arrays (also known as dictionaries ).<br/>
   </td></tr>
 </table>
 
-**At a glance:** Maps are used to store associative arrays (also known as dictionaries ).
+**At a glance:** Maps are used to store associative arrays (also known as
+dictionaries ).
 
 #### Related Terms
 - Maps
@@ -7911,11 +8090,13 @@ The null literal is specified as null .<br/>
 <table>
   <tr><td>
 <strong>[SC] Number</strong><br/>
-A number literal can be an integer or floating-point number, and can be positive or negative.<br/>
+A number literal can be an integer or floating-point number, and can be positive
+or negative.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A number literal can be an integer or floating-point number, and can be positive or negative.
+**At a glance:** A number literal can be an integer or floating-point number,
+and can be positive or negative.
 
 #### Related Terms
 - Number
@@ -7942,11 +8123,13 @@ A number literal can be an integer or floating-point number, and can be positive
 <table>
   <tr><td>
 <strong>[SC] Operators</strong><br/>
-Operators are symbols that perform specific functions on one or more values, and generally make code easier to read.<br/>
+Operators are symbols that perform specific functions on one or more values, and
+generally make code easier to read.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Operators are symbols that perform specific functions on one or more values, and generally make code easier to read.
+**At a glance:** Operators are symbols that perform specific functions on one or
+more values, and generally make code easier to read.
 
 #### Related Terms
 - Operators
@@ -8098,7 +8281,8 @@ Regular expressions are the Swiss Army knife of text processing.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Regular expressions are the Swiss Army knife of text processing.
+**At a glance:** Regular expressions are the Swiss Army knife of text
+processing.
 
 #### Related Terms
 - Regular expressions
@@ -8207,11 +8391,13 @@ Reference for Script declarations.<br/>
 <table>
   <tr><td>
 <strong>[SC] Script definitions</strong><br/>
-So far, we have been focusing on the basic building blocks of Nextflow code, like variables, lists, strings, and closures.<br/>
+So far, we have been focusing on the basic building blocks of Nextflow code,
+like variables, lists, strings, and closures.<br/>
   </td></tr>
 </table>
 
-**At a glance:** So far, we have been focusing on the basic building blocks of Nextflow code, like variables, lists, strings, and closures.
+**At a glance:** So far, we have been focusing on the basic building blocks of
+Nextflow code, like variables, lists, strings, and closures.
 
 #### Related Terms
 - Script definitions
@@ -8275,11 +8461,15 @@ Reference for Statements.<br/>
 <table>
   <tr><td>
 <strong>[SC] String interpolation</strong><br/>
-There is an important difference between single-quoted and double-quoted strings: Double-quoted strings support variable interpolations, while single-quoted strings do not.<br/>
+There is an important difference between single-quoted and double-quoted
+strings: Double-quoted strings support variable interpolations, while
+single-quoted strings do not.<br/>
   </td></tr>
 </table>
 
-**At a glance:** There is an important difference between single-quoted and double-quoted strings: Double-quoted strings support variable interpolations, while single-quoted strings do not.
+**At a glance:** There is an important difference between single-quoted and
+double-quoted strings: Double-quoted strings support variable interpolations,
+while single-quoted strings do not.
 
 #### Related Terms
 - String interpolation
@@ -8454,7 +8644,8 @@ Tuples are used to store a fixed sequence of heterogeneous values.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Tuples are used to store a fixed sequence of heterogeneous values.
+**At a glance:** Tuples are used to store a fixed sequence of heterogeneous
+values.
 
 #### Related Terms
 - Tuples
@@ -8555,11 +8746,13 @@ Reference for Variables.<br/>
 <table>
   <tr><td>
 <strong>[MD] Multiple inclusions</strong><br/>
-A Nextflow script can include any number of modules, and an include statement can import any number of definitions from a module.<br/>
+A Nextflow script can include any number of modules, and an include statement
+can import any number of definitions from a module.<br/>
   </td></tr>
 </table>
 
-**At a glance:** A Nextflow script can include any number of modules, and an include statement can import any number of definitions from a module.
+**At a glance:** A Nextflow script can include any number of modules, and an
+include statement can import any number of definitions from a module.
 
 #### Related Terms
 - Multiple inclusions
@@ -8584,11 +8777,15 @@ A Nextflow script can include any number of modules, and an include statement ca
 <table>
   <tr><td>
 <strong>[MD] Sharing modules</strong><br/>
-Modules are designed to be easy to share and re-use across different pipelines, which helps eliminate duplicate work and spread improvements throughout the community.<br/>
+Modules are designed to be easy to share and re-use across different pipelines,
+which helps eliminate duplicate work and spread improvements throughout the
+community.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Modules are designed to be easy to share and re-use across different pipelines, which helps eliminate duplicate work and spread improvements throughout the community.
+**At a glance:** Modules are designed to be easy to share and re-use across
+different pipelines, which helps eliminate duplicate work and spread
+improvements throughout the community.
 
 #### Related Terms
 - Sharing modules
@@ -8712,11 +8909,13 @@ Reference for Copying files.<br/>
 <table>
   <tr><td>
 <strong>[FL] Filesystem operations</strong><br/>
-Methods for performing filesystem operations such as copying, deleting, and directory listing are documented in the Path reference.<br/>
+Methods for performing filesystem operations such as copying, deleting, and
+directory listing are documented in the Path reference.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Methods for performing filesystem operations such as copying, deleting, and directory listing are documented in the Path reference.
+**At a glance:** Methods for performing filesystem operations such as copying,
+deleting, and directory listing are documented in the Path reference.
 
 #### Related Terms
 - Filesystem operations
@@ -8830,11 +9029,13 @@ Reference for Reading and writing.<br/>
 <table>
   <tr><td>
 <strong>[FL] Remote files</strong><br/>
-Nextflow works with many types of remote files and objects using the same interface as for local files.<br/>
+Nextflow works with many types of remote files and objects using the same
+interface as for local files.<br/>
   </td></tr>
 </table>
 
-**At a glance:** Nextflow works with many types of remote files and objects using the same interface as for local files.
+**At a glance:** Nextflow works with many types of remote files and objects
+using the same interface as for local files.
 
 #### Related Terms
 - Remote files

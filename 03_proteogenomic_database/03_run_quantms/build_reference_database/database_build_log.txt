@@ -1,0 +1,10 @@
+Database Build Log
+Date: 2026-02-27 13:42:10.370488
+
+Source:
+UniProt reviewed human proteome (taxonomy 9606) with isoforms
+cRAP contaminant database
+
+Human unique sequences: 42480
+cRAP sequences: 116
+Total unique sequences (combined): 42562

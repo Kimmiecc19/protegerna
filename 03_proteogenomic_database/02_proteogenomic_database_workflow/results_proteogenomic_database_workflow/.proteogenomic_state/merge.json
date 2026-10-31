@@ -1,0 +1,51 @@
+{
+  "configuration_sha256": "27492c3f6cde47732849156d24110b0ce56d81d404fc3842bb01aff72a6a353c",
+  "input_sha256": {
+    "data/UP000005640_9606.fasta": "16c764aab2be38521d44e5a89a2a9d9e60d44e99b0f583884b91224096fac8df",
+    "data/crap.fasta": "4b0e6e97ab1d618baa38be612a787d884a781e07f627b919c4b29ac064db5382",
+    "results/pgdb_publication_rerun_v5/fusion.primary.fasta": "3d6dd8da5d79405b1b6790a75a3e21e73d2825bc01779b1d51f98f3b66bbad03",
+    "results/pgdb_publication_rerun_v5/gencode_translation_concordance.json": "923233cb1f331a0ccfa537c1f127e14260e3a22785013b2898d1b04872a3c17b",
+    "results/pgdb_publication_rerun_v5/rmats.primary.fasta": "281daa8d1bc7a085af6794682a049b6646afbf11f976a658a6058351394c72e9",
+    "results/pgdb_publication_rerun_v5/suppa.primary.fasta": "808aacb034e0afba0c9f037f2e8c923ce0378ab378dfe4d38d376ec6878019aa"
+  },
+  "resolved_configuration": {
+    "annotation_release": "GENCODE_46",
+    "contaminants_fasta": [
+      "data/crap.fasta"
+    ],
+    "gencode_concordance_summary": "results/pgdb_publication_rerun_v5/gencode_translation_concordance.json",
+    "id_prefix": "PGDB_U",
+    "id_width": 7,
+    "include_rescue_tiers": false,
+    "inputs": [
+      "results/pgdb_publication_rerun_v5/fusion.primary.fasta",
+      "results/pgdb_publication_rerun_v5/rmats.primary.fasta",
+      "results/pgdb_publication_rerun_v5/suppa.primary.fasta"
+    ],
+    "invalid_sequence_policy": "error",
+    "log_level": "INFO",
+    "max_header_values": 3,
+    "max_missed_cleavages": 3,
+    "max_peptide_length": 40,
+    "min_peptide_length": 7,
+    "min_protein_length": 6,
+    "organism": "Homo_sapiens",
+    "out_biological_interpretation": "results/pgdb_publication_rerun_v5/proteogenomic_biological.tsv",
+    "out_fasta": "results/pgdb_publication_rerun_v5/proteogenomic_database.fasta",
+    "out_mapping": "results/pgdb_publication_rerun_v5/proteogenomic_mapping.tsv",
+    "out_metadata": "results/pgdb_publication_rerun_v5/proteogenomic_metadata.tsv",
+    "out_peptide_evidence": "results/pgdb_publication_rerun_v5/proteogenomic_peptides.tsv",
+    "out_summary_json": "results/pgdb_publication_rerun_v5/proteogenomic_summary.json",
+    "out_summary_tsv": "results/pgdb_publication_rerun_v5/proteogenomic_summary.tsv",
+    "record_types": [
+      "protein"
+    ],
+    "recursive": false,
+    "reference_fasta": [
+      "data/UP000005640_9606.fasta"
+    ]
+  },
+  "schema_version": "pgdb-workflow-run-v1",
+  "software_version": "0.1.0",
+  "step": "merge"
+}

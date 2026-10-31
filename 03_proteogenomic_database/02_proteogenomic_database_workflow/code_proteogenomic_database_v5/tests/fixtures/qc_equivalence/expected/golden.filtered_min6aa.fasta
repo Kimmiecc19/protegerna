@@ -1,0 +1,8 @@
+>R1|schema_version=pgdb-merge-input-v1|source=rmats|record_type=protein|record_id=R1|event_type=SE|event_id=E1|annotation_release=GENCODE_46|database_output_tier=primary|GN=GENE1|OS=Homo_sapiens
+MPEPTIDEK
+>R2|schema_version=pgdb-merge-input-v1|source=suppa|record_type=protein|record_id=R2|event_type=A3|event_id=E2|annotation_release=GENCODE_46|database_output_tier=primary|GN=GENE2|OS=Homo_sapiens
+MPEPTIDEK
+>R3|source=rmats|record_type=protein|record_id=R3
+MPEP*TIDEK
+>R5|source=fusioninspector|record_type=protein|record_id=R5
+MPEP?TIDEK

@@ -1,0 +1,14 @@
+{
+    "gencode": true,
+    "rmats": true,
+    "rmats_read_len": 100,
+    "rmats_novel_splice_site": true,
+    "rmats_paired_stats": false,
+
+    "dexseq_exon": false,
+    "edger_exon": true,
+    "dexseq_dtu": false,
+
+    "skip_miso": true,
+    "sashimi_plot": false
+}

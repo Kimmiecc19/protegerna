@@ -1,0 +1,41 @@
+{
+  "biological_interpretation_rows_written": 157792,
+  "exact_sequence_redundancy_fraction": 0.4886258448194971,
+  "input_fasta_file_count": 5,
+  "input_fasta_files": [
+    "/home/kcoetzer/proteogenomic_database/data/UP000005640_9606.fasta",
+    "/home/kcoetzer/proteogenomic_database/data/crap.fasta",
+    "/home/kcoetzer/proteogenomic_database/results/pgdb_publication_rerun_v5/fusion.primary.fasta",
+    "/home/kcoetzer/proteogenomic_database/results/pgdb_publication_rerun_v5/rmats.primary.fasta",
+    "/home/kcoetzer/proteogenomic_database/results/pgdb_publication_rerun_v5/suppa.primary.fasta"
+  ],
+  "read_filter_statistics": {
+    "records_read": 157792,
+    "records_retained_after_dia_filtering": 157726,
+    "records_skipped_no_eligible_tryptic_peptide": 56,
+    "records_skipped_too_short": 10
+  },
+  "record_mappings_written": 157726,
+  "records_read": 157792,
+  "records_removed_invalid_sequence": 0,
+  "records_removed_no_valid_peptide": 56,
+  "records_removed_short_protein": 10,
+  "records_retained_after_dia_filtering": 157726,
+  "retained_original_records": 157726,
+  "source_record_counts": {
+    "crap": 116,
+    "fusioninspector": 77884,
+    "reference": 20620,
+    "rmats": 18786,
+    "suppa": 40320
+  },
+  "source_unique_sequence_counts": {
+    "crap": 116,
+    "fusioninspector": 4211,
+    "reference": 20547,
+    "rmats": 18786,
+    "suppa": 40320
+  },
+  "unique_sequences_before_filtering": 80657,
+  "unique_sequences_written": 80657
+}

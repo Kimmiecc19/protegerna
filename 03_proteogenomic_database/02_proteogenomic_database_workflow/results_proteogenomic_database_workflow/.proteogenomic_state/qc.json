@@ -1,0 +1,29 @@
+{
+  "configuration_sha256": "28c8990d467c9621f40afc0564d4e4c288010d4a4f5b828d9401ff2e880041cd",
+  "input_sha256": {
+    "data/UP000005640_9606.fasta": "16c764aab2be38521d44e5a89a2a9d9e60d44e99b0f583884b91224096fac8df",
+    "results/pgdb_publication_rerun_v5/proteogenomic_database.fasta": "3566def523f8b023f3a497599315ccc5986d244058cd0230ca4d3a0b4d4d1768",
+    "results/pgdb_publication_rerun_v5/proteogenomic_metadata.tsv": "fb9fd1996fb7fa6d013426cdeb7b293b25d5948d0a5e590dea05cbe3c4b7a455"
+  },
+  "resolved_configuration": {
+    "exclude_no_eligible_peptide": false,
+    "fasta": [
+      "results/pgdb_publication_rerun_v5/proteogenomic_database.fasta"
+    ],
+    "max_missed_cleavages": 3,
+    "max_peptide_length": 40,
+    "metadata": [
+      "results/pgdb_publication_rerun_v5/proteogenomic_metadata.tsv"
+    ],
+    "min_peptide_length": 7,
+    "min_protein_length": 6,
+    "outdir": "results/pgdb_publication_rerun_v5/qc",
+    "prefix": "proteogenomic_database",
+    "reference_proteome": "data/UP000005640_9606.fasta",
+    "strict_quantms": true,
+    "write_filtered_fasta": false
+  },
+  "schema_version": "pgdb-workflow-run-v1",
+  "software_version": "0.1.0",
+  "step": "qc"
+}
