@@ -1,0 +1,93 @@
+{
+  "callers": {
+    "crap": {
+      "exclusion:NA": 116,
+      "frame:NA": 116,
+      "peptide_evidence": 116,
+      "records": 116
+    },
+    "fusion": {
+      "exclusion:NA": 77884,
+      "exclusion:PGDB_EXCL_ACCEPTOR_INCOMPLETE_CDS_EXCLUDED_FROM_DIA": 27122,
+      "exclusion:PGDB_EXCL_ACCEPTOR_RETAINED_CDS_LT_THRESHOLD": 6962,
+      "exclusion:PGDB_EXCL_ANNOTATED_SELENOCYSTEINE_NOT_SUPPORTED_FOR_FUSION_CDS": 40,
+      "exclusion:PGDB_EXCL_ANNOTATED_STOP_CODON_READTHROUGH_NOT_RECONSTRUCTED": 3,
+      "exclusion:PGDB_EXCL_BREAKPOINT_SNAPPED_FAR_FROM_REPORTED_COORDINATE": 92378,
+      "exclusion:PGDB_EXCL_DONOR_INCOMPLETE_CDS_EXCLUDED_FROM_DIA": 17882,
+      "exclusion:PGDB_EXCL_DONOR_ONLY_PRODUCT_NOT_REQUESTED": 28016,
+      "exclusion:PGDB_EXCL_DONOR_RETAINED_CDS_LT_THRESHOLD": 4798,
+      "exclusion:PGDB_EXCL_FRAMESHIFT_EXCLUDED_FROM_DIA": 220061,
+      "exclusion:PGDB_EXCL_FUSION_PROTEIN_IDENTICAL_TO_CANONICAL_PROTEOME": 67,
+      "exclusion:PGDB_EXCL_LOW_CONFIDENCE_RECONSTRUCTION": 164518,
+      "exclusion:PGDB_EXCL_MISSING_PROTEIN_SEQUENCE": 515,
+      "exclusion:PGDB_EXCL_NMD_PREDICTED_EXCLUDED_FROM_DIA": 140726,
+      "exclusion:PGDB_EXCL_NO_CANONICAL_UNIQUE_JUNCTION_PEPTIDE": 36467,
+      "exclusion:PGDB_EXCL_NO_TRYPTIC_JUNCTION_SPANNING_PEPTIDE": 31620,
+      "exclusion:PGDB_EXCL_PROTEIN_TOO_SHORT_FOR_DIA": 16488,
+      "exclusion:PGDB_EXCL_SNAPPED_BREAKPOINT_WITHOUT_INDEPENDENT_JUNCTION_EVIDENCE": 402,
+      "exclusion:PGDB_EXCL_TRUNCATED_OR_EARLY_STOP_EXCLUDED_FROM_DIA": 118604,
+      "frame:FRAMESHIFT": 220061,
+      "frame:INFRAME": 172790,
+      "nmd_predicted": 140726,
+      "peptide_evidence": 328368,
+      "records": 392851
+    },
+    "fusioninspector": {
+      "exclusion:NA": 77884,
+      "frame:NA": 77884,
+      "peptide_evidence": 77884,
+      "records": 77884
+    },
+    "reference": {
+      "exclusion:NA": 20620,
+      "exclusion:PGDB_EXCL_NO_ELIGIBLE_TRYPTIC_PEPTIDE": 40,
+      "exclusion:PGDB_EXCL_PROTEIN_SHORTER_THAN_6AA": 3,
+      "frame:NA": 20663,
+      "peptide_evidence": 20620,
+      "records": 20663
+    },
+    "rmats": {
+      "exclusion:NA": 85545,
+      "exclusion:PGDB_EXCL_ANNOTATED_SELENOCYSTEINE_NOT_SUPPORTED_FOR_ALTERED_CDS": 193,
+      "exclusion:PGDB_EXCL_ANNOTATED_STOP_CODON_READTHROUGH_NOT_RECONSTRUCTED": 55,
+      "exclusion:PGDB_EXCL_CDS_SEQUENCE_IDENTICAL_TO_CANONICAL": 429229,
+      "exclusion:PGDB_EXCL_INCOMPLETE_CDS_EXCLUDED_FROM_DIA": 37394,
+      "exclusion:PGDB_EXCL_NMD_PREDICTED_EXCLUDED_FROM_DIA": 149903,
+      "exclusion:PGDB_EXCL_NO_CDS_OVERLAP": 164,
+      "exclusion:PGDB_EXCL_NO_ELIGIBLE_TRYPTIC_PEPTIDE": 16,
+      "exclusion:PGDB_EXCL_NO_OPPOSITE_ISOFORM_UNIQUE_TRYPTIC_PEPTIDE": 6571,
+      "exclusion:PGDB_EXCL_NO_TRANSLATABLE_ORF": 8003,
+      "exclusion:PGDB_EXCL_PROTEIN_SEQUENCE_IDENTICAL_TO_CANONICAL": 108,
+      "exclusion:PGDB_EXCL_PROTEIN_SHORTER_THAN_6AA": 7,
+      "exclusion:PGDB_EXCL_RETAINED_INTRON_ORF_NOT_PRESERVED": 107796,
+      "exclusion:PGDB_EXCL_RI_NO_JUNCTION_SPANNING_SEARCHABLE_PEPTIDE": 7888,
+      "exclusion:PGDB_EXCL_START_LOSS_EXCLUDED_FROM_DIA": 7997,
+      "frame:FRAMESHIFT": 143931,
+      "frame:INFRAME": 116640,
+      "frame:NA": 448038,
+      "nmd_predicted": 149903,
+      "peptide_evidence": 255198,
+      "records": 708609,
+      "transcript_ambiguous": 490058
+    },
+    "suppa": {
+      "exclusion:NA": 2061120,
+      "exclusion:PGDB_EXCL_ANNOTATED_STOP_CODON_READTHROUGH_NOT_RECONSTRUCTED": 462,
+      "exclusion:PGDB_EXCL_INCOMPLETE_CDS_EXCLUDED_FROM_DIA": 835104,
+      "exclusion:PGDB_EXCL_NMD_PREDICTED_EXCLUDED_FROM_DIA": 486,
+      "exclusion:PGDB_EXCL_NO_ANNOTATED_CDS": 3093420,
+      "exclusion:PGDB_EXCL_NO_OPPOSITE_ISOFORM_UNIQUE_TRYPTIC_PEPTIDE": 559716,
+      "exclusion:PGDB_EXCL_NO_REFERENCE_UNIQUE_TRYPTIC_PEPTIDE": 810114,
+      "exclusion:PGDB_EXCL_PROTEIN_SEQUENCE_IDENTICAL_TO_OPPOSITE_ISOFORM": 216312,
+      "exclusion:PGDB_EXCL_RETAINED_INTRON_ORF_NOT_PRESERVED": 197142,
+      "frame:FRAMESHIFT": 900480,
+      "frame:INFRAME": 2705232,
+      "frame:NA": 3935802,
+      "nmd_predicted": 486,
+      "peptide_evidence": 3389148,
+      "records": 7541514,
+      "transcript_ambiguous": 65718
+    }
+  },
+  "schema_version": "pgdb-release-report-v1"
+}

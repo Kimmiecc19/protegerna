@@ -1,0 +1,47 @@
+# Minimal production workflow template.
+# Replace each input placeholder with a real path. The workflow output_dir
+# supplies conventional output filenames for each step.
+# Validate the generated commands before running:
+# proteogenomic-workflow workflow.minimum.example.toml --dry-run
+
+[workflow]
+output_dir = "results/minimal_run"
+resume = false
+
+[common]
+gtf_db = "data/REPLACE_WITH_GTF_DATABASE.db"
+genome = "data/REPLACE_WITH_GENOME.fa"
+annotation_release = "GENCODE_XX"
+organism = "Homo_sapiens"
+
+[validate]
+enabled = true
+gencode_protein_fasta = "data/REPLACE_WITH_GENCODE_PROTEINS.fa"
+
+[fusion]
+enabled = true
+fusioninspector = ["data/REPLACE_WITH_FUSIONINSPECTOR_FILE_OR_DIRECTORY"]
+
+[rmats]
+enabled = true
+se_files = ["data/REPLACE_WITH_SE_MATS_JC.txt"]
+
+[suppa]
+enabled = true
+event_files = ["data/REPLACE_WITH_SUPPA_EVENT_FILE.ioe"]
+
+# Merge consumes the outputs produced above. Include a reviewed reference FASTA
+# for a useful reference-aware release database.
+[merge]
+enabled = true
+gencode_concordance_summary = "results/minimal_run/gencode_translation_concordance.json"
+inputs = ["results/minimal_run/fusion.primary.fasta", "results/minimal_run/rmats.primary.fasta", "results/minimal_run/suppa.primary.fasta"]
+reference_fasta = ["data/REPLACE_WITH_REFERENCE_PROTEOME.fa"]
+
+[qc]
+enabled = true
+fasta = ["results/minimal_run/proteogenomic_database.fasta"]
+
+[report]
+enabled = true
+inputs = ["results/minimal_run/fusion.biological.tsv", "results/minimal_run/rmats.consequences.tsv", "results/minimal_run/suppa.consequences.tsv", "results/minimal_run/proteogenomic_biological.tsv"]

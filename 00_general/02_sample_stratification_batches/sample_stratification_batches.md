@@ -1,19 +1,22 @@
 # Stratified Sampling for AnswerALS Multi-Omics Data
 
 📅 **Created**: 12 May 2025
-🎯 **Purpose**: Create artificial batches for transcriptomic and proteomic data to minimize downstream batch effects.
+🎯 **Purpose**: Create artificial batches for transcriptomic and proteomic data
+to minimize downstream batch effects.
 
 ---
 
 ## 🔍 Overview
 
-This repository describes how AnswerALS samples were pre-processed and stratified to reduce technical batch effects prior to multi-omics integration.
+This repository describes how AnswerALS samples were pre-processed and
+stratified to reduce technical batch effects prior to multi-omics integration.
 
 ---
 
 ## 📋 Sample Mapping: Summary
 
-Based on Neuromine sample mapping (see [README](https://stdataportalprod.blob.core.windows.net/wp-media/Sample-Mapping-README.txt)).
+Based on Neuromine sample mapping (see
+[README](https://stdataportalprod.blob.core.windows.net/wp-media/Sample-Mapping-README.txt)).
 
 ### Key Columns
 
@@ -36,10 +39,13 @@ Use the mapping file to:
 ## 🧪 Batch Technical Control (BTC) vs Batch Differentiation Control (BDC)
 
 * `CTRL-NEUEU392AE8` is the control line used for **BTC** and **BDC**
-* **BTC**: Clone produced in bulk for consistent omics assay comparison (Oct–Dec 2018 & Jun–Jul 2021)
-* **BDC**: Same clone, differentiated with each batch to assess inter-batch variability
+* **BTC**: Clone produced in bulk for consistent omics assay comparison (Oct–Dec
+  2018 & Jun–Jul 2021)
+* **BDC**: Same clone, differentiated with each batch to assess inter-batch
+  variability
 
-⚠️ **52 samples** from release one had strong batch effects. Recommended to exclude these from analysis.
+⚠️ **52 samples** from release one had strong batch effects. Recommended to
+exclude these from analysis.
 
 ---
 
@@ -72,11 +78,14 @@ Result:
 
 ## 🧪 Creating Artificial Batches
 
-**Problem**: Filtering by available omics and batch quality left batches unbalanced (some with 2–14 samples).
+**Problem**: Filtering by available omics and batch quality left batches
+unbalanced (some with 2–14 samples).
 
-**Solution**: Use **StratifiedKFold** to create artificial, biologically balanced batches across transcriptomics and proteomics data.
+**Solution**: Use **StratifiedKFold** to create artificial, biologically
+balanced batches across transcriptomics and proteomics data.
 
-🔗 [StratifiedKFold docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)
+🔗 [StratifiedKFold
+docs](https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.StratifiedKFold.html)
 
 ---
 
@@ -488,18 +497,23 @@ for name, df in trans_validation.items():
 
 1. **Essential sanity check**
 
-   * Confirms that BDC (biological disease/control) and BTC (technical control) samples are correctly split across batches.
-   * Ensures stratification by diagnosis and sex is preserved — crucial for statistical power and avoiding bias downstream.
+   * Confirms that BDC (biological disease/control) and BTC (technical control)
+     samples are correctly split across batches.
+   * Ensures stratification by diagnosis and sex is preserved — crucial for
+     statistical power and avoiding bias downstream.
 
 2. **Transparent batch structure**
 
-   * Documents how artificial batches were created — important for reproducibility and troubleshooting.
-   * Makes it easier to justify and describe design choices in methods sections, manuscripts, or presentations.
+   * Documents how artificial batches were created — important for
+     reproducibility and troubleshooting.
+   * Makes it easier to justify and describe design choices in methods sections,
+     manuscripts, or presentations.
 
 3. **Catches early issues**
 
    * Flags unbalanced batches (e.g., all males or all ALS cases).
-   * Alerts if BTCs are missing from a batch, which could affect normalization or batch correction later.
+   * Alerts if BTCs are missing from a batch, which could affect normalization
+     or batch correction later.
 
 4. **Reusable across omics**
 
@@ -508,7 +522,8 @@ for name, df in trans_validation.items():
 
 5. **Supports quality reporting**
 
-   * Can generate summary stats or tables ready for inclusion in reports or supplementary material.
+   * Can generate summary stats or tables ready for inclusion in reports or
+     supplementary material.
 
 ---
 
@@ -516,31 +531,40 @@ for name, df in trans_validation.items():
 
 1. **Redundant if already validated upstream**
 
-   * If batch assignment and sample stratification were handled during preprocessing (e.g., in R or Nextflow), this check may be redundant.
+   * If batch assignment and sample stratification were handled during
+     preprocessing (e.g., in R or Nextflow), this check may be redundant.
 
 2. **Doesn’t detect subtle imbalances**
 
-   * Won’t flag statistical trends (e.g., mild male enrichment across all batches) unless distributions are explicitly tested.
+   * Won’t flag statistical trends (e.g., mild male enrichment across all
+     batches) unless distributions are explicitly tested.
    * Doesn’t assess expression or intensity distributions — only metadata.
 
 3. **Scripting overhead**
 
-   * Adds another script to maintain, especially if formats or column names vary between omics layers.
+   * Adds another script to maintain, especially if formats or column names vary
+     between omics layers.
    * Requires consistent metadata structure, or it’ll break.
 
 ---
 
 ### ✅ When it *is* worth it:
 
-* If you’re doing custom artificial batching — especially for aligning transcriptomics and proteomics in multi-omics studies.
-* If you plan to document this step in a manuscript, supplement, or reproducibility audit.
-* If you want to proactively catch batch composition issues *before* normalization or integration.
+* If you’re doing custom artificial batching — especially for aligning
+  transcriptomics and proteomics in multi-omics studies.
+* If you plan to document this step in a manuscript, supplement, or
+  reproducibility audit.
+* If you want to proactively catch batch composition issues *before*
+  normalization or integration.
 
 ---
 
 ## 🧬 But what about my **WGS** data?
 
-In most multi-omics studies, **whole genome sequencing (WGS)** does **not** require batching in the same way as RNA-seq or proteomics. Whether stratified sampling or artificial batching is necessary depends on how you’re using the WGS data.
+In most multi-omics studies, **whole genome sequencing (WGS)** does **not**
+require batching in the same way as RNA-seq or proteomics. Whether stratified
+sampling or artificial batching is necessary depends on how you’re using the WGS
+data.
 
 ---
 
@@ -550,14 +574,18 @@ In most multi-omics studies, **whole genome sequencing (WGS)** does **not** requ
 
    * WGS, especially germline variant calling, is robust to batch effects:
 
-     * The assay is standardized and less sensitive to reagent or instrument variability.
-     * DNA is stable — unlike RNA or proteins, it doesn't change with biological state.
-     * Tools like GATK or `nf-core/sarek` are designed to scale across sequencing runs without needing technical controls.
+     * The assay is standardized and less sensitive to reagent or instrument
+       variability.
+     * DNA is stable — unlike RNA or proteins, it doesn't change with biological
+       state.
+     * Tools like GATK or `nf-core/sarek` are designed to scale across
+       sequencing runs without needing technical controls.
 
 2. **BTCs target assay noise — not needed for WGS**
 
    * BTCs in RNA-seq or proteomics help assess lab-specific variability.
-   * In WGS, quality metrics (coverage, duplication, base quality) suffice to monitor performance.
+   * In WGS, quality metrics (coverage, duplication, base quality) suffice to
+     monitor performance.
 
 3. **Batch consistency is evaluated differently**
 
@@ -574,32 +602,40 @@ In most multi-omics studies, **whole genome sequencing (WGS)** does **not** requ
 
 ### 🚫 I do **not** need to stratify or re-batch WGS if:
 
-* I’m only calling variants once per sample (e.g., using `nf-core/sarek`), and batch structure doesn’t affect the pipeline.
+* I’m only calling variants once per sample (e.g., using `nf-core/sarek`), and
+  batch structure doesn’t affect the pipeline.
 * The WGS results (VCFs) are used downstream without batch-based normalization.
-* WGS is used mainly for annotation, modeling, or integration (e.g., for variant-driven protein structure prediction).
+* WGS is used mainly for annotation, modeling, or integration (e.g., for
+  variant-driven protein structure prediction).
 
-➡️ *In my case*, **WGS batches became unbalanced after pre-filtering** (due to sample matching), but this doesn't impact variant calling.
+➡️ *In my case*, **WGS batches became unbalanced after pre-filtering** (due to
+sample matching), but this doesn't impact variant calling.
 
 ---
 
 ### ✅ I *may* want to align WGS batches if:
 
-* My filtered WGS sample set no longer reflects a balanced distribution across diagnosis/sex.
-* I want to align all omics layers to avoid integration bias (e.g., for tools like MOFA, SNF, WGCNA).
+* My filtered WGS sample set no longer reflects a balanced distribution across
+  diagnosis/sex.
+* I want to align all omics layers to avoid integration bias (e.g., for tools
+  like MOFA, SNF, WGCNA).
 
 ---
 
 ## ✔️ Best practice for T + P + WGS integration:
 
-* If RNA-seq and proteomics batches are artificial, I can map **WGS** samples to those batches based on shared participant/sample IDs.
-* This is **not** for technical correction during variant calling — only to ensure consistency during integration.
+* If RNA-seq and proteomics batches are artificial, I can map **WGS** samples to
+  those batches based on shared participant/sample IDs.
+* This is **not** for technical correction during variant calling — only to
+  ensure consistency during integration.
 
 ---
 
 ### 🧠 Bottom line:
 
 * ✅ No need to re-batch WGS for `sarek` or variant calling.
-* ✅ Yes — assign the **same artificial batch labels** to WGS metadata **for integration purposes only**.
+* ✅ Yes — assign the **same artificial batch labels** to WGS metadata **for
+  integration purposes only**.
 * ✅ Make sure WGS QC is passed (coverage, Ti/Tv, etc.).
 * ❌ Don’t apply batch correction to WGS the same way as RNA/protein data.
 
@@ -612,13 +648,18 @@ In most multi-omics studies, **whole genome sequencing (WGS)** does **not** requ
 ### **1. Ratio-Based Scaling with Reference Materials**
 
 **Yu et al. (2023)**
-*Correcting batch effects in large-scale multiomics studies using a reference-material-based ratio method.*
+*Correcting batch effects in large-scale multiomics studies using a
+reference-material-based ratio method.*
 [Genome Biology, 24, 201](https://doi.org/10.1186/s13059-023-03047-z)
 
-* Batch effects are **pervasive across omics layers** (transcriptomics, proteomics, metabolomics).
-* Introduced by lab conditions, reagents, operators, etc., and are **unrelated to biological factors**.
-* Can lead to **false positives/negatives**, **misleading results**, and **irreproducibility**.
-* **Ratio-based scaling** using common **reference materials** enhances comparability across batches in **large-scale multi-omics** studies.
+* Batch effects are **pervasive across omics layers** (transcriptomics,
+  proteomics, metabolomics).
+* Introduced by lab conditions, reagents, operators, etc., and are **unrelated
+  to biological factors**.
+* Can lead to **false positives/negatives**, **misleading results**, and
+  **irreproducibility**.
+* **Ratio-based scaling** using common **reference materials** enhances
+  comparability across batches in **large-scale multi-omics** studies.
 
 ---
 
@@ -626,13 +667,18 @@ In most multi-omics studies, **whole genome sequencing (WGS)** does **not** requ
 
 **Ugidos et al. (2022)**
 *MultiBaC: an R package to remove batch effects in multi-omic experiments.*
-[Bioinformatics, 38(9), 2657–2658](https://doi.org/10.1093/bioinformatics/btac132)
-[Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MultiBaC.html) | [GitHub](https://github.com/ConesaLab/MultiBaC)
+[Bioinformatics, 38(9),
+2657–2658](https://doi.org/10.1093/bioinformatics/btac132)
+[Bioconductor](https://www.bioconductor.org/packages/release/bioc/html/MultiBaC.html)
+| [GitHub](https://github.com/ConesaLab/MultiBaC)
 
-* Most batch correction algorithms (**BECAs**) assume **known batches** and clean designs.
+* Most batch correction algorithms (**BECAs**) assume **known batches** and
+  clean designs.
 * Few methods correct for **unknown or latent sources of systematic noise**.
-* In **multi-omic experiments**, batch effects often **confound with omic type effects**, complicating correction.
-* **MultiBaC** addresses this using **matrix factorization**, separating biological signal from unwanted noise across modalities.
+* In **multi-omic experiments**, batch effects often **confound with omic type
+  effects**, complicating correction.
+* **MultiBaC** addresses this using **matrix factorization**, separating
+  biological signal from unwanted noise across modalities.
 
 ---
 
@@ -642,18 +688,24 @@ In most multi-omics studies, **whole genome sequencing (WGS)** does **not** requ
 *Assessing and mitigating batch effects in large-scale omics studies.*
 [Genome Biology, 25, 254](https://doi.org/10.1186/s13059-024-03401-9)
 
-* Batch effects reduce signal, introduce bias, and contribute to **non-reproducible or retracted studies**.
+* Batch effects reduce signal, introduce bias, and contribute to
+  **non-reproducible or retracted studies**.
 * Especially problematic in **longitudinal** or **multi-center** studies.
-* Current tools vary widely in assumptions—**method selection remains a challenge** for non-experts.
-* Most tools focus on **quantitative data**, leaving **qualitative omics** (e.g., splicing events, mutations) under-addressed.
+* Current tools vary widely in assumptions—**method selection remains a
+  challenge** for non-experts.
+* Most tools focus on **quantitative data**, leaving **qualitative omics**
+  (e.g., splicing events, mutations) under-addressed.
 * Emphasizes need for **novel correction methods for qualitative omics**.
 
 ---
 
 ### ✅ Takeaway:
 
-* **Batch effects affect all omics layers**—transcriptomics, proteomics, metabolomics, and multi-omics integration.
-* **Reference material-based methods** and tools like **MultiBaC** are effective, especially when omics are acquired asynchronously.
-* There's a growing need for **robust tools that handle both known and unknown sources of variation**, and support **qualitative data correction**.
+* **Batch effects affect all omics layers**—transcriptomics, proteomics,
+  metabolomics, and multi-omics integration.
+* **Reference material-based methods** and tools like **MultiBaC** are
+  effective, especially when omics are acquired asynchronously.
+* There's a growing need for **robust tools that handle both known and unknown
+  sources of variation**, and support **qualitative data correction**.
 
 ---

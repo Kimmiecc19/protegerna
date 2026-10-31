@@ -1,0 +1,200 @@
+# Full parameter reference / dry-run template.
+# Every accepted workflow, common, and step option is shown. Replace every
+# example path with a real file/path before running; this is not executable as-is.
+# Check the generated commands with:
+# proteogenomic-workflow workflow.full.example.toml --dry-run
+
+[workflow]
+output_dir = "results/full_run"
+resume = false
+
+[common]
+gtf_db = "data/REPLACE_WITH_GTF_DATABASE.db"
+genome = "data/REPLACE_WITH_GENOME.fa"
+annotation_release = "GENCODE_XX"
+organism = "Homo_sapiens"
+reference_proteome = "data/REPLACE_WITH_REFERENCE_PROTEOME.fa"
+reference_peptide_cache = "results/full_run/reference_peptides.cache"
+sample_metadata = "data/REPLACE_WITH_SAMPLE_METADATA.tsv"
+
+[validate]
+enabled = true
+gencode_protein_fasta = "data/REPLACE_WITH_GENCODE_PROTEINS.fa"
+out_tsv = "results/full_run/gencode_translation_concordance.tsv"
+out_summary_json = "results/full_run/gencode_translation_concordance.json"
+max_mismatch_rate = 0.0
+
+[fusion]
+enabled = true
+fusioninspector = ["data/REPLACE_WITH_FUSIONINSPECTOR_FILE_OR_DIRECTORY"]
+recursive_inputs = true
+biological_interpretation_tsv = "results/full_run/fusion.biological.tsv"
+filtered_cds_fasta = "results/full_run/fusion.primary.cds.fasta"
+filtered_protein_fasta = "results/full_run/fusion.primary.fasta"
+dia_database_metadata_tsv = "results/full_run/fusion.metadata.tsv"
+out_sequence_sample_tsv = "results/full_run/fusion.sequence_samples.tsv"
+digested_peptide_tsv = "results/full_run/fusion.peptides.tsv"
+nmd_distance_threshold_nt = 55
+early_stop_aa_cutoff = 30
+workers = 1
+max_transcripts_per_gene = 3
+transcript_model_cache = "results/full_run/fusion_transcript_models.pkl"
+digest_trypsin = true
+min_protein_length = 30
+quantms_conservative = true
+exclude_incomplete_cds = true
+require_unique_junction_peptide = true
+require_junction_peptide = true
+exclude_frameshift_from_dia = true
+exclude_truncated_from_dia = true
+exclude_nmd_from_dia = true
+include_donor_only_products = false
+min_retained_cds_nt = 30
+max_breakpoint_snap_distance_nt = 25
+min_split_reads_for_snapped_product = 1
+max_missed_cleavages = 2
+digested_min_peptide_length = 7
+digested_max_peptide_length = 40
+
+[rmats]
+enabled = true
+se_files = ["data/REPLACE_WITH_SE_MATS_JC.txt"]
+a3ss_files = ["data/REPLACE_WITH_A3SS_MATS_JC.txt"]
+a5ss_files = ["data/REPLACE_WITH_A5SS_MATS_JC.txt"]
+mxe_files = ["data/REPLACE_WITH_MXE_MATS_JC.txt"]
+ri_files = ["data/REPLACE_WITH_RI_MATS_JC.txt"]
+out_prot_fa = "results/full_run/rmats.primary.fasta"
+out_alt_start_prot_fa = "results/full_run/rmats.alternative_start.fasta"
+out_exploratory_orf_fa = "results/full_run/rmats.exploratory_orf.fasta"
+out_junc_fa = "results/full_run/rmats.junctions.fasta"
+out_consequence_tsv = "results/full_run/rmats.consequences.tsv"
+out_event_summary_tsv = "results/full_run/rmats.events.tsv"
+max_fdr = 1.0
+min_abs_inc_level_difference = 0.0
+min_inclusion_junction_reads = 1
+min_skipping_junction_reads = 1
+rmats_conservative_event_filter = false
+pad_partial_codons = false
+allow_alt_start = false
+alternative_start_codons = ["ATG"]
+min_alt_start_kozak_strength = "weak"
+allow_longest_orf = false
+min_alt_orf_aa = 30
+short_junction_peptides = false
+junction_max_flank = 15
+junction_min_flank = 7
+chunksize = 50000
+sequence_cache_entries = 100000
+workers = 1
+nmd_distance_threshold_nt = 55
+exclude_frameshift_from_dia = false
+exclude_nmd_from_dia = false
+exclude_start_loss_from_dia = false
+exclude_premature_stop_from_dia = false
+exclude_incomplete_cds = true
+require_ri_orf_preserved = false
+require_ri_read_evidence = true
+min_ri_inclusion_reads = 1
+exclude_ri_nmd_from_primary = true
+require_ri_junction_peptide = true
+include_failed_filter_proteins = false
+reference_peptide_cache = "results/full_run/reference_peptides.cache"
+require_unique_event_peptide = false
+quantms_conservative = false
+max_missed_cleavages = 2
+min_database_peptide_length = 7
+max_database_peptide_length = 40
+
+[suppa]
+enabled = true
+event_files = ["data/REPLACE_WITH_SUPPA_EVENT_FILE.ioe"]
+psi_files = ["data/REPLACE_WITH_SUPPA_PSI_FILE.psi"]
+min_psi = 0.05
+min_psi_samples = 1
+keep_events_missing_psi = false
+out_psi_summary_tsv = "results/full_run/suppa.psi.tsv"
+out_prot_fa = "results/full_run/suppa.primary.fasta"
+out_alt_start_prot_fa = "results/full_run/suppa.alternative_start.fasta"
+out_exploratory_orf_fa = "results/full_run/suppa.exploratory_orf.fasta"
+out_junc_fa = "results/full_run/suppa.junctions.fasta"
+out_consequence_tsv = "results/full_run/suppa.consequences.tsv"
+pad_partial_codons = false
+allow_alt_start = false
+allow_longest_orf = false
+min_alt_orf_aa = 30
+short_junction_peptides = false
+junction_max_flank = 15
+junction_min_flank = 7
+sequence_cache_entries = 100000
+workers = 1
+nmd_distance_threshold_nt = 55
+exclude_frameshift_from_dia = false
+exclude_nmd_from_dia = false
+exclude_start_loss_from_dia = false
+exclude_premature_stop_from_dia = false
+exclude_incomplete_cds = true
+require_ri_orf_preserved = false
+reference_peptide_cache = "results/full_run/reference_peptides.cache"
+require_unique_event_peptide = false
+quantms_conservative = false
+max_missed_cleavages = 2
+min_database_peptide_length = 7
+max_database_peptide_length = 40
+
+[benchmark]
+enabled = true
+actual = "results/full_run/REPLACE_WITH_ACTUAL_CONSEQUENCE_TSV"
+truth = "data/REPLACE_WITH_CURATED_TRUTH.tsv"
+out_tsv = "results/full_run/benchmark.tsv"
+out_json = "results/full_run/benchmark.json"
+
+[merge]
+enabled = true
+gencode_concordance_summary = "results/full_run/gencode_translation_concordance.json"
+inputs = ["results/full_run/fusion.primary.fasta", "results/full_run/rmats.primary.fasta", "results/full_run/suppa.primary.fasta"]
+annotation_release = "GENCODE_XX"
+organism = "Homo_sapiens"
+recursive = false
+reference_fasta = ["data/REPLACE_WITH_REFERENCE_PROTEOME.fa"]
+contaminants_fasta = ["data/REPLACE_WITH_CONTAMINANTS.fa"]
+record_types = ["protein"]
+out_fasta = "results/full_run/proteogenomic_database.fasta"
+out_metadata = "results/full_run/proteogenomic_metadata.tsv"
+out_mapping = "results/full_run/proteogenomic_mapping.tsv"
+out_peptide_evidence = "results/full_run/proteogenomic_peptides.tsv"
+out_biological_interpretation = "results/full_run/proteogenomic_biological.tsv"
+out_summary_tsv = "results/full_run/proteogenomic_summary.tsv"
+out_summary_json = "results/full_run/proteogenomic_summary.json"
+id_prefix = "PGDB_U"
+id_width = 7
+max_header_values = 3
+min_protein_length = 6
+max_protein_length = 1000000  # Large practical ceiling; remove this line for no configured maximum.
+min_peptide_length = 7
+max_peptide_length = 40
+max_missed_cleavages = 2
+include_rescue_tiers = false
+invalid_sequence_policy = "warn"
+log_level = "INFO"
+
+[qc]
+enabled = true
+fasta = ["results/full_run/proteogenomic_database.fasta"]
+labels = ["merged"]
+metadata = ["results/full_run/proteogenomic_metadata.tsv"]
+reference_proteome = "data/REPLACE_WITH_REFERENCE_PROTEOME.fa"
+outdir = "results/full_run/qc"
+prefix = "proteogenomic_fasta"
+max_missed_cleavages = 2
+min_peptide_length = 7
+max_peptide_length = 40
+min_protein_length = 6
+exclude_no_eligible_peptide = false
+write_filtered_fasta = false
+strict_quantms = false
+
+[report]
+enabled = true
+inputs = ["results/full_run/fusion.biological.tsv", "results/full_run/rmats.consequences.tsv", "results/full_run/suppa.consequences.tsv", "results/full_run/proteogenomic_biological.tsv"]
+out_tsv = "results/full_run/release_report.tsv"
+out_json = "results/full_run/release_report.json"

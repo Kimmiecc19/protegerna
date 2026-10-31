@@ -6,94 +6,151 @@ First generated: 02/06/2025
 
 Source: <https://dataportal.answerals.org/resources>
 
-Amyotrophic Lateral Sclerosis (ALS) is a devasting neurological disease that affects 1 in 400 people. Patients suffer a progressive loss of voluntary muscle control leading to paralysis, difficulty speaking, swallowing, and, ultimately, breathing. Over 60% of patients with ALS die within three years of clinical presentation, and 90% will die within ten years.
+Amyotrophic Lateral Sclerosis (ALS) is a devasting neurological disease that
+affects 1 in 400 people. Patients suffer a progressive loss of voluntary muscle
+control leading to paralysis, difficulty speaking, swallowing, and, ultimately,
+breathing. Over 60% of patients with ALS die within three years of clinical
+presentation, and 90% will die within ten years.
 
 ### Program Mission
 
-To build the most comprehensive clinical and biological assessment of ALS in history, leading to the discovery of disease subtypes so that researchers and scientists across the globe are equipped to understand and ultimately end ALS.
+To build the most comprehensive clinical and biological assessment of ALS in
+history, leading to the discovery of disease subtypes so that researchers and
+scientists across the globe are equipped to understand and ultimately end ALS.
 
 ### Strategy
 
-The Answer ALS Research Program is a paradigm shift in how we study ALS and neurological disease more broadly. Unlike other tissues in the body, the brain and spinal cord cannot be biopsied without causing irreversible damage. However, recent advances in stem cell technology allow scientists to *recreate* an individual's brain and spinal cord cells in vitro.
+The Answer ALS Research Program is a paradigm shift in how we study ALS and
+neurological disease more broadly. Unlike other tissues in the body, the brain
+and spinal cord cannot be biopsied without causing irreversible damage. However,
+recent advances in stem cell technology allow scientists to *recreate* an
+individual's brain and spinal cord cells in vitro.
 
-Using cells isolated from a simple blood sample, researchers can generate lines of induced pluripotent stem cells (iPSCs). These iPSCs can then be directed to become motor neurons (MNs)—the specific cell type affected in ALS. By recreating patient-derived motor neurons, scientists can study how these cells differ from those of a healthy individual or another ALS patient.
+Using cells isolated from a simple blood sample, researchers can generate lines
+of induced pluripotent stem cells (iPSCs). These iPSCs can then be directed to
+become motor neurons (MNs)—the specific cell type affected in ALS. By recreating
+patient-derived motor neurons, scientists can study how these cells differ from
+those of a healthy individual or another ALS patient.
 
 For each enrolled participant, the program generates:
 
 * Longitudinal clinical data
 * Whole-genome sequences
-* Multi-omics data (transcriptomics, epigenomics, proteomics) from iPSC-derived motor neurons
+* Multi-omics data (transcriptomics, epigenomics, proteomics) from iPSC-derived
+  motor neurons
 
-These data, along with associated bio-resources (including patient-derived biofluids, iPSC lines, and—for some participants—autopsy tissue), are standardized and made available to the global research community through the [Answer ALS Data Portal](https://data.answerals.org).
+These data, along with associated bio-resources (including patient-derived
+biofluids, iPSC lines, and—for some participants—autopsy tissue), are
+standardized and made available to the global research community through the
+[Answer ALS Data Portal](https://data.answerals.org).
 
-Combined with the wealth of data collected via a custom mobile app—designed for frequent, at-home assessments to monitor disease progression—and integrated multi-omics analyses, Answer ALS provides an immense body of knowledge and resources for the scientific community. By openly sharing data, samples, and findings, the program aims to have a global impact on ALS research.
+Combined with the wealth of data collected via a custom mobile app—designed for
+frequent, at-home assessments to monitor disease progression—and integrated
+multi-omics analyses, Answer ALS provides an immense body of knowledge and
+resources for the scientific community. By openly sharing data, samples, and
+findings, the program aims to have a global impact on ALS research.
 
-Although focused on ALS, the Answer ALS Research Program is increasingly being recognized as a model for collaborative research in other neurological diseases. It represents a unique and necessary partnership across institutions, disciplines, and technologies, all united by a single mission: to answer ALS.
+Although focused on ALS, the Answer ALS Research Program is increasingly being
+recognized as a model for collaborative research in other neurological diseases.
+It represents a unique and necessary partnership across institutions,
+disciplines, and technologies, all united by a single mission: to answer ALS.
 
 ## Identifying which samples I will use
 
 Source: <https://dataportal.answerals.org/data-information>
 
-The clinical data tables and files included in the download package are essential resources for researchers seeking to gain insights. These tables and files contain detailed information about patient demographics and medical histories. Researchers can use this data to conduct analyses, generate statistics, and develop models to better understand disease progression and treatment effectiveness.
+The clinical data tables and files included in the download package are
+essential resources for researchers seeking to gain insights. These tables and
+files contain detailed information about patient demographics and medical
+histories. Researchers can use this data to conduct analyses, generate
+statistics, and develop models to better understand disease progression and
+treatment effectiveness.
 
 Included in the folder:
 
 Not important:
 
-* Clinical_Dictionary_v2_2023.csv – A reformatted and curated clinical dictionary for easier analysis. Download the file here.
+* Clinical_Dictionary_v2_2023.csv – A reformatted and curated clinical
+  dictionary for easier analysis. Download the file here.
 
 * Clinical_Dictionary.csv – Raw data dictionary.
 
-* Clinical Folder – This folder holds 33 csv files containing clinical measurements from de-identified participant visits.
+* Clinical Folder – This folder holds 33 csv files containing clinical
+  measurements from de-identified participant visits.
 
-* aals_participants v2.csv – A list of participants by ID indicating cohort group.
+* aals_participants v2.csv – A list of participants by ID indicating cohort
+  group.
 
 Most important:
 
-* aals_dataportal_datatable.csv – A table view of high-level summary information keyed by participant ID. Information includes demographics, cell line QC and availability.
+* aals_dataportal_datatable.csv – A table view of high-level summary information
+  keyed by participant ID. Information includes demographics, cell line QC and
+  availability.
 
-All columns: Participant_ID,GUID,NYGC_CGND_ID,HAS_GENOMICS,HAS_EPIGENOMICS,HAS_TRANSCRIPTOMICS,HAS_PROTEOMICS,Number_of_Visits,SEX,ETHNIC_CATEGORY,RACE,SUBJECT_GROUP,SUBJECT_SUBGROUP,REVISED_EL_ESCORIAL_CRITERIA,Site_of_Onset,Bulbar_Onset,Axial_Onset,Limb_Onset,Other_Onset,AGE_AT_SYMPTOM_ONSET,AGE_AT_DEATH,ALSFRS_R_Baseline_Value,ALSFRS_R_Latest_Value,ALSFRS_R_PROGRESSION_SLOPE,CBS_Baseline_Value,CBS_Latest_Value,COGNITIVE_PROGRESSION_SLOPE,HasIPSC,HasDIMN,root_iPSC_Line,iPSCLine,diMNs_line,Primary_Tissue,Age_at_First_PBMC_Collection,Batch,PCT_SMI32,PCT_ISL1,PCT_NKX61,PCT_TUJ1,PCT_S100b,PCT_Nestin,Staining_Details,ClinReport_Mutations_Details,HasVariant,EH_C9orf72,EH_ATXN2,C9orf72_repeat_length,ATXN2_repeat_length,WGS_Sequencing_Protocol_Used,Genomic_Sequencing_DNA_Source,External_Control
+All columns:
+Participant_ID,GUID,NYGC_CGND_ID,HAS_GENOMICS,HAS_EPIGENOMICS,HAS_TRANSCRIPTOMICS,HAS_PROTEOMICS,Number_of_Visits,SEX,ETHNIC_CATEGORY,RACE,SUBJECT_GROUP,SUBJECT_SUBGROUP,REVISED_EL_ESCORIAL_CRITERIA,Site_of_Onset,Bulbar_Onset,Axial_Onset,Limb_Onset,Other_Onset,AGE_AT_SYMPTOM_ONSET,AGE_AT_DEATH,ALSFRS_R_Baseline_Value,ALSFRS_R_Latest_Value,ALSFRS_R_PROGRESSION_SLOPE,CBS_Baseline_Value,CBS_Latest_Value,COGNITIVE_PROGRESSION_SLOPE,HasIPSC,HasDIMN,root_iPSC_Line,iPSCLine,diMNs_line,Primary_Tissue,Age_at_First_PBMC_Collection,Batch,PCT_SMI32,PCT_ISL1,PCT_NKX61,PCT_TUJ1,PCT_S100b,PCT_Nestin,Staining_Details,ClinReport_Mutations_Details,HasVariant,EH_C9orf72,EH_ATXN2,C9orf72_repeat_length,ATXN2_repeat_length,WGS_Sequencing_Protocol_Used,Genomic_Sequencing_DNA_Source,External_Control
 
-Relevant columns: Participant_ID,GUID,HAS_GENOMICS,HAS_TRANSCRIPTOMICS,HAS_PROTEOMICS,SEX,ETHNIC_CATEGORY,RACE
+Relevant columns:
+Participant_ID,GUID,HAS_GENOMICS,HAS_TRANSCRIPTOMICS,HAS_PROTEOMICS,SEX,ETHNIC_CATEGORY,RACE
 
-* aals_released_files.csv – A list of released files with the data path and size of each indicated.
+* aals_released_files.csv – A list of released files with the data path and size
+  of each indicated.
 
-All columns: Participant_ID,omic,CGND_ID,iPSC_Line,line,differentiation,data_level,experiment,path,size in bytes
+All columns:
+Participant_ID,omic,CGND_ID,iPSC_Line,line,differentiation,data_level,experiment,path,size
+in bytes
 
 Relevant columns: Participant_ID,omic,data_level,experiment,path
 
-Additional data files available (<https://dataportal.answerals.org/data-information>):
+Additional data files available
+(<https://dataportal.answerals.org/data-information>):
 
 1. Sample mapping information
 
-* The use of a sample mapping file in controlling pipeline analysis for batch effects plays a crucial role in ensuring the reliability and reproducibility of results, especially in complex biological experiments like cell line differentiation studies.
-* Batch effects can significantly skew data interpretation because they introduce variation that is not related to the biological variables being studied.
+* The use of a sample mapping file in controlling pipeline analysis for batch
+  effects plays a crucial role in ensuring the reliability and reproducibility
+  of results, especially in complex biological experiments like cell line
+  differentiation studies.
+* Batch effects can significantly skew data interpretation because they
+  introduce variation that is not related to the biological variables being
+  studied.
 
 * sample_mapping_README.txt
 * Sample-Mapping-File-Feb-2024.csv
 
-All columns: Participant ID,Sample ID,GUID-Batch,GUID,Cell Line,Batch #,Vial ID,Site,Shipment
+All columns: Participant ID,Sample ID,GUID-Batch,GUID,Cell Line,Batch #,Vial
+ID,Site,Shipment
 
 Relevant columns: Participant ID,Sample ID,GUID-Batch,Batch #,Shipment
 
 1. Proteomic batch effects
 
-52 samples from release one have been found to have strong batch effects. The extent to which these samples vary from the subsequent data has led us to advise users not to utilize these samples in their analyses.
+52 samples from release one have been found to have strong batch effects. The
+extent to which these samples vary from the subsequent data has led us to advise
+users not to utilize these samples in their analyses.
 
-* Proteomics_Batch_Effect_Samples_52.csv (list of participants with proteomic batch effects)
+* Proteomics_Batch_Effect_Samples_52.csv (list of participants with proteomic
+  batch effects)
 
 ### Recommended usage of Sample-Mapping-File for pre-processing
 
-* Before starting the analysis, use the sample mapping file to categorize my data according to the batch number. This involves segregating the cell line differentiation samples based on their batch and identifying the corresponding batch control samples.
+* Before starting the analysis, use the sample mapping file to categorize my
+  data according to the batch number. This involves segregating the cell line
+  differentiation samples based on their batch and identifying the corresponding
+  batch control samples.
 
 ## Filtering and Sample matching scripts
 
-The following R scripts were used to prepare files for stratification for artificial batch generation.
+The following R scripts were used to prepare files for stratification for
+artificial batch generation.
 
-* From these 1269 AnswerALS participants, I performed sample matching to filter the data.
-* Briefly, participants were included if they had all three omics (WGS, RNA-Seq, and proteomic) data available.
+* From these 1269 AnswerALS participants, I performed sample matching to filter
+  the data.
+* Briefly, participants were included if they had all three omics (WGS, RNA-Seq,
+  and proteomic) data available.
 * All other participants were excluded.
-* Included participants who were identified as having strong batch effects in their proteomics data, were also excluded.
+* Included participants who were identified as having strong batch effects in
+  their proteomics data, were also excluded.
 * Remaining participants were matched to the sample mapping file
 * Epigenomic samples were removed
 * The mapped sample file was split into BTC and BDC
@@ -145,11 +202,13 @@ aals_filtered_cleaned <- aals_filtered %>%
 write_csv(aals_filtered_cleaned, "filtered_matched_aals.csv")
 ```
 
-* After filtering participants based on matched omics data, I was left with **347** unique participants left.
+* After filtering participants based on matched omics data, I was left with
+  **347** unique participants left.
 
 1. Sample mapping of filtered participants
 
-Goal: Filter the Sample-Mapping-File-Feb-2024.csv to remove epigenomic data and merge it with the extracted columns from the large merged file.
+Goal: Filter the Sample-Mapping-File-Feb-2024.csv to remove epigenomic data and
+merge it with the extracted columns from the large merged file.
 
 Input: merged_aals_data.csv AND Sample-Mapping-File-Feb-2024.csv
 Output: merged_mapping_TP_data.csv
@@ -226,9 +285,12 @@ write_csv(bdc, "stratify_bdc.csv")
 
 1. Metadata merge
 
-Goal: Generate a large merged csv file containing the metadata for the 347 participants
-Input: filtered_matched_aals.csv AND aals_released_files.csv AND aals_dataportal_datatable.csv
-Output: merged_aals_data.csv (full table) AND genomic_data_level2.csv, transcriptomic_data_level1.csv, proteomic_data_level1.csv (omic type tables)
+Goal: Generate a large merged csv file containing the metadata for the 347
+participants
+Input: filtered_matched_aals.csv AND aals_released_files.csv AND
+aals_dataportal_datatable.csv
+Output: merged_aals_data.csv (full table) AND genomic_data_level2.csv,
+transcriptomic_data_level1.csv, proteomic_data_level1.csv (omic type tables)
 
 ```r
 # 4_aals_full_merge.R
@@ -322,19 +384,30 @@ write_csv(final_merge_aals_data, "merged_aals_data.csv")
 
 ### Data Level Descriptions
 
--Level 1 data is raw, immutable data coming off an instrument (e.g. a sequencer). For genomics, we only provide data corresponding to this level upon special request.
--Level 2 data is raw data mapped against the appropriate reference. Genomics (wgs) uses hg38 as a reference.
+-Level 1 data is raw, immutable data coming off an instrument (e.g. a
+sequencer). For genomics, we only provide data corresponding to this level upon
+special request.
+-Level 2 data is raw data mapped against the appropriate reference. Genomics
+(wgs) uses hg38 as a reference.
 -Level 3 data the most processed form of patient-specific data.
--Level 4 data is attained from the joining of a cohort of patients’ level 3 data from a particular assay.
--Level 5 data is comparative data between two specific cohorts typically labelled as differentially expressed genes (DESeq) or proteins or enriched sites within the genome (DiffBind)
+-Level 4 data is attained from the joining of a cohort of patients’ level 3 data
+from a particular assay.
+-Level 5 data is comparative data between two specific cohorts typically
+labelled as differentially expressed genes (DESeq) or proteins or enriched sites
+within the genome (DiffBind)
 
 ### Chosen data levels
 
-**Proteomics:** raw data coming off a mass spectrometer is called a wiff file: ~2.5GB/individual - TODO: changed to mzML files
+**Proteomics:** raw data coming off a mass spectrometer is called a wiff file:
+~2.5GB/individual - TODO: changed to mzML files
 
-**Genomics:** raw, immutable data coming off an instrument (e.g. a sequencer) called a FASTQ file. FASTQ is a text-based sequencing data file format that stores both raw sequence data and quality scores: ~54.5 GB/individual
+**Genomics:** raw, immutable data coming off an instrument (e.g. a sequencer)
+called a FASTQ file. FASTQ is a text-based sequencing data file format that
+stores both raw sequence data and quality scores: ~54.5 GB/individual
 
-**Transcriptomics:** raw data coming off an instrument (e.g. a sequencer) is also called a FASTQ file. FASTQ is a text-based sequencing data file format that stores both raw sequence data and quality scores: ~5GB/individual  1
+**Transcriptomics:** raw data coming off an instrument (e.g. a sequencer) is
+also called a FASTQ file. FASTQ is a text-based sequencing data file format that
+stores both raw sequence data and quality scores: ~5GB/individual  1
 
 ---
 
@@ -362,7 +435,8 @@ However, I am only using 347 participants (after filtering - see below)
 
 ### AnswerALS Download Tool
 
-* On Neuromine data search page, download the Linux version of Download Tool (answer-als-download-tool-linux-x64)
+* On Neuromine data search page, download the Linux version of Download Tool
+  (answer-als-download-tool-linux-x64)
 * Extract folder and transfer to hemera using rsync
 
 ```bash
@@ -401,10 +475,15 @@ cd /home/kcoetzer/answer-als-download-tool-linux-x64/CLI
 
 ### OPTIONAL: Unpack DATA subdirectories
 
-* The download files from Neuromine typically appear as a folder with many subdirectories
-* For example: /home/kcoetzer/DATA/genomics/2_cram/CASE-NEUZY975XKL/CASE-NEUZY975XKL-01338-G/CASE-NEUZY975XKL-01338-G_1.final.cram
-* In some cases, it can be helpful to unpack the files so that the path is not as long
-* For example: /home/kcoetzer/DATA/genomics/CASE-NEUZY975XKL-01338-G/CASE-NEUZY975XKL-01338-G_1.final.cram is better.
+* The download files from Neuromine typically appear as a folder with many
+  subdirectories
+* For example:
+  /home/kcoetzer/DATA/genomics/2_cram/CASE-NEUZY975XKL/CASE-NEUZY975XKL-01338-G/CASE-NEUZY975XKL-01338-G_1.final.cram
+* In some cases, it can be helpful to unpack the files so that the path is not
+  as long
+* For example:
+  /home/kcoetzer/DATA/genomics/CASE-NEUZY975XKL-01338-G/CASE-NEUZY975XKL-01338-G_1.final.cram
+  is better.
 
 ```py
 # unpack_dir.py
@@ -445,8 +524,10 @@ if __name__ == "__main__":
 ### Renaming data files
 
 * Some file names are inconsistent. For example: fastq vs. fq
-* To make things easier and ensure that pipelines run smoothly, it is helpful to rename all the files to be the same.
-* This should only be an issue with the transcriptomics files since the other data types are .cram and .wiff files with consistent naming conventions.
+* To make things easier and ensure that pipelines run smoothly, it is helpful to
+  rename all the files to be the same.
+* This should only be an issue with the transcriptomics files since the other
+  data types are .cram and .wiff files with consistent naming conventions.
 
 ```python
 # rename_fastq.py
@@ -525,7 +606,8 @@ with open('rna_data.csv', 'w', newline='') as csv_file:
 
 ### Keep participants of interest
 
-* As mentioned previously, only 347 out of over 1000 participants are being used.
+* As mentioned previously, only 347 out of over 1000 participants are being
+  used.
 
 ```bash
 # keep_matched_samples.sh

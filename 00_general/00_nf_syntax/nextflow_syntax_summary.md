@@ -1,8 +1,11 @@
 # Nextflow Syntax Summary
 
-A concise, category-first overview of grouped terms with short synopses and quick lookup links.
+A concise, category-first overview of grouped terms with short synopses and
+quick lookup links.
 
-![Total Terms](https://img.shields.io/badge/Total%20Terms-247-0f172a?style=for-the-badge) ![Categories](https://img.shields.io/badge/Categories-10-0ea5e9?style=for-the-badge)
+![Total
+Terms](https://img.shields.io/badge/Total%20Terms-247-0f172a?style=for-the-badge)
+![Categories](https://img.shields.io/badge/Categories-10-0ea5e9?style=for-the-badge)
 
 ## <a id="summary-category-snapshot"></a>Category Snapshot
 
