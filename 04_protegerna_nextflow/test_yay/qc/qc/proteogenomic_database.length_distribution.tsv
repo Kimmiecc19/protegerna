@@ -1,0 +1,3 @@
+source_label	n_sequences	min_len	q1_len	median_len	mean_len	q3_len	max_len	n_lt_7aa	n_lt_30aa	n_ge_30aa	n_ge_100aa
+proteogenomic_database	4	40	40.0	45.0	45	50.0	50	0	0	4	0
+ALL	4	40	40.0	45.0	45	50.0	50	0	0	4	0

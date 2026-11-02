@@ -1,0 +1,2 @@
+#FusionName	JunctionReadCount	SpanningFragCount	LeftGene	LeftBreakpoint	RightGene	RightBreakpoint	SpliceType	LargeAnchorSupport
+GENE1--GENE2	20	10	GENE1^ENSG00000000001	chr1:60:+	GENE2^ENSG00000000002	chr1:601:+	ONLY_REF_SPLICE	YES

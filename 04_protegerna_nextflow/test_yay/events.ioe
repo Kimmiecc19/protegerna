@@ -1,0 +1,2 @@
+seqname	gene_id	event_id	alternative_transcripts	total_transcripts
+chr1	ENSG00000000001	ENSG00000000001;SE:chr1:60-101:130-201:+	ENST00000000001	ENST00000000001,ENST00000000003
