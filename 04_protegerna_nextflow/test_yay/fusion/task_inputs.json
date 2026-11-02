@@ -1,0 +1,55 @@
+{
+  "options": {
+    "recursive_inputs": false,
+    "biological_interpretation_tsv": "fusion.biological.tsv",
+    "filtered_cds_fasta": "fusion.primary.cds.fasta",
+    "filtered_protein_fasta": "fusion.primary.fasta",
+    "dia_database_metadata_tsv": "fusion.metadata.tsv",
+    "out_sequence_sample_tsv": "fusion.sequence_samples.tsv",
+    "digested_peptide_tsv": "fusion.peptides.tsv",
+    "nmd_distance_threshold_nt": 55,
+    "early_stop_aa_cutoff": 30,
+    "workers": 4,
+    "max_transcripts_per_gene": 3,
+    "digest_trypsin": true,
+    "min_protein_length": 30,
+    "quantms_conservative": true,
+    "exclude_incomplete_cds": true,
+    "require_unique_junction_peptide": true,
+    "require_junction_peptide": true,
+    "exclude_frameshift_from_dia": true,
+    "exclude_truncated_from_dia": true,
+    "exclude_nmd_from_dia": true,
+    "include_donor_only_products": false,
+    "min_retained_cds_nt": 30,
+    "max_breakpoint_snap_distance_nt": 25,
+    "min_split_reads_for_snapped_product": 2,
+    "max_missed_cleavages": 3,
+    "digested_min_peptide_length": 7,
+    "digested_max_peptide_length": 40,
+    "annotation_release": "GENCODE_46",
+    "organism": "Homo_sapiens"
+  },
+  "inputs": {
+    "gtf_db": "references/annotation.db",
+    "genome": "references/genome.fa",
+    "reference_proteome": "references/proteome.fa",
+    "reference_peptide_cache": "cache/reference.cache"
+  },
+  "process": "PROTEGERNA:FUSIONINSPECTOR_TO_PROTEIN",
+  "cpus": 4,
+  "rows": [
+    {
+      "sample": "S1",
+      "tool": "fusion",
+      "event_type": "FUSION",
+      "path": "S1.FusionInspector.fusions.abridged.tsv",
+      "batch": "batch1",
+      "condition": "CASE"
+    }
+  ],
+  "files": [
+    "inputs/row0001/S1.FusionInspector.fusions.abridged.tsv"
+  ],
+  "sample_metadata": null
+}

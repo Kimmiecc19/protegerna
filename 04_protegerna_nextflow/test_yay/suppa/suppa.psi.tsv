@@ -1,0 +1,2 @@
+source_file	sample_id	batch	condition	event_type	event_id	psi_filter_applied	psi_found	psi_mean	psi_max	psi_valid_samples	psi_total_samples	psi_samples_passing	psi_min_threshold	psi_min_samples	passed_filter	reason	consequence_rows_generated	reconstruction_status
+inputs/row0001/events.ioe	S1;S2;S3	batch1	NA	SE	ENSG00000000001;SE:chr1:60-101:130-201:+	True	True	0.6	0.7	3	3	3	0.1	3	True	passed_psi_filter	2	reconstructed
