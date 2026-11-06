@@ -222,30 +222,10 @@ With the Python dependencies installed, `python tests/run_python_smoke.py` runs 
 
 The Python reconstruction code is copied, unmodified, from the sibling `code_proteogenomic_database_v7` directory. After changing that code, run `python scripts/build_runtime.py` (Python 3.11 or later with the pinned dependencies) from the pipeline root. It copies only the modules the pipeline can reach (following imports from the stages in `assets/runtime_overlay/nextflow_adapter.py`), records their SHA-256 hashes in `assets/proteogenomic_runtime/SOURCE_MANIFEST.json`, and regenerates `assets/resolved_publication_defaults.json` and `assets/params.publication.yml`. No source file is patched.
 
-
-Test run
+Test run of one participant
 
 ```bash
 IMAGE="$(realpath containers/proteogenomic/protegerna.sif)"
-
-nextflow run . \
-    -profile test \
-    --proteogenomic_container "$IMAGE" \
-    --outdir "$(realpath results)/test_conda" \
-    -work-dir "$(realpath work)/test_conda"
-```    
-
-
-IMAGE="$(realpath containers/proteogenomic/protegerna.sif)"
-
-nextflow run . \
-    -profile test \
-    --proteogenomic_container "$IMAGE" \
-    --outdir "$(realpath results)/test_woohoo" \
-    -work-dir "$(realpath work)/test_woohoo"
-
-
-    WARN: Apptainer cache directory has not been defined -- Remote image will be stored in the path: /home/KimberlyCC/work/nf_protegerna/work/test_woohoo/singularity -- Use the environment variable NXF_APPTAINER_CACHEDIR to specify a different location
 
 IMAGE="$(realpath containers/proteogenomic/protegerna.sif)"
 
@@ -256,5 +236,6 @@ nextflow run . \
     --outdir "$(realpath results)/test_publication_woohoo" \
     -work-dir "$(realpath work)/test_publication_woohoo" \
     -resume
+```
 
 The multiQC process is only run to report the pipeline information, not the biological QC.
