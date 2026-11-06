@@ -1,3 +1,0 @@
-source_label	n_records	n_unique_headers	n_duplicate_header_records	n_unique_sequences	n_duplicate_sequence_records	n_empty_sequences	n_invalid_aa_sequences	n_terminal_stop_sequences	n_internal_stop_sequences	total_internal_stop_codons	total_residues	n_proteins_shorter_than_min_peptide	n_proteins_with_eligible_peptide	n_proteins_without_eligible_peptide	pct_proteins_with_eligible_peptide
-ALL	80657	80657	0	80657	0	0	0	0	0	0	45186038	0	80657	0	100.0
-proteogenomic_database	80657	80657	0	80657	0	0	0	0	0	0	45186038	0	80657	0	100.0

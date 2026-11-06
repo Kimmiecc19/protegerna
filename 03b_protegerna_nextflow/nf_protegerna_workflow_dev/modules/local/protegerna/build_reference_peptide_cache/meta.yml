@@ -1,0 +1,54 @@
+{
+  "name": "build_reference_peptide_cache",
+  "description": "Execute build_reference_peptide_cache through assets/proteogenomic_runtime/nextflow_adapter.py.",
+  "keywords": [
+    "proteogenomics",
+    "database"
+  ],
+  "input": [
+    {
+      "options": {
+        "type": "map",
+        "description": "Resolved command options."
+      }
+    },
+    {
+      "runtime": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "reference_proteome": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "existing_cache": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    }
+  ],
+  "output": [
+    {
+      "cache": {
+        "type": "file",
+        "description": "'reference_tryptic_peptides.cache'"
+      }
+    },
+    {
+      "versions": {
+        "type": "file",
+        "description": "'versions.yml'"
+      }
+    },
+    {
+      "provenance": {
+        "type": "file",
+        "description": "'task_inputs.json'"
+      }
+    }
+  ]
+}

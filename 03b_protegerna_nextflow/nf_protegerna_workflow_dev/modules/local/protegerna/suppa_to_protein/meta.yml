@@ -1,0 +1,138 @@
+{
+  "name": "suppa_to_protein",
+  "description": "Execute suppa_to_protein through assets/proteogenomic_runtime/nextflow_adapter.py.",
+  "keywords": [
+    "proteogenomics",
+    "database"
+  ],
+  "input": [
+    {
+      "options": {
+        "type": "map",
+        "description": "Resolved command options."
+      }
+    },
+    {
+      "runtime": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "rows": {
+        "type": "map",
+        "description": "Samplesheet rows paired in order with the staged event files."
+      }
+    },
+    {
+      "event_files": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "gtf_db": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "genome": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "reference_proteome": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "peptide_cache": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "sample_metadata": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    }
+  ],
+  "output": [
+    {
+      "fasta": {
+        "type": "file",
+        "description": "\"${options.out_prot_fa}\""
+      }
+    },
+    {
+      "consequences": {
+        "type": "file",
+        "description": "\"${options.out_consequence_tsv}\""
+      }
+    },
+    {
+      "psi": {
+        "type": "file",
+        "description": "\"${options.out_psi_summary_tsv}\""
+      }
+    },
+    {
+      "alternative_start": {
+        "type": "file",
+        "description": "\"${options.out_alt_start_prot_fa}\""
+      }
+    },
+    {
+      "exploratory_orf": {
+        "type": "file",
+        "description": "\"${options.out_exploratory_orf_fa}\""
+      }
+    },
+    {
+      "junctions": {
+        "type": "file",
+        "description": "\"${options.out_junc_fa}\""
+      }
+    },
+    {
+      "versions": {
+        "type": "file",
+        "description": "'versions.yml'"
+      }
+    },
+    {
+      "provenance": {
+        "type": "file",
+        "description": "'task_inputs.json'"
+      }
+    },
+    {
+      "command": {
+        "type": "file",
+        "description": "'command.json'"
+      }
+    },
+    {
+      "run_config": {
+        "type": "file",
+        "description": "'*.run_config.json'"
+      }
+    },
+    {
+      "event_metadata": {
+        "type": "file",
+        "description": "'*_metadata.json'"
+      }
+    },
+    {
+      "sample_metadata": {
+        "type": "file",
+        "description": "'sample_metadata.tsv'"
+      }
+    }
+  ]
+}

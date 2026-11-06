@@ -1,0 +1,49 @@
+[workflow]
+output_dir = "results"
+resume = true
+
+# Values shared only with steps that accept them.
+[common]
+gtf_db = "data/genetic_data/db_cache/gencode.v46.annotation.db"
+genome = "data/genetic_data/GRCh38.primary_assembly.genome.fa"
+reference_proteome = "data/reference/reference_proteome.fasta"
+annotation_release = "GENCODE_46"
+organism = "Homo_sapiens"
+
+# Run once per matched GENCODE release; merge consumes its JSON gate.
+[validate]
+enabled = false
+gencode_protein_fasta = "data/reference/gencode.v46.pc_translations.fa"
+
+[fusion]
+enabled = true
+fusioninspector = ["fusion_database"]
+recursive_inputs = true
+
+[rmats]
+enabled = true
+se_files = ["data/splice_data/SE.MATS.JC.txt"]
+a3ss_files = ["data/splice_data/A3SS.MATS.JC.txt"]
+a5ss_files = ["data/splice_data/A5SS.MATS.JC.txt"]
+mxe_files = ["data/splice_data/MXE.MATS.JC.txt"]
+ri_files = ["data/splice_data/RI.MATS.JC.txt"]
+
+[suppa]
+enabled = false
+event_files = ["data/splice_data/events.ioe"]
+
+# Enable after producer FASTAs and the GENCODE validation summary exist.
+[merge]
+enabled = false
+gencode_concordance_summary = "results/gencode_translation_concordance.json"
+inputs = ["results/fusion.primary.fasta", "results/rmats.primary.fasta"]
+reference_fasta = ["data/reference/reference_proteome.fasta"]
+contaminants_fasta = ["data/reference/crap.fasta"]
+
+[qc]
+enabled = false
+fasta = ["results/proteogenomic_database.fasta"]
+
+[report]
+enabled = false
+inputs = ["results/fusion.biological.tsv", "results/rmats.consequences.tsv"]

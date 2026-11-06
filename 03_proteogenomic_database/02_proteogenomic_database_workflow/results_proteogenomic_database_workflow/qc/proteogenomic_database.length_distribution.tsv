@@ -1,3 +1,0 @@
-source_label	n_sequences	min_len	q1_len	median_len	mean_len	q3_len	max_len	n_lt_7aa	n_lt_30aa	n_ge_30aa	n_ge_100aa
-proteogenomic_database	80657	7	175.0	377	560.225	682.0	36019	0	519	80138	70560
-ALL	80657	7	175.0	377	560.225	682.0	36019	0	519	80138	70560

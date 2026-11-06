@@ -1,0 +1,126 @@
+{
+  "name": "merge_proteogenomic_database",
+  "description": "Execute merge_proteogenomic_database through assets/proteogenomic_runtime/nextflow_adapter.py.",
+  "keywords": [
+    "proteogenomics",
+    "database"
+  ],
+  "input": [
+    {
+      "options": {
+        "type": "map",
+        "description": "Resolved command options."
+      }
+    },
+    {
+      "runtime": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "reference_proteome": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "variant_fastas": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "contaminants": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "concordance": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    }
+  ],
+  "output": [
+    {
+      "fasta": {
+        "type": "file",
+        "description": "\"${options.out_fasta}\""
+      }
+    },
+    {
+      "metadata": {
+        "type": "file",
+        "description": "\"${options.out_metadata}\""
+      }
+    },
+    {
+      "mapping": {
+        "type": "file",
+        "description": "\"${options.out_mapping}\""
+      }
+    },
+    {
+      "peptide_evidence": {
+        "type": "file",
+        "description": "\"${options.out_peptide_evidence}\""
+      }
+    },
+    {
+      "biological": {
+        "type": "file",
+        "description": "\"${options.out_biological_interpretation}\""
+      }
+    },
+    {
+      "summary_tsv": {
+        "type": "file",
+        "description": "\"${options.out_summary_tsv}\""
+      }
+    },
+    {
+      "summary_json": {
+        "type": "file",
+        "description": "\"${options.out_summary_json}\""
+      }
+    },
+    {
+      "versions": {
+        "type": "file",
+        "description": "'versions.yml'"
+      }
+    },
+    {
+      "provenance": {
+        "type": "file",
+        "description": "'task_inputs.json'"
+      }
+    },
+    {
+      "command": {
+        "type": "file",
+        "description": "'command.json'"
+      }
+    },
+    {
+      "run_config": {
+        "type": "file",
+        "description": "'*.run_config.json'"
+      }
+    },
+    {
+      "event_metadata": {
+        "type": "file",
+        "description": "'*_metadata.json'"
+      }
+    },
+    {
+      "sample_metadata": {
+        "type": "file",
+        "description": "'sample_metadata.tsv'"
+      }
+    }
+  ]
+}

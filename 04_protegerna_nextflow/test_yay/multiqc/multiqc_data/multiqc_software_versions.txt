@@ -1,2 +1,0 @@
-Sample	nf-core/protegerna	Nextflow
-Workflow	v1.0.0dev	26.10.2

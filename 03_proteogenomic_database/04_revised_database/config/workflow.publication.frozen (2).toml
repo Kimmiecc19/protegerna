@@ -1,0 +1,253 @@
+# Frozen thesis-release configuration for the AnswerALS proteogenomic database.
+#
+# Release policy: publication
+# - Primary FASTA only for SUPPA and Fusion; rMATS keeps all; no alternative-start 
+#   or longest-ORF rescue tiers.
+# - Reference-unique event/junction peptides required from reconstructed products.
+# - GENCODE translation concordance is a mandatory zero-mismatch release gate.
+# - Exact amino-acid deduplication occurs only during the authoritative merge.
+# - Digestion rules match the quantMS/DIA-NN search: trypsin, 7-40 aa,
+#   and up to 3 missed cleavages.
+#
+# Before the release run, verify that:
+# 1. data/gencode.v46.pc_translations.fa is the official
+#    GENCODE v46 protein-translation FASTA (this file is not currently present).
+# 2. Peptide uniqueness is assessed against UniProt canonical PLUS the UniProt
+#    "_additional" isoform FASTA (reference_proteome below), so annotated
+#    isoforms are not counted as novel. Download
+#    UP000005640_9606_additional.fasta.gz from the same UniProt release as the
+#    canonical FASTA. The merged search database still adds canonical only
+#    ([merge] reference_fasta); the reference-only quantMS control search should
+#    use the same canonical FASTA.
+# 3. The fusion and rMATS globs resolve to all six cohort batches, not test data;
+#    SUPPA uses one events.ioe (annotation-derived, identical across batches) and
+#    the PSI matrices of all six batches.
+
+[workflow]
+profile = "publication"
+output_dir = "results/protegerna_v7_nopsi"
+resume = false
+
+[common]
+gtf_db = "data/Homo_sapiens_GRCh38_46.gtf.db"
+genome = "data/Homo_sapiens_GRCh38_46_dna_primary_assembly.fa"
+reference_proteome = [
+  "data/UP000005640_9606.fasta.gz",
+  "data/UP000005640_9606_additional.fasta.gz",
+]
+reference_peptide_cache = "results/protegerna_v7_nopsi/reference_tryptic_peptides.cache"
+annotation_release = "GENCODE_46"
+organism = "Homo_sapiens"
+
+[validate]
+enabled = true
+gencode_protein_fasta = "data/gencode.v46.pc_translations.fa"
+out_tsv = "results/protegerna_v7_nopsi/gencode_translation_concordance.tsv"
+out_summary_json = "results/protegerna_v7_nopsi/gencode_translation_concordance.json"
+max_mismatch_rate = 0.0
+
+[fusion]
+enabled = true
+fusioninspector = [
+  "/home/kcoetzer/nf/nf_results/rnafusion/rnafusion_analysis/rnafusion_analysis_batch[1-6]/fusioninspector/*.FusionInspector.fusions.abridged.tsv"
+]
+recursive_inputs = false
+
+# Frozen transcript-selection and reconstruction rules.
+max_transcripts_per_gene = 3
+nmd_distance_threshold_nt = 55
+early_stop_aa_cutoff = 30
+min_retained_cds_nt = 30
+max_breakpoint_snap_distance_nt = 25
+min_split_reads_for_snapped_product = 2
+exclude_incomplete_cds = true
+
+# Frozen publication/DIA retention policy. quantms_conservative also enforces
+# these values internally; they are repeated here to make the release explicit.
+quantms_conservative = true
+require_junction_peptide = true
+require_unique_junction_peptide = true
+exclude_frameshift_from_dia = true
+exclude_truncated_from_dia = true
+exclude_nmd_from_dia = true
+include_donor_only_products = false
+
+# Search-space-matched digestion rules.
+digest_trypsin = true
+max_missed_cleavages = 3
+digested_min_peptide_length = 7
+digested_max_peptide_length = 40
+
+# Execution controls do not alter biological eligibility.
+workers = 4
+# transcript_model_cache = "results/protegerna_v7_nopsi/fusion_transcript_models.pkl"
+# (option removed 2026-10-12: the fusion program accepted it but never read or wrote the cache)
+
+# Explicit producer outputs.
+filtered_protein_fasta = "results/protegerna_v7_nopsi/fusion.primary.fasta"
+filtered_cds_fasta = "results/protegerna_v7_nopsi/fusion.primary.cds.fasta"
+biological_interpretation_tsv = "results/protegerna_v7_nopsi/fusion.biological.tsv"
+dia_database_metadata_tsv = "results/protegerna_v7_nopsi/fusion.metadata.tsv"
+out_sequence_sample_tsv = "results/protegerna_v7_nopsi/fusion.sequence_samples.tsv"
+digested_peptide_tsv = "results/protegerna_v7_nopsi/fusion.peptides.tsv"
+
+[rmats]
+enabled = true
+
+se_files = ["/home/kcoetzer/nf/nf_results/rnasplice/rnasplice_analysis/rnasplice_analysis_batch[1-6]/rmats_post/SE.MATS.JC.txt"]
+a3ss_files = ["/home/kcoetzer/nf/nf_results/rnasplice/rnasplice_analysis/rnasplice_analysis_batch[1-6]/rmats_post/A3SS.MATS.JC.txt"]
+a5ss_files = ["/home/kcoetzer/nf/nf_results/rnasplice/rnasplice_analysis/rnasplice_analysis_batch[1-6]/rmats_post/A5SS.MATS.JC.txt"]
+mxe_files = ["/home/kcoetzer/nf/nf_results/rnasplice/rnasplice_analysis/rnasplice_analysis_batch[1-6]/rmats_post/MXE.MATS.JC.txt"]
+ri_files = ["/home/kcoetzer/nf/nf_results/rnasplice/rnasplice_analysis/rnasplice_analysis_batch[1-6]/rmats_post/RI.MATS.JC.txt"]
+
+# Temporary workaround: allow every row with numeric rMATS statistics.
+rmats_conservative_event_filter = true
+include_failed_filter_proteins = true
+max_fdr = 1.0
+min_abs_inc_level_difference = 0.0
+min_inclusion_junction_reads = 0
+min_skipping_junction_reads = 0
+
+pad_partial_codons = false
+allow_alt_start = false
+allow_longest_orf = false
+short_junction_peptides = true
+nmd_distance_threshold_nt = 55
+
+# Same database rules as [suppa]. With include_failed_filter_proteins = true,
+# reconstructable non-canonical rMATS proteins that fail these rules are still
+# exported, with the failed rules recorded (passed_dia_filters = false).
+quantms_conservative = true
+require_unique_event_peptide = true
+
+exclude_incomplete_cds = true
+exclude_nmd_from_dia = true
+exclude_start_loss_from_dia = true
+exclude_frameshift_from_dia = false
+exclude_premature_stop_from_dia = false
+
+require_ri_orf_preserved = true
+require_ri_read_evidence = true
+min_ri_inclusion_reads = 1
+require_ri_junction_peptide = true
+exclude_ri_nmd_from_primary = false
+
+max_missed_cleavages = 3
+min_database_peptide_length = 7
+max_database_peptide_length = 40
+
+workers = 4
+chunksize = 50000
+sequence_cache_entries = 100000
+
+out_prot_fa = "results/protegerna_v7_nopsi/rmats.primary.fasta"
+out_consequence_tsv = "results/protegerna_v7_nopsi/rmats.consequences.tsv"
+out_event_summary_tsv = "results/protegerna_v7_nopsi/rmats.events.tsv"
+out_junc_fa = "results/protegerna_v7_nopsi/rmats.junction.fasta"
+
+[suppa]
+enabled = true
+
+event_files = ["/home/kcoetzer/nf/nf_results/rnasplice/rnasplice_analysis/rnasplice_analysis_batch1/suppa/generate_events/per_local_event/events.ioe"]
+# No PSI filtering in this release: every annotated SUPPA event is considered.
+# Omit psi_files to disable PSI filtering
+# psi_files = []
+
+# PSI is evidence for event inclusion only and never changes reconstruction.
+# min_psi = 0.10
+# min_psi_samples = 3
+# keep_events_missing_psi = false
+
+
+# Frozen reconstruction and primary-FASTA rules.
+pad_partial_codons = false
+allow_alt_start = false
+allow_longest_orf = false
+short_junction_peptides = true
+nmd_distance_threshold_nt = 55
+exclude_incomplete_cds = true
+quantms_conservative = true
+require_unique_event_peptide = true
+exclude_nmd_from_dia = true
+exclude_start_loss_from_dia = true
+exclude_frameshift_from_dia = false
+exclude_premature_stop_from_dia = false
+require_ri_orf_preserved = true
+
+# Search-space-matched digestion rules.
+max_missed_cleavages = 3
+min_database_peptide_length = 7
+max_database_peptide_length = 40
+
+workers = 4
+sequence_cache_entries = 100000
+out_prot_fa = "results/protegerna_v7_nopsi/suppa.primary.fasta"
+out_consequence_tsv = "results/protegerna_v7_nopsi/suppa.consequences.tsv"
+# out_psi_summary_tsv = "results/protegerna_v7_nopsi/suppa.psi.tsv"
+out_junc_fa = "results/protegerna_v7_nopsi/suppa.junction.fasta"
+
+[merge]
+enabled = true
+gencode_concordance_summary = "results/protegerna_v7_nopsi/gencode_translation_concordance.json"
+inputs = [
+  "results/protegerna_v7_nopsi/fusion.primary.fasta",
+  "results/protegerna_v7_nopsi/rmats.primary.fasta",
+  "results/protegerna_v7_nopsi/suppa.primary.fasta",
+]
+# Every producer FASTA must carry a run manifest that binds it to the validated reference.
+require_producer_manifests = true
+reference_fasta = ["data/UP000005640_9606.fasta.gz"]
+contaminants_fasta = ["data/crap.fasta"]
+record_types = ["protein"]
+recursive = false
+
+# Frozen authoritative merge rules.
+include_rescue_tiers = false
+min_protein_length = 6
+min_peptide_length = 7
+max_peptide_length = 40
+max_missed_cleavages = 3
+invalid_sequence_policy = "error"
+id_prefix = "PGDB_U"
+id_width = 7
+max_header_values = 3
+log_level = "INFO"
+
+out_fasta = "results/protegerna_v7_nopsi/proteogenomic_database.fasta"
+out_metadata = "results/protegerna_v7_nopsi/proteogenomic_metadata.tsv"
+out_mapping = "results/protegerna_v7_nopsi/proteogenomic_mapping.tsv"
+out_peptide_evidence = "results/protegerna_v7_nopsi/proteogenomic_peptides.tsv"
+out_biological_interpretation = "results/protegerna_v7_nopsi/proteogenomic_biological.tsv"
+out_summary_tsv = "results/protegerna_v7_nopsi/proteogenomic_summary.tsv"
+out_summary_json = "results/protegerna_v7_nopsi/proteogenomic_summary.json"
+
+[qc]
+enabled = true
+fasta = ["results/protegerna_v7_nopsi/proteogenomic_database.fasta"]
+metadata = ["results/protegerna_v7_nopsi/proteogenomic_metadata.tsv"]
+reference_proteome = [
+  "data/UP000005640_9606.fasta.gz",
+  "data/UP000005640_9606_additional.fasta.gz",
+]
+outdir = "results/protegerna_v7_nopsi/qc"
+prefix = "proteogenomic_database"
+
+# QC verifies the authoritative merge and does not deduplicate or rewrite it.
+max_missed_cleavages = 3
+min_peptide_length = 7
+max_peptide_length = 40
+min_protein_length = 6
+exclude_no_eligible_peptide = false
+write_filtered_fasta = false
+strict_quantms = true
+
+[report]
+enabled = true
+inputs = [
+  "results/protegerna_v7_nopsi/fusion.biological.tsv",
+  "results/protegerna_v7_nopsi/rmats.consequences.tsv",
+  "results/protegerna_v7_nopsi/suppa.consequences.tsv",
+  "results/protegerna_v7_nopsi/proteogenomic_biological.tsv",
+]
+out_tsv = "results/protegerna_v7_nopsi/release_report.tsv"
+out_json = "results/protegerna_v7_nopsi/release_report.json"

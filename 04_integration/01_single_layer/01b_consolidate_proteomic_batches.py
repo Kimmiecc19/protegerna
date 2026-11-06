@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Stream batch DIA-NN TSVs into audited cohort tables.
-Removed the following samples:
+The following samples were removed (failed quantmsdiann runs):
 batch1 CASE-NEUBK117YXL-5944-P_B09_profile.mzML 112 0
 batch1 CASE-NEUFH122WN7-5930-P_B08_profile.mzML 0 0
 batch5 CASE-NEUMN012EVP-5972-P_C01_profile.mzML 188 0

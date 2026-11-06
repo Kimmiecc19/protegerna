@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "proteogenomic-database-reconstruction"
+version = "0.1.0"
+description = "Annotation-projected splice and fusion protein database reconstruction"
+requires-python = ">=3.11"
+dependencies = [
+  "biopython==1.88",
+  "gffutils==0.14",
+  "pandas==3.0.1",
+  "pyfaidx==0.9.0.4",
+  "tqdm==4.70.0",
+]
+
+[project.optional-dependencies]
+test = [
+  "pytest>=8",
+  "hypothesis>=6.100",
+]
+
+[tool.setuptools]
+package-dir = {"" = "."}
+packages = ["proteogenomic"]
+py-modules = [
+  "proteogenomic_workflow",
+  "fusiontoprotein",
+  "rmatstoprotein",
+  "suppatoprotein",
+  "merge_proteogenomic_database",
+  "proteogenomic_fasta_qc",
+  "validate_gencode_translation",
+  "release_report",
+  "benchmark_variant_reconstruction",
+  "summarize_fusion_concordance",
+]
+
+[project.scripts]
+proteogenomic-workflow = "proteogenomic_workflow:main"
+proteogenomic-validate-reference = "validate_gencode_translation:main"
+proteogenomic-fusion = "fusiontoprotein:main"
+proteogenomic-rmats = "rmatstoprotein:main"
+proteogenomic-suppa = "suppatoprotein:main"
+proteogenomic-merge = "merge_proteogenomic_database:main"
+proteogenomic-qc = "proteogenomic_fasta_qc:main"
+proteogenomic-release-report = "release_report:main"

@@ -1,0 +1,138 @@
+{
+  "name": "fusioninspector_to_protein",
+  "description": "Execute fusioninspector_to_protein through assets/proteogenomic_runtime/nextflow_adapter.py.",
+  "keywords": [
+    "proteogenomics",
+    "database"
+  ],
+  "input": [
+    {
+      "options": {
+        "type": "map",
+        "description": "Resolved command options."
+      }
+    },
+    {
+      "runtime": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "rows": {
+        "type": "map",
+        "description": "Samplesheet rows paired in order with the staged event files."
+      }
+    },
+    {
+      "event_files": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "gtf_db": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "genome": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "reference_proteome": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "peptide_cache": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "sample_metadata": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    }
+  ],
+  "output": [
+    {
+      "fasta": {
+        "type": "file",
+        "description": "\"${options.filtered_protein_fasta}\""
+      }
+    },
+    {
+      "cds": {
+        "type": "file",
+        "description": "\"${options.filtered_cds_fasta}\""
+      }
+    },
+    {
+      "biological": {
+        "type": "file",
+        "description": "\"${options.biological_interpretation_tsv}\""
+      }
+    },
+    {
+      "metadata": {
+        "type": "file",
+        "description": "\"${options.dia_database_metadata_tsv}\""
+      }
+    },
+    {
+      "sequence_samples": {
+        "type": "file",
+        "description": "\"${options.out_sequence_sample_tsv}\""
+      }
+    },
+    {
+      "peptides": {
+        "type": "file",
+        "description": "\"${options.digested_peptide_tsv}\""
+      }
+    },
+    {
+      "versions": {
+        "type": "file",
+        "description": "'versions.yml'"
+      }
+    },
+    {
+      "provenance": {
+        "type": "file",
+        "description": "'task_inputs.json'"
+      }
+    },
+    {
+      "command": {
+        "type": "file",
+        "description": "'command.json'"
+      }
+    },
+    {
+      "run_config": {
+        "type": "file",
+        "description": "'*.run_config.json'"
+      }
+    },
+    {
+      "event_metadata": {
+        "type": "file",
+        "description": "'*_metadata.json'"
+      }
+    },
+    {
+      "sample_metadata": {
+        "type": "file",
+        "description": "'sample_metadata.tsv'"
+      }
+    }
+  ]
+}

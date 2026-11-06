@@ -1,0 +1,2 @@
+>PGDB|FUSION_P34F3E20AA49B|FUSION_P34F3E20AA49B GN=GENE1--GENE2 OS=Homo_sapiens|record_type=protein|record_id=FUSION_P34F3E20AA49B|schema_version=pgdb-merge-input-v1|source=fusioninspector|gene_id=ENSG1--ENSG2|transcript=ENST1--ENST2|event_type=FUSION|event_id=F1|frame_status=INFRAME|sample_id=S1|batch=B1|condition=CASE|annotation_release=GENCODE_46|database_output_tier=primary|junction_aa=NA|variant=fusion_protein|protein_length=9
+MPEPTIDEK
