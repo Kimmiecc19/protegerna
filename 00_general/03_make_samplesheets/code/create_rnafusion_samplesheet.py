@@ -47,7 +47,7 @@ def write_samplesheet(paired_reads, output_file):
 
         for read1, read2 in paired_reads:
             base_name = extract_basename(read1)
-            writer.writerow({"sample": base_name, "fastq_1": read1, "fastq_2": read2, "strandedness": "forward"})
+            writer.writerow({"sample": base_name, "fastq_1": read1, "fastq_2": read2, "strandedness": "forward"}) # later found to be incorrect. Meant to be reverse
             #writer.writerow({"sample": base_name, "fastq_1": read1, "fastq_2": read2, "strandedness": "auto"})
 
 def main():
