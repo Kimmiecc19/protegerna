@@ -1,0 +1,36 @@
+{
+  "name": "create_gencode_db",
+  "description": "Execute create_gencode_db through assets/proteogenomic_runtime/nextflow_adapter.py.",
+  "keywords": [
+    "proteogenomics",
+    "database"
+  ],
+  "input": [
+    {
+      "runtime": {
+        "type": "file",
+        "description": "Bundled proteogenomic runtime directory."
+      }
+    },
+    {
+      "gtf": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    }
+  ],
+  "output": [
+    {
+      "db": {
+        "type": "file",
+        "description": "'gencode.gtf.db'"
+      }
+    },
+    {
+      "versions": {
+        "type": "file",
+        "description": "'versions.yml'"
+      }
+    }
+  ]
+}

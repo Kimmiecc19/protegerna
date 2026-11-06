@@ -1,0 +1,84 @@
+{
+  "name": "proteogenomic_fasta_qc",
+  "description": "Execute proteogenomic_fasta_qc through assets/proteogenomic_runtime/nextflow_adapter.py.",
+  "keywords": [
+    "proteogenomics",
+    "database"
+  ],
+  "input": [
+    {
+      "options": {
+        "type": "map",
+        "description": "Resolved command options."
+      }
+    },
+    {
+      "runtime": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "reference_proteome": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "fasta": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    },
+    {
+      "metadata": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    }
+  ],
+  "output": [
+    {
+      "qc": {
+        "type": "file",
+        "description": "\"${options.outdir}\""
+      }
+    },
+    {
+      "versions": {
+        "type": "file",
+        "description": "'versions.yml'"
+      }
+    },
+    {
+      "provenance": {
+        "type": "file",
+        "description": "'task_inputs.json'"
+      }
+    },
+    {
+      "command": {
+        "type": "file",
+        "description": "'command.json'"
+      }
+    },
+    {
+      "run_config": {
+        "type": "file",
+        "description": "'*.run_config.json'"
+      }
+    },
+    {
+      "event_metadata": {
+        "type": "file",
+        "description": "'*_metadata.json'"
+      }
+    },
+    {
+      "sample_metadata": {
+        "type": "file",
+        "description": "'sample_metadata.tsv'"
+      }
+    }
+  ]
+}

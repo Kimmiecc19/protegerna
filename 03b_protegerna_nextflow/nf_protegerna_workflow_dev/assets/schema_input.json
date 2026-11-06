@@ -1,0 +1,40 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "$id": "https://raw.githubusercontent.com/nf-core/protegerna/master/assets/schema_input.json",
+    "title": "nf-core/protegerna pipeline - params.input schema",
+    "description": "Schema for the proteogenomic event-file samplesheet provided with params.input",
+    "type": "array",
+    "items": {
+        "type": "object",
+        "properties": {
+            "sample": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$",
+                "errorMessage": "Sample name must be provided and contain only letters, numbers, underscores, periods or hyphens"
+            },
+            "tool": {
+                "type": "string",
+                "enum": ["fusion", "rmats", "suppa"]
+            },
+            "event_type": {
+                "type": "string",
+                "pattern": "^(FUSION|SE|A3SS|A5SS|MXE|RI|IOE|PSI)$"
+            },
+            "path": {
+                "type": "string",
+                "pattern": "^\\S+$",
+                "errorMessage": "Input event-file path must be provided and cannot contain spaces"
+            },
+            "batch": {
+                "type": "string",
+                "pattern": "^[A-Za-z0-9][A-Za-z0-9_.-]*$"
+            },
+            "condition": {
+                "type": "string",
+                "pattern": "^\\S+$"
+            }
+        },
+        "required": ["sample", "tool", "event_type", "path", "batch", "condition"],
+        "additionalProperties": false
+    }
+}

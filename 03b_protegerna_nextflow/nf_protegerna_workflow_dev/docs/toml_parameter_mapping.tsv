@@ -1,0 +1,385 @@
+source_toml	section	option	nextflow_destination
+workflow.conservative.example.toml	workflow	profile	removed: publication policy only (set individual options)
+workflow.conservative.example.toml	common	gtf_db	params.gtf_db
+workflow.conservative.example.toml	common	genome	params.genome
+workflow.conservative.example.toml	common	reference_proteome	params.reference_proteome
+workflow.conservative.example.toml	common	annotation_release	params.annotation_release
+workflow.conservative.example.toml	common	organism	params.organism
+workflow.conservative.example.toml	fusion	fusioninspector	samplesheet.csv: tool, event_type and path
+workflow.conservative.example.toml	fusion	recursive_inputs	params.fusion.recursive_inputs
+workflow.conservative.example.toml	fusion	filtered_protein_fasta	params.fusion.filtered_protein_fasta
+workflow.conservative.example.toml	fusion	biological_interpretation_tsv	params.fusion.biological_interpretation_tsv
+workflow.conservative.example.toml	rmats	se_files	samplesheet.csv: tool, event_type and path
+workflow.conservative.example.toml	rmats	ri_files	samplesheet.csv: tool, event_type and path
+workflow.conservative.example.toml	rmats	out_prot_fa	params.rmats.out_prot_fa
+workflow.publication.frozen.toml	workflow	profile	removed: publication policy only (set individual options)
+workflow.publication.frozen.toml	workflow	output_dir	params.outdir
+workflow.publication.frozen.toml	workflow	resume	Nextflow -resume
+workflow.publication.frozen.toml	common	gtf_db	params.gtf_db
+workflow.publication.frozen.toml	common	genome	params.genome
+workflow.publication.frozen.toml	common	reference_proteome	params.reference_proteome
+workflow.publication.frozen.toml	common	reference_peptide_cache	params.reference_peptide_cache
+workflow.publication.frozen.toml	common	annotation_release	params.annotation_release
+workflow.publication.frozen.toml	common	organism	params.organism
+workflow.publication.frozen.toml	validate	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.publication.frozen.toml	validate	gencode_protein_fasta	params.gencode_protein_fasta
+workflow.publication.frozen.toml	validate	out_tsv	params.validate.out_tsv
+workflow.publication.frozen.toml	validate	out_summary_json	params.validate.out_summary_json
+workflow.publication.frozen.toml	validate	max_mismatch_rate	params.validate.max_mismatch_rate
+workflow.publication.frozen.toml	fusion	enabled	Producer presence in samplesheet
+workflow.publication.frozen.toml	fusion	fusioninspector	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	fusion	recursive_inputs	params.fusion.recursive_inputs
+workflow.publication.frozen.toml	fusion	max_transcripts_per_gene	params.fusion.max_transcripts_per_gene
+workflow.publication.frozen.toml	fusion	nmd_distance_threshold_nt	params.fusion.nmd_distance_threshold_nt
+workflow.publication.frozen.toml	fusion	early_stop_aa_cutoff	params.fusion.early_stop_aa_cutoff
+workflow.publication.frozen.toml	fusion	min_retained_cds_nt	params.fusion.min_retained_cds_nt
+workflow.publication.frozen.toml	fusion	max_breakpoint_snap_distance_nt	params.fusion.max_breakpoint_snap_distance_nt
+workflow.publication.frozen.toml	fusion	min_split_reads_for_snapped_product	params.fusion.min_split_reads_for_snapped_product
+workflow.publication.frozen.toml	fusion	exclude_incomplete_cds	params.fusion.exclude_incomplete_cds
+workflow.publication.frozen.toml	fusion	quantms_conservative	params.fusion.quantms_conservative
+workflow.publication.frozen.toml	fusion	require_junction_peptide	params.fusion.require_junction_peptide
+workflow.publication.frozen.toml	fusion	require_unique_junction_peptide	params.fusion.require_unique_junction_peptide
+workflow.publication.frozen.toml	fusion	exclude_frameshift_from_dia	params.fusion.exclude_frameshift_from_dia
+workflow.publication.frozen.toml	fusion	exclude_truncated_from_dia	params.fusion.exclude_truncated_from_dia
+workflow.publication.frozen.toml	fusion	exclude_nmd_from_dia	params.fusion.exclude_nmd_from_dia
+workflow.publication.frozen.toml	fusion	include_donor_only_products	params.fusion.include_donor_only_products
+workflow.publication.frozen.toml	fusion	digest_trypsin	params.fusion.digest_trypsin
+workflow.publication.frozen.toml	fusion	max_missed_cleavages	params.fusion.max_missed_cleavages
+workflow.publication.frozen.toml	fusion	digested_min_peptide_length	params.fusion.digested_min_peptide_length
+workflow.publication.frozen.toml	fusion	digested_max_peptide_length	params.fusion.digested_max_peptide_length
+workflow.publication.frozen.toml	fusion	workers	params.fusion.workers
+workflow.publication.frozen.toml	fusion	transcript_model_cache	removed: the option was accepted but never read (2026-10-12)
+workflow.publication.frozen.toml	fusion	filtered_protein_fasta	params.fusion.filtered_protein_fasta
+workflow.publication.frozen.toml	fusion	filtered_cds_fasta	params.fusion.filtered_cds_fasta
+workflow.publication.frozen.toml	fusion	biological_interpretation_tsv	params.fusion.biological_interpretation_tsv
+workflow.publication.frozen.toml	fusion	dia_database_metadata_tsv	params.fusion.dia_database_metadata_tsv
+workflow.publication.frozen.toml	fusion	out_sequence_sample_tsv	params.fusion.out_sequence_sample_tsv
+workflow.publication.frozen.toml	fusion	digested_peptide_tsv	params.fusion.digested_peptide_tsv
+workflow.publication.frozen.toml	rmats	enabled	Producer presence in samplesheet
+workflow.publication.frozen.toml	rmats	se_files	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	rmats	a3ss_files	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	rmats	a5ss_files	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	rmats	mxe_files	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	rmats	ri_files	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	rmats	rmats_conservative_event_filter	params.rmats.rmats_conservative_event_filter
+workflow.publication.frozen.toml	rmats	include_failed_filter_proteins	params.rmats.include_failed_filter_proteins
+workflow.publication.frozen.toml	rmats	max_fdr	params.rmats.max_fdr
+workflow.publication.frozen.toml	rmats	min_abs_inc_level_difference	params.rmats.min_abs_inc_level_difference
+workflow.publication.frozen.toml	rmats	min_inclusion_junction_reads	params.rmats.min_inclusion_junction_reads
+workflow.publication.frozen.toml	rmats	min_skipping_junction_reads	params.rmats.min_skipping_junction_reads
+workflow.publication.frozen.toml	rmats	pad_partial_codons	params.rmats.pad_partial_codons
+workflow.publication.frozen.toml	rmats	allow_alt_start	params.rmats.allow_alt_start
+workflow.publication.frozen.toml	rmats	allow_longest_orf	params.rmats.allow_longest_orf
+workflow.publication.frozen.toml	rmats	short_junction_peptides	params.rmats.short_junction_peptides
+workflow.publication.frozen.toml	rmats	nmd_distance_threshold_nt	params.rmats.nmd_distance_threshold_nt
+workflow.publication.frozen.toml	rmats	quantms_conservative	params.rmats.quantms_conservative
+workflow.publication.frozen.toml	rmats	require_unique_event_peptide	params.rmats.require_unique_event_peptide
+workflow.publication.frozen.toml	rmats	exclude_incomplete_cds	params.rmats.exclude_incomplete_cds
+workflow.publication.frozen.toml	rmats	exclude_nmd_from_dia	params.rmats.exclude_nmd_from_dia
+workflow.publication.frozen.toml	rmats	exclude_start_loss_from_dia	params.rmats.exclude_start_loss_from_dia
+workflow.publication.frozen.toml	rmats	exclude_frameshift_from_dia	params.rmats.exclude_frameshift_from_dia
+workflow.publication.frozen.toml	rmats	exclude_premature_stop_from_dia	params.rmats.exclude_premature_stop_from_dia
+workflow.publication.frozen.toml	rmats	require_ri_orf_preserved	params.rmats.require_ri_orf_preserved
+workflow.publication.frozen.toml	rmats	require_ri_read_evidence	params.rmats.require_ri_read_evidence
+workflow.publication.frozen.toml	rmats	min_ri_inclusion_reads	params.rmats.min_ri_inclusion_reads
+workflow.publication.frozen.toml	rmats	require_ri_junction_peptide	params.rmats.require_ri_junction_peptide
+workflow.publication.frozen.toml	rmats	exclude_ri_nmd_from_primary	params.rmats.exclude_ri_nmd_from_primary
+workflow.publication.frozen.toml	rmats	max_missed_cleavages	params.rmats.max_missed_cleavages
+workflow.publication.frozen.toml	rmats	min_database_peptide_length	params.rmats.min_database_peptide_length
+workflow.publication.frozen.toml	rmats	max_database_peptide_length	params.rmats.max_database_peptide_length
+workflow.publication.frozen.toml	rmats	workers	params.rmats.workers
+workflow.publication.frozen.toml	rmats	chunksize	params.rmats.chunksize
+workflow.publication.frozen.toml	rmats	sequence_cache_entries	params.rmats.sequence_cache_entries
+workflow.publication.frozen.toml	rmats	out_prot_fa	params.rmats.out_prot_fa
+workflow.publication.frozen.toml	rmats	out_consequence_tsv	params.rmats.out_consequence_tsv
+workflow.publication.frozen.toml	rmats	out_event_summary_tsv	params.rmats.out_event_summary_tsv
+workflow.publication.frozen.toml	suppa	enabled	Producer presence in samplesheet
+workflow.publication.frozen.toml	suppa	event_files	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	suppa	psi_files	samplesheet.csv: tool, event_type and path
+workflow.publication.frozen.toml	suppa	min_psi	params.suppa.min_psi
+workflow.publication.frozen.toml	suppa	min_psi_samples	params.suppa.min_psi_samples
+workflow.publication.frozen.toml	suppa	keep_events_missing_psi	params.suppa.keep_events_missing_psi
+workflow.publication.frozen.toml	suppa	pad_partial_codons	params.suppa.pad_partial_codons
+workflow.publication.frozen.toml	suppa	allow_alt_start	params.suppa.allow_alt_start
+workflow.publication.frozen.toml	suppa	allow_longest_orf	params.suppa.allow_longest_orf
+workflow.publication.frozen.toml	suppa	short_junction_peptides	params.suppa.short_junction_peptides
+workflow.publication.frozen.toml	suppa	nmd_distance_threshold_nt	params.suppa.nmd_distance_threshold_nt
+workflow.publication.frozen.toml	suppa	exclude_incomplete_cds	params.suppa.exclude_incomplete_cds
+workflow.publication.frozen.toml	suppa	quantms_conservative	params.suppa.quantms_conservative
+workflow.publication.frozen.toml	suppa	require_unique_event_peptide	params.suppa.require_unique_event_peptide
+workflow.publication.frozen.toml	suppa	exclude_nmd_from_dia	params.suppa.exclude_nmd_from_dia
+workflow.publication.frozen.toml	suppa	exclude_start_loss_from_dia	params.suppa.exclude_start_loss_from_dia
+workflow.publication.frozen.toml	suppa	exclude_frameshift_from_dia	params.suppa.exclude_frameshift_from_dia
+workflow.publication.frozen.toml	suppa	exclude_premature_stop_from_dia	params.suppa.exclude_premature_stop_from_dia
+workflow.publication.frozen.toml	suppa	require_ri_orf_preserved	params.suppa.require_ri_orf_preserved
+workflow.publication.frozen.toml	suppa	max_missed_cleavages	params.suppa.max_missed_cleavages
+workflow.publication.frozen.toml	suppa	min_database_peptide_length	params.suppa.min_database_peptide_length
+workflow.publication.frozen.toml	suppa	max_database_peptide_length	params.suppa.max_database_peptide_length
+workflow.publication.frozen.toml	suppa	workers	params.suppa.workers
+workflow.publication.frozen.toml	suppa	sequence_cache_entries	params.suppa.sequence_cache_entries
+workflow.publication.frozen.toml	suppa	out_prot_fa	params.suppa.out_prot_fa
+workflow.publication.frozen.toml	suppa	out_consequence_tsv	params.suppa.out_consequence_tsv
+workflow.publication.frozen.toml	suppa	out_psi_summary_tsv	params.suppa.out_psi_summary_tsv
+workflow.publication.frozen.toml	merge	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.publication.frozen.toml	merge	gencode_concordance_summary	Nextflow channel from the upstream process
+workflow.publication.frozen.toml	merge	inputs	Nextflow channel from the upstream process
+workflow.publication.frozen.toml	merge	reference_fasta	params.reference_proteome
+workflow.publication.frozen.toml	merge	contaminants_fasta	params.contaminants
+workflow.publication.frozen.toml	merge	record_types	params.merge.record_types
+workflow.publication.frozen.toml	merge	recursive	params.merge.recursive
+workflow.publication.frozen.toml	merge	include_rescue_tiers	params.merge.include_rescue_tiers
+workflow.publication.frozen.toml	merge	min_protein_length	params.merge.min_protein_length
+workflow.publication.frozen.toml	merge	min_peptide_length	params.merge.min_peptide_length
+workflow.publication.frozen.toml	merge	max_peptide_length	params.merge.max_peptide_length
+workflow.publication.frozen.toml	merge	max_missed_cleavages	params.merge.max_missed_cleavages
+workflow.publication.frozen.toml	merge	invalid_sequence_policy	params.merge.invalid_sequence_policy
+workflow.publication.frozen.toml	merge	id_prefix	params.merge.id_prefix
+workflow.publication.frozen.toml	merge	id_width	params.merge.id_width
+workflow.publication.frozen.toml	merge	max_header_values	params.merge.max_header_values
+workflow.publication.frozen.toml	merge	log_level	params.merge.log_level
+workflow.publication.frozen.toml	merge	out_fasta	params.merge.out_fasta
+workflow.publication.frozen.toml	merge	out_metadata	params.merge.out_metadata
+workflow.publication.frozen.toml	merge	out_mapping	params.merge.out_mapping
+workflow.publication.frozen.toml	merge	out_peptide_evidence	params.merge.out_peptide_evidence
+workflow.publication.frozen.toml	merge	out_biological_interpretation	params.merge.out_biological_interpretation
+workflow.publication.frozen.toml	merge	out_summary_tsv	params.merge.out_summary_tsv
+workflow.publication.frozen.toml	merge	out_summary_json	params.merge.out_summary_json
+workflow.publication.frozen.toml	qc	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.publication.frozen.toml	qc	fasta	Nextflow channel from the upstream process
+workflow.publication.frozen.toml	qc	metadata	Nextflow channel from the upstream process
+workflow.publication.frozen.toml	qc	reference_proteome	params.reference_proteome
+workflow.publication.frozen.toml	qc	outdir	params.qc.outdir
+workflow.publication.frozen.toml	qc	prefix	params.qc.prefix
+workflow.publication.frozen.toml	qc	max_missed_cleavages	params.qc.max_missed_cleavages
+workflow.publication.frozen.toml	qc	min_peptide_length	params.qc.min_peptide_length
+workflow.publication.frozen.toml	qc	max_peptide_length	params.qc.max_peptide_length
+workflow.publication.frozen.toml	qc	min_protein_length	params.qc.min_protein_length
+workflow.publication.frozen.toml	qc	exclude_no_eligible_peptide	params.qc.exclude_no_eligible_peptide
+workflow.publication.frozen.toml	qc	write_filtered_fasta	params.qc.write_filtered_fasta
+workflow.publication.frozen.toml	qc	strict_quantms	params.qc.strict_quantms
+workflow.publication.frozen.toml	report	enabled	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.publication.frozen.toml	report	inputs	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.publication.frozen.toml	report	out_tsv	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.publication.frozen.toml	report	out_json	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.standard.example.toml	workflow	profile	removed: publication policy only (set individual options)
+workflow.standard.example.toml	workflow	output_dir	params.outdir
+workflow.standard.example.toml	workflow	resume	Nextflow -resume
+workflow.standard.example.toml	common	gtf_db	params.gtf_db
+workflow.standard.example.toml	common	genome	params.genome
+workflow.standard.example.toml	common	reference_proteome	params.reference_proteome
+workflow.standard.example.toml	common	annotation_release	params.annotation_release
+workflow.standard.example.toml	common	organism	params.organism
+workflow.standard.example.toml	validate	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.standard.example.toml	validate	gencode_protein_fasta	params.gencode_protein_fasta
+workflow.standard.example.toml	fusion	enabled	Producer presence in samplesheet
+workflow.standard.example.toml	fusion	fusioninspector	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	fusion	recursive_inputs	params.fusion.recursive_inputs
+workflow.standard.example.toml	rmats	enabled	Producer presence in samplesheet
+workflow.standard.example.toml	rmats	se_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	a3ss_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	a5ss_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	mxe_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	ri_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	suppa	enabled	Producer presence in samplesheet
+workflow.standard.example.toml	suppa	event_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	merge	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.standard.example.toml	merge	gencode_concordance_summary	Nextflow channel from the upstream process
+workflow.standard.example.toml	merge	inputs	Nextflow channel from the upstream process
+workflow.standard.example.toml	merge	reference_fasta	params.reference_proteome
+workflow.standard.example.toml	merge	contaminants_fasta	params.contaminants
+workflow.standard.example.toml	qc	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.standard.example.toml	qc	fasta	Nextflow channel from the upstream process
+workflow.standard.example.toml	report	enabled	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.standard.example.toml	report	inputs	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.conservative.example.toml	workflow	profile	removed: publication policy only (set individual options)
+workflow.conservative.example.toml	common	gtf_db	params.gtf_db
+workflow.conservative.example.toml	common	genome	params.genome
+workflow.conservative.example.toml	common	reference_proteome	params.reference_proteome
+workflow.conservative.example.toml	common	annotation_release	params.annotation_release
+workflow.conservative.example.toml	common	organism	params.organism
+workflow.conservative.example.toml	fusion	fusioninspector	samplesheet.csv: tool, event_type and path
+workflow.conservative.example.toml	fusion	recursive_inputs	params.fusion.recursive_inputs
+workflow.conservative.example.toml	fusion	filtered_protein_fasta	params.fusion.filtered_protein_fasta
+workflow.conservative.example.toml	fusion	biological_interpretation_tsv	params.fusion.biological_interpretation_tsv
+workflow.conservative.example.toml	rmats	se_files	samplesheet.csv: tool, event_type and path
+workflow.conservative.example.toml	rmats	ri_files	samplesheet.csv: tool, event_type and path
+workflow.conservative.example.toml	rmats	out_prot_fa	params.rmats.out_prot_fa
+workflow.publication.v3.frozen.toml	workflow	profile	removed: publication policy only (set individual options)
+workflow.publication.v3.frozen.toml	workflow	output_dir	params.outdir
+workflow.publication.v3.frozen.toml	workflow	resume	Nextflow -resume
+workflow.publication.v3.frozen.toml	common	gtf_db	params.gtf_db
+workflow.publication.v3.frozen.toml	common	genome	params.genome
+workflow.publication.v3.frozen.toml	common	reference_proteome	params.reference_proteome
+workflow.publication.v3.frozen.toml	common	reference_peptide_cache	params.reference_peptide_cache
+workflow.publication.v3.frozen.toml	common	annotation_release	params.annotation_release
+workflow.publication.v3.frozen.toml	common	organism	params.organism
+workflow.publication.v3.frozen.toml	valdate	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.publication.v3.frozen.toml	valdate	gencode_protein_fasta	params.gencode_protein_fasta
+workflow.publication.v3.frozen.toml	valdate	out_tsv	params.validate.out_tsv (corrects source TOML section typo)
+workflow.publication.v3.frozen.toml	valdate	out_summary_json	params.validate.out_summary_json (corrects source TOML section typo)
+workflow.publication.v3.frozen.toml	valdate	max_mismatch_rate	params.validate.max_mismatch_rate (corrects source TOML section typo)
+workflow.publication.v3.frozen.toml	fusion	enabled	Producer presence in samplesheet
+workflow.publication.v3.frozen.toml	fusion	fusioninspector	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	fusion	recursive_inputs	params.fusion.recursive_inputs
+workflow.publication.v3.frozen.toml	fusion	max_transcripts_per_gene	params.fusion.max_transcripts_per_gene
+workflow.publication.v3.frozen.toml	fusion	nmd_distance_threshold_nt	params.fusion.nmd_distance_threshold_nt
+workflow.publication.v3.frozen.toml	fusion	early_stop_aa_cutoff	params.fusion.early_stop_aa_cutoff
+workflow.publication.v3.frozen.toml	fusion	min_retained_cds_nt	params.fusion.min_retained_cds_nt
+workflow.publication.v3.frozen.toml	fusion	max_breakpoint_snap_distance_nt	params.fusion.max_breakpoint_snap_distance_nt
+workflow.publication.v3.frozen.toml	fusion	min_split_reads_for_snapped_product	params.fusion.min_split_reads_for_snapped_product
+workflow.publication.v3.frozen.toml	fusion	exclude_incomplete_cds	params.fusion.exclude_incomplete_cds
+workflow.publication.v3.frozen.toml	fusion	quantms_conservative	params.fusion.quantms_conservative
+workflow.publication.v3.frozen.toml	fusion	require_junction_peptide	params.fusion.require_junction_peptide
+workflow.publication.v3.frozen.toml	fusion	require_unique_junction_peptide	params.fusion.require_unique_junction_peptide
+workflow.publication.v3.frozen.toml	fusion	exclude_frameshift_from_dia	params.fusion.exclude_frameshift_from_dia
+workflow.publication.v3.frozen.toml	fusion	exclude_truncated_from_dia	params.fusion.exclude_truncated_from_dia
+workflow.publication.v3.frozen.toml	fusion	exclude_nmd_from_dia	params.fusion.exclude_nmd_from_dia
+workflow.publication.v3.frozen.toml	fusion	include_donor_only_products	params.fusion.include_donor_only_products
+workflow.publication.v3.frozen.toml	fusion	digest_trypsin	params.fusion.digest_trypsin
+workflow.publication.v3.frozen.toml	fusion	max_missed_cleavages	params.fusion.max_missed_cleavages
+workflow.publication.v3.frozen.toml	fusion	digested_min_peptide_length	params.fusion.digested_min_peptide_length
+workflow.publication.v3.frozen.toml	fusion	digested_max_peptide_length	params.fusion.digested_max_peptide_length
+workflow.publication.v3.frozen.toml	fusion	workers	params.fusion.workers
+workflow.publication.v3.frozen.toml	fusion	transcript_model_cache	removed: the option was accepted but never read (2026-10-12)
+workflow.publication.v3.frozen.toml	fusion	filtered_protein_fasta	params.fusion.filtered_protein_fasta
+workflow.publication.v3.frozen.toml	fusion	filtered_cds_fasta	params.fusion.filtered_cds_fasta
+workflow.publication.v3.frozen.toml	fusion	biological_interpretation_tsv	params.fusion.biological_interpretation_tsv
+workflow.publication.v3.frozen.toml	fusion	dia_database_metadata_tsv	params.fusion.dia_database_metadata_tsv
+workflow.publication.v3.frozen.toml	fusion	out_sequence_sample_tsv	params.fusion.out_sequence_sample_tsv
+workflow.publication.v3.frozen.toml	fusion	digested_peptide_tsv	params.fusion.digested_peptide_tsv
+workflow.publication.v3.frozen.toml	rmats	enabled	Producer presence in samplesheet
+workflow.publication.v3.frozen.toml	rmats	se_files	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	rmats	a3ss_files	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	rmats	a5ss_files	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	rmats	mxe_files	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	rmats	ri_files	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	rmats	rmats_conservative_event_filter	params.rmats.rmats_conservative_event_filter
+workflow.publication.v3.frozen.toml	rmats	max_fdr	params.rmats.max_fdr
+workflow.publication.v3.frozen.toml	rmats	min_abs_inc_level_difference	params.rmats.min_abs_inc_level_difference
+workflow.publication.v3.frozen.toml	rmats	min_inclusion_junction_reads	params.rmats.min_inclusion_junction_reads
+workflow.publication.v3.frozen.toml	rmats	min_skipping_junction_reads	params.rmats.min_skipping_junction_reads
+workflow.publication.v3.frozen.toml	rmats	pad_partial_codons	params.rmats.pad_partial_codons
+workflow.publication.v3.frozen.toml	rmats	allow_alt_start	params.rmats.allow_alt_start
+workflow.publication.v3.frozen.toml	rmats	allow_longest_orf	params.rmats.allow_longest_orf
+workflow.publication.v3.frozen.toml	rmats	short_junction_peptides	params.rmats.short_junction_peptides
+workflow.publication.v3.frozen.toml	rmats	nmd_distance_threshold_nt	params.rmats.nmd_distance_threshold_nt
+workflow.publication.v3.frozen.toml	rmats	quantms_conservative	params.rmats.quantms_conservative
+workflow.publication.v3.frozen.toml	rmats	require_unique_event_peptide	params.rmats.require_unique_event_peptide
+workflow.publication.v3.frozen.toml	rmats	exclude_incomplete_cds	params.rmats.exclude_incomplete_cds
+workflow.publication.v3.frozen.toml	rmats	exclude_nmd_from_dia	params.rmats.exclude_nmd_from_dia
+workflow.publication.v3.frozen.toml	rmats	exclude_start_loss_from_dia	params.rmats.exclude_start_loss_from_dia
+workflow.publication.v3.frozen.toml	rmats	exclude_frameshift_from_dia	params.rmats.exclude_frameshift_from_dia
+workflow.publication.v3.frozen.toml	rmats	exclude_premature_stop_from_dia	params.rmats.exclude_premature_stop_from_dia
+workflow.publication.v3.frozen.toml	rmats	require_ri_orf_preserved	params.rmats.require_ri_orf_preserved
+workflow.publication.v3.frozen.toml	rmats	require_ri_read_evidence	params.rmats.require_ri_read_evidence
+workflow.publication.v3.frozen.toml	rmats	min_ri_inclusion_reads	params.rmats.min_ri_inclusion_reads
+workflow.publication.v3.frozen.toml	rmats	require_ri_junction_peptide	params.rmats.require_ri_junction_peptide
+workflow.publication.v3.frozen.toml	rmats	exclude_ri_nmd_from_primary	params.rmats.exclude_ri_nmd_from_primary
+workflow.publication.v3.frozen.toml	rmats	include_failed_filter_proteins	params.rmats.include_failed_filter_proteins
+workflow.publication.v3.frozen.toml	rmats	max_missed_cleavages	params.rmats.max_missed_cleavages
+workflow.publication.v3.frozen.toml	rmats	min_database_peptide_length	params.rmats.min_database_peptide_length
+workflow.publication.v3.frozen.toml	rmats	max_database_peptide_length	params.rmats.max_database_peptide_length
+workflow.publication.v3.frozen.toml	rmats	workers	params.rmats.workers
+workflow.publication.v3.frozen.toml	rmats	chunksize	params.rmats.chunksize
+workflow.publication.v3.frozen.toml	rmats	sequence_cache_entries	params.rmats.sequence_cache_entries
+workflow.publication.v3.frozen.toml	rmats	out_prot_fa	params.rmats.out_prot_fa
+workflow.publication.v3.frozen.toml	rmats	out_consequence_tsv	params.rmats.out_consequence_tsv
+workflow.publication.v3.frozen.toml	rmats	out_event_summary_tsv	params.rmats.out_event_summary_tsv
+workflow.publication.v3.frozen.toml	suppa	enabled	Producer presence in samplesheet
+workflow.publication.v3.frozen.toml	suppa	event_files	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	suppa	psi_files	samplesheet.csv: tool, event_type and path
+workflow.publication.v3.frozen.toml	suppa	min_psi	params.suppa.min_psi
+workflow.publication.v3.frozen.toml	suppa	min_psi_samples	params.suppa.min_psi_samples
+workflow.publication.v3.frozen.toml	suppa	keep_events_missing_psi	params.suppa.keep_events_missing_psi
+workflow.publication.v3.frozen.toml	suppa	pad_partial_codons	params.suppa.pad_partial_codons
+workflow.publication.v3.frozen.toml	suppa	allow_alt_start	params.suppa.allow_alt_start
+workflow.publication.v3.frozen.toml	suppa	allow_longest_orf	params.suppa.allow_longest_orf
+workflow.publication.v3.frozen.toml	suppa	short_junction_peptides	params.suppa.short_junction_peptides
+workflow.publication.v3.frozen.toml	suppa	nmd_distance_threshold_nt	params.suppa.nmd_distance_threshold_nt
+workflow.publication.v3.frozen.toml	suppa	exclude_incomplete_cds	params.suppa.exclude_incomplete_cds
+workflow.publication.v3.frozen.toml	suppa	quantms_conservative	params.suppa.quantms_conservative
+workflow.publication.v3.frozen.toml	suppa	require_unique_event_peptide	params.suppa.require_unique_event_peptide
+workflow.publication.v3.frozen.toml	suppa	exclude_nmd_from_dia	params.suppa.exclude_nmd_from_dia
+workflow.publication.v3.frozen.toml	suppa	exclude_start_loss_from_dia	params.suppa.exclude_start_loss_from_dia
+workflow.publication.v3.frozen.toml	suppa	exclude_frameshift_from_dia	params.suppa.exclude_frameshift_from_dia
+workflow.publication.v3.frozen.toml	suppa	exclude_premature_stop_from_dia	params.suppa.exclude_premature_stop_from_dia
+workflow.publication.v3.frozen.toml	suppa	require_ri_orf_preserved	params.suppa.require_ri_orf_preserved
+workflow.publication.v3.frozen.toml	suppa	max_missed_cleavages	params.suppa.max_missed_cleavages
+workflow.publication.v3.frozen.toml	suppa	min_database_peptide_length	params.suppa.min_database_peptide_length
+workflow.publication.v3.frozen.toml	suppa	max_database_peptide_length	params.suppa.max_database_peptide_length
+workflow.publication.v3.frozen.toml	suppa	workers	params.suppa.workers
+workflow.publication.v3.frozen.toml	suppa	sequence_cache_entries	params.suppa.sequence_cache_entries
+workflow.publication.v3.frozen.toml	suppa	out_prot_fa	params.suppa.out_prot_fa
+workflow.publication.v3.frozen.toml	suppa	out_consequence_tsv	params.suppa.out_consequence_tsv
+workflow.publication.v3.frozen.toml	suppa	out_psi_summary_tsv	params.suppa.out_psi_summary_tsv
+workflow.publication.v3.frozen.toml	merge	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.publication.v3.frozen.toml	merge	gencode_concordance_summary	Nextflow channel from the upstream process
+workflow.publication.v3.frozen.toml	merge	inputs	Nextflow channel from the upstream process
+workflow.publication.v3.frozen.toml	merge	reference_fasta	params.reference_proteome
+workflow.publication.v3.frozen.toml	merge	contaminants_fasta	params.contaminants
+workflow.publication.v3.frozen.toml	merge	record_types	params.merge.record_types
+workflow.publication.v3.frozen.toml	merge	recursive	params.merge.recursive
+workflow.publication.v3.frozen.toml	merge	include_rescue_tiers	params.merge.include_rescue_tiers
+workflow.publication.v3.frozen.toml	merge	min_protein_length	params.merge.min_protein_length
+workflow.publication.v3.frozen.toml	merge	min_peptide_length	params.merge.min_peptide_length
+workflow.publication.v3.frozen.toml	merge	max_peptide_length	params.merge.max_peptide_length
+workflow.publication.v3.frozen.toml	merge	max_missed_cleavages	params.merge.max_missed_cleavages
+workflow.publication.v3.frozen.toml	merge	invalid_sequence_policy	params.merge.invalid_sequence_policy
+workflow.publication.v3.frozen.toml	merge	id_prefix	params.merge.id_prefix
+workflow.publication.v3.frozen.toml	merge	id_width	params.merge.id_width
+workflow.publication.v3.frozen.toml	merge	max_header_values	params.merge.max_header_values
+workflow.publication.v3.frozen.toml	merge	log_level	params.merge.log_level
+workflow.publication.v3.frozen.toml	merge	out_fasta	params.merge.out_fasta
+workflow.publication.v3.frozen.toml	merge	out_metadata	params.merge.out_metadata
+workflow.publication.v3.frozen.toml	merge	out_mapping	params.merge.out_mapping
+workflow.publication.v3.frozen.toml	merge	out_peptide_evidence	params.merge.out_peptide_evidence
+workflow.publication.v3.frozen.toml	merge	out_biological_interpretation	params.merge.out_biological_interpretation
+workflow.publication.v3.frozen.toml	merge	out_summary_tsv	params.merge.out_summary_tsv
+workflow.publication.v3.frozen.toml	merge	out_summary_json	params.merge.out_summary_json
+workflow.publication.v3.frozen.toml	qc	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.publication.v3.frozen.toml	qc	fasta	Nextflow channel from the upstream process
+workflow.publication.v3.frozen.toml	qc	metadata	Nextflow channel from the upstream process
+workflow.publication.v3.frozen.toml	qc	reference_proteome	params.reference_proteome
+workflow.publication.v3.frozen.toml	qc	outdir	params.qc.outdir
+workflow.publication.v3.frozen.toml	qc	prefix	params.qc.prefix
+workflow.publication.v3.frozen.toml	qc	max_missed_cleavages	params.qc.max_missed_cleavages
+workflow.publication.v3.frozen.toml	qc	min_peptide_length	params.qc.min_peptide_length
+workflow.publication.v3.frozen.toml	qc	max_peptide_length	params.qc.max_peptide_length
+workflow.publication.v3.frozen.toml	qc	min_protein_length	params.qc.min_protein_length
+workflow.publication.v3.frozen.toml	qc	exclude_no_eligible_peptide	params.qc.exclude_no_eligible_peptide
+workflow.publication.v3.frozen.toml	qc	write_filtered_fasta	params.qc.write_filtered_fasta
+workflow.publication.v3.frozen.toml	qc	strict_quantms	params.qc.strict_quantms
+workflow.publication.v3.frozen.toml	report	enabled	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.publication.v3.frozen.toml	report	inputs	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.publication.v3.frozen.toml	report	out_tsv	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.publication.v3.frozen.toml	report	out_json	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.standard.example.toml	workflow	profile	removed: publication policy only (set individual options)
+workflow.standard.example.toml	workflow	output_dir	params.outdir
+workflow.standard.example.toml	workflow	resume	Nextflow -resume
+workflow.standard.example.toml	common	gtf_db	params.gtf_db
+workflow.standard.example.toml	common	genome	params.genome
+workflow.standard.example.toml	common	reference_proteome	params.reference_proteome
+workflow.standard.example.toml	common	annotation_release	params.annotation_release
+workflow.standard.example.toml	common	organism	params.organism
+workflow.standard.example.toml	validate	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.standard.example.toml	validate	gencode_protein_fasta	params.gencode_protein_fasta
+workflow.standard.example.toml	fusion	enabled	Producer presence in samplesheet
+workflow.standard.example.toml	fusion	fusioninspector	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	fusion	recursive_inputs	params.fusion.recursive_inputs
+workflow.standard.example.toml	rmats	enabled	Producer presence in samplesheet
+workflow.standard.example.toml	rmats	se_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	a3ss_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	a5ss_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	mxe_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	rmats	ri_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	suppa	enabled	Producer presence in samplesheet
+workflow.standard.example.toml	suppa	event_files	samplesheet.csv: tool, event_type and path
+workflow.standard.example.toml	merge	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.standard.example.toml	merge	gencode_concordance_summary	Nextflow channel from the upstream process
+workflow.standard.example.toml	merge	inputs	Nextflow channel from the upstream process
+workflow.standard.example.toml	merge	reference_fasta	params.reference_proteome
+workflow.standard.example.toml	merge	contaminants_fasta	params.contaminants
+workflow.standard.example.toml	qc	enabled	Mandatory in the complete workflow; reuse successful tasks with -resume
+workflow.standard.example.toml	qc	fasta	Nextflow channel from the upstream process
+workflow.standard.example.toml	report	enabled	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process
+workflow.standard.example.toml	report	inputs	Nextflow reports, trace, work directory, versions and per-stage biological tables; no release_report process

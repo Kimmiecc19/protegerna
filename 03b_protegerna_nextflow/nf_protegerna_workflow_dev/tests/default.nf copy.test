@@ -1,0 +1,19 @@
+nextflow_pipeline {
+    name 'Proteogenomic database integration'
+    script '../main.nf'
+    tag 'pipeline'
+
+    test('All producers, reference gate, merge and strict QC') {
+        when {
+            params {
+                outdir = "$outputDir"
+            }
+        }
+        then {
+            assert workflow.success
+            assert workflow.trace.succeeded().size() == 9
+            assert new File("$outputDir/merge/proteogenomic_database.fasta").readLines().count { it.startsWith('>') } == 4
+            assert new File("$outputDir/pipeline_info/software_versions.yml").exists()
+        }
+    }
+}

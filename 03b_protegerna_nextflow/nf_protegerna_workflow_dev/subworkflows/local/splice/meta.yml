@@ -1,0 +1,81 @@
+{
+  "name": "splice",
+  "description": "Splice stage of the proteogenomic database workflow.",
+  "keywords": [
+    "proteogenomics",
+    "splice"
+  ],
+  "components": [
+    "rmats_to_protein",
+    "suppa_to_protein"
+  ],
+  "input": [
+    {
+      "rmats_options": {
+        "description": "rmats_options input channel or options."
+      }
+    },
+    {
+      "suppa_options": {
+        "description": "suppa_options input channel or options."
+      }
+    },
+    {
+      "runtime": {
+        "description": "runtime input channel or options."
+      }
+    },
+    {
+      "rmats_events": {
+        "description": "rmats_events input channel or options."
+      }
+    },
+    {
+      "suppa_events": {
+        "description": "suppa_events input channel or options."
+      }
+    },
+    {
+      "db": {
+        "description": "db input channel or options."
+      }
+    },
+    {
+      "genome": {
+        "description": "genome input channel or options."
+      }
+    },
+    {
+      "reference": {
+        "description": "reference input channel or options."
+      }
+    },
+    {
+      "cache": {
+        "description": "cache input channel or options."
+      }
+    },
+    {
+      "sample_metadata": {
+        "description": "sample_metadata input channel or options."
+      }
+    }
+  ],
+  "output": [
+    {
+      "fastas": {
+        "description": "Primary rMATS and SUPPA protein FASTAs."
+      }
+    },
+    {
+      "rescue": {
+        "description": "Alternative-start and exploratory-ORF FASTAs (merged only when merge.include_rescue_tiers is true)."
+      }
+    },
+    {
+      "versions": {
+        "description": "versions output channel."
+      }
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+source_label	source_file	record_ordinal	header	sequence_hash	sequence_length	has_eligible_tryptic_peptide	exclusion_reasons	exclusion_reason_codes	duplicate_of_header
+synthetic	tests/fixtures/qc_equivalence/input.fasta	4	R4|source=suppa|record_type=protein|record_id=R4	b2690faaaa9351ecb43b60145db79e38151129eaa426b9529f1705b2dd5168bc	2	False	protein_shorter_than_6aa	PGDB_EXCL_PROTEIN_SHORTER_THAN_6AA	

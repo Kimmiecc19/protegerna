@@ -1,0 +1,6 @@
+source_label	source_file	record_ordinal	header_identifier	header_field_count	header_has_key_value_metadata	observed_sequence_length	header_length_matches_sequence	observed_sequence_md5	header_md5_matches_sequence	source	record_type	record_id	gene_symbol	event_type	event_id	annotation_release	database_output_tier	GN	OS	gn	os	schema_version
+synthetic	tests/fixtures/qc_equivalence/input.fasta	1	R1	13	True	9		1a07fe2774bfe5f8502d99c0739d5f50		rmats	protein	R1	GENE1	SE	E1	GENCODE_46	primary	GENE1	Homo_sapiens	GENE1	Homo_sapiens	pgdb-merge-input-v1
+synthetic	tests/fixtures/qc_equivalence/input.fasta	2	R2	13	True	9		1a07fe2774bfe5f8502d99c0739d5f50		suppa	protein	R2	GENE2	A3	E2	GENCODE_46	primary	GENE2	Homo_sapiens	GENE2	Homo_sapiens	pgdb-merge-input-v1
+synthetic	tests/fixtures/qc_equivalence/input.fasta	3	R3	3	True	10		dfefbf1e27e4cb87b86f51f054046ba4		rmats	protein	R3										
+synthetic	tests/fixtures/qc_equivalence/input.fasta	4	R4	3	True	2		fbd1e7ba9564863b88d5c43cb833afaf		suppa	protein	R4										
+synthetic	tests/fixtures/qc_equivalence/input.fasta	5	R5	3	True	10		fe44988535e3ceee8e8508abfb253c46		fusioninspector	protein	R5										

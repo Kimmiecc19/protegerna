@@ -1,0 +1,82 @@
+{
+  "name": "validate",
+  "description": "Validate stage of the proteogenomic database workflow.",
+  "keywords": [
+    "proteogenomics",
+    "validate"
+  ],
+  "components": [
+    "validate_gencode_translation",
+    "build_reference_peptide_cache",
+    "create_gencode_db"
+  ],
+  "input": [
+    {
+      "options": {
+        "description": "options input channel or options."
+      }
+    },
+    {
+      "cache_options": {
+        "description": "cache_options input channel or options."
+      }
+    },
+    {
+      "runtime": {
+        "description": "runtime input channel or options."
+      }
+    },
+    {
+      "db": {
+        "description": "db input channel or options."
+      }
+    },
+    {
+      "gtf": {
+        "description": "gtf input channel or options."
+      }
+    },
+    {
+      "genome": {
+        "description": "genome input channel or options."
+      }
+    },
+    {
+      "gencode": {
+        "description": "gencode input channel or options."
+      }
+    },
+    {
+      "reference": {
+        "description": "reference input channel or options."
+      }
+    },
+    {
+      "existing_cache": {
+        "description": "existing_cache input channel or options."
+      }
+    }
+  ],
+  "output": [
+    {
+      "cache": {
+        "description": "cache output channel."
+      }
+    },
+    {
+      "db": {
+        "description": "db output channel."
+      }
+    },
+    {
+      "summary": {
+        "description": "summary output channel."
+      }
+    },
+    {
+      "versions": {
+        "description": "versions output channel."
+      }
+    }
+  ]
+}

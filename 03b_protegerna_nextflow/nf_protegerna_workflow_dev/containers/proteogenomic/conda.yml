@@ -1,0 +1,12 @@
+name: base
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  - python=3.11
+  - procps-ng
+  - gffutils=0.14
+  - pyfaidx=0.9.0.4
+  - tqdm=4.70.0
+  - biopython=1.88
+  - pandas=3.0.1

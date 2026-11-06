@@ -1,0 +1,46 @@
+name: Python quality
+
+on:
+  push:
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  test-and-typecheck:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+
+      - name: Install package and quality dependencies
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install --editable .
+          python -m pip install mypy hypothesis
+
+      - name: Compile production modules
+        run: python -m compileall -q -l . proteogenomic
+
+      - name: Type-check typed core modules
+        run: >-
+          python -m mypy
+          proteogenomic/provenance.py
+          proteogenomic/pgdb_header.py
+          proteogenomic/splice_reconstruction_core.py
+
+      - name: Run regression and golden-fixture tests
+        env:
+          PYTHONPATH: .
+        run: python -m unittest discover -s tests -p 'test_*.py' -v
+
+      - name: Validate example workflow configuration
+        run: proteogenomic-workflow workflow.standard.example.toml --dry-run

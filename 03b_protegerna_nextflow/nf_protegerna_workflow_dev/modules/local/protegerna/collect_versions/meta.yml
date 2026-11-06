@@ -1,0 +1,30 @@
+{
+  "name": "collect_versions",
+  "description": "Execute collect_versions through assets/proteogenomic_runtime/nextflow_adapter.py.",
+  "keywords": [
+    "proteogenomics",
+    "database"
+  ],
+  "input": [
+    {
+      "runtime": {
+        "type": "file",
+        "description": "Bundled proteogenomic runtime directory."
+      }
+    },
+    {
+      "versions": {
+        "type": "file",
+        "description": "Staged input file(s)."
+      }
+    }
+  ],
+  "output": [
+    {
+      "yml": {
+        "type": "file",
+        "description": "'software_versions.yml'"
+      }
+    }
+  ]
+}
