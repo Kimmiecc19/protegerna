@@ -203,7 +203,7 @@ def load_alsod(path: Path) -> dict[str, str]:
         for row in reader:
             gene = (row.get("Gene symbol") or "").strip()
             if gene:
-                evidence[gene] = (row.get("Category") or "").strip()
+                evidence[gene.upper()] = (row.get("Category") or "").strip()  # case-insensitive: ALSoD writes e.g. 'EphA3'
     return evidence
 
 
@@ -211,8 +211,8 @@ def load_alsod(path: Path) -> dict[str, str]:
 # Prioritisation
 # --------------------------------------------------------------------------- #
 def event_row(event: dict, gene_evidence: dict[str, str], scope: str) -> dict:
-    als_hits = sorted(gene for gene in event["genes"] if gene in gene_evidence)
-    high_als = sorted(gene for gene in als_hits if gene_evidence[gene] in HIGH_ALS_LEVELS)
+    als_hits = sorted(gene for gene in event["genes"] if gene.upper() in gene_evidence)
+    high_als = sorted(gene for gene in als_hits if gene_evidence[gene.upper()] in HIGH_ALS_LEVELS)
     max_score = max(event["scores"]) if event["scores"] else None
     als_priority = bool(high_als)
     score_priority = max_score is not None and max_score >= HIGH_RANK_THRESHOLD
@@ -234,7 +234,7 @@ def event_row(event: dict, gene_evidence: dict[str, str], scope: str) -> dict:
         "control_sample_count": sum(sample_id.startswith("CTRL-") for sample_id in carriers),
         "samples": ";".join(carriers),
         "genes": joined("genes"),
-        "alsod_gene_hits": ";".join(f"{gene} ({gene_evidence[gene]})" for gene in als_hits),
+        "alsod_gene_hits": ";".join(f"{gene} ({gene_evidence[gene.upper()]})" for gene in als_hits),
         "high_priority_als_genes": ";".join(high_als),
         "max_annotsv_ranking_score": max_score if max_score is not None else "",
         "annotsv_ranking_criteria": " | ".join(sorted(event["criteria"])),
