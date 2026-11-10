@@ -9,3 +9,11 @@
 **/multiqc/
 **/pmultiqc/
 **/__pycache__/
+
+# Generated analysis outputs
+**/results/
+**/results_*/
+**/quant_tables/
+**/multiqc/
+**/pmultiqc/
+**/__pycache__/
