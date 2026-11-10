@@ -1,2 +1,5 @@
+04_integration/data/*
+03_proteogenomic_database/data/*
+path_fixes_review.diff
 
 # Large FASTA files

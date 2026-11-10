@@ -1,183 +1,86 @@
-# AnswerALS data preparation and nf-core support
+# Shared cohort preparation and utilities
 
-This directory contains scripts and working notes used to prepare AnswerALS
-participant metadata and omics file manifests for nf-core pipeline runs and
-downstream PhD analyses. The workflow links participant-level metadata to
-released files, selects eligible samples, assigns analysis batches, and provides
-utilities for generating RNA-seq samplesheets and reviewing Nextflow resource
-use.
+**Objective:** prepare the matched Answer ALS cohort used by Objectives Two to Four, and keep shared figures and utilities.
 
-The scripts support preparation and organization of data. They do not download
-or redistribute AnswerALS data, and they do not replace the pipeline-specific
-validation required before running nf-core workflows.
+**Dissertation:** Chapter 4, Section 4.2.1 and Table 4.4 (347 participants); Chapter 5, Sections 5.2.2–5.2.4; Chapter 6,
+Sections 6.2.2–6.2.4. The schematic figures for Chapters 3–5 are in `04_miscellaneous/figures/`.
 
-## Workflow overview
+## What is done
 
-The numbered directories indicate the broad order of work:
+1. **Filter and match participants** (`01_filtering_matching_patients/`): keep participants with genomic, transcriptomic and
+   proteomic data, remove the 52 proteomic samples with strong batch effects, map the remaining 347 participants to their sample
+   records and released files, and separate the recurring technical-control samples (BTC/BDC) for batching.
+2. **Describe the cohort** (`02_demographic_plots/`): cohort and variant-carrier summaries for the literature review.
+3. **Review resource use** (`03_resource_optimization/`): summarise Nextflow trace files and suggest resource settings.
+4. **Utilities and figures** (`04_miscellaneous/`, `00_nf_syntax/`).
 
-1. **Filter and match participants** — select participants with the required
-   omics availability, exclude listed proteomics batch-effect samples, link
-   metadata to sample-mapping records, and join participants to released-file
-   paths.
-2. **Create sample batches** — separate BDC and BTC records and create or
-   validate artificial batch assignments. The batch scripts were developed
-   iteratively; check each script’s inputs, parameters, and outputs before
-   choosing one for a new analysis.
-3. **Prepare pipeline inputs** — create samplesheets from paired FASTQ files and
-   organize downloaded file layouts when needed.
-4. **Review resource use** — summarize Nextflow execution traces and generate
-   suggested process resource overrides.
-5. **Look up Nextflow syntax** — build and retain a searchable Markdown
-   reference from the official Nextflow documentation.
+Batching (six matched RNA/proteomic batches) is in `../03_proteogenomic_database/01_sample_batches/`.
 
-## Directory guide
+## Scripts
 
-| Directory | Contents |
-| --- | --- |
-| `00_nf_syntax/` | `extract_nf_syntax.py` and generated syntax reference Markdown files. The extractor reads current Nextflow documentation over the network; the checked-in Markdown files are snapshots. |
-| `01_filtering_matching_patients/` | R scripts for participant filtering, sample-mapping joins, BDC/BTC splitting, released-file joins, and downstream demographic plots. The workflow and source-data notes are in `AALS_sample_filtering_matching.md`. |
-| `02_sample_stratification_batches/` | R and Python scripts for separating records, generating or validating artificial batches, and batch-related data and notes. |
-| `03_make_samplesheets/` | Python utilities for creating a paired-read samplesheet and unpacking nested download directories; sample data and batch-related files are under `data/`. |
-| `04_resource_optimization/` | `01_optimize_resources.py` analyzes Nextflow trace files and writes resource summaries and configuration recommendations. |
+| Script | What it does | Dissertation |
+| --- | --- | --- |
+| `01_filtering_matching_patients/01_participant_filtering.R` | Keep participants with all three omics; remove the 52 batch-effect samples | Table 4.4; 4.2.1 |
+| `01_filtering_matching_patients/02_merged_tp_mapping.R` | Map transcriptomic and proteomic files to participants | 5.2.4 |
+| `01_filtering_matching_patients/03_split_bcd_btc.R` | Split BTC/BDC records before batching | 5.2.3 |
+| `01_filtering_matching_patients/04_aals_full_merge.R` | Merge metadata with released-file paths | Table 4.4 |
+| `02_demographic_plots/01_literature_review.R` | Cohort, sex, ancestry, C9orf72/ATXN2 repeat and omics-availability summaries | cohort description; no numbered table or figure |
+| `03_resource_optimization/01_optimize_resources.py` | Resource summaries from Nextflow traces | not reported |
+| `04_miscellaneous/move_participants_by_batch.sh`, `unpack_dir.py` | Move files into batch folders; flatten download folders | not reported |
+| `00_nf_syntax/extract_nf_syntax.py` | Build a searchable Nextflow syntax reference | not reported |
 
-Generated files are generally written to the paths specified in each script or
-to the relevant `results/` directory. Many scripts are research utilities rather
-than a single parameterized command-line application. Read their configuration
-blocks and input assumptions before running them.
+## How to run
 
-## Data preparation logic
+### Cohort matching
 
-The documented participant-matching workflow uses AnswerALS data-portal
-metadata, released-file manifests, the sample-mapping file, and a list of
-proteomics samples identified as having strong batch effects. The documented
-selection retains participants with genomics, transcriptomics, and proteomics
-availability, removes the listed proteomics batch-effect participants, maps
-remaining participants to sample records, and excludes epigenomics where it is
-outside the analysis scope. The workflow then separates BTC and BDC records and
-creates joined metadata and file-path tables.
-
-The included notes describe a cohort of 347 participants for one historical data
-snapshot. This is not a guaranteed count for later portal releases: source
-tables, inclusion rules, and file availability may change. Treat the output
-tables and run-specific manifests as the authority for any particular analysis.
-
-The batch scripts support balancing and coordinating transcriptomics and
-proteomics work while retaining diagnosis and sex representation and accounting
-for technical batches. BTC records are treated as technical controls in the
-documented strategy and are handled separately from biological participant
-samples. Review the batch notes and validation outputs to understand the exact
-logic used for a given set of results.
-
-## Running selected utilities
-
-Use Python 3, R, and the packages imported by the selected script. Commands
-below are examples; run them from the relevant directory or provide explicit
-paths. Paths in several older R scripts are relative to the working directory.
-
-### Filter and match participant metadata
-
-The R scripts in `01_filtering_matching_patients/code/` are staged by filename,
-including participant filtering, metadata/sample mapping, BDC/BTC splitting, and
-the full metadata/file merge. They expect source CSV files such as the AnswerALS
-data-portal table, released-file manifest, sample-mapping file, and proteomics
-batch-effect list. Those inputs must be obtained through the authorized
-AnswerALS access route and placed where the scripts expect them, or the scripts
-must be updated with the appropriate paths.
-
-The historical workflow and intended inputs/outputs are described in
-`01_filtering_matching_patients/AALS_sample_filtering_matching.md`. Inspect the
-selected script before execution; the notes include historical code and data
-counts that may not reflect a current portal release.
-
-### Assign and validate batches
-
-Batch code and example data are under `02_sample_stratification_batches/`. For
-example, some Python scripts use pandas, NumPy, and scikit-learn; R scripts use
-tidyverse packages. Several scripts set input/output filenames and parameters
-near the top of the file rather than accepting command-line arguments. Confirm
-that the input files correspond to the intended cohort and that the generated
-transcriptomics and proteomics assignments remain aligned before pipeline
-execution or integration analyses.
-
-### Create an RNA-seq samplesheet
-
-`03_make_samplesheets/code/create_rnasplice_samplesheet.py` searches recursively
-for paired `*_1.fastq.gz`/`*_2.fastq.gz` or `*_R1.fastq.gz`/`*_R2.fastq.gz`
-files and writes a CSV with `sample`, `fastq_1`, `fastq_2`, `strandedness`, and
-`condition` columns.
+Run from `01_filtering_matching_patients/`; file names are set inside each script. Place the Answer ALS portal tables in
+`data/aals_metadata_neuromine/` (`aals_dataportal_datatable.csv`, `aals_released_files.csv`,
+`Proteomics_Batch_Effect_Samples_52.csv`, `Sample-Mapping-File-Feb-2024.csv`). The first and third are saved there; the other
+two are controlled-access portal downloads you add yourself. The scripts read the portal tables from that folder and write
+their outputs to `01_filtering_matching_patients/`.
 
 ```bash
-python 03_make_samplesheets/code/create_rnasplice_samplesheet.py /path/to/fastq_directory samplesheet.csv
+cd 00_general/01_filtering_matching_patients
+Rscript 01_participant_filtering.R   # -> filtered_matched_aals.csv (347 participants)
+Rscript 04_aals_full_merge.R         # -> merged_aals_data.csv
+Rscript 02_merged_tp_mapping.R       # -> filtered_mapping_data.csv
+Rscript 03_split_bcd_btc.R           # -> samples_with_paths.csv, stratify_bdc.csv, stratify_btc.csv, stratify_bdc_ctrl.csv
 ```
 
-The script currently sets strandedness to `forward` and infers condition from
-`CASE-` or `CTRL-` in a file path. Confirm that these values and the resulting
-sample identifiers match the requirements of the specific nf-core pipeline and
-the experimental design. Review the output for unmatched or incorrectly paired
-reads before launching a workflow.
+`AALS_sample_filtering_matching.md` records the selection steps and counts; `data/aals_metadata_neuromine/downloading_aals_data.md`
+records how the portal tables were downloaded (Feb 2024 snapshot). `filtered_aals_cleaned.csv` is a cleaned copy of
+`filtered_matched_aals.csv`; check which one a downstream script reads.
 
-`03_make_samplesheets/code/unpack_dir.py` moves files from nested subdirectories
-into a supplied parent directory and removes empty subdirectories. This changes
-the input directory structure; use it only when that flattening is appropriate
-for the downloaded data layout.
-
-### Analyze Nextflow execution traces
-
-`04_resource_optimization/01_optimize_resources.py` searches recursively for
-`execution_trace_*` files in a directory and writes summaries and a suggested
-Nextflow resource configuration. For example:
+### Cohort description
 
 ```bash
-python 04_resource_optimization/01_optimize_resources.py --input-dir /path/to/nf-results --output-prefix rnasplice_
+cd 00_general/02_demographic_plots
+Rscript 01_literature_review.R   # -> figures_literature_review/*.pdf and *_counts.csv
 ```
 
-Options include `--time-headroom`, `--time-quantile`, and `--min-time-minutes`;
-run `python 04_resource_optimization/01_optimize_resources.py --help` for
-defaults and full details. Recommendations are based on observed runs and should
-be reviewed against the pipeline, scheduler limits, sample scale, and
-failed-task history before use.
+Run it from its own folder: it sources `plot_helpers.R` and `thesis_palette.R` from there and reads
+`../01_filtering_matching_patients/data/aals_metadata_neuromine/aals_dataportal_datatable.csv`.
 
-### Refresh the Nextflow syntax reference
+### Nextflow resource review
 
-`00_nf_syntax/extract_nf_syntax_07042026.py` fetches documentation pages from
-nextflow.io and builds the Markdown reference files. It requires network access
-and Python packages `requests` and `beautifulsoup4`. Its output reflects the
-documentation available at the time it is run and may differ from the checked-in
-snapshot.
+```bash
+python 03_resource_optimization/01_optimize_resources.py --input-dir /path/to/nf-results --output-prefix rnasplice_
+```
 
-## Reproducibility and data stewardship
+Writes CPU and memory waste rankings, a process summary and a suggested resource config (`results_resource_optimization/`).
 
-- AnswerALS participant metadata and omics files may be controlled-access or
-  governed by data-use terms. Obtain them from the official portal under the
-  applicable approvals. Do not commit participant-level data, sample
-  identifiers, file paths that reveal restricted information, credentials, or
-  access codes to a public repository.
-- Before publishing, review all tracked files and generated outputs for
-  restricted or identifiable information. Keep sensitive input data and derived
-  participant-level tables outside the public repository unless their release is
-  explicitly permitted.
-- Record the source release, retrieval date, filtering criteria, script version,
-  and relevant parameters for each analysis. Preserve the source manifest and
-  the exact samplesheet used for a pipeline run in an appropriately
-  access-controlled location.
-- nf-core samplesheet schemas differ across pipelines and may change between
-  pipeline versions. Use the selected pipeline’s documentation and validation
-  command as the final guide for required column names and values.
-- Batch assignment is an analysis choice, not a substitute for modeling
-  technical effects. Retain the original batch metadata and document how
-  artificial batches were constructed.
-- Resource recommendations are empirical starting points rather than guarantees
-  of successful execution or optimal allocation.
+### Nextflow syntax reference
 
-## Sources
+```bash
+python 00_nf_syntax/extract_nf_syntax.py   # needs network access, requests and beautifulsoup4
+```
 
-The workflow notes identify the [AnswerALS Data
-Portal](https://dataportal.answerals.org/) as the source for participant
-metadata and released files. The syntax extractor uses the official [Nextflow
-documentation](https://www.nextflow.io/docs/latest/). Follow the applicable
-data-use terms and cite the data resource and nf-core pipelines used in
-resulting work.
+## Figures and notes
 
-## License
+- `04_miscellaneous/figures/`: `objective1_methods_flowchart.png` (Figure 3.1), `objective2_workflow.png` (Figure 4.1),
+  `proteogenomic_database_v5_03102026-{workflow,splice,fusion}.png` (Figures 5.1–5.3).
+- `04_miscellaneous/DMP.md` (data management plan) and `metadata.md`.
 
----
+## Data access
+
+Answer ALS data are controlled-access and are not in this repository. Request them from the [Answer ALS data portal](https://dataportal.answerals.org/) under its data-use terms. Do not commit participant-level files, credentials or access tokens.
