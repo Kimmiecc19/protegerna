@@ -1,12 +1,10 @@
 # Multi-omics integration: design logic and methodological considerations
 
-TThis page explains the **logic** behind how the [Objective 4](Objective-4-Multi-Omics-Integration) integration framework was built. 
-It covers how the layers are linked within participants, how evidence is graded, how each analysis is calibrated so that a negative result can be read, and what the results can and cannot support. 
-It summarises Chapter 6 of the dissertation (Sections 6.1, 6.2 and 6.4). 
-
-For how to run each step, see [Objective 4](Objective-4-Multi-Omics-Integration).
-
-![alt text](figures/objectives/objective4_framework.png)
+This page explains **why** the [Objective 4](Objective-4-Multi-Omics-Integration) integration framework is built the
+way it is. It covers how the layers are linked within participants, how evidence is graded, how each analysis is
+calibrated so that a negative result can be read, and what the results can and cannot support. It summarises Chapter 6
+of the dissertation (Sections 6.1, 6.2 and 6.4). For how to run each step, see
+[Objective 4](Objective-4-Multi-Omics-Integration).
 
 **Contents**
 - [Multi-omics integration: design logic and methodological considerations](#multi-omics-integration-design-logic-and-methodological-considerations)
@@ -33,6 +31,8 @@ For how to run each step, see [Objective 4](Objective-4-Multi-Omics-Integration)
   - [Key literature](#key-literature)
 
 ---
+
+![alt text](figures/objectives/objective4_framework.png)
 
 ## 1. What the framework is for
 

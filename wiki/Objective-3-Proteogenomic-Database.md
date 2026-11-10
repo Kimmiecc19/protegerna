@@ -1,13 +1,11 @@
 # Objective 3: Proteogenomic search database for DIA proteomics
 
 **Folder:** [`03_proteogenomic_database/`](https://github.com/Kimmiecc19/protegerna/tree/main/03_proteogenomic_database)
-(Nextflow version: [nf_protegerna pipeline](nf_protegerna-Pipeline))
+(Nextflow version: [nf-core/protegerna pipeline](nf-core-protegerna-Pipeline))
 **Dissertation:** Chapter 5, *Beyond the reference proteome: translating RNA events into protein hypotheses* (methods 5.2,
 results 5.3, Appendix 5A)
 
 ## Overview
-
-![alt text](figures/objectives/objective3_proteogenomic_workflow.png)
 
 **Objective:** develop a proteogenomic workflow that translates gene-fusion and alternative-splicing events into a searchable
 protein database for peptide identification and protein inference.
@@ -249,7 +247,7 @@ Every database stage records its configuration hash and input checksums.
 | Table 5.8 | `06/02c_compare_peptide_lengths.py` |
 | Table 5.10 | `06/02b_find_novel_candidate_peptides.py` |
 | Table 5.11 | `06/02b` + Objective 4 (`01_single_layer/02b`, `04b`; `03_cross_layer/02_evaluation_table.py`) |
-| Table 5.12 | [nf_protegerna](nf_protegerna-Pipeline) test profile |
+| Table 5.12 | [nf-core/protegerna](nf-core-protegerna-Pipeline) test profile |
 | Table 5A.1 | `01_biotools_landscape/02a_filter_biotools.R` |
 
 ## Key literature
