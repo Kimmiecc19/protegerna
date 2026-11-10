@@ -7,6 +7,7 @@ path_fixes_review.diff
 # Generated analysis outputs
 **/results/
 **/results_*/
+**/*_results*/
 **/quant_tables/
 **/multiqc/
 **/pmultiqc/
