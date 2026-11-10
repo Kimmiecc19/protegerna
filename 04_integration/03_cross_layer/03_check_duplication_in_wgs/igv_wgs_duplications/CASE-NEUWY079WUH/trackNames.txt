@@ -1,0 +1,7 @@
+Name
+CASE-NEUWY079WUH-02239.germline.vcf.gz
+CASE-NEUWY079WUH-02239-G_1.final.cram Coverage
+CASE-NEUWY079WUH-02239-G_1.final.cram Junctions
+CASE-NEUWY079WUH-02239-G_1.final.cram
+Reference sequence
+Refseq Select

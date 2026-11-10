@@ -1,0 +1,7 @@
+Name
+CTRL-NEUJH928PGD-03448.germline.vcf.gz
+CTRL-NEUJH928PGD-03448-G_1.final.cram Coverage
+CTRL-NEUJH928PGD-03448-G_1.final.cram Junctions
+CTRL-NEUJH928PGD-03448-G_1.final.cram
+Reference sequence
+Refseq Select

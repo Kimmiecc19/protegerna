@@ -1,0 +1,14 @@
+provenance,tier,audited_tier,outcome,disposition,n
+Intersection,1,1,Technically supported,Primary candidate,19
+Intersection,1,1,Technically supported,Exploratory review only,1
+Intersection,1,1,Supported with caveats,Primary candidate,4
+Intersection,1,1,Supported with caveats,Exploratory review only,3
+Intersection,1,4,Supported with caveats,Deprioritised (shared/frequent),2
+Intersection,2,2,Technically supported,Primary candidate,1
+Intersection,2,2,Technically supported,Exploratory review only,1
+Intersection,3,3,Technically supported,Deprioritised (shared/frequent),1
+Intersection,3,3,Supported with caveats,Deprioritised (shared/frequent),1
+Intersection,3,4,Supported with caveats,Deprioritised (shared/frequent),1
+Intersection,4,4,Technically supported,Deprioritised (shared/frequent),9
+Intersection,4,4,Supported with caveats,Deprioritised (shared/frequent),6
+Intersection,4,4,Uncertain,Deprioritised (shared/frequent),1

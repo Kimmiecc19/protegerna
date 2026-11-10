@@ -1,0 +1,22 @@
+{
+    "input": "ERR315327.csv",
+    "outdir": "scratch",
+    "genomes_base": "GRCh38",
+    "genome_gencode_version": 46,
+    "tools": "all",
+    "arriba_ref_blacklist": "/path/to/references/GRCh38/arriba/2.5.0/blacklist_hg38_GRCh38_v2.5.0.tsv.gz",
+    "arriba_ref_cytobands": "/path/to/references/GRCh38/arriba/2.5.0/cytobands_hg38_GRCh38_v2.5.0.tsv",
+    "arriba_ref_known_fusions": "/path/to/references/GRCh38/arriba/2.5.0/known_fusions_hg38_GRCh38_v2.5.0.tsv.gz",
+    "arriba_ref_protein_domains": "/path/to/references/GRCh38/arriba/2.5.0/protein_domains_hg38_GRCh38_v2.5.0.gff3",
+    "fusioncatcher_ref": "/path/to/references/GRCh38/gencode_v46/fusioncatcher",
+    "fusionreport_ref": "/path/to/references/GRCh38/fusion_report_db",
+    "hgnc_ref": "/path/to/references/GRCh38/hgnc/hgnc_complete_set.txt",
+    "hgnc_date": "/path/to/references/GRCh38/hgnc/HGNC-DB-timestamp.txt",
+    "salmon_index": "/path/to/references/GRCh38/gencode_v46/salmon",
+    "starfusion_ref": "/path/to/references/GRCh38/gencode_v46/starfusion/ctat_genome_lib_build_dir",
+    "starindex_ref": "/path/to/references/GRCh38/gencode_v46/star",
+    "cram": true,
+    "fasta": "/path/to/references/GRCh38/gencode_v46/gencode/Homo_sapiens_GRCh38_46_dna_primary_assembly.fa",
+    "fai": "/path/to/references/GRCh38/gencode_v46/gencode/Homo_sapiens_GRCh38_46_dna_primary_assembly.fa.fai",
+    "gtf": "/path/to/references/GRCh38/gencode_v46/gencode/Homo_sapiens_GRCh38_46.gtf"
+}

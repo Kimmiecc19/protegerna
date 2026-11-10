@@ -1,0 +1,25 @@
+metric	reference	v5	note
+database entries	42562.0	80657	
+distinct theoretical tryptic peptides	3175800.0	3414145	+7.5%
+theoretical peptides only in this database	54353.0	292698	
+theoretical peptides shared	3121447.0	3121447	
+theoretical length median	19.0	19.0	
+theoretical length mean	20.13	20.2	
+theoretical length min	7.0	7	
+theoretical length max	40.0	40	
+theoretical length n_ge30	615058.0	668482	
+theoretical length pct_ge30	19.37	19.58	
+distinct identified peptides (B1-6)	76198.0	76448	
+identified peptides shared	73510.0	73510	
+identified length median	12.0	12.0	
+identified length mean	13.42	13.42	
+identified length min	7.0	7	
+identified length max	40.0	40	
+identified length n_ge30	809.0	801	
+identified length pct_ge30	1.06	1.05	
+identified length n_cys	12354.0	12678	
+reference-only searches B2-6: n	75294.0		Batch 1 reference search lacked fixed Cys carbamidomethylation
+reference-only searches B2-6: median	12.0		Batch 1 reference search lacked fixed Cys carbamidomethylation
+reference-only searches B2-6: mean	13.41		Batch 1 reference search lacked fixed Cys carbamidomethylation
+reference-only searches B2-6: n_cys	12346.0		Batch 1 reference search lacked fixed Cys carbamidomethylation
+% of theoretical peptides identified	2.4	2.24	

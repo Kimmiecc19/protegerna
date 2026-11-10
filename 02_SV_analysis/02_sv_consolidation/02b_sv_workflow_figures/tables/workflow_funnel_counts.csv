@@ -1,0 +1,10 @@
+stage,lane,n
+"1. Per-caller cohort callset
+(OctopuSV sample merge)",Manta,84017
+"1. Per-caller cohort callset
+(OctopuSV sample merge)",TIDDIT,142763
+"2. Caller consolidation
+(per-sample intersection / union)",Intersection,31411
+"2. Caller consolidation
+(per-sample intersection / union)",Union,193202
+5. Audited primary candidates,Intersection,24

@@ -1,0 +1,7 @@
+Name
+CTRL-NEUMF196GPV-03562.germline.vcf.gz
+CTRL-NEUMF196GPV-03562-G_1.final.cram Coverage
+CTRL-NEUMF196GPV-03562-G_1.final.cram Junctions
+CTRL-NEUMF196GPV-03562-G_1.final.cram
+Reference sequence
+Refseq Select

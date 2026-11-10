@@ -1,0 +1,11 @@
+peptide	verdict	note
+EDLIIPHVSPFSPSTR	pass	score-based review; flags: confidence (CScore)
+GERAVLKQVHPDTGISSKAMGIMNSFVNDIFER	fail	score-based review; flags: fragment co-elution;RT reproducibility
+LAEYICSK	pass	score-based review; flags: confidence (CScore)
+LLDPDLLSPK	pass	score-based review; flags: none
+LPSSLQNLDHGK	pass	score-based review; flags: none
+LVSSPCCIVTSTYGWTATTAEK	pass	score-based review; flags: none
+MAGITAEHHTGR	pass	score-based review; flags: none
+TAHALPGPYSLMVVPPDK	pass	score-based review; flags: none
+TDQFYVVYEKENLASHGQG	pass	score-based review; flags: none
+TTGLVGLAVCNTPHEPIIMQIISS	pass	score-based review; flags: none

@@ -1,0 +1,22 @@
+metric	v5	v7	note
+distinct sequences	80657	30031	v7 = 37.2% of v5
+sequences in both releases	29902	29902	
+sequences only in this release	50755	129	
+reference: distinct sequences	20547	20535	
+reference: v7 sequences present anywhere in v5		20511	
+reference: v7 sequences present as same source in v5		20482	
+crap: distinct sequences	116	116	
+crap: v7 sequences present anywhere in v5		116	
+crap: v7 sequences present as same source in v5		116	
+rmats: distinct sequences	18786	7022	
+rmats: v7 sequences present anywhere in v5		7022	
+rmats: v7 sequences present as same source in v5		7022	
+suppa: distinct sequences	40320	104	
+suppa: v7 sequences present anywhere in v5		104	
+suppa: v7 sequences present as same source in v5		101	
+fusioninspector: distinct sequences	4211	2289	
+fusioninspector: v7 sequences present anywhere in v5		2184	
+fusioninspector: v7 sequences present as same source in v5		2184	
+fusion events with a reconstructed CDS	33898	33895	fusion.biological.tsv
+fusion events observed in more than one sample	15204	15204	fusion.biological.tsv
+multi-sample events with more than one distinct CDS	8256	0	fusion.biological.tsv

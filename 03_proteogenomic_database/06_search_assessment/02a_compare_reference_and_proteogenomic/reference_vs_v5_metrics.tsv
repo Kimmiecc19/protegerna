@@ -1,0 +1,94 @@
+batch	metric	reference	v5	note
+1	per-file precursor change, median % (IQR)		+20.75 (+17.90 to +21.99)	75 paired files
+1	specific proteins per file, median (all files)	3044.0	2276.5	
+1	specific proteins per file, median paired change %		-25.4	74 paired files
+1	distinct precursors (4 x 1% q)	65068	79342	
+1	distinct peptides (4 x 1% q)	53837	65463	
+1	peptides gained in V5 / lost		13450 / 1824	
+1	gained peptides mapping only to splice/fusion entries		175	
+1	V5 peptides mapping only to splice/fusion entries		464	
+1	distinct cysteine-free peptides	53772	54493	
+1	cysteine-free peptides gained / lost		2533 / 1812	101 gained map only to splice/fusion entries
+1	per-file cysteine-free peptide change, median % (IQR)		+0.57 (+0.27 to +0.94)	74 files
+1	protein groups (pg_matrix rows)	6416	6800	
+1	quantified protein groups per file, median	5874.5	6192.0	
+1	quantified unique genes per file, median	3042.5	2296.0	
+1	shared gene-group labels	6282	6578	5612 shared
+1	median per-file Pearson r (log2, shared labels)		0.957	74 files
+1	repeated-control CV % (reference)		9.88	18 control files; 4999 gene groups
+1	repeated-control CV % (v5)		9.79	18 control files; 5276 gene groups
+2	per-file precursor change, median % (IQR)		-0.03 (-0.20 to +0.34)	66 paired files
+2	specific proteins per file, median (all files)	3195.5	2335.0	
+2	specific proteins per file, median paired change %		-27.2	66 paired files
+2	distinct precursors (4 x 1% q)	78134	78354	
+2	distinct peptides (4 x 1% q)	64619	64734	
+2	peptides gained in V5 / lost		2848 / 2733	
+2	gained peptides mapping only to splice/fusion entries		124	
+2	V5 peptides mapping only to splice/fusion entries		473	
+2	protein groups (pg_matrix rows)	6598	6807	
+2	quantified protein groups per file, median	6085.5	6281.0	
+2	quantified unique genes per file, median	3225.5	2310.0	
+2	shared gene-group labels	6432	6576	5737 shared
+2	median per-file Pearson r (log2, shared labels)		0.965	66 files
+2	repeated-control CV % (reference)		9.03	8 control files; 4974 gene groups
+2	repeated-control CV % (v5)		9.16	8 control files; 5090 gene groups
+3	per-file precursor change, median % (IQR)		-0.14 (-0.39 to +0.16)	73 paired files
+3	specific proteins per file, median (all files)	3237.0	2332.0	
+3	specific proteins per file, median paired change %		-28.7	73 paired files
+3	distinct precursors (4 x 1% q)	79193	78705	
+3	distinct peptides (4 x 1% q)	65423	64984	
+3	peptides gained in V5 / lost		2347 / 2786	
+3	gained peptides mapping only to splice/fusion entries		126	
+3	V5 peptides mapping only to splice/fusion entries		484	
+3	protein groups (pg_matrix rows)	6735	6836	
+3	quantified protein groups per file, median	6063.0	6221.0	
+3	quantified unique genes per file, median	3182.0	2292.0	
+3	shared gene-group labels	6561	6610	5821 shared
+3	median per-file Pearson r (log2, shared labels)		0.965	73 files
+3	repeated-control CV % (reference)		11.54	15 control files; 5358 gene groups
+3	repeated-control CV % (v5)		11.61	15 control files; 5426 gene groups
+4	per-file precursor change, median % (IQR)		-0.80 (-1.21 to -0.19)	66 paired files
+4	specific proteins per file, median (all files)	3166.5	2254.5	
+4	specific proteins per file, median paired change %		-28.7	66 paired files
+4	distinct precursors (4 x 1% q)	77994	76746	
+4	distinct peptides (4 x 1% q)	64501	63487	
+4	peptides gained in V5 / lost		2222 / 3236	
+4	gained peptides mapping only to splice/fusion entries		99	
+4	V5 peptides mapping only to splice/fusion entries		432	
+4	protein groups (pg_matrix rows)	6696	6707	
+4	quantified protein groups per file, median	6079.5	6131.5	
+4	quantified unique genes per file, median	3201.0	2270.5	
+4	shared gene-group labels	6529	6497	5780 shared
+4	median per-file Pearson r (log2, shared labels)		0.959	66 files
+4	repeated-control CV % (reference)		11.72	8 control files; 4692 gene groups
+4	repeated-control CV % (v5)		12.17	8 control files; 4777 gene groups
+5	per-file precursor change, median % (IQR)		+0.05 (-0.38 to +0.57)	71 paired files
+5	specific proteins per file, median (all files)	3184.0	2268.0	
+5	specific proteins per file, median paired change %		-28.5	70 paired files
+5	distinct precursors (4 x 1% q)	77602	77129	
+5	distinct peptides (4 x 1% q)	64208	63786	
+5	peptides gained in V5 / lost		2469 / 2891	
+5	gained peptides mapping only to splice/fusion entries		116	
+5	V5 peptides mapping only to splice/fusion entries		449	
+5	protein groups (pg_matrix rows)	6706	6876	
+5	quantified protein groups per file, median	6067.0	6232.0	
+5	quantified unique genes per file, median	3187.0	2295.0	
+5	shared gene-group labels	6533	6638	5846 shared
+5	median per-file Pearson r (log2, shared labels)		0.961	70 files
+5	repeated-control CV % (reference)		9.99	14 control files; 5146 gene groups
+5	repeated-control CV % (v5)		10.38	14 control files; 5277 gene groups
+6	per-file precursor change, median % (IQR)		-0.29 (-0.47 to +0.10)	65 paired files
+6	specific proteins per file, median (all files)	3206.0	2265.0	
+6	specific proteins per file, median paired change %		-28.3	64 paired files
+6	distinct precursors (4 x 1% q)	76041	75997	
+6	distinct peptides (4 x 1% q)	62899	62913	
+6	peptides gained in V5 / lost		2635 / 2621	
+6	gained peptides mapping only to splice/fusion entries		112	
+6	V5 peptides mapping only to splice/fusion entries		442	
+6	protein groups (pg_matrix rows)	6526	6780	
+6	quantified protein groups per file, median	6013.0	6157.0	
+6	quantified unique genes per file, median	3182.0	2291.0	
+6	shared gene-group labels	6376	6567	5730 shared
+6	median per-file Pearson r (log2, shared labels)		0.966	64 files
+6	repeated-control CV % (reference)		9.22	8 control files; 4571 gene groups
+6	repeated-control CV % (v5)		9.10	8 control files; 4626 gene groups

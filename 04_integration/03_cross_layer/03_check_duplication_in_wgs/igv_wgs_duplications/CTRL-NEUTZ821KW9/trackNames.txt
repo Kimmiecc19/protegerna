@@ -1,0 +1,7 @@
+Name
+CTRL-NEUTZ821KW9-03235.germline.vcf.gz
+CTRL-NEUTZ821KW9-03235-G_1.final.cram Coverage
+CTRL-NEUTZ821KW9-03235-G_1.final.cram Junctions
+CTRL-NEUTZ821KW9-03235-G_1.final.cram
+Reference sequence
+Refseq Select

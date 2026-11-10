@@ -1,0 +1,27 @@
+provenance,disposition,audited_case_carriers,audited_control_carriers,n
+Intersection,Primary candidate,1,0,16
+Intersection,Primary candidate,2,0,2
+Intersection,Primary candidate,3,0,2
+Intersection,Primary candidate,4,0,1
+Intersection,Primary candidate,5,0,1
+Intersection,Primary candidate,8,0,1
+Intersection,Primary candidate,14,0,1
+Intersection,Exploratory review only,1,0,2
+Intersection,Exploratory review only,2,0,2
+Intersection,Exploratory review only,6,0,1
+Intersection,Deprioritised (shared/frequent),0,1,4
+Intersection,Deprioritised (shared/frequent),1,1,3
+Intersection,Deprioritised (shared/frequent),2,2,1
+Intersection,Deprioritised (shared/frequent),6,1,1
+Intersection,Deprioritised (shared/frequent),27,1,1
+Intersection,Deprioritised (shared/frequent),37,10,1
+Intersection,Deprioritised (shared/frequent),58,3,1
+Intersection,Deprioritised (shared/frequent),75,11,1
+Intersection,Deprioritised (shared/frequent),81,13,1
+Intersection,Deprioritised (shared/frequent),96,14,1
+Intersection,Deprioritised (shared/frequent),109,17,1
+Intersection,Deprioritised (shared/frequent),113,20,1
+Intersection,Deprioritised (shared/frequent),130,18,1
+Intersection,Deprioritised (shared/frequent),211,34,1
+Intersection,Deprioritised (shared/frequent),284,49,1
+Intersection,Deprioritised (shared/frequent),296,51,1

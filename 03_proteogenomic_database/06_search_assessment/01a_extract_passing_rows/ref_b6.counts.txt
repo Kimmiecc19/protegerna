@@ -1,0 +1,3 @@
+rows	3912564
+pass	3689768
+fail_global	185397
