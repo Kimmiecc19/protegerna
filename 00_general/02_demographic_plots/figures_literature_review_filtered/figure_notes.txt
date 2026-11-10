@@ -1,0 +1,8 @@
+Cohort: Filtered portal cohort
+Participants: 347
+One row per unique Participant_ID.
+Categories retain source labels; blanks are Not recorded.
+Race: White, Black/African American, Asian and Not recorded retained; remaining and mixed-race categories grouped as Other.
+EH flags are plotted as recorded; their clinical meaning is not inferred.
+Full repeat-length fields containing allele pairs are retained in audit CSVs.
+Subgroup and familial plots use the entire selected cohort denominator.

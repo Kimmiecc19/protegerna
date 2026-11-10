@@ -1,14 +1,6 @@
 04_integration/data/*
 03_proteogenomic_database/data/*
-
-# Large FASTA files
-# Generated analysis outputs
-**/results/
-**/results_*/
-**/quant_tables/
-**/multiqc/
-**/pmultiqc/
-**/__pycache__/
+04_integration/data/gene_sets/*
 
 # Generated analysis outputs
 **/results/
@@ -17,3 +9,5 @@
 **/multiqc/
 **/pmultiqc/
 **/__pycache__/
+03_proteogenomic_database/02_event_detection/02_results_rnafusion_final/
+03_proteogenomic_database/02_event_detection/03_results_rnasplice_final
