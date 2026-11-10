@@ -6,6 +6,8 @@ workflow* (methods 4.2, results 4.3, Appendix 4A)
 
 ## Overview
 
+![alt text](figures/objectives/objective2_workflow.png)
+
 **Objective:** develop a reproducible workflow for structural variant (SV) analysis and interactive interpretation, with
 ALS-informed candidate nomination.
 

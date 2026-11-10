@@ -1,4 +1,4 @@
-# nf-core/protegerna pipeline (Nextflow implementation of Objective 3)
+# nf_protegerna pipeline (Nextflow implementation of Objective 3)
 
 **Folder:** [`03b_protegerna_nextflow/nf_protegerna_workflow_dev/`](https://github.com/Kimmiecc19/protegerna/tree/main/03b_protegerna_nextflow/nf_protegerna_workflow_dev)
 **Also published at:** [github.com/Kimmiecc19/nf_protegerna](https://github.com/Kimmiecc19/nf_protegerna)
@@ -6,7 +6,7 @@
 
 ## Overview
 
-nf-core/protegerna packages the [Objective 3](Objective-3-Proteogenomic-Database) database workflow as an nf-core-style
+nf_protegerna packages the [Objective 3](Objective-3-Proteogenomic-Database) database workflow as an nf-core-style
 Nextflow DSL2 pipeline. It builds a proteogenomic protein database from FusionInspector, rMATS and SUPPA results, on a local
 Linux server with Apptainer.
 
