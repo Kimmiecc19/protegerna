@@ -3,6 +3,7 @@
 04_integration/data/gene_sets/*
 path_fixes_review.diff
 
+# Large FASTA files
 # Generated analysis outputs
 **/results/
 **/results_*/
