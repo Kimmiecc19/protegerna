@@ -1,6 +1,7 @@
 04_integration/data/*
 03_proteogenomic_database/data/*
 04_integration/data/gene_sets/*
+path_fixes_review.diff
 
 # Generated analysis outputs
 **/results/
