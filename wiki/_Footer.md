@@ -1,0 +1,1 @@
+protegerna · PhD research of Kimberly Christine Coetzer, Stellenbosch University · Answer ALS data are controlled access and are not redistributed here · [Repository](https://github.com/Kimmiecc19/protegerna)
