@@ -239,13 +239,10 @@ Rscript 04_figures/01_combined_chapter6_figures.R   # -> 04_figures/01_results_c
 
 - **External inputs.** Everything is read from this repository except the GENCODE v46 GTF (`OBJ4_GTF`), the GENCODE
   translations (`--gencode`), and the six carriers' CRAMs with their reference (`CRAM_DIR`, `WGS_REFERENCE`).
-- **`03b` permutations.** The script's `n_perm` is 5000, but the saved results used 1000. Set it to 1000 to reproduce them;
-  the output file name records the value.
 - **Seeds:** pathway label permutation 20261014; SV-scan null and evaluation table 1; Stage 3 carrier permutation
   `default_rng(1)`. The fusion label-permutation seed was not saved.
 - **`PYTHONHASHSEED=0`** is needed when re-running `01e`; otherwise the row order among tied p-values depends on the hash seed.
 - Every peptide-level result uses the **v5** search database. The rnasplice quantitative outputs are not used.
-- Figure 6.2 (FusionInspector views) is not saved. Figures 6.1 and 6.3 have saved data, but the figure files are missing.
 
 ## Dissertation map
 

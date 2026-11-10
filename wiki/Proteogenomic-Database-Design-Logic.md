@@ -1,26 +1,40 @@
 # Proteogenomic database: design logic and methodological considerations
 
-This page explains **why** the [Objective 3](Objective-3-Proteogenomic-Database) proteogenomic database workflow is built
-the way it is. It covers the assumptions it makes, the rules that decide what enters the database, and how its outputs
-should (and should not) be interpreted. It summarises Chapter 5 of the dissertation (Sections 5.1, 5.2.5–5.2.11 and
-5.4) and Appendix 5A.4. For how to run the workflow, see [Objective 3](Objective-3-Proteogenomic-Database) and the
-[nf-core/protegerna pipeline](nf-core-protegerna-Pipeline).
+This page explains the **logic** behind how the [Objective 3](Objective-3-Proteogenomic-Database) proteogenomic database workflow was built. 
+It covers the assumptions it makes, the rules that decide what enters the database, and how its outputs should (and should not) be interpreted. 
+It summarises Chapter 5 of the dissertation (Sections 5.1, 5.2.5–5.2.11 and 5.4) and Appendix 5A.4. 
+
+For how to run the workflow, see [Objective 3](Objective-3-Proteogenomic-Database) and the [nf_protegerna pipeline](nf_protegerna-Pipeline).
 
 **Contents**
-1. [What the workflow is for](#1-what-the-workflow-is-for)
-2. [Why a new workflow: gaps in existing tools](#2-why-a-new-workflow-gaps-in-existing-tools)
-3. [Translation rules treated as explicit assumptions](#3-translation-rules-treated-as-explicit-assumptions)
-4. [Workflow overview](#4-workflow-overview)
-5. [Core design principles](#5-core-design-principles)
-6. [Splice branches: rMATS and SUPPA](#6-splice-branches-rmats-and-suppa)
-7. [Fusion branch: FusionInspector](#7-fusion-branch-fusioninspector)
-8. [Inclusion policies: what enters the search database](#8-inclusion-policies-what-enters-the-search-database)
-9. [Merge, deduplication and quality control](#9-merge-deduplication-and-quality-control)
-10. [Searching the database: DIA design](#10-searching-the-database-dia-design)
-11. [Search database (v5) vs revised database (v7)](#11-search-database-v5-vs-revised-database-v7)
-12. [Key parameters](#12-key-parameters)
-13. [How to interpret the outputs](#13-how-to-interpret-the-outputs)
-14. [Limitations and future directions](#14-limitations-and-future-directions)
+- [Proteogenomic database: design logic and methodological considerations](#proteogenomic-database-design-logic-and-methodological-considerations)
+  - [1. What the workflow is for](#1-what-the-workflow-is-for)
+  - [2. Why a new workflow: gaps in existing tools](#2-why-a-new-workflow-gaps-in-existing-tools)
+  - [3. Translation rules treated as explicit assumptions](#3-translation-rules-treated-as-explicit-assumptions)
+  - [4. Workflow overview](#4-workflow-overview)
+  - [5. Core design principles](#5-core-design-principles)
+    - [5.1 Release gated on reference validation](#51-release-gated-on-reference-validation)
+    - [5.2 Caller-specific modelling of evidence](#52-caller-specific-modelling-of-evidence)
+    - [5.3 Annotation-aware reconstruction, not multi-frame or ORF enumeration](#53-annotation-aware-reconstruction-not-multi-frame-or-orf-enumeration)
+    - [5.4 Explicit management of transcript ambiguity](#54-explicit-management-of-transcript-ambiguity)
+    - [5.5 Separation of reconstruction, biological annotation and inclusion policy](#55-separation-of-reconstruction-biological-annotation-and-inclusion-policy)
+    - [5.6 Control of database expansion for bottom-up DIA](#56-control-of-database-expansion-for-bottom-up-dia)
+    - [5.7 Deduplication without loss of provenance](#57-deduplication-without-loss-of-provenance)
+    - [5.8 Built as a releasable, reproducible workflow](#58-built-as-a-releasable-reproducible-workflow)
+  - [6. Splice branches: rMATS and SUPPA](#6-splice-branches-rmats-and-suppa)
+    - [6.1 Event selection: called, not differentially spliced](#61-event-selection-called-not-differentially-spliced)
+    - [6.2 rMATS: event-specific reconstruction](#62-rmats-event-specific-reconstruction)
+    - [6.3 SUPPA: annotated isoforms](#63-suppa-annotated-isoforms)
+    - [6.4 Consequence assessment (both branches)](#64-consequence-assessment-both-branches)
+  - [7. Fusion branch: FusionInspector](#7-fusion-branch-fusioninspector)
+  - [8. Inclusion policies: what enters the search database](#8-inclusion-policies-what-enters-the-search-database)
+  - [9. Merge, deduplication and quality control](#9-merge-deduplication-and-quality-control)
+  - [10. Searching the database: DIA design](#10-searching-the-database-dia-design)
+  - [11. Search database (v5) vs revised database (v7)](#11-search-database-v5-vs-revised-database-v7)
+  - [12. Key parameters](#12-key-parameters)
+  - [13. How to interpret the outputs](#13-how-to-interpret-the-outputs)
+  - [14. Limitations and future directions](#14-limitations-and-future-directions)
+  - [Key literature](#key-literature)
 
 ---
 
@@ -104,23 +118,7 @@ of database construction (Section 5.1):
 
 A configuration-driven Python workflow (TOML settings) runs six stages (Section 5.2.6; Figures 5.1–5.3):
 
-```text
-                 GRCh38 genome + GENCODE v46 annotation (same releases as the RNA-seq calling)
-                                         |
- (1) VALIDATE   reproduce GENCODE v46 protein translations  ── release gate: must pass before the merge
-                                         |
- (2) RECONSTRUCT (independent producers, shared transcript-model / translation / consequence / peptide code)
-        rMATS  ── project local event onto every compatible exon chain, event-type rules
-        SUPPA  ── translate the complete annotated CDS of each listed isoform
-        FusionInspector ── up to 3 ranked transcripts per partner, breakpoint resolution, junction translation
-                                         |
-        each producer: primary FASTA + audit tables (every candidate, kept or excluded, with reason codes)
-                                         |
- (3) MERGE      + UniProt UP000005640 (canonical) + cRAP; exact-sequence deduplication, provenance aggregated
- (4) DIA FILTER (within the merge) ≥ 6 aa; ≥ 1 tryptic peptide of 7–40 aa, ≤ 3 missed cleavages
- (5) FASTA QC   sequence integrity, metadata consistency, searchability, strict quantmsdiann validation
- (6) REPORT     caller-stratified release report: ambiguity, frame, NMD, peptide evidence, exclusion codes
-```
+![alt text](figures/objectives/objective3_proteogenomic_workflow.png)
 
 Code locations: stage 1 is `validate_gencode_translation.py`; stage 2 is `rmatstoprotein.py`, `suppatoprotein.py` and
 `fusiontoprotein.py` (modules `proteogenomic/rmats_*`, `suppa_*`, `splice_*`, `fusion_*`); stages 3–4 are
@@ -209,6 +207,8 @@ workflow **as now implemented**, not retrospectively to the search database (see
 
 ## 6. Splice branches: rMATS and SUPPA
 
+![alt text](figures/objectives/objective3_splice_workflow.png)
+
 Both branches share GENCODE transcript-model loading, genome extraction, annotation-aware translation, consequence
 classification and tryptic-peptide evidence. Transcript models are built once from a gffutils database of the GENCODE v46
 GTF and indexed by versioned and unversioned IDs, gene IDs and symbols. They keep the GENCODE tags the inclusion rules
@@ -268,6 +268,8 @@ predicted when the last nucleotide of a premature stop lies **≥ 55 nt upstream
 junction**, including 3′-UTR junctions.
 
 ## 7. Fusion branch: FusionInspector
+
+![alt text](figures/objectives/objective3_fusion_workflow.png)
 
 The fusion branch **reconstructs coding sequences from the genome and GENCODE** rather than translating
 FusionInspector's predicted transcripts. That keeps reconstruction independent of the caller's own model, which in turn

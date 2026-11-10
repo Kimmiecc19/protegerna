@@ -1,18 +1,24 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Shared filtered/unfiltered runner (03_run_annotsv_unfiltered.sh calls this with
-# --mode unfiltered). The defaults retain the historical run names.
-export PATH="${ANNOTSV_BIN_DIR:-/home/kcoetzer/objective_two/AnnotSV/bin}:$PATH"
-INPUT_DIR="${INPUT_DIR:-/home/kcoetzer/objective_two/octopusv/octopusv_merged_02092026/merged}"
-OUT_DIR="${OUT_DIR:-${OUTPUT_DIR:-/home/kcoetzer/objective_two/run_annotsv/results}}"
-GENES="${GENES:-/home/kcoetzer/objective_two/run_annotsv/data/gene_lists/ALS_candidate_gene_list.txt}"
-ANNOTATIONS="${ANNOTATIONS:-/home/kcoetzer/objective_two/AnnotSV/share/AnnotSV}"
+# Shared filtered/unfiltered runner (02b_run_annotsv_unfiltered.sh calls this with
+# --mode unfiltered). Defaults follow this repository; the AnnotSV install is external.
+SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
+SV_DIR="$(dirname "$SCRIPT_DIR")"
+
+# ---- Settings (override with environment variables) --------------------------
+ANNOTSV_BIN_DIR="${ANNOTSV_BIN_DIR:-/path/to/AnnotSV/bin}"                 # AnnotSV 3.5.8 install (external)
+ANNOTATIONS="${ANNOTATIONS:-/path/to/AnnotSV/share/AnnotSV}"              # AnnotSV GRCh38 annotations (external)
+INPUT_DIR="${INPUT_DIR:-$SV_DIR/02_sv_consolidation/01_results_octopusv/merged}"
+GENES="${GENES:-$SV_DIR/04_sv_prioritization/data/ALS_candidate_gene_list.txt}"
+OUT_DIR="${OUT_DIR:-${OUTPUT_DIR:-}}"   # default set below from --mode
+# -------------------------------------------------------------------------------
+export PATH="$ANNOTSV_BIN_DIR:$PATH"
 MODE=filtered
 RUN_LABEL=""
 
 usage() {
-    echo "Usage: 02_run_annotsv_filtered.sh [--mode filtered|unfiltered] [--input-dir DIR] [--out-dir DIR] [--run-label LABEL]"
+    echo "Usage: 02a_run_annotsv_filtered.sh [--mode filtered|unfiltered] [--input-dir DIR] [--out-dir DIR] [--run-label LABEL]"
     echo "Paths can be supplied through INPUT_DIR, OUT_DIR (or legacy OUTPUT_DIR), GENES, ANNOTATIONS and ANNOTSV_BIN_DIR."
 }
 
@@ -26,8 +32,16 @@ while (( $# )); do
         *) echo "ERROR: Unknown argument: $1" >&2; usage >&2; exit 2 ;;
     esac
 done
-# Default label matches the final runs in results_annotsv_final.
-RUN_LABEL="${RUN_LABEL:-08102026}"
+# Default labels and output folders match the saved runs:
+#   filtered   -> 02a_results_annotsv_filtered/octopusv_*_cohort_filtered_05102026
+#   unfiltered -> 02b_results_annotsv_unfiltered/octopusv_*_cohort_unfiltered_03102026
+if [[ "$MODE" == filtered ]]; then
+    RUN_LABEL="${RUN_LABEL:-05102026}"
+    OUT_DIR="${OUT_DIR:-$SCRIPT_DIR/02a_results_annotsv_filtered}"
+else
+    RUN_LABEL="${RUN_LABEL:-03102026}"
+    OUT_DIR="${OUT_DIR:-$SCRIPT_DIR/02b_results_annotsv_unfiltered}"
+fi
 [[ "$MODE" == filtered || "$MODE" == unfiltered ]] || { echo "ERROR: --mode must be filtered or unfiltered" >&2; exit 2; }
 [[ "$RUN_LABEL" =~ ^[a-zA-Z0-9_-]+$ ]] || { echo "ERROR: Invalid run label" >&2; exit 2; }
 command -v AnnotSV >/dev/null || { echo "ERROR: AnnotSV not found" >&2; exit 127; }

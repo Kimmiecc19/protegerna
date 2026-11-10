@@ -6,7 +6,7 @@ build-backend = "setuptools.build_meta"
 name = "proteogenomic-database-reconstruction"
 version = "0.1.0"
 description = "Annotation-projected splice and fusion protein database reconstruction"
-requires-python = ">=3.12,<3.13"
+requires-python = ">=3.11,<3.13"
 dependencies = [
   "biopython==1.88",
   "gffutils==0.14",

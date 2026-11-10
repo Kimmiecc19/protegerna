@@ -39,13 +39,30 @@ Needs:  Python 3, pandas, numpy.
 import sys, os, re, gzip
 import numpy as np, pandas as pd
 
+# The "six-batch" folder may hold the 01a/01b/01c outputs side by side, or be this step's folder,
+# where they sit in their own result subfolders. Look in the folder first, then in those subfolders.
+SIX_SUBDIRS = ("01a_extract_passing_rows", "01b_make_sequence_source_table",
+               "01c_collect_diann_summary_tables", "02d_summarise_fusion_peptides")
+
+
+def six_path(root, *parts):
+    flat = os.path.join(root, *parts)
+    if os.path.exists(flat):
+        return flat
+    for sub in SIX_SUBDIRS:
+        candidate = os.path.join(root, sub, *parts)
+        if os.path.exists(candidate):
+            return candidate
+    return flat
+
+
 D = sys.argv[1] if len(sys.argv) > 1 else os.path.dirname(os.path.abspath(__file__))
 OUT = sys.argv[2] if len(sys.argv) > 2 else os.path.join(D, "reference_vs_v5_metrics.tsv")
-S = os.path.join(D, "small")
+S = six_path(D, "small")
 CONTROL = "CTRL-NEUEU392AE8"
 PASS_COLS = ["File.Name", "Protein.Ids", "Stripped.Sequence", "Precursor.Id"]
 
-src = pd.read_csv(os.path.join(D, "v5_id_source.tsv"), sep="\t", header=None, names=["id", "source", "gene"])
+src = pd.read_csv(six_path(D, "v5_id_source.tsv"), sep="\t", header=None, names=["id", "source", "gene"])
 REF_IDS = set(src.loc[src.source.str.split(";").map(lambda s: any(x in ("reference", "crap") for x in s)), "id"])
 idrx = re.compile(r"PGDB_[UC]\d+")
 
@@ -58,7 +75,7 @@ def fkey(name):
 
 
 def load_pass(tag, b):
-    df = pd.read_csv(os.path.join(D, f"{tag}_b{b}.pass.tsv.gz"), sep="\t", header=None,
+    df = pd.read_csv(six_path(D, f"{tag}_b{b}.pass.tsv.gz"), sep="\t", header=None,
                      usecols=[0, 1, 2, 3], names=PASS_COLS, dtype=str)
     return df
 
@@ -66,12 +83,6 @@ def load_pass(tag, b):
 def qstats(x):
     x = pd.Series(x).dropna()
     return x.median(), x.quantile(0.25), x.quantile(0.75)
-
-
-def pct_change(v5, ref):
-    m = pd.merge(v5, ref, on="key", suffixes=("_v5", "_ref"))
-    m = m[m.iloc[:, 2] > 0] if m.shape[1] > 2 else m
-    return m
 
 
 def stats_table(tag, b):

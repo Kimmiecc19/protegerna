@@ -1,20 +1,20 @@
 #!/usr/bin/env python3
 """Stage 4: variant -> gene-level RNA expression and protein abundance (carrier test).
 For every rare SV (<= RARE_MAX cohort carriers) overlapping a protein-coding gene (+/- FLANK),
-compare carriers vs non-carriers among participants of the pooled batches (obj4_paths.BATCHES) for:
+compare carriers vs non-carriers among participants of the pooled batches (paths.BATCHES) for:
   RNA      : log2(CPM+1) from the AnswerALS consortium raw counts (release 7)
              [CORRECTED Oct 2026: replaces strand-affected rnasplice Salmon TPMs]
   protein  : log2 DIA-NN PG.MaxLFQ (pg_matrix, v5 search), genes via PGDB metadata, median-centred per run
 Runs from the same participant (e.g. the repeated control line) are averaged first.
 Evidence tiers: A = protein and RNA effect; B = protein or RNA effect; C = neither.
 (The Stage 3 splice carrier test used strand-affected PSI and has been removed.)
-Usage: 13d_protein_rna_link.py OUT"""
+Usage: 04_test_rare_sv_rna_protein.py OUT"""
 import sys, os, re, json
 import numpy as np, pandas as pd
 from scipy.stats import mannwhitneyu
 OUT = sys.argv[1]
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from obj4_paths import PATHS as C, BATCHES, load_protein_by_gene
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+from paths import PATHS as C, BATCHES, load_protein_by_gene
 GTF = C['GTF']
 from rna_answerals import load_rna_log2cpm
 RARE_MAX, FLANK, MIN_DETECT = 17, 5_000, 0.5          # 17 = 5% of 347; protein must be quantified in >=50% of participants
@@ -32,7 +32,7 @@ genes = pd.DataFrame(genes, columns=['chrom', 'start', 'end', 'gene_id', 'gene']
 
 # --- omics matrices -> participant x gene
 prot = load_protein_by_gene()                                 # gene x participant, pooled batches
-rna = load_rna_log2cpm(GTF, set(prot.columns), counts_path=C['COUNTS'])                 # participant x gene log2(CPM+1)
+rna = load_rna_log2cpm(None, GTF, set(prot.columns), counts_path=C['COUNTS'])                 # participant x gene log2(CPM+1)
 rna = rna[rna.index.isin(set(genes.gene))]                        # protein-coding genes
 rna = rna[(2 ** rna - 1).median(axis=1) >= MIN_CPM]               # expressed genes only (median CPM >= 1)
 participants = sorted(set(prot.columns) & set(rna.columns))

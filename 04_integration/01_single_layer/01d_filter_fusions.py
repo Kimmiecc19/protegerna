@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-12_fusion_filter_als_test.py  -  Objective 4, fusion evidence
+01d_filter_fusions.py  -  Objective 4, fusion evidence
 
 Builds a cohort fusion catalogue from nf-core/rnafusion outputs, applies
 pre-declared filters, and tests whether individual fusions (and genes
@@ -50,9 +50,11 @@ Outputs
   sample_manifest.tsv, summary.json
 """
 import argparse, csv, glob, json, os, re, sys
-from collections import defaultdict
 import pandas as pd
 from scipy.stats import fisher_exact
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
+from common import bh
 
 ARTEFACT_TAGS = ["GTEx", "BodyMap", "Babiceanu_Normal", "Greger_Normal", "DGD_PARALOGS",
                  "HGNC_GENEFAM", "ConjoinG", "Normal"]
@@ -156,7 +158,6 @@ def main():
         if c is None:
             return pd.Series({"discovery_callers": "", "n_discovery_callers": pd.NA, "caller_info": "pair_not_in_fusionreport"})
         return pd.Series({"discovery_callers": ";".join(c), "n_discovery_callers": len(c), "caller_info": "available"})
-    name_col = "FusionName"
     fi = pd.concat([fi, fi.apply(caller_info, axis=1)], axis=1)
 
     # ---------------- filters ----------------
@@ -174,15 +175,16 @@ def main():
     fi["pass_multicaller"] = fi["pass_core"] & (pd.to_numeric(fi["n_discovery_callers"], errors="coerce") >= 2)
     fi["als_gene_partner"] = fi["gene1"].isin(als_genes) | fi["gene2"].isin(als_genes)
     fi["coding_fusion"] = fi["PROT_FUSION_TYPE"].isin(["INFRAME", "FRAMESHIFT"])   # FusionInspector predicts a CDS fusion
-    keep_cols = ["sample", "participant", "rnafusion_batch", name_col, "pair", "gene1", "gene2", "JunctionReadCount",
+    keep_cols = ["sample", "participant", "rnafusion_batch", "FusionName", "pair", "gene1", "gene2", "JunctionReadCount",
                  "SpanningFragCount", "FFPM", "LeftBreakpoint", "RightBreakpoint", "SpliceType", "LargeAnchorSupport",
                  "annots", "PROT_FUSION_TYPE", "FUSION_TRANSL", "discovery_callers", "n_discovery_callers", "caller_info",
                  "F1_junction_reads", "F2_ffpm", "F3_large_anchor", "F4_not_neighbors", "F5_not_artefact_list",
                  "F6_not_in_control_line", "pass_core", "pass_multicaller", "als_gene_partner", "coding_fusion"]
-    fi[[c for c in keep_cols if c in fi.columns]].to_csv(out("fusion_calls_all.tsv"), sep="\t", index=False)
+    keep_cols = [c for c in keep_cols if c in fi.columns]
+    fi[keep_cols].to_csv(out("fusion_calls_all.tsv"), sep="\t", index=False)
     passing = fi[fi["pass_core"]]
-    passing[[c for c in keep_cols if c in fi.columns]].to_csv(out("fusion_calls_pass.tsv"), sep="\t", index=False)
-    passing[passing["als_gene_partner"]][[c for c in keep_cols if c in fi.columns]].to_csv(out("als_gene_fusions.tsv"), sep="\t", index=False)
+    passing[keep_cols].to_csv(out("fusion_calls_pass.tsv"), sep="\t", index=False)
+    passing[passing["als_gene_partner"]][keep_cols].to_csv(out("als_gene_fusions.tsv"), sep="\t", index=False)
 
     # ---------------- test population ----------------
     cov["has_fusion_output"] = cov["sample"].isin(seen)
@@ -207,9 +209,8 @@ def main():
         if r.empty:
             return r
         r = r.sort_values("p_fisher")
-        m = len(r); r["rank"] = range(1, m + 1)
-        r["padj_BH"] = (r["p_fisher"] * m / r["rank"]).iloc[::-1].cummin().iloc[::-1].clip(upper=1)
-        return r.drop(columns="rank")
+        r["padj_BH"] = bh(r["p_fisher"].values)
+        return r
 
     pair_tests = test(passing, "pair", "fusion_pair", "pass_core")
     if not pair_tests.empty:

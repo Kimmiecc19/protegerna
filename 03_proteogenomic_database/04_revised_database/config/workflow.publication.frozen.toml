@@ -1,7 +1,12 @@
+# Paths are relative to the project folder 03_proteogenomic_database/ (the default --project-dir).
+# Event inputs point at 02_event_detection/ in this repository. Reference files (GTF database, genome,
+# UniProt, GENCODE translations, cRAP) are not in the repository: place them in 03_proteogenomic_database/data/.
+# The configuration exactly as run on the server is saved with the results (results_revised_database/).
 # Frozen thesis-release configuration for the AnswerALS proteogenomic database.
 #
 # Release policy: publication
-# - Primary FASTA only; no alternative-start or longest-ORF rescue tiers.
+# - Primary FASTA only for SUPPA and Fusion; rMATS keeps all; no alternative-start 
+#   or longest-ORF rescue tiers.
 # - Reference-unique event/junction peptides required from reconstructed products.
 # - GENCODE translation concordance is a mandatory zero-mismatch release gate.
 # - Exact amino-acid deduplication occurs only during the authoritative merge.
@@ -9,7 +14,7 @@
 #   and up to 3 missed cleavages.
 #
 # Before the release run, verify that:
-# 1. data/genetic_data/gencode.v46.pc_translations.fa is the official
+# 1. data/gencode.v46.pc_translations.fa is the official
 #    GENCODE v46 protein-translation FASTA (this file is not currently present).
 # 2. Peptide uniqueness is assessed against UniProt canonical PLUS the UniProt
 #    "_additional" isoform FASTA (reference_proteome below), so annotated
@@ -24,33 +29,32 @@
 
 [workflow]
 profile = "publication"
-output_dir = "results/pgdb_publication_rerun_v3"
+output_dir = "04_revised_database/results_revised_database"
 resume = false
 
 [common]
-gtf_db = "data/gencode_v46.gtf.db"
+gtf_db = "data/Homo_sapiens_GRCh38_46.gtf.db"
 genome = "data/Homo_sapiens_GRCh38_46_dna_primary_assembly.fa"
 reference_proteome = [
-  "data/UP000005640_9606.fasta",
+  "data/UP000005640_9606.fasta.gz",
   "data/UP000005640_9606_additional.fasta.gz",
 ]
-reference_peptide_cache = "results/pgdb_publication_rerun_v3/reference_tryptic_peptides.cache"
+reference_peptide_cache = "04_revised_database/results_revised_database/reference_tryptic_peptides.cache"
 annotation_release = "GENCODE_46"
 organism = "Homo_sapiens"
 
 [validate]
 enabled = true
 gencode_protein_fasta = "data/gencode.v46.pc_translations.fa"
-out_tsv = "results/pgdb_publication_rerun_v3/gencode_translation_concordance.tsv"
-out_summary_json = "results/pgdb_publication_rerun_v3/gencode_translation_concordance.json"
+out_tsv = "04_revised_database/results_revised_database/gencode_translation_concordance.tsv"
+out_summary_json = "04_revised_database/results_revised_database/gencode_translation_concordance.json"
 max_mismatch_rate = 0.0
 
 [fusion]
 enabled = true
 fusioninspector = [
-  "/home/kcoetzer/nf/nf_results/rnafusion/batch[1-6]/fusioninspector/*.FusionInspector.fusions.abridged.tsv"
+  "02_event_detection/02_results_rnafusion_final/rnafusion_analysis_batch[1-6]/fusioninspector/*.FusionInspector.fusions.abridged.tsv"
 ]
-
 recursive_inputs = false
 
 # Frozen transcript-selection and reconstruction rules.
@@ -80,25 +84,25 @@ digested_max_peptide_length = 40
 
 # Execution controls do not alter biological eligibility.
 workers = 4
-# transcript_model_cache = "results/pgdb_publication_rerun_v3/fusion_transcript_models.pkl"
+# transcript_model_cache = "04_revised_database/results_revised_database/fusion_transcript_models.pkl"
 # (option removed 2026-10-12: the fusion program accepted it but never read or wrote the cache)
 
 # Explicit producer outputs.
-filtered_protein_fasta = "results/pgdb_publication_rerun_v3/fusion.primary.fasta"
-filtered_cds_fasta = "results/pgdb_publication_rerun_v3/fusion.primary.cds.fasta"
-biological_interpretation_tsv = "results/pgdb_publication_rerun_v3/fusion.biological.tsv"
-dia_database_metadata_tsv = "results/pgdb_publication_rerun_v3/fusion.metadata.tsv"
-out_sequence_sample_tsv = "results/pgdb_publication_rerun_v3/fusion.sequence_samples.tsv"
-digested_peptide_tsv = "results/pgdb_publication_rerun_v3/fusion.peptides.tsv"
+filtered_protein_fasta = "04_revised_database/results_revised_database/fusion.primary.fasta"
+filtered_cds_fasta = "04_revised_database/results_revised_database/fusion.primary.cds.fasta"
+biological_interpretation_tsv = "04_revised_database/results_revised_database/fusion.biological.tsv"
+dia_database_metadata_tsv = "04_revised_database/results_revised_database/fusion.metadata.tsv"
+out_sequence_sample_tsv = "04_revised_database/results_revised_database/fusion.sequence_samples.tsv"
+digested_peptide_tsv = "04_revised_database/results_revised_database/fusion.peptides.tsv"
 
 [rmats]
 enabled = true
 
-se_files = ["/home/kcoetzer/nf/nf_results/rnasplice/batch[1-6]/old/star_salmon/rmats/CASE-CTRL/rmats_post/SE.MATS.JC.txt"]
-a3ss_files = ["/home/kcoetzer/nf/nf_results/rnasplice/batch[1-6]/old/star_salmon/rmats/CASE-CTRL/rmats_post/A3SS.MATS.JC.txt"]
-a5ss_files = ["/home/kcoetzer/nf/nf_results/rnasplice/batch[1-6]/old/star_salmon/rmats/CASE-CTRL/rmats_post/A5SS.MATS.JC.txt"]
-mxe_files = ["/home/kcoetzer/nf/nf_results/rnasplice/batch[1-6]/old/star_salmon/rmats/CASE-CTRL/rmats_post/MXE.MATS.JC.txt"]
-ri_files = ["/home/kcoetzer/nf/nf_results/rnasplice/batch[1-6]/old/star_salmon/rmats/CASE-CTRL/rmats_post/RI.MATS.JC.txt"]
+se_files = ["02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch[1-6]/rmats_post/SE.MATS.JC.txt"]
+a3ss_files = ["02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch[1-6]/rmats_post/A3SS.MATS.JC.txt"]
+a5ss_files = ["02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch[1-6]/rmats_post/A5SS.MATS.JC.txt"]
+mxe_files = ["02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch[1-6]/rmats_post/MXE.MATS.JC.txt"]
+ri_files = ["02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch[1-6]/rmats_post/RI.MATS.JC.txt"]
 
 # Temporary workaround: allow every row with numeric rMATS statistics.
 rmats_conservative_event_filter = true
@@ -111,7 +115,7 @@ min_skipping_junction_reads = 0
 pad_partial_codons = false
 allow_alt_start = false
 allow_longest_orf = false
-short_junction_peptides = false
+short_junction_peptides = true
 nmd_distance_threshold_nt = 55
 
 # Same database rules as [suppa]. With include_failed_filter_proteins = true,
@@ -140,27 +144,30 @@ workers = 4
 chunksize = 50000
 sequence_cache_entries = 100000
 
-out_prot_fa = "results/pgdb_publication_rerun_v3/rmats.primary.fasta"
-out_consequence_tsv = "results/pgdb_publication_rerun_v3/rmats.consequences.tsv"
-out_event_summary_tsv = "results/pgdb_publication_rerun_v3/rmats.events.tsv"
+out_prot_fa = "04_revised_database/results_revised_database/rmats.primary.fasta"
+out_consequence_tsv = "04_revised_database/results_revised_database/rmats.consequences.tsv"
+out_event_summary_tsv = "04_revised_database/results_revised_database/rmats.events.tsv"
+out_junc_fa = "04_revised_database/results_revised_database/rmats.junction.fasta"
 
 [suppa]
 enabled = true
-event_files = ["/home/kcoetzer/nf/nf_results/rnasplice/batch1/old/star_salmon/suppa/generate_events/per_local_event/events.ioe"]
-psi_files = [
-  "/home/kcoetzer/nf/nf_results/rnasplice/batch[1-6]/old/star_salmon/suppa/psi_per_local_event/suppa_local.psi"
-]
+
+event_files = ["02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/suppa/generate_events/per_local_event/events.ioe"]
+# No PSI filtering in this release: every annotated SUPPA event is considered.
+# Omit psi_files to disable PSI filtering
+# psi_files = []
 
 # PSI is evidence for event inclusion only and never changes reconstruction.
-min_psi = 0.10
-min_psi_samples = 3
-keep_events_missing_psi = false
+# min_psi = 0.10
+# min_psi_samples = 3
+# keep_events_missing_psi = false
+
 
 # Frozen reconstruction and primary-FASTA rules.
 pad_partial_codons = false
 allow_alt_start = false
 allow_longest_orf = false
-short_junction_peptides = false
+short_junction_peptides = true
 nmd_distance_threshold_nt = 55
 exclude_incomplete_cds = true
 quantms_conservative = true
@@ -178,21 +185,22 @@ max_database_peptide_length = 40
 
 workers = 4
 sequence_cache_entries = 100000
-out_prot_fa = "results/pgdb_publication_rerun_v3/suppa.primary.fasta"
-out_consequence_tsv = "results/pgdb_publication_rerun_v3/suppa.consequences.tsv"
-out_psi_summary_tsv = "results/pgdb_publication_rerun_v3/suppa.psi.tsv"
+out_prot_fa = "04_revised_database/results_revised_database/suppa.primary.fasta"
+out_consequence_tsv = "04_revised_database/results_revised_database/suppa.consequences.tsv"
+# out_psi_summary_tsv = "04_revised_database/results_revised_database/suppa.psi.tsv"
+out_junc_fa = "04_revised_database/results_revised_database/suppa.junction.fasta"
 
 [merge]
 enabled = true
-gencode_concordance_summary = "results/pgdb_publication_rerun_v3/gencode_translation_concordance.json"
+gencode_concordance_summary = "04_revised_database/results_revised_database/gencode_translation_concordance.json"
 inputs = [
-  "results/pgdb_publication_rerun_v3/fusion.primary.fasta",
-  "results/pgdb_publication_rerun_v3/rmats.primary.fasta",
-  "results/pgdb_publication_rerun_v3/suppa.primary.fasta",
+  "04_revised_database/results_revised_database/fusion.primary.fasta",
+  "04_revised_database/results_revised_database/rmats.primary.fasta",
+  "04_revised_database/results_revised_database/suppa.primary.fasta",
 ]
 # Every producer FASTA must carry a run manifest that binds it to the validated reference.
 require_producer_manifests = true
-reference_fasta = ["data/UP000005640_9606.fasta"]
+reference_fasta = ["data/UP000005640_9606.fasta.gz"]
 contaminants_fasta = ["data/crap.fasta"]
 record_types = ["protein"]
 recursive = false
@@ -209,23 +217,23 @@ id_width = 7
 max_header_values = 3
 log_level = "INFO"
 
-out_fasta = "results/pgdb_publication_rerun_v3/proteogenomic_database.fasta"
-out_metadata = "results/pgdb_publication_rerun_v3/proteogenomic_metadata.tsv"
-out_mapping = "results/pgdb_publication_rerun_v3/proteogenomic_mapping.tsv"
-out_peptide_evidence = "results/pgdb_publication_rerun_v3/proteogenomic_peptides.tsv"
-out_biological_interpretation = "results/pgdb_publication_rerun_v3/proteogenomic_biological.tsv"
-out_summary_tsv = "results/pgdb_publication_rerun_v3/proteogenomic_summary.tsv"
-out_summary_json = "results/pgdb_publication_rerun_v3/proteogenomic_summary.json"
+out_fasta = "04_revised_database/results_revised_database/proteogenomic_database.fasta"
+out_metadata = "04_revised_database/results_revised_database/proteogenomic_metadata.tsv"
+out_mapping = "04_revised_database/results_revised_database/proteogenomic_mapping.tsv"
+out_peptide_evidence = "04_revised_database/results_revised_database/proteogenomic_peptides.tsv"
+out_biological_interpretation = "04_revised_database/results_revised_database/proteogenomic_biological.tsv"
+out_summary_tsv = "04_revised_database/results_revised_database/proteogenomic_summary.tsv"
+out_summary_json = "04_revised_database/results_revised_database/proteogenomic_summary.json"
 
 [qc]
 enabled = true
-fasta = ["results/pgdb_publication_rerun_v3/proteogenomic_database.fasta"]
-metadata = ["results/pgdb_publication_rerun_v3/proteogenomic_metadata.tsv"]
+fasta = ["04_revised_database/results_revised_database/proteogenomic_database.fasta"]
+metadata = ["04_revised_database/results_revised_database/proteogenomic_metadata.tsv"]
 reference_proteome = [
-  "data/UP000005640_9606.fasta",
+  "data/UP000005640_9606.fasta.gz",
   "data/UP000005640_9606_additional.fasta.gz",
 ]
-outdir = "results/pgdb_publication_rerun_v3/qc"
+outdir = "04_revised_database/results_revised_database/qc"
 prefix = "proteogenomic_database"
 
 # QC verifies the authoritative merge and does not deduplicate or rewrite it.
@@ -240,10 +248,10 @@ strict_quantms = true
 [report]
 enabled = true
 inputs = [
-  "results/pgdb_publication_rerun_v3/fusion.biological.tsv",
-  "results/pgdb_publication_rerun_v3/rmats.consequences.tsv",
-  "results/pgdb_publication_rerun_v3/suppa.consequences.tsv",
-  "results/pgdb_publication_rerun_v3/proteogenomic_biological.tsv",
+  "04_revised_database/results_revised_database/fusion.biological.tsv",
+  "04_revised_database/results_revised_database/rmats.consequences.tsv",
+  "04_revised_database/results_revised_database/suppa.consequences.tsv",
+  "04_revised_database/results_revised_database/proteogenomic_biological.tsv",
 ]
-out_tsv = "results/pgdb_publication_rerun_v3/release_report.tsv"
-out_json = "results/pgdb_publication_rerun_v3/release_report.json"
+out_tsv = "04_revised_database/results_revised_database/release_report.tsv"
+out_json = "04_revised_database/results_revised_database/release_report.json"

@@ -12,7 +12,8 @@ from datetime import datetime
 # Configuration
 # ==============================
 
-OUTPUT_DIR = "protein_databases"
+# Written beside this script, where the reference search (02a) and its params file expect it.
+OUTPUT_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "01_results_make_reference_database")
 
 HUMAN_FASTA_GZ = "uniprot_human_reviewed_isoforms.fasta.gz"
 HUMAN_FASTA = "uniprot_human_reviewed_isoforms.fasta"

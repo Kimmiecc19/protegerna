@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-15_sv_carrier_expression_scan.py  -  do structural variants change expression of the genes they overlap?
+01e_sv_carrier_expression_scan.py  -  do structural variants change expression of the genes they overlap?
 
 Genome-wide carrier vs non-carrier RNA scan for every SV event in one or more AnnotSV event
 prioritisation tables (intersection and/or union-only), using AnswerALS release-7 counts.
@@ -13,23 +13,17 @@ Calibration: the same carrier sets scored on random expressed genes (empirical n
 reported as genomic inflation lambda and as an empirical p per pair.
 Positive control: expected direction (DEL down, DUP up) by SV length bin.
 
-Usage: python 15_sv_carrier_expression_scan.py --tables <intersection.tsv> [<union_only.tsv>]
+Usage: python 01e_sv_carrier_expression_scan.py --tables <intersection.tsv> [<union_only.tsv>]
          --labels intersection union_only --counts <AnswerALS release7 csv> --coldata <remove_btc_raw_coldata_filtered (2).csv>
          --gene-map <ensg_symbol.tsv: ENSG<TAB>symbol>  --outdir <new folder>
          [--max-carrier-frac 0.5] [--alsod <alsod_gene_list.csv>]
 """
-import argparse, os, re, json
+import argparse, os, sys, json
 import numpy as np, pandas as pd
 from scipy import stats
 
-rx = re.compile(r'(CASE|CTRL)[-_](NEU[A-Z0-9]+)')
-part = lambda s: (lambda m: f'{m.group(1)}-{m.group(2)}' if m else None)(rx.search(str(s)))
-
-
-def bh(p):
-    p = np.asarray(p, float); n = len(p); o = np.argsort(p)
-    q = p[o] * n / np.arange(1, n + 1); q = np.minimum.accumulate(q[::-1])[::-1]
-    out = np.empty(n); out[o] = np.minimum(q, 1); return out
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+from common import part, bh
 
 
 def main():
@@ -72,7 +66,7 @@ def main():
 
     alsod = set()
     if a.alsod:
-        al = pd.read_csv(a.alsod); alsod = set(al.iloc[:, 0].astype(str))
+        al = pd.read_csv(a.alsod); alsod = set(al.iloc[:, 0].astype(str).str.upper())  # case-insensitive: ALSoD writes e.g. 'EphA3'
 
     allres, summ = [], {'rna_participants': N, 'expressed_genes': int(Z.shape[1])}
     Zv = Z.values; gpos = {g: j for j, g in enumerate(Z.columns)}
@@ -92,7 +86,7 @@ def main():
                 if g not in gpos: continue
                 z = Zv[ci, gpos[g]]
                 rows.append(dict(table=lab, event_id=r.event_id, sv_type=r.sv_type, sv_length_bp=r.sv_length_bp,
-                                 gene=g, alsod_gene=g in alsod or (isinstance(r.alsod_gene_hits, str) and g in r.alsod_gene_hits),
+                                 gene=g, alsod_gene=g.upper() in alsod or (isinstance(r.alsod_gene_hits, str) and g in r.alsod_gene_hits),
                                  manual_review_priority=r.manual_review_priority, n_carriers_wgs=r.sample_count,
                                  n_carriers_rna=k, carriers=';'.join(car), carrier_z=';'.join(f'{v:.2f}' for v in z),
                                  mean_z=z.mean(), S=z.mean() * np.sqrt(k), _ci=ci))
@@ -110,14 +104,13 @@ def main():
         lam = np.median(res.S ** 2) / stats.chi2.ppf(0.5, 1); lam0 = np.median(nullS.ravel() ** 2) / stats.chi2.ppf(0.5, 1)
         res['expected_dir'] = np.where(res.sv_type == 'DEL', -1, np.where(res.sv_type == 'DUP', 1, 0))
         res['len_bin'] = pd.cut(res.sv_length_bp.abs(), [0, 1e3, 1e4, 1e5, 1e9], labels=['<1kb', '1-10kb', '10-100kb', '>100kb'])
-        pc = (res[res.expected_dir != 0].groupby(['sv_type', 'len_bin'], observed=True)
+        directed = res[res.expected_dir != 0].assign(_in_dir=lambda x: np.sign(x.S) == x.expected_dir)
+        pc = (directed.groupby(['sv_type', 'len_bin'], observed=True)
               .agg(pairs=('S', 'size'), median_mean_z=('mean_z', 'median'),
                    frac_nominal_p05=('p_empirical', lambda x: (x < 0.05).mean()),
-                   frac_in_expected_direction=('S', lambda s: np.nan)).reset_index())
-        for i, rr in pc.iterrows():
-            sub = res[(res.sv_type == rr.sv_type) & (res.len_bin == rr.len_bin)]
-            pc.loc[i, 'frac_in_expected_direction'] = (np.sign(sub.S) == sub.expected_dir).mean()
-            pc.loc[i, 'sign_test_p'] = stats.binomtest(int((np.sign(sub.S) == sub.expected_dir).sum()), len(sub), 0.5).pvalue
+                   frac_in_expected_direction=('_in_dir', 'mean'), _k=('_in_dir', 'sum')).reset_index())
+        pc['sign_test_p'] = [stats.binomtest(int(k), int(n), 0.5).pvalue for k, n in zip(pc._k, pc.pairs)]
+        pc = pc.drop(columns='_k')
         pc.insert(0, 'table', lab); pc.to_csv(out(f'{lab}_positive_control_by_length.tsv'), sep='\t', index=False)
         res = res.drop(columns=['_ci']).sort_values('p_empirical')
         res.to_csv(out(f'{lab}_sv_gene_expression_tests.tsv'), sep='\t', index=False)

@@ -50,6 +50,23 @@ import sys
 import numpy as np
 import pandas as pd
 
+# The "six-batch" folder may hold the 01a/01b/01c outputs side by side, or be this step's folder,
+# where they sit in their own result subfolders. Look in the folder first, then in those subfolders.
+SIX_SUBDIRS = ("01a_extract_passing_rows", "01b_make_sequence_source_table",
+               "01c_collect_diann_summary_tables", "02d_summarise_fusion_peptides")
+
+
+def six_path(root, *parts):
+    flat = os.path.join(root, *parts)
+    if os.path.exists(flat):
+        return flat
+    for sub in SIX_SUBDIRS:
+        candidate = os.path.join(root, sub, *parts)
+        if os.path.exists(candidate):
+            return candidate
+    return flat
+
+
 PASS_COLS = ["File.Name", "Protein.Ids", "Stripped.Sequence", "Precursor.Id", "Spectrum.Similarity", "PEP"]
 ID_RX = re.compile(r"PGDB_[UC]\d+")
 GROUP_RX = re.compile(r"(CASE|CTRL)-NEU")
@@ -87,8 +104,8 @@ def read_junctions(path):
 
 
 def summarise_batch(batch, six, fusion_ids, ref_ids, gene, junctions, unique_junctions, junction_ids):
-    pass_path = os.path.join(six, f"v5_b{batch}.pass.tsv.gz")
-    stats_path = os.path.join(six, "small", f"v5_b{batch}.stats.tsv")
+    pass_path = six_path(six, f"v5_b{batch}.pass.tsv.gz")
+    stats_path = six_path(six, "small", f"v5_b{batch}.stats.tsv")
     stats = pd.read_csv(stats_path, sep="\t", usecols=["File.Name"])
 
     fusion_rows = []
@@ -157,8 +174,8 @@ def main(argv=None):
     ap.add_argument("--out-prefix", required=True)
     a = ap.parse_args(argv)
 
-    id_source = a.id_source or os.path.join(a.six_dir, "v5_id_source.tsv")
-    junction_path = a.junctions or os.path.join(a.six_dir, "junction_peptides.tsv.gz")
+    id_source = a.id_source or six_path(a.six_dir, "v5_id_source.tsv")
+    junction_path = a.junctions or six_path(a.six_dir, "junction_peptides.tsv.gz")
     if not os.path.exists(junction_path):
         if not a.pgdb_peptides:
             sys.exit(f"{junction_path} not found: give --pgdb-peptides to build it")

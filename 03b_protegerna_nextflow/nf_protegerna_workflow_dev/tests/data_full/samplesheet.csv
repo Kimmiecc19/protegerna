@@ -1,9 +1,9 @@
 sample,tool,event_type,path,batch,condition
-CASE-NEUWY079WUH,fusion,FUSION,/home/KimberlyCC/work/nf_protegerna/tests/data_full/CASE-NEUWY079WUH-7340-T.FusionInspector.fusions.abridged.tsv,batch1,CASE
-CASE-CTRL,rmats,SE,/home/KimberlyCC/work/nf_protegerna/tests/data_full/SE.MATS.JC.txt,batch1,CASE-CTRL
-CASE-CTRL,rmats,MXE,/home/KimberlyCC/work/nf_protegerna/tests/data_full/MXE.MATS.JC.txt,batch1,CASE-CTRL
-CASE-CTRL,rmats,RI,/home/KimberlyCC/work/nf_protegerna/tests/data_full/RI.MATS.JC.txt,batch1,CASE-CTRL
-CASE-CTRL,rmats,A3SS,/home/KimberlyCC/work/nf_protegerna/tests/data_full/A3SS.MATS.JC.txt,batch1,CASE-CTRL
-CASE-CTRL,rmats,A5SS,/home/KimberlyCC/work/nf_protegerna/tests/data_full/A5SS.MATS.JC.txt,batch1,CASE-CTRL
-cohort,suppa,IOE,/home/KimberlyCC/work/nf_protegerna/tests/data_full/events.ioe,batch1,NA
-cohort,suppa,PSI,/home/KimberlyCC/work/nf_protegerna/tests/data_full/suppa_local.psi,batch1,NA
+CASE-NEUWY079WUH,fusion,FUSION,../../../../03_proteogenomic_database/02_event_detection/02_results_rnafusion_final/rnafusion_analysis_batch1/fusioninspector/CASE-NEUWY079WUH-7340-T.FusionInspector.fusions.abridged.tsv,batch1,CASE
+CASE-CTRL,rmats,SE,../../../../03_proteogenomic_database/02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/rmats_post/SE.MATS.JC.txt,batch1,CASE-CTRL
+CASE-CTRL,rmats,MXE,../../../../03_proteogenomic_database/02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/rmats_post/MXE.MATS.JC.txt,batch1,CASE-CTRL
+CASE-CTRL,rmats,RI,../../../../03_proteogenomic_database/02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/rmats_post/RI.MATS.JC.txt,batch1,CASE-CTRL
+CASE-CTRL,rmats,A3SS,../../../../03_proteogenomic_database/02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/rmats_post/A3SS.MATS.JC.txt,batch1,CASE-CTRL
+CASE-CTRL,rmats,A5SS,../../../../03_proteogenomic_database/02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/rmats_post/A5SS.MATS.JC.txt,batch1,CASE-CTRL
+cohort,suppa,IOE,../../../../03_proteogenomic_database/02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/suppa/generate_events/per_local_event/events.ioe,batch1,NA
+cohort,suppa,PSI,../../../../03_proteogenomic_database/02_event_detection/03_results_rnasplice_final/rnasplice_analysis_batch1/suppa/psi_per_local_event/suppa_local.psi,batch1,NA

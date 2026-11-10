@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Objective 4 feasibility: count within-participant links across genome (SV),
-transcriptome (fusion / gene expression) and proteome (DIA peptides), pooled over the batches in obj4_paths.BATCHES
-(default batches 4-6; RNA batch N and quantms-diann batch N contain the same participants).
+transcriptome (fusion / gene expression) and proteome (DIA peptides), pooled over the batches in lib/paths.py BATCHES
+(default batches 1-6; RNA batch N and quantms-diann batch N contain the same participants).
 
 CORRECTED October 2026: the rnasplice SUPPA PSI and diffSplice results were produced with the
 wrong library strandedness and are no longer used. Splice-isoform peptides are linked to the
@@ -13,24 +13,22 @@ Links (all within the SAME participant):
                         isoform peptides are linked to their annotated event and report the gene's RNA level in P
   E2 variant -> event : SV carried by P lies within/near the splice event or fusion breakpoints seen in P
   chain               : variant -> event -> peptide
-Run:  python3 13a_link_feasibility.py <out_dir>
+Run:  python3 01_link_peptides_to_events.py <out_dir>
 """
-import sys, os, re, gzip, csv, json
+import sys, os, re, csv, json, collections
 import pandas as pd
 csv.field_size_limit(10**9)
 OUT = sys.argv[1]
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from obj4_paths import PATHS as C, BATCHES, CONTROL_LINE, dia_file, dia_runs, excluded_runs, rna_samples as pooled_rna_samples
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+from paths import PATHS as C, BATCHES, CONTROL_LINE, dia_file, dia_runs, excluded_runs, rna_samples as pooled_rna_samples
 PGDB = C['PGDB']
 GTF = C['GTF']
 SVVCF = C['SV_VCF']
 REF_FASTAS = [C['UNIPROT_REF'], C['UNIPROT_ISO']]
 MIN_LOG2CPM, SPLICE_WIN, FUSION_WIN, RARE_MAX = 1.0, 5_000, 100_000, 17   # gene 'expressed' if log2(CPM+1) >= 1; 17 = 5% of 347
 from rna_answerals import load_rna_log2cpm
+from common import part, read_fasta_seqs
 os.makedirs(OUT, exist_ok=True)
-rx = re.compile(r'(CASE|CTRL)[-_](NEU[A-Z0-9]+)')
-def part(s):
-    m = rx.search(s); return f'{m.group(1)}-{m.group(2)}' if m else None
 log = {}
 
 # ---------- participants (RNA samples of the pooled batches; technical control line excluded)
@@ -54,16 +52,7 @@ nov = pr[pr.sources.map(lambda s: not any('reference' in x or 'crap' in x for x 
 log['precursors_total'] = len(pr); log['precursors_nonreference_entries_only'] = len(nov)
 
 # strict novelty: peptide (I/L-equivalent) absent from UniProt canonical + isoforms
-ref = []
-for fa in REF_FASTAS:
-    op = gzip.open if fa.endswith('.gz') else open
-    seq = []
-    for l in op(fa, 'rt'):
-        if l[0] == '>':
-            if seq: ref.append(''.join(seq)); seq = []
-        else: seq.append(l.strip())
-    if seq: ref.append(''.join(seq))
-refstr = '#'.join(ref).replace('I', 'L')
+refstr = '#'.join(read_fasta_seqs(REF_FASTAS)).replace('I', 'L')
 peps = nov['Stripped.Sequence'].unique()
 novel_set = {p for p in peps if p.replace('I', 'L') not in refstr}
 # FIX 15 Oct 2026: E1 previously ran on the 6 strictly novel peptides only, so the 557 known-isoform
@@ -82,7 +71,7 @@ novpep.to_csv(f'{OUT}/novel_peptides_detected.tsv', sep='\t', index=False)   # u
 
 # ---------- transcriptome: per-participant event evidence
 # gene-level RNA expression per participant (AnswerALS consortium counts; replaces SUPPA PSI)
-rna = load_rna_log2cpm(GTF, participants, counts_path=C['COUNTS'])
+rna = load_rna_log2cpm(None, GTF, participants, counts_path=C['COUNTS'])
 log['rna_participants_with_expression'] = int(rna.shape[1])
 def rna_level(gene, p):
     if not isinstance(gene, str) or gene not in rna.index or p not in rna.columns: return None
@@ -90,11 +79,6 @@ def rna_level(gene, p):
 def suppa_key(e):   # PGDB event id -> SUPPA local event id "ENSG;TYPE:coords"
     m = re.match(r'(ENSG[0-9.]+)(?:_and_ENSG[0-9.]+)*_([A-Z0-9]+:chr.*)$', e)
     return f'{m.group(1)};{m.group(2)}' if m else None
-def coords(e):
-    m = re.search(r':(chr[^:]+):(.*):([+-])$', e)
-    if not m: return None
-    nums = [int(x) for x in re.findall(r'\d+', m.group(2))]
-    return m.group(1), min(nums), max(nums)
 
 # fusions: PGDB sequence -> samples (via sha256), samples of the pooled batches only
 fs = pd.read_csv(f'{PGDB}/fusion.sequence_samples.tsv', sep='\t', dtype=str,
@@ -168,7 +152,7 @@ for p in participants:
     for _, f in fmeta[fmeta.sample_id.map(part) == p].iterrows():
         b1, b2 = int(f.breakpoint1), int(f.breakpoint2)
         for r in sv.get(p, []):
-            ok = (r['chrom'] == f.chrom1 and near(r['pos'], b1, FUSION_WIN) and r['chr2'] == f.chrom2 and near(r['end'] if r['chr2'] == r['chrom'] else r['end'], b2, FUSION_WIN)) or \
+            ok = (r['chrom'] == f.chrom1 and near(r['pos'], b1, FUSION_WIN) and r['chr2'] == f.chrom2 and near(r['end'], b2, FUSION_WIN)) or \
                  (r['chrom'] == f.chrom2 and near(r['pos'], b2, FUSION_WIN) and r['chr2'] == f.chrom1 and near(r['end'], b1, FUSION_WIN))
             if ok:
                 e2.append(dict(participant=p, sv_id=r['id'], svtype=r['svtype'], sv_chrom=r['chrom'], sv_pos=r['pos'], sv_end=r['end'],

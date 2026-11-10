@@ -3,21 +3,20 @@
 CORRECTED October 2026: no SUPPA PSI / diffSplice (strand-affected). Isoform events are the annotated
 SUPPA events that produced a PGDB protein; a link records an SV of participant P within SPLICE_WIN of the
 event, plus the gene's RNA level in P from the AnswerALS consortium counts. Fusion links are unchanged.
-Pooled over obj4_paths.BATCHES. Needs feasibility outputs: sv_carriers.tsv, links_peptide_event.tsv. Usage: 13c_link_variant_event.py OUT"""
+Pooled over paths.BATCHES. Needs outputs of scripts 01-02: sv_carriers.tsv, links_peptide_event.tsv. Usage: 03_link_svs_to_events.py OUT"""
 import sys, os, re, json, collections
 import numpy as np, pandas as pd
 OUT = sys.argv[1]
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from obj4_paths import PATHS as C, BATCHES, CONTROL_LINE, rna_samples as pooled_rna_samples
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+from paths import PATHS as C, BATCHES, CONTROL_LINE, rna_samples as pooled_rna_samples
 PGDB, GTF = C['PGDB'], C['GTF']
 MIN_LOG2CPM, SPLICE_WIN, FUSION_WIN, RARE_MAX = 1.0, 5_000, 100_000, 17
 from rna_answerals import load_rna_log2cpm
-rx = re.compile(r'(CASE|CTRL)[-_](NEU[A-Z0-9]+)')
-part = lambda s: (lambda m: f'{m.group(1)}-{m.group(2)}' if m else None)(rx.search(str(s)))
+from common import part
 rna_samples = pooled_rna_samples()
 participants = sorted({part(s) for s in rna_samples} - {None, CONTROL_LINE})
 
-rna = load_rna_log2cpm(GTF, participants, counts_path=C['COUNTS'])
+rna = load_rna_log2cpm(None, GTF, participants, counts_path=C['COUNTS'])
 mp = pd.read_csv(f'{PGDB}/proteogenomic_mapping.tsv', sep='\t', dtype=str, usecols=['source', 'event_ids', 'gene_symbols'])
 def suppa_key(e):
     m = re.match(r'(ENSG[0-9.]+)(?:_and_ENSG[0-9.]+)*_([A-Z0-9]+:chr.*)$', e); return f'{m.group(1)};{m.group(2)}' if m else None

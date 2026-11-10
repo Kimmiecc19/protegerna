@@ -1,19 +1,19 @@
 #!/usr/bin/env python3
 """Stage 5: permutation null for Stage 4. Keep every SV-gene pair and its number of carriers (pooled batches),
 but give the 'carrier' label to random participants; count how many pairs pass the same effect
-rules. Gives an empirical p-value and FDR for the observed counts. Usage: 13e_permutation_null.py OUT [N_PERM]"""
+rules. Gives an empirical p-value and FDR for the observed counts. Usage: 05_permutation_null.py OUT [N_PERM]"""
 import sys, os, json
 import numpy as np, pandas as pd
 from scipy.stats import mannwhitneyu
 OUT = sys.argv[1]; NPERM = int(sys.argv[2]) if len(sys.argv) > 2 else 200
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from obj4_paths import PATHS as C, load_protein_by_gene
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+from paths import PATHS as C, load_protein_by_gene
 GTF = C['GTF']
 from rna_answerals import load_rna_log2cpm   # CORRECTED Oct 2026: AnswerALS counts replace rnasplice TPMs
 Z_SINGLE, LFC_MIN, P_MAX, MIN_CPM, MIN_DETECT = 2.5, 0.5, 0.05, 1.0, 0.5
 res = pd.read_csv(f'{OUT}/variant_gene_rna_protein.tsv', sep='\t')
 prot = load_protein_by_gene()
-rna = load_rna_log2cpm(GTF, set(prot.columns), counts_path=C['COUNTS'])
+rna = load_rna_log2cpm(None, GTF, set(prot.columns), counts_path=C['COUNTS'])
 rna = rna[rna.index.isin(set(res.gene))]; rna = rna[(2 ** rna - 1).median(axis=1) >= MIN_CPM]
 parts = sorted(set(prot.columns) & set(rna.columns)); idx = {p: i for i, p in enumerate(parts)}
 def prep(mat, need):

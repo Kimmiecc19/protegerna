@@ -1,42 +1,44 @@
 #!/usr/bin/env python3
-"""Run the Objective 4 integration pipeline end to end, pooled over quantms-diann/RNA batches (obj4_paths.BATCHES).
+"""Run the Objective 4 integration pipeline end to end, pooled over quantms-diann/RNA batches (lib/paths.py BATCHES).
 
 Stages (order matters; later stages read files written by earlier ones):
-  1   13a_link_feasibility.py    peptide->event (E1), variant->event (E2), chains, novel peptides
-  1b  13b_cache_sv.py     PASS SVs carried by participants of the pooled batches
-  2   13c_link_variant_event.py  E2 + chains rebuilt with 'relation'/'rare' (overwrites stage-1 E2, chains, summary.json)
-  (3  carrier_effect.py      REMOVED Oct 2026 - used strand-affected SUPPA PSI)
-  4   13d_protein_rna_link.py    SV carriers vs non-carriers: gene RNA + protein, evidence tiers
-  5   13e_permutation_null.py    carrier-label permutation null for stage 4
+  1   01_link_peptides_to_events.py   peptide->event (E1), variant->event (E2), chains, novel peptides
+  1b  02_extract_sv_carriers.py       PASS SVs carried by participants of the pooled batches
+  2   03_link_svs_to_events.py        E2 + chains rebuilt with 'relation'/'rare' (overwrites stage-1 E2, chains, summary.json)
+  (3  carrier_effect.py               REMOVED Oct 2026 - used strand-affected SUPPA PSI)
+  4   04_test_rare_sv_rna_protein.py  SV carriers vs non-carriers: gene RNA + protein, evidence tiers
+  5   05_permutation_null.py          carrier-label permutation null for stage 4
 
-Input paths are set in obj4_paths.py (server layout under /home/kcoetzer); edit that file, not the stages.
+Input paths are set in lib/paths.py (resolved from this repository; the GTF is external); edit that file or set
+OBJ4_<NAME> environment variables, not the stages.
 
-Usage (server, from /home/kcoetzer/objective_four):
-  python code_ALS_integration/13_run_objective4.py --check          # verify inputs and Python packages
-  python code_ALS_integration/13_run_objective4.py --nperm 600      # full run -> results_ALS_integration/results_integration_case_study/batches1-6_<date>
-  python code_ALS_integration/13_run_objective4.py --from-stage 4 --out <folder>   # resume
+Usage (from the 04_integration folder):
+  python 02_participant_linking/00_run_linking_pipeline.py --check          # verify inputs and Python packages
+  python 02_participant_linking/00_run_linking_pipeline.py --nperm 600      # full run -> 02_participant_linking/02_results_participant_linking/b1to6_<date>
+  python 02_participant_linking/00_run_linking_pipeline.py --from-stage 4 --out <folder>   # resume
 """
 import argparse, datetime as dt, hashlib, json, platform, shutil, subprocess, sys, time
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
-SCRIPTS = HERE if (HERE / '13a_link_feasibility.py').exists() else HERE / 'scripts'
-sys.path.insert(0, str(HERE))
-from obj4_paths import required_files, BATCHES
-DEFAULT_RESULTS = HERE.parent / 'results_ALS_integration' / 'results_integration_case_study'
+SCRIPTS = HERE
+LIB = HERE.parent / 'lib'
+sys.path.insert(0, str(LIB))
+from paths import required_files, BATCHES
+DEFAULT_RESULTS = HERE / '02_results_participant_linking'
 
 STAGES = [  # (id, script, outputs it must produce)
-    ('1',  '13a_link_feasibility.py',   ['novel_peptides_detected.tsv', 'links_peptide_event.tsv']),
-    ('1b', '13b_cache_sv.py',    ['sv_carriers.tsv']),
-    ('2',  '13c_link_variant_event.py', ['links_variant_event.tsv', 'chains_variant_event_peptide.tsv', 'summary.json']),
-    ('4',  '13d_protein_rna_link.py',   ['variant_gene_rna_protein.tsv', 'variant_gene_rna_protein_summary.json']),
-    ('5',  '13e_permutation_null.py',   ['permutation_null_summary.json']),
+    ('1',  '01_link_peptides_to_events.py',  ['novel_peptides_detected.tsv', 'links_peptide_event.tsv']),
+    ('1b', '02_extract_sv_carriers.py',      ['sv_carriers.tsv']),
+    ('2',  '03_link_svs_to_events.py',       ['links_variant_event.tsv', 'chains_variant_event_peptide.tsv', 'summary.json']),
+    ('4',  '04_test_rare_sv_rna_protein.py', ['variant_gene_rna_protein.tsv', 'variant_gene_rna_protein_summary.json']),
+    ('5',  '05_permutation_null.py',         ['permutation_null_summary.json']),
 ]
 ORDER = [s[0] for s in STAGES]
 
 def check():
     ok = True
-    print('Inputs (edit obj4_paths.py or set OBJ4_<NAME> to change):')
+    print('Inputs (edit lib/paths.py or set OBJ4_<NAME> to change):')
     for name, path in required_files().items():
         p = Path(path)
         found = p.exists()
@@ -47,9 +49,9 @@ def check():
             m = __import__(mod); print(f'  [ok] python package {mod} {getattr(m, "__version__", "")}')
         except ImportError:
             ok = False; print(f'  [MISSING] python package {mod}  ->  pip install {mod}')
-    for script in [s for _, s, _ in STAGES] + ['rna_answerals.py', 'obj4_paths.py']:
-        if not (SCRIPTS / script).exists():
-            ok = False; print(f'  [MISSING] stage script {SCRIPTS / script}')
+    for script in [SCRIPTS / s for _, s, _ in STAGES] + [LIB / f for f in ('rna_answerals.py', 'paths.py', 'common.py')]:
+        if not script.exists():
+            ok = False; print(f'  [MISSING] script {script}')
     return ok
 
 def sha(p):
@@ -60,16 +62,16 @@ def sha(p):
 
 def main():
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
-    ap.add_argument('--out', help='output folder (default: results_ALS_integration/results_integration_case_study/batches<BATCHES>_<YYYYMMDD>)')
+    ap.add_argument('--out', help='output folder (default: 02_participant_linking/02_results_participant_linking/b<BATCHES>_<YYYYMMDD>)')
     ap.add_argument('--nperm', type=int, default=600, help='permutations for stage 5 (default 600, as in the feasibility run)')
     ap.add_argument('--from-stage', choices=ORDER, default='1', help='resume from this stage (needs earlier outputs in --out)')
     ap.add_argument('--to-stage', choices=ORDER, default='5', help='stop after this stage')
     ap.add_argument('--check', action='store_true', help='only check inputs and packages, then exit')
     a = ap.parse_args()
 
-    out = Path(a.out).resolve() if a.out else DEFAULT_RESULTS / f"batches{'-'.join(b.replace('batch', '') for b in BATCHES)}_{dt.date.today():%Y%m%d}"
+    out = Path(a.out).resolve() if a.out else DEFAULT_RESULTS / f"b{'to'.join([BATCHES[0].replace('batch', ''), BATCHES[-1].replace('batch', '')])}_{dt.date.today():%Y%m%d}"
     if not check():
-        sys.exit('\nSome inputs are missing - set their paths in obj4_paths.py (or OBJ4_<NAME>) before running.')
+        sys.exit('\nSome inputs are missing - set their paths in lib/paths.py (or OBJ4_<NAME>) before running.')
     if a.check:
         print('\nAll inputs found.'); return
 

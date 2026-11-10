@@ -12,8 +12,7 @@
 #   coldata_file  your 336-sample metadata (286 ALS + 50 HC, BDC only;
 #                 rownames like CASE_NEUAG241NUD_6681_T; columns condition,
 #                 seq_batch, sex, diagnosis)
-#"C:\Users\USER-PC\OneDrive\Documents\05_ALS_integration\data_ALS_integration\4_matrix_transcriptomics_answerals\AnswerALS-1276-T-v1-release7_raw-counts.csv"
-#"C:\Users\USER-PC\OneDrive\Documents\05_ALS_integration\data_ALS_integration\answerals_cohort_coldata.csv"
+#   Both are read from 04_integration/data/ (controlled access; not committed).
 # Outputs (out_dir)
 #   QC/                          sample matching, design tables, library sizes,
 #                                PCA, p-value histograms, low-depth flags
@@ -22,7 +21,7 @@
 #                                P.Value, adj.P.Val, ... (the format the
 #                                existing dream_fgsea_*.R scripts read)
 #   AALS_dream_voom_objects.rds  voom object + metadata for the permutation
-#                                check (03_pathway_label_permutation.R)
+#                                check (03b_pathway_label_permutation.R)
 #
 #Installed with bioconductor: edger, variancepartition, annotationdbi, org.Hs.eg.db
 #
@@ -43,16 +42,28 @@ suppressPackageStartupMessages({
   library(org.Hs.eg.db)
 })
 
-source(file.path("code_ALS_integration", "thesis_palette.R"))
+# Paths below are relative to 04_integration/. Find this script's folder however it is run
+# (Rscript, RStudio "Source", or source()), then work from 04_integration/.
+script_dir <- local({
+  f <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE))
+  if (length(f)) return(dirname(normalizePath(f[1])))
+  for (fr in rev(sys.frames())) if (!is.null(fr$ofile)) return(dirname(normalizePath(fr$ofile)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
+    p <- tryCatch(rstudioapi::getSourceEditorContext()$path, error = function(e) "")
+    if (nzchar(p)) return(dirname(normalizePath(p)))
+  }
+  stop("Cannot locate this script; run it with Rscript or source() it by its path.")
+})
+project_dir <- normalizePath(file.path(script_dir, ".."))   # 04_integration/
+setwd(project_dir)
+source(file.path("lib", "thesis_palette.R"))
 
 # ----------------------------
 # Settings
 # ----------------------------
-project_dir  <- "C:/Users/USER-PC/OneDrive/Documents/05_ALS_integration"
-setwd(project_dir)
-counts_file  <- "data_ALS_integration/4_matrix_transcriptomics_answerals/AnswerALS-1276-T-v1-release7_raw-counts.csv"   # release 7: all 336 samples match exactly
-coldata_file <- "data_ALS_integration/answerals_cohort_coldata.csv"
-out_dir      <- "results_ALS_integration/results_rna_dream"
+counts_file  <- "data/AnswerALS-1276-T-v1-release7_raw-counts.csv"   # release 7: all 336 samples match exactly
+coldata_file <- "data/answerals_cohort_coldata.csv"
+out_dir      <- "01_single_layer/01a_results_rna_differential_expression"
 min_count    <- 10      # same filtering rule as the earlier analysis
 min_samples  <- 20
 allow_participant_fallback <- TRUE   # match on participant ID if the exact sample ID is absent

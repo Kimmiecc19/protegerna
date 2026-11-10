@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-06_peptide_source_classification.py  -  Objective 3 / 4, proteogenomic evidence
+02b_classify_peptide_sources.py  -  Objective 3 / 4, proteogenomic evidence
 
 Classifies every DIA-NN precursor identified with the v5 proteogenomic database:
 
@@ -27,25 +27,13 @@ Outputs
   summary.json                   counts per batch and combined (precursors, peptides,
                                  intensity share), class breakdown
 """
-import argparse, gzip, json, os, re, sys
+import argparse, json, os, re, sys
 import pandas as pd
 
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "lib"))
+from common import read_fasta_seqs
+
 CTRL_LINE = r"CTRL-NEUEU392AE8"
-
-
-def read_fasta_seqs(paths):
-    seqs = []
-    for p in paths:
-        op = gzip.open if p.endswith(".gz") else open
-        buf = []
-        with op(p, "rt") as fh:
-            for line in fh:
-                if line.startswith(">"):
-                    if buf: seqs.append("".join(buf)); buf = []
-                else:
-                    buf.append(line.strip())
-        if buf: seqs.append("".join(buf))
-    return seqs
 
 
 def main():

@@ -7,22 +7,23 @@
 # value; delete a line to keep its publication default. Unknown keys stop the run.
 # Output names under the stages must be plain file names; outdir sets the location.
 
-# --- Inputs and references (paths on the server)
-input: '/home/KimberlyCC/work/nf_protegerna/tests/data_full/samplesheet.csv'  # sample,tool,event_type,path,batch,condition (see README)
+# --- Inputs and references (relative paths resolve from the pipeline root, where `nextflow run .` is launched)
+# The genome FASTA and GTF are not in the repository: add them to tests/data_full/ or point these lines at them.
+input: 'tests/data_full/samplesheet.csv'  # sample,tool,event_type,path,batch,condition (see README)
 outdir: 'results/protegerna_publication'
-genome: '/home/KimberlyCC/work/nf_protegerna/tests/data_full/Homo_sapiens_GRCh38_46_dna_primary_assembly.fa'  # uncompressed
-gtf: '/home/KimberlyCC/work/nf_protegerna/tests/data_full/Homo_sapiens_GRCh38_46.gtf'  # give exactly one of gtf / gtf_db
+genome: 'tests/data_full/Homo_sapiens_GRCh38_46_dna_primary_assembly.fa'  # uncompressed
+gtf: 'tests/data_full/Homo_sapiens_GRCh38_46.gtf'  # give exactly one of gtf / gtf_db
 gtf_db: null  # prebuilt gffutils database
-reference_proteome: '/home/KimberlyCC/work/nf_protegerna/tests/data_full/UP000005640_9606.fasta'  # uncompressed target proteome
-gencode_protein_fasta: '/home/KimberlyCC/work/nf_protegerna/tests/data_full/gencode.v46.pc_translations.fa'
-contaminants: '/home/KimberlyCC/work/nf_protegerna/tests/data_full/crap.fasta'  # optional; null to omit
+reference_proteome: 'tests/data_full/UP000005640_9606.fasta'  # uncompressed target proteome
+gencode_protein_fasta: 'tests/data_full/gencode.v46.pc_translations.fa'
+contaminants: 'tests/data_full/crap.fasta'  # optional; null to omit
 sample_metadata: null  # optional sample_id,batch,condition table
 reference_peptide_cache: null  # optional reuse of a previous cache
 annotation_release: 'GENCODE_46'
 organism: 'Homo_sapiens'
 
 # --- Runtime
-proteogenomic_container: '/home/KimberlyCC/work/nf_protegerna/containers/proteogenomic/protegerna.sif'
+proteogenomic_container: 'containers/proteogenomic/protegerna.sif'  # pass an absolute path with --proteogenomic_container "$(realpath ...)"
 max_cpus: 8
 max_memory: '32.GB'
 publish_dir_mode: 'copy'

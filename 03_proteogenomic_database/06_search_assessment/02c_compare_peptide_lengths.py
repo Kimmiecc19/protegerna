@@ -28,6 +28,23 @@ Needs: Python 3, pandas, numpy.
 import argparse, os, re
 import numpy as np, pandas as pd
 
+# The "six-batch" folder may hold the 01a/01b/01c outputs side by side, or be this step's folder,
+# where they sit in their own result subfolders. Look in the folder first, then in those subfolders.
+SIX_SUBDIRS = ("01a_extract_passing_rows", "01b_make_sequence_source_table",
+               "01c_collect_diann_summary_tables", "02d_summarise_fusion_peptides")
+
+
+def six_path(root, *parts):
+    flat = os.path.join(root, *parts)
+    if os.path.exists(flat):
+        return flat
+    for sub in SIX_SUBDIRS:
+        candidate = os.path.join(root, sub, *parts)
+        if os.path.exists(candidate):
+            return candidate
+    return flat
+
+
 ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
 ap.add_argument("--ref-fasta", required=True)
 ap.add_argument("--v5-fasta", required=True)
@@ -75,7 +92,7 @@ def digest_db(path):
 def observed(tag, batches):
     peps = set()
     for b in batches:
-        p = pd.read_csv(os.path.join(a.six_dir, f"{tag}_b{b}.pass.tsv.gz"), sep="\t", header=None,
+        p = pd.read_csv(six_path(a.six_dir, f"{tag}_b{b}.pass.tsv.gz"), sep="\t", header=None,
                         usecols=[2], names=["pep"], dtype=str)
         peps |= set(p.pep.unique())
     return peps

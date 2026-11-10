@@ -1,40 +1,46 @@
-r"""Input paths and shared loaders for the Objective 4 integration pipeline (13_run_objective4.py, stages 13a-13e).
+r"""Input paths and shared loaders for the Objective 4 integration pipeline (02_participant_linking/00_run_linking_pipeline.py, scripts 01-05).
 
 The pipeline pools the batches listed in BATCHES (RNA batch N and quantms-diann batch N contain the same participants).
 
 Edit the values below if a file lives elsewhere, or override any of them for one run with an environment
-variable called OBJ4_<NAME>, e.g.  OBJ4_GTF=/path/to/genes.gtf python 13_run_objective4.py --check
+variable called OBJ4_<NAME>, e.g.  OBJ4_GTF=/path/to/genes.gtf python 02_participant_linking/00_run_linking_pipeline.py --check
 Batches can be overridden with OBJ4_BATCHES="batch4 batch5 batch6" (default: batch1 through batch6).
 
-DIA-NN runs listed in EXCLUDE_RUNS (the same TSV given to 05_consolidate_cohort.py --exclude-runs; columns
+DIA-NN runs listed in EXCLUDE_RUNS (the same TSV given to 01_single_layer/01b_consolidate_proteomic_batches.py --exclude-runs; columns
 batch, file_name, reason) are dropped from the precursor and protein matrices. Set OBJ4_EXCLUDE_RUNS= (empty) to disable.
 
 """
 import glob, os, re
+from common import part, pgdb_gene_mapper
 
-HOME = '/home/kcoetzer'
-O4 = f'{HOME}/objective_four'
+from pathlib import Path
+
+# Paths are resolved from this repository: lib/ -> 04_integration/ -> repository root.
+O4 = Path(__file__).resolve().parents[1]          # 04_integration/
+REPO = O4.parent                                  # repository root
+O2 = REPO / '02_SV_analysis'
+O3 = REPO / '03_proteogenomic_database'
+DATA = O4 / 'data'
 BATCHES = os.environ.get('OBJ4_BATCHES', 'batch1 batch2 batch3 batch4 batch5 batch6').split()
 CONTROL_LINE = 'CTRL-NEUEU392AE8'          # technical control line, excluded from participant-level tests
 
 PATHS = dict(
     # Objective 2: OctopuSV Manta+TIDDIT intersection cohort VCF
-    SV_VCF=f'{HOME}/objective_two/octopusv/octopusv_merged_02092026/merged/manta_tiddit.intersect.cohort.vcf',
+    SV_VCF=str(O2 / '02_sv_consolidation' / '01_results_octopusv' / 'merged' / 'manta_tiddit.intersect.cohort.vcf'),
     # Objective 3: v5 proteogenomic database folder (metadata, mapping, fusion.* tables)
-    PGDB=f'{HOME}/proteogenomic_database/results/results_proteogenomic_database_with_errors/pgdb_publication_rerun_v5',
+    PGDB=str(O3 / '03_search_database' / 'results_pgdb_publication_rerun_v5'),
     # nf-core/rnafusion results: folder containing rnafusion_analysis_batch1..6 (each with fusioncatcher/)
-    RNAFUS_ROOT=f'{HOME}/nf/nf_results/rnafusion/rnafusion_analysis',
-    # AnswerALS release 7 raw counts
-    COUNTS=f'{O4}/data_ALS_integration/4_matrix_transcriptomics_answerals/AnswerALS-1276-T-v1-release7_raw-counts.csv',
-    # ---- SET ME: not in the listings you sent ----
-    GTF=f'{HOME}/proteogenomic_database/data/Homo_sapiens_GRCh38_46.gtf',                       # GENCODE v46 / Ensembl 112 GTF
-        UNIPROT_REF=f'{HOME}/proteogenomic_database/data/UP000005640_9606.fasta.gz',                   # UniProt canonical proteome
-        UNIPROT_ISO=f'{HOME}/proteogenomic_database/data/UP000005640_9606_additional.fasta.gz',             # UniProt isoforms (or varsplice)
-    # folder containing pgdb_v5_batch1/ ... pgdb_v5_batch6/ (each with quant_tables/); same location as the
-    # cohort_batches_1-6.tsv manifest used by 05_consolidate_cohort.py (was .../pgdb/results_quantmsdiann_pgdb for batches 4-6)
-    DIA_ROOT=f'{HOME}/nf/nf_results/quantms/pgdb',
-    # failed DIA-NN runs (same file as 05_consolidate_cohort.py --exclude-runs); '' = exclude nothing
-    EXCLUDE_RUNS=f'{O4}/data_ALS_integration/data_consolidate_quantms/cohort_exclude_runs_1-6.tsv',
+    RNAFUS_ROOT=str(O3 / '02_event_detection' / '02_results_rnafusion_final'),
+    # AnswerALS release 7 raw counts (controlled access; place in 04_integration/data/)
+    COUNTS=str(DATA / 'AnswerALS-1276-T-v1-release7_raw-counts.csv'),
+    # GENCODE v46 / Ensembl 112 GTF: not in the repository; set OBJ4_GTF or edit this line
+    GTF='/path/to/references/GRCh38/gencode_v46/gencode/Homo_sapiens_GRCh38_46.gtf',
+    UNIPROT_REF=str(DATA / 'UP000005640_9606.fasta.gz'),               # UniProt canonical proteome
+    UNIPROT_ISO=str(DATA / 'UP000005640_9606_additional.fasta.gz'),    # UniProt isoforms
+    # folder containing pgdb_v5_batch1/ ... pgdb_v5_batch6/ (each with quant_tables/)
+    DIA_ROOT=str(O3 / '05_proteomic_search' / '02b_results_quantmsdiann_pgdb'),
+    # failed DIA-NN runs (same file as 01_single_layer/01b_consolidate_proteomic_batches.py --exclude-runs); '' = exclude nothing
+    EXCLUDE_RUNS=str(DATA / 'cohort_exclude_runs_1-6.tsv'),
 )
 for _k in PATHS:
     PATHS[_k] = os.environ.get(f'OBJ4_{_k}', PATHS[_k])
@@ -82,10 +88,7 @@ def load_protein_by_gene():
     runs of one participant averaged, technical control line excluded."""
     import numpy as np, pandas as pd
     meta = pd.read_csv(os.path.join(PATHS['PGDB'], 'proteogenomic_metadata.tsv'), sep='\t', dtype=str, usecols=['sequence_id', 'gene'])
-    id2gene = dict(zip(meta.sequence_id, meta.gene))
-    def pg_gene(pg):
-        g = {id2gene.get(i) for i in re.findall(r'PGDB_U\d+', str(pg))} - {None, 'NA', ''}
-        return g.pop() if len(g) == 1 else None
+    pg_gene = pgdb_gene_mapper(dict(zip(meta.sequence_id, meta.gene)))
     mats = []
     for b in BATCHES:
         pg = pd.read_csv(dia_file(b, 'pg'), sep='\t', low_memory=False)

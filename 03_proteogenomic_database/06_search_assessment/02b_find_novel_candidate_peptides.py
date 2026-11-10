@@ -19,9 +19,26 @@ Usage: python check_custom_only_peptides.py SIX_BATCH_DIR REFDB UNIPROT_CANONICA
 import sys, os, re, gzip
 import pandas as pd
 
+# The "six-batch" folder may hold the 01a/01b/01c outputs side by side, or be this step's folder,
+# where they sit in their own result subfolders. Look in the folder first, then in those subfolders.
+SIX_SUBDIRS = ("01a_extract_passing_rows", "01b_make_sequence_source_table",
+               "01c_collect_diann_summary_tables", "02d_summarise_fusion_peptides")
+
+
+def six_path(root, *parts):
+    flat = os.path.join(root, *parts)
+    if os.path.exists(flat):
+        return flat
+    for sub in SIX_SUBDIRS:
+        candidate = os.path.join(root, sub, *parts)
+        if os.path.exists(candidate):
+            return candidate
+    return flat
+
+
 D, REFDB, UPC, UPA, GEN, OUT = sys.argv[1:7]
 idrx = re.compile(r"PGDB_[UC]\d+")
-src = pd.read_csv(os.path.join(D, "v5_id_source.tsv"), sep="\t", header=None, names=["id", "source", "gene"])
+src = pd.read_csv(six_path(D, "v5_id_source.tsv"), sep="\t", header=None, names=["id", "source", "gene"])
 src["custom"] = src.source.str.split(";").map(lambda s: all(x in ("rmats", "suppa", "fusioninspector") for x in s))
 CUSTOM = set(src.loc[src.custom, "id"]); SRC = dict(zip(src.id, src.source)); GENE = dict(zip(src.id, src.gene))
 
@@ -42,9 +59,9 @@ def fasta(path):
 
 ref_ident, rows = set(), {}
 for b in range(1, 7):
-    r = pd.read_csv(os.path.join(D, f"ref_b{b}.pass.tsv.gz"), sep="\t", header=None, usecols=[2], names=["pep"], dtype=str)
+    r = pd.read_csv(six_path(D, f"ref_b{b}.pass.tsv.gz"), sep="\t", header=None, usecols=[2], names=["pep"], dtype=str)
     ref_ident |= {p.replace("I", "L") for p in r.pep.unique()}
-    v = pd.read_csv(os.path.join(D, f"v5_b{b}.pass.tsv.gz"), sep="\t", header=None, usecols=[0, 1, 2],
+    v = pd.read_csv(six_path(D, f"v5_b{b}.pass.tsv.gz"), sep="\t", header=None, usecols=[0, 1, 2],
                     names=["file", "ids", "pep"], dtype=str)
     g = v.groupby("pep").agg(ids=("ids", lambda s: set(idrx.findall(";".join(s)))), files=("file", "nunique"))
     for pep, r_ in g.iterrows():

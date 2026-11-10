@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 r"""
-16_integration_evaluation_table.py  -  Objective 4: does integration change the interpretation of each candidate?
+02_evaluation_table.py  -  Objective 4: does integration change the interpretation of each candidate?
 
 For every candidate that a single layer would put forward, this script records the single-layer conclusion,
 the evidence from the other layers in the same participants, the integrated conclusion, the change class
@@ -13,21 +13,21 @@ the evidence from the other layers in the same participants, the integrated conc
 
 Candidate categories
   primary_SV        Objective 2 audited primary candidates (carriers = participant_support support_rule_met)
-  ALS_gene_SV       SVs overlapping ALSoD genes from the script-15 scans (BH within ALSoD genes)
-  novel_peptide     variant-only peptides absent from UniProt and GENCODE (script 06); fusion-derived ones are
+  ALS_gene_SV       SVs overlapping ALSoD genes from the 01_single_layer/01e scans (BH within ALSoD genes)
+  novel_peptide     variant-only peptides absent from UniProt and GENCODE (01_single_layer/02b); fusion-derived ones are
                     tested for co-occurrence with the RNA fusion call in the same participants (Fisher)
   isoform_peptide   variant-only peptides that are known UniProt isoforms or GENCODE-only; RNA check = gene
                     expressed (CPM >= 1) in >= 90% of peptide-positive participants, detected in >= 50% of a batch
-  recurrent_fusion  filtered fusions with >= 3 carriers (script 12); checked against SV carriers in the partner genes
+  recurrent_fusion  filtered fusions with >= 3 carriers (01_single_layer/01d); checked against SV carriers in the partner genes
                     and against fusion-derived peptides
   DE_gene           genes at FDR < 0.05 in the RNA (01) or protein (02) ALS vs HC analysis, checked in the other layer
 
-Carrier tests (SVs) use the same statistic as script 15: expression residualised on seq_batch + sex + diagnosis,
+Carrier tests (SVs) use the same statistic as 01_single_layer/01e: expression residualised on seq_batch + sex + diagnosis,
 z-scored per gene; S = mean(carrier z) * sqrt(k); empirical p from the same carriers on 1,000 random genes.
 Protein carrier tests use per-run median-centred log2 intensities, z-scored per protein, same statistic.
 
 Usage (PowerShell; replace <...>):
-  python 16_integration_evaluation_table.py `
+  python 02_evaluation_table.py `
     --rna-counts <...>\AnswerALS-1276-T-v1-release7_raw-counts.csv `
     --rna-coldata "<...>\remove_btc_raw_coldata_filtered (2).csv" --gene-map <...>\ensg_symbol.tsv `
     --sv-primary <Obj2>\primary_candidates.tsv --sv-support <Obj2>\participant_support.tsv `
@@ -49,10 +49,13 @@ Outputs
   evaluation_summary.tsv     counts per category x change class and per category x evidence level
   summary.json
 """
-import argparse, json, os, re, warnings
+import argparse, json, os, sys, warnings
 warnings.filterwarnings('ignore', category=RuntimeWarning)
 import numpy as np, pandas as pd
 from scipy import stats
+
+sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'lib'))
+from common import part, bh, load_v5_protein_by_gene
 
 FDR, NOM = 0.05, 0.05
 MIN_CPM, EXPR_FRAC, REPRO = 1.0, 0.9, 0.5
@@ -60,18 +63,6 @@ LARGE_SV = 10_000
 CONTROL_LINE = 'CTRL-NEUEU392AE8'
 POLYMORPHIC_17Q21 = {"KANSL1", "ARL17A", "ARL17B", "LRRC37A", "LRRC37A2", "LRRC37A3", "LRRC37A4P", "NSF", "MAPT",
                      "CRHR1", "KANSL1-AS1", "MAPK8IP1P2"}
-rx = re.compile(r'(CASE|CTRL)[-_](NEU[A-Z0-9]+)')
-part = lambda s: (lambda m: f'{m.group(1)}-{m.group(2)}' if m else None)(rx.search(str(s)))
-
-
-def bh(p):
-    p = np.asarray(p, float); out = np.full(len(p), np.nan); ok = ~np.isnan(p)
-    if ok.sum() == 0: return out
-    q = p[ok]; o = np.argsort(q); n = len(q)
-    r = q[o] * n / np.arange(1, n + 1); r = np.minimum.accumulate(r[::-1])[::-1]
-    tmp = np.empty(n); tmp[o] = np.minimum(r, 1); out[ok] = tmp; return out
-
-
 # ------------------------------------------------------------------ data loaders
 def load_rna(counts, coldata, gene_map):
     cd = pd.read_csv(coldata); cd['participant'] = cd.iloc[:, 0].map(part)
@@ -96,16 +87,7 @@ def load_rna(counts, coldata, gene_map):
 
 
 def load_protein(matrix, samples, pgdb_meta):
-    pm = pd.read_csv(matrix, sep='\t', index_col=0, na_values=['NA', ''])
-    ps = pd.read_csv(samples, sep='\t')
-    ps = ps[(ps.sample_type == 'participant') & ps.cohort_run.isin(pm.columns)]
-    pm = pm[ps.cohort_run]; pm = pm - pm.median()
-    meta = pd.read_csv(pgdb_meta, sep='\t', dtype=str); id2gene = dict(zip(meta.sequence_id, meta.gene))
-    def pg_gene(pg):
-        g = {id2gene.get(i) for i in re.findall(r'PGDB_U\d+', str(pg))} - {None, 'NA', ''}
-        return g.pop() if len(g) == 1 else None
-    pm.index = [pg_gene(i) for i in pm.index]; pm = pm[pm.index.notna()].groupby(level=0).mean()
-    pm.columns = [part(p) for p in ps.participant_id]; pm = pm.T.groupby(level=0).mean()   # participant x gene
+    pm = load_v5_protein_by_gene(matrix, samples, pgdb_meta).T                       # participant x gene
     return (pm - pm.mean()) / pm.std()
 
 
@@ -250,12 +232,9 @@ def main():
         return u - {CONTROL_LINE}
     def gene_list(s): return sorted({x.replace('GN=', '') for x in str(s).split(';')} - {'', 'nan'})
     def expressed_frac(genes, parts):
-        best = np.nan
-        for g in genes:
-            if g in cpm.index:
-                v = cpm.loc[g, [p for p in parts if p in cpm.columns]]
-                if len(v): best = np.nanmax([best, float((v >= MIN_CPM).mean())]) if not np.isnan(best) else float((v >= MIN_CPM).mean())
-        return best
+        cols = [p for p in parts if p in cpm.columns]
+        fracs = [float((cpm.loc[g, cols] >= MIN_CPM).mean()) for g in genes if g in cpm.index and cols]
+        return max(fracs) if fracs else np.nan
 
     # ============ 3. novel peptides
     fusion_peptide_support = {}
@@ -339,7 +318,8 @@ def main():
                 p = stats.fisher_exact(t, alternative='greater')[1]
                 if np.isnan(best[0]) or p < best[0]:
                     best = (p, h.event_id, f'{len(sc & fc)}/{len(fc)} fusion carriers carry {h.event_id}')
-        pep = [fusion_peptide_support[k] for k in (r.fusion_pair.replace('--', '-'), ) if k in fusion_peptide_support]
+        pep_key = r.fusion_pair.replace('--', '-')
+        pep = [fusion_peptide_support[pep_key]] if pep_key in fusion_peptide_support else []
         fusion_rows.append(dict(r=r, g1=g1, g2=g2, n=len(carriers), sv_p=best[0], sv_event=best[1], sv_txt=best[2], pep=pep))
     qs = bh([x['sv_p'] for x in fusion_rows])
     for x, q in zip(fusion_rows, qs):
@@ -348,12 +328,10 @@ def main():
         pep_ok = bool(x['pep']) and x['pep'][0][0]
         notes = []
         if poly: notes.append('partner in the polymorphic 17q21.31 inversion region')
-        if r.padj_BH < FDR: lvl4 = True
-        else: lvl4 = False
         if dna_ok and pep_ok: cls, lvl = 'confirmed', 3
         elif dna_ok or pep_ok: cls, lvl = 'confirmed', 2
         else: cls, lvl = 'unchanged', 1
-        if lvl4: lvl = 4
+        if r.padj_BH < FDR: lvl = 4
         why = (f"ALS vs HC: {r.n_ALS}/286 vs {r.n_HC}/50 (q = {r.padj_BH:.3g}). "
                f"DNA: {x['sv_txt'] + f' (q = {q:.3g})' if x['sv_event'] else 'no SV in partner genes tested'}. "
                f"Peptide: {('fusion peptide ' + ('tracks' if pep_ok else 'does not track') + ' the RNA call') if x['pep'] else 'no fusion-derived peptide'}."

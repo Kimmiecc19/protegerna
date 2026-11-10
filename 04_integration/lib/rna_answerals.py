@@ -6,14 +6,9 @@ Several samples of one participant are averaged (only the control line has repea
 """
 import os, re
 import numpy as np, pandas as pd
+from common import PART_RX as _rx, part
 
 ANSWERALS_COUNTS = '5_ALS_case_study/2_transcriptomics/4_matrix_transcriptomics_answerals/AnswerALS-1276-T-v1-release7_raw-counts.csv'
-_rx = re.compile(r'(CASE|CTRL)[-_](NEU[A-Z0-9]+)')
-
-
-def part(s):
-    m = _rx.search(str(s))
-    return f'{m.group(1)}-{m.group(2)}' if m else None
 
 
 def gene_id_to_name(gtf):

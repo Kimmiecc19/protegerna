@@ -36,39 +36,51 @@ suppressPackageStartupMessages({
   library(ggplot2)
 })
 
-source(file.path("code_ALS_integration", "thesis_palette.R"))
+# Paths below are relative to 04_integration/. Find this script's folder however it is run
+# (Rscript, RStudio "Source", or source()), then work from 04_integration/.
+script_dir <- local({
+  f <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE))
+  if (length(f)) return(dirname(normalizePath(f[1])))
+  for (fr in rev(sys.frames())) if (!is.null(fr$ofile)) return(dirname(normalizePath(fr$ofile)))
+  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
+    p <- tryCatch(rstudioapi::getSourceEditorContext()$path, error = function(e) "")
+    if (nzchar(p)) return(dirname(normalizePath(p)))
+  }
+  stop("Cannot locate this script; run it with Rscript or source() it by its path.")
+})
+project_dir <- normalizePath(file.path(script_dir, ".."))   # 04_integration/
+setwd(project_dir)
+source(file.path("lib", "thesis_palette.R"))
 set_thesis_geom_defaults()
 
 # ----------------------------
 # Settings
 # ----------------------------
-#project_dir <- "C:/Users/USER-PC/OneDrive/Documents/05_ALS_integration"
-#setwd(project_dir)
-
 source_mode   <- "V5"     # "consortium" (primary) or "v5" (sensitivity)
-clinical_file <- "data_ALS_integration/answerals_cohort_coldata.csv"
+clinical_file <- "data/answerals_cohort_coldata.csv"
 min_valid_fraction_per_group <- 0.70
 control_line  <- "CTRL-NEUEU392AE8"
 run_dream_sensitivity <- FALSE
 
 # consortium input
-consortium_file <- "data_ALS_integration/4_matrix_proteomics_answerals/AnswerALS-447-P_proteomics-protein-matrix_prebatchcorrected.txt"
-prep_batch_file <- "data_ALS_integration/data_consolidate_quantms/cohort_samples.tsv"   # sample_preparation_batch per participant
+consortium_file <- "data/AnswerALS-447-P_proteomics-protein-matrix_prebatchcorrected.txt"
+prep_batch_file <- "data/cohort_samples.tsv"   # sample_preparation_batch per participant
 
-# v5 input (05_consolidate_cohort.py output)
-protein_file   <- "results_ALS_integration/results_05_cohort_v5_b1to6/protein_by_run.log2.tsv"
-samples_file   <- "results_ALS_integration/results_05_cohort_v5_b1to6/sample_metadata.tsv"
-pgdb_meta_file <- "proteogenomic_db_compare_v5_v7/results_pgdb_publication_rerun_v5/proteogenomic_metadata.tsv"
+# v5 input (01b_consolidate_proteomic_batches.py output) and the v5 database metadata (Objective 3)
+protein_file   <- "01_single_layer/01b_results_consolidate_proteomic_batches/protein_by_run.log2.tsv"
+samples_file   <- "01_single_layer/01b_results_consolidate_proteomic_batches/sample_metadata.tsv"
+pgdb_meta_file <- file.path("..", "03_proteogenomic_database", "03_search_database",
+                            "results_pgdb_publication_rerun_v5", "proteogenomic_metadata.tsv")
 batches_to_use <- paste0("batch", 1:6)
 
-out_dir <- if (source_mode == "consortium") "results_ALS_integration/results_07_protein_da_consortium" else
-  "results_ALS_integration/results_07_protein_da_v5_b1to6"
+out_dir <- if (source_mode == "consortium") "01_single_layer/02a_results_protein_da_consortium" else
+  "01_single_layer/02a_results_protein_da_v5"
 if (dir.exists(out_dir)) stop("Output folder exists: ", out_dir, " (rename or delete it first)")
 dir.create(file.path(out_dir, "QC"), recursive = TRUE)
 
 part_id <- function(x) {
-  m <- regmatches(x, regexpr("(CASE|CTRL)[-_]NEU[A-Z0-9]+", x))
-  out <- rep(NA_character_, length(x)); out[regexpr("(CASE|CTRL)[-_]NEU[A-Z0-9]+", x) > 0] <- gsub("_", "-", m); out
+  hit <- regexpr("(CASE|CTRL)[-_]NEU[A-Z0-9]+", x)
+  out <- rep(NA_character_, length(x)); out[hit > 0] <- gsub("_", "-", regmatches(x, hit)); out
 }
 
 # participant-level diagnosis and sex from the RNA metadata
