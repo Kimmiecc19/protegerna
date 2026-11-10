@@ -1,0 +1,348 @@
+participant,guid,genom,rna,prot,sex,ethnicity,race,diagnosis,batch
+CASE-NEUAB000NKC,NEUAB000NKC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,10
+CASE-NEUAE228FF6,NEUAE228FF6,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,37
+CASE-NEUAE993EPR,NEUAE993EPR,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,ALS,20
+CASE-NEUAF553MJ3,NEUAF553MJ3,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,13
+CASE-NEUAG241NUD,NEUAG241NUD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,25
+CASE-NEUAG603XLK,NEUAG603XLK,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,11
+CASE-NEUAG766ULB,NEUAG766ULB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,39
+CASE-NEUAK321NN1,NEUAK321NN1,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,58
+CASE-NEUAK401LJK,NEUAK401LJK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,45
+CASE-NEUAL614GYB,NEUAL614GYB,Yes,Yes,Yes,Female,Unknown,White,ALS,50
+CASE-NEUAP285GGU,NEUAP285GGU,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,28
+CASE-NEUAT234RK6,NEUAT234RK6,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,22
+CASE-NEUAW339DLB,NEUAW339DLB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,45
+CASE-NEUAW408VMD,NEUAW408VMD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,47
+CASE-NEUAW717TN6,NEUAW717TN6,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,20
+CASE-NEUAX665ZHY,NEUAX665ZHY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,23
+CASE-NEUAY067UTB,NEUAY067UTB,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,25
+CASE-NEUAZ394JEZ,NEUAZ394JEZ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,36
+CASE-NEUBA169GXD,NEUBA169GXD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,16
+CASE-NEUBC622XYK,NEUBC622XYK,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,43
+CASE-NEUBC901KL3,NEUBC901KL3,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,39
+CASE-NEUBC998WWB,NEUBC998WWB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,14
+CASE-NEUBD062TJV,NEUBD062TJV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,50
+CASE-NEUBD141MGD,NEUBD141MGD,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Asymptomatic ALS Gene carrier,27
+CASE-NEUBD288RXQ,NEUBD288RXQ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,22
+CASE-NEUBE218XDY,NEUBE218XDY,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,59
+CASE-NEUBK117YXL,NEUBK117YXL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,15
+CASE-NEUBL463FP2,NEUBL463FP2,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,60
+CASE-NEUBN979ZZ5,NEUBN979ZZ5,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,39
+CASE-NEUBT273FH3,NEUBT273FH3,Yes,Yes,Yes,Female,Not Hispanic or Latino,Native Hawaiian/Pacific Islander,ALS,29
+CASE-NEUBW008RJ5,NEUBW008RJ5,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,25
+CASE-NEUBY734PFR,NEUBY734PFR,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,10
+CASE-NEUCB613CA9,NEUCB613CA9,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,22
+CASE-NEUCC065VTK,NEUCC065VTK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,36
+CASE-NEUCC219HJC,NEUCC219HJC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,40
+CASE-NEUCD502BFU,NEUCD502BFU,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,40
+CASE-NEUCD750HYR,NEUCD750HYR,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,50
+CASE-NEUCF538BRM,NEUCF538BRM,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,17
+CASE-NEUCG511MJ6,NEUCG511MJ6,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,38
+CASE-NEUCN596RR3,NEUCN596RR3,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,11
+CASE-NEUCP068CPY,NEUCP068CPY,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,35
+CASE-NEUCP218XVV,NEUCP218XVV,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,39
+CASE-NEUCT022VTK,NEUCT022VTK,Yes,Yes,Yes,Male,Not Hispanic or Latino,American Indian/Alaska Native,ALS,25
+CASE-NEUCT440NYE,NEUCT440NYE,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,34
+CASE-NEUCT842RJV,NEUCT842RJV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,29
+CASE-NEUCU076ADN,NEUCU076ADN,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,40
+CASE-NEUCV578DFJ,NEUCV578DFJ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,38
+CASE-NEUCW352BPV,NEUCW352BPV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,34
+CASE-NEUCW678DB0,NEUCW678DB0,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,48
+CASE-NEUCX894KE1,NEUCX894KE1,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,44
+CASE-NEUDE422HTQ,NEUDE422HTQ,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,49
+CASE-NEUDE902GCT,NEUDE902GCT,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,10
+CASE-NEUDG272XWC,NEUDG272XWC,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,18
+CASE-NEUDH063DEA,NEUDH063DEA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,27
+CASE-NEUDM949BAR,NEUDM949BAR,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,ALS,26
+CASE-NEUDP155HFH,NEUDP155HFH,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,23
+CASE-NEUDP959KRY,NEUDP959KRY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,58
+CASE-NEUDY534KGP,NEUDY534KGP,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,27
+CASE-NEUDZ473EGM,NEUDZ473EGM,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,40
+CASE-NEUEC400NYR,NEUEC400NYR,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,20
+CASE-NEUEE624VCY,NEUEE624VCY,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,50
+CASE-NEUEF261XG0,NEUEF261XG0,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,49
+CASE-NEUEK191WYC,NEUEK191WYC,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,13
+CASE-NEUEL515MZ3,NEUEL515MZ3,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,36
+CASE-NEUEN017PCJ,NEUEN017PCJ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,21
+CASE-NEUET072VDG,NEUET072VDG,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,30
+CASE-NEUET956RE3,NEUET956RE3,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,42
+CASE-NEUEU318NY2,NEUEU318NY2,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,28
+CASE-NEUEY478NZP,NEUEY478NZP,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,29
+CASE-NEUFD119MT2,NEUFD119MT2,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,40
+CASE-NEUFE455EX1,NEUFE455EX1,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,48
+CASE-NEUFF278LJX,NEUFF278LJX,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,48
+CASE-NEUFG869YDY,NEUFG869YDY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,59
+CASE-NEUFH122WN7,NEUFH122WN7,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,14
+CASE-NEUFH461AAN,NEUFH461AAN,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,30
+CASE-NEUFV237VCZ,NEUFV237VCZ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,21
+CASE-NEUGC065VHR,NEUGC065VHR,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,49
+CASE-NEUGD965XVD,NEUGD965XVD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,15
+CASE-NEUGH995TFK,NEUGH995TFK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,38
+CASE-NEUGJ714MMC,NEUGJ714MMC,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,43
+CASE-NEUGK693CJZ,NEUGK693CJZ,Yes,Yes,Yes,Female,Not Hispanic or Latino,Asian,ALS,50
+CASE-NEUGL543NJ1,NEUGL543NJ1,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,21
+CASE-NEUGP781PDU,NEUGP781PDU,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,11
+CASE-NEUGR121TFD,NEUGR121TFD,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,17
+CASE-NEUGR539MVT,NEUGR539MVT,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,26
+CASE-NEUGU254CLF,NEUGU254CLF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,44
+CASE-NEUGW340YEB,NEUGW340YEB,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,22
+CASE-NEUHA779EKT,NEUHA779EKT,Yes,Yes,Yes,Female,Not Hispanic or Latino,Asian,ALS,46
+CASE-NEUHB491NGF,NEUHB491NGF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,18
+CASE-NEUHG644RYB,NEUHG644RYB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,18
+CASE-NEUHK991AVP,NEUHK991AVP,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,29
+CASE-NEUHL096UF0,NEUHL096UF0,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Non-ALS MND,37
+CASE-NEUHL814WMU,NEUHL814WMU,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Non-ALS MND,41
+CASE-NEUHL999WWT,NEUHL999WWT,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,21
+CASE-NEUHM532NDD,NEUHM532NDD,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,22
+CASE-NEUHP073VJ7,NEUHP073VJ7,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,60
+CASE-NEUHR975AFM,NEUHR975AFM,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,35
+CASE-NEUHT665KDA,NEUHT665KDA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,33
+CASE-NEUHV216EHA,NEUHV216EHA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,19
+CASE-NEUHW530WD8,NEUHW530WD8,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,23
+CASE-NEUHW590KBH,NEUHW590KBH,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,13
+CASE-NEUHY206ZEQ,NEUHY206ZEQ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,29
+CASE-NEUHZ364FZW,NEUHZ364FZW,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,45
+CASE-NEUJA666PYD,NEUJA666PYD,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,10
+CASE-NEUJC191RLE,NEUJC191RLE,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,23
+CASE-NEUJE592JXB,NEUJE592JXB,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,34
+CASE-NEUJG311WGV,NEUJG311WGV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,30
+CASE-NEUJG344BTU,NEUJG344BTU,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,60
+CASE-NEUJG885PY7,NEUJG885PY7,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,32
+CASE-NEUJH197AK2,NEUJH197AK2,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,16
+CASE-NEUJH436DPG,NEUJH436DPG,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,24
+CASE-NEUJK720JCL,NEUJK720JCL,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,24
+CASE-NEUJL547WVQ,NEUJL547WVQ,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,40
+CASE-NEUJL595JAZ,NEUJL595JAZ,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,ALS,31
+CASE-NEUJP437YZ0,NEUJP437YZ0,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,40
+CASE-NEUJP935AVF,NEUJP935AVF,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,31
+CASE-NEUJT708HZL,NEUJT708HZL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,47
+CASE-NEUJX780XXK,NEUJX780XXK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,17
+CASE-NEUJX990GR5,NEUJX990GR5,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,40
+CASE-NEUJY426MBU,NEUJY426MBU,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,15
+CASE-NEUJY536DKF,NEUJY536DKF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,22
+CASE-NEUKA429GAC,NEUKA429GAC,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,46
+CASE-NEUKA860NUG,NEUKA860NUG,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,41
+CASE-NEUKJ497WBB,NEUKJ497WBB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,33
+CASE-NEUKK433LRC,NEUKK433LRC,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,46
+CASE-NEUKP160HX8,NEUKP160HX8,Yes,Yes,Yes,Male,Not Hispanic or Latino,Asian,ALS,28
+CASE-NEUKR376CW3,NEUKR376CW3,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,31
+CASE-NEUKV547CFA,NEUKV547CFA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,41
+CASE-NEUKY696CC9,NEUKY696CC9,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,34
+CASE-NEUKZ850KXU,NEUKZ850KXU,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,49
+CASE-NEULA694DDC,NEULA694DDC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,41
+CASE-NEULA777DBT,NEULA777DBT,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,22
+CASE-NEULC015VD9,NEULC015VD9,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,60
+CASE-NEULC153TP4,NEULC153TP4,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,49
+CASE-NEULD354RZB,NEULD354RZB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,22
+CASE-NEULD729BGF,NEULD729BGF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Non-ALS MND,48
+CASE-NEULH618DXF,NEULH618DXF,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,33
+CASE-NEULH729AU2,NEULH729AU2,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,41
+CASE-NEULJ823EJD,NEULJ823EJD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,43
+CASE-NEULK071LRJ,NEULK071LRJ,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,42
+CASE-NEULL588ALG,NEULL588ALG,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,11
+CASE-NEULM479YNK,NEULM479YNK,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,ALS,41
+CASE-NEULM691PBK,NEULM691PBK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Non-ALS MND,31
+CASE-NEULN113GMA,NEULN113GMA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,50
+CASE-NEULP953KE7,NEULP953KE7,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,45
+CASE-NEULP998KDJ,NEULP998KDJ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,18
+CASE-NEULT851ENP,NEULT851ENP,Yes,Yes,Yes,Male,Not Hispanic or Latino,Asian,ALS,24
+CASE-NEULY177TTN,NEULY177TTN,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,12
+CASE-NEULY328CRJ,NEULY328CRJ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,32
+CASE-NEULZ548ZXV,NEULZ548ZXV,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,ALS,20
+CASE-NEUMA411HJP,NEUMA411HJP,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,58
+CASE-NEUMA640ZBR,NEUMA640ZBR,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,42
+CASE-NEUMB242CLN,NEUMB242CLN,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,38
+CASE-NEUMC278JK3,NEUMC278JK3,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,47
+CASE-NEUME498PCJ,NEUME498PCJ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,13
+CASE-NEUME929BY2,NEUME929BY2,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,39
+CASE-NEUMG659AUL,NEUMG659AUL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,50
+CASE-NEUMH556GHC,NEUMH556GHC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Asymptomatic ALS Gene carrier,60
+CASE-NEUMH634MKT,NEUMH634MKT,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,24
+CASE-NEUMK513KKZ,NEUMK513KKZ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Asymptomatic ALS Gene carrier,35
+CASE-NEUMN012EVP,NEUMN012EVP,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,15
+CASE-NEUMN219VGE,NEUMN219VGE,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,60
+CASE-NEUMN370TMN,NEUMN370TMN,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,35
+CASE-NEUMN922PMZ,NEUMN922PMZ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,20
+CASE-NEUMT098DUY,NEUMT098DUY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,44
+CASE-NEUMT422NBX,NEUMT422NBX,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,42
+CASE-NEUMW598YMT,NEUMW598YMT,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,38
+CASE-NEUMW642ATG,NEUMW642ATG,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,60
+CASE-NEUMX408BMF,NEUMX408BMF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,33
+CASE-NEUMY871DGF,NEUMY871DGF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,15
+CASE-NEUNG326MFP,NEUNG326MFP,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,18
+CASE-NEUNJ155KYL,NEUNJ155KYL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,28
+CASE-NEUNJ938DUL,NEUNJ938DUL,Yes,Yes,Yes,Female,Not Hispanic or Latino,Asian,ALS,37
+CASE-NEUNL303HLF,NEUNL303HLF,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,26
+CASE-NEUNP157FRQ,NEUNP157FRQ,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,35
+CASE-NEUNR020KV6,NEUNR020KV6,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,30
+CASE-NEUNR118PKF,NEUNR118PKF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,50
+CASE-NEUNX568KA8,NEUNX568KA8,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Non-ALS MND,39
+CASE-NEUNY225WHE,NEUNY225WHE,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Non-ALS MND,49
+CASE-NEUNZ171UYF,NEUNZ171UYF,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,24
+CASE-NEUPA955VWR,NEUPA955VWR,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,59
+CASE-NEUPD015UWX,NEUPD015UWX,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,46
+CASE-NEUPF731DTB,NEUPF731DTB,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,39
+CASE-NEUPG593UTV,NEUPG593UTV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,39
+CASE-NEUPJ837WUD,NEUPJ837WUD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,44
+CASE-NEUPK142YFD,NEUPK142YFD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,49
+CASE-NEUPK546ZLD,NEUPK546ZLD,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,17
+CASE-NEUPM937TMY,NEUPM937TMY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,32
+CASE-NEUPR357AUF,NEUPR357AUF,Yes,Yes,Yes,Female,Hispanic or Latino,White,ALS,23
+CASE-NEUPU527GZL,NEUPU527GZL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,58
+CASE-NEUPY050ANK,NEUPY050ANK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,36
+CASE-NEURF720KHA,NEURF720KHA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,27
+CASE-NEURJ362MXH,NEURJ362MXH,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,21
+CASE-NEURJ448YCV,NEURJ448YCV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,33
+CASE-NEURR881FKY,NEURR881FKY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,13
+CASE-NEURT008RBN,NEURT008RBN,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,49
+CASE-NEURT785NE0,NEURT785NE0,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,58
+CASE-NEURX315DYH,NEURX315DYH,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,18
+CASE-NEURX909UL6,NEURX909UL6,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,10
+CASE-NEUTA057AF6,NEUTA057AF6,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,15
+CASE-NEUTB230DA3,NEUTB230DA3,Yes,Yes,Yes,Male,Not Hispanic or Latino,"Black/African American,American Indian/Alaska Native",ALS,17
+CASE-NEUTC791PVE,NEUTC791PVE,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,40
+CASE-NEUTD314VFT,NEUTD314VFT,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,19
+CASE-NEUTD866EAH,NEUTD866EAH,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,39
+CASE-NEUTJ613AH9,NEUTJ613AH9,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,11
+CASE-NEUTJ673HVL,NEUTJ673HVL,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,42
+CASE-NEUTK103LA2,NEUTK103LA2,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,33
+CASE-NEUTL257PNR,NEUTL257PNR,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,28
+CASE-NEUTL699WJ0,NEUTL699WJ0,Yes,Yes,Yes,Female,Hispanic or Latino,White,ALS,23
+CASE-NEUTM459HZV,NEUTM459HZV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,25
+CASE-NEUTM934BPY,NEUTM934BPY,Yes,Yes,Yes,Female,Hispanic or Latino,White,ALS,21
+CASE-NEUTU360YJY,NEUTU360YJY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,16
+CASE-NEUTV502UXV,NEUTV502UXV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,43
+CASE-NEUUC458RFT,NEUUC458RFT,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,38
+CASE-NEUUD158CJF,NEUUD158CJF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,36
+CASE-NEUUE852BB1,NEUUE852BB1,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,12
+CASE-NEUUF177PR6,NEUUF177PR6,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,41
+CASE-NEUUF613PHL,NEUUF613PHL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,30
+CASE-NEUUJ507EAB,NEUUJ507EAB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,40
+CASE-NEUUK960PF7,NEUUK960PF7,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Non-ALS MND,58
+CASE-NEUUL256UC9,NEUUL256UC9,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,19
+CASE-NEUUL292XRC,NEUUL292XRC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,39
+CASE-NEUUL311NRQ,NEUUL311NRQ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,30
+CASE-NEUUU506WZF,NEUUU506WZF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,37
+CASE-NEUUZ691KHN,NEUUZ691KHN,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,48
+CASE-NEUVF488XCF,NEUVF488XCF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,47
+CASE-NEUVP060WFG,NEUVP060WFG,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,26
+CASE-NEUVR636VTP,NEUVR636VTP,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,16
+CASE-NEUVR711TBR,NEUVR711TBR,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,43
+CASE-NEUVR814YCY,NEUVR814YCY,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,32
+CASE-NEUVU735HU6,NEUVU735HU6,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,27
+CASE-NEUVV115HWH,NEUVV115HWH,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,ALS,34
+CASE-NEUVV225XKB,NEUVV225XKB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,24
+CASE-NEUVW680LPK,NEUVW680LPK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,20
+CASE-NEUVW999FP9,NEUVW999FP9,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,18
+CASE-NEUVX902YNL,NEUVX902YNL,Yes,Yes,Yes,Male,Not Hispanic or Latino,"White,American Indian/Alaska Native",ALS,19
+CASE-NEUWD538KT3,NEUWD538KT3,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,11
+CASE-NEUWD781PHK,NEUWD781PHK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,35
+CASE-NEUWD946RDA,NEUWD946RDA,Yes,Yes,Yes,Female,Hispanic or Latino,White,ALS,38
+CASE-NEUWH380YHV,NEUWH380YHV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,21
+CASE-NEUWH955FJF,NEUWH955FJF,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,35
+CASE-NEUWJ389FC7,NEUWJ389FC7,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,21
+CASE-NEUWL486NRA,NEUWL486NRA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,34
+CASE-NEUWM344ZLM,NEUWM344ZLM,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,28
+CASE-NEUWX167DAH,NEUWX167DAH,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,20
+CASE-NEUWY079WUH,NEUWY079WUH,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,35
+CASE-NEUWZ387HEM,NEUWZ387HEM,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,33
+CASE-NEUWZ614ARQ,NEUWZ614ARQ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,31
+CASE-NEUWZ822EZ3,NEUWZ822EZ3,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,50
+CASE-NEUXC114JYA,NEUXC114JYA,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,41
+CASE-NEUXD265LJ8,NEUXD265LJ8,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,46
+CASE-NEUXD985ZU1,NEUXD985ZU1,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,31
+CASE-NEUXG265ME9,NEUXG265ME9,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,25
+CASE-NEUXH833LL4,NEUXH833LL4,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,25
+CASE-NEUXP289KRC,NEUXP289KRC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,15
+CASE-NEUXP495XE2,NEUXP495XE2,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,26
+CASE-NEUXV122FN3,NEUXV122FN3,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,16
+CASE-NEUXW790VZK,NEUXW790VZK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,50
+CASE-NEUXZ486GG5,NEUXZ486GG5,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,49
+CASE-NEUXZ835CZN,NEUXZ835CZN,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,58
+CASE-NEUYB991JTA,NEUYB991JTA,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,44
+CASE-NEUYC055XPZ,NEUYC055XPZ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,30
+CASE-NEUYC198DCR,NEUYC198DCR,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,25
+CASE-NEUYC303AJY,NEUYC303AJY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,30
+CASE-NEUYD306HAB,NEUYD306HAB,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,41
+CASE-NEUYG208KVV,NEUYG208KVV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,26
+CASE-NEUYG298CA9,NEUYG298CA9,Yes,Yes,Yes,Male,Not Hispanic or Latino,"White, Asian",ALS,23
+CASE-NEUYG636WT7,NEUYG636WT7,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,49
+CASE-NEUYH924UCE,NEUYH924UCE,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,17
+CASE-NEUYJ400MGQ,NEUYJ400MGQ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,60
+CASE-NEUYJ705VN9,NEUYJ705VN9,Yes,Yes,Yes,Male,Not Hispanic or Latino,Asian,ALS,38
+CASE-NEUYK012ATK,NEUYK012ATK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,47
+CASE-NEUYK029WUU,NEUYK029WUU,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,13
+CASE-NEUYP226CPW,NEUYP226CPW,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,37
+CASE-NEUYP235ZLD,NEUYP235ZLD,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,19
+CASE-NEUYR166GN9,NEUYR166GN9,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,46
+CASE-NEUYR183FYF,NEUYR183FYF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,34
+CASE-NEUYY493DR8,NEUYY493DR8,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,59
+CASE-NEUYY614DN8,NEUYY614DN8,Yes,Yes,Yes,Female,Not Hispanic or Latino,Asian,ALS,39
+CASE-NEUYY878JGP,NEUYY878JGP,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,22
+CASE-NEUYZ462TBW,NEUYZ462TBW,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,60
+CASE-NEUZD231YZ6,NEUZD231YZ6,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,27
+CASE-NEUZE432DZM,NEUZE432DZM,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,41
+CASE-NEUZE814JZF,NEUZE814JZF,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,ALS,46
+CASE-NEUZF473UEP,NEUZF473UEP,Yes,Yes,Yes,Female,Hispanic or Latino,White,ALS,38
+CASE-NEUZK054DP5,NEUZK054DP5,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,27
+CASE-NEUZP278MR4,NEUZP278MR4,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,20
+CASE-NEUZR615PKX,NEUZR615PKX,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,45
+CASE-NEUZT902WVB,NEUZT902WVB,Yes,Yes,Yes,Male,Hispanic or Latino,White,ALS,25
+CASE-NEUZV656DD1,NEUZV656DD1,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,ALS,16
+CASE-NEUZW291KJY,NEUZW291KJY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,59
+CASE-NEUZW701NNF,NEUZW701NNF,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,28
+CASE-NEUZX521TKK,NEUZX521TKK,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,12
+CASE-NEUZX663FZ2,NEUZX663FZ2,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,59
+CASE-NEUZX847VWV,NEUZX847VWV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,17
+CASE-NEUZY975XKL,NEUZY975XKL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,ALS,24
+CTRL-NEUAA485DZL,NEUAA485DZL,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,38
+CTRL-NEUAG120VWW,NEUAG120VWW,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,59
+CTRL-NEUBU578NX3,NEUBU578NX3,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,58
+CTRL-NEUCA748GF2,NEUCA748GF2,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,15
+CTRL-NEUCE403VM7,NEUCE403VM7,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,Healthy Control,59
+CTRL-NEUCV136DHM,NEUCV136DHM,Yes,Yes,Yes,Male,Not Hispanic or Latino,Asian,Healthy Control,17
+CTRL-NEUCV809LL4,NEUCV809LL4,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,13
+CTRL-NEUDA782GW3,NEUDA782GW3,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,10
+CTRL-NEUDD665KML,NEUDD665KML,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,60
+CTRL-NEUDM126GNG,NEUDM126GNG,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,10
+CTRL-NEUDT762KUL,NEUDT762KUL,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,28
+CTRL-NEUEA702XRF,NEUEA702XRF,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,34
+CTRL-NEUEB210XRC,NEUEB210XRC,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,29
+CTRL-NEUET121DA6,NEUET121DA6,Yes,Yes,Yes,Female,Not Hispanic or Latino,Black/African American,Healthy Control,43
+CTRL-NEUEU392AE8,NEUEU392AE8,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,1
+CTRL-NEUFL733GX5,NEUFL733GX5,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,40
+CTRL-NEUGM959DE2,NEUGM959DE2,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,50
+CTRL-NEUHE723FGT,NEUHE723FGT,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,14
+CTRL-NEUHY905BUE,NEUHY905BUE,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,60
+CTRL-NEUJH928PGD,NEUJH928PGD,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,58
+CTRL-NEUJX341NDP,NEUJX341NDP,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,13
+CTRL-NEUMA002VLD,NEUMA002VLD,Yes,Yes,Yes,Male,Not Hispanic or Latino,"White,American Indian/Alaska Native",Healthy Control,31
+CTRL-NEUMF089KLV,NEUMF089KLV,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,29
+CTRL-NEUMF196GPV,NEUMF196GPV,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,59
+CTRL-NEUML507PFJ,NEUML507PFJ,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,29
+CTRL-NEUMT184NWC,NEUMT184NWC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,18
+CTRL-NEUMV031UD8,NEUMV031UD8,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,60
+CTRL-NEUNB744CAL,NEUNB744CAL,Yes,Yes,Yes,Female,Hispanic or Latino,White,Healthy Control,58
+CTRL-NEUNC876ZB2,NEUNC876ZB2,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,37
+CTRL-NEUNN472ACB,NEUNN472ACB,Yes,Yes,Yes,Male,Not Hispanic or Latino,Black/African American,Healthy Control,39
+CTRL-NEUNW343RXP,NEUNW343RXP,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,13
+CTRL-NEUPH301NNX,NEUPH301NNX,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,12
+CTRL-NEUPL878MTL,NEUPL878MTL,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,20
+CTRL-NEUPM433ADK,NEUPM433ADK,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,49
+CTRL-NEUPW536ZKZ,NEUPW536ZKZ,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,29
+CTRL-NEURV546WMW,NEURV546WMW,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,32
+CTRL-NEUTD932VFY,NEUTD932VFY,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,50
+CTRL-NEUTZ821KW9,NEUTZ821KW9,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,35
+CTRL-NEUUV825HYF,NEUUV825HYF,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,5
+CTRL-NEUUX563RM1,NEUUX563RM1,Yes,Yes,Yes,Male,Not Hispanic or Latino,White,Healthy Control,59
+CTRL-NEUWN092BVG,NEUWN092BVG,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,25
+CTRL-NEUWT164JRQ,NEUWT164JRQ,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,22
+CTRL-NEUXC258VTR,NEUXC258VTR,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,26
+CTRL-NEUXP955XW7,NEUXP955XW7,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,36
+CTRL-NEUXU356GN0,NEUXU356GN0,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,44
+CTRL-NEUXW311EFC,NEUXW311EFC,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,30
+CTRL-NEUXY894VJR,NEUXY894VJR,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,41
+CTRL-NEUZA664DNH,NEUZA664DNH,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,50
+CTRL-NEUZL045YD3,NEUZL045YD3,Yes,Yes,Yes,Female,Not Hispanic or Latino,Asian,Healthy Control,23
+CTRL-NEUZR532AA4,NEUZR532AA4,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,46
+CTRL-NEUZX866LAD,NEUZX866LAD,Yes,Yes,Yes,Female,Not Hispanic or Latino,White,Healthy Control,48

@@ -1,0 +1,60 @@
+{
+  "arguments": {
+    "annotation_release": "GENCODE_46",
+    "biological_interpretation_tsv": "fusion.biological.tsv",
+    "dia_database_metadata_tsv": "fusion.metadata.tsv",
+    "digest_trypsin": true,
+    "digested_max_peptide_length": 40,
+    "digested_min_peptide_length": 7,
+    "digested_peptide_tsv": "fusion.peptides.tsv",
+    "early_stop_aa_cutoff": 30,
+    "exclude_frameshift_from_dia": true,
+    "exclude_incomplete_cds": true,
+    "exclude_nmd_from_dia": true,
+    "exclude_truncated_from_dia": true,
+    "filtered_cds_fasta": "fusion.primary.cds.fasta",
+    "filtered_protein_fasta": "fusion.primary.fasta",
+    "fusioninspector": [
+      "events/batch1/S1.FusionInspector.fusions.abridged.tsv"
+    ],
+    "genome": "references/genome.fa",
+    "gtf_db": "references/annotation.db",
+    "include_donor_only_products": false,
+    "max_breakpoint_snap_distance_nt": 25,
+    "max_missed_cleavages": 3,
+    "max_transcripts_per_gene": 3,
+    "min_protein_length": 30,
+    "min_retained_cds_nt": 30,
+    "min_split_reads_for_snapped_product": 2,
+    "nmd_distance_threshold_nt": 55,
+    "organism": "Homo_sapiens",
+    "out_sequence_sample_tsv": "fusion.sequence_samples.tsv",
+    "quantms_conservative": true,
+    "recursive_inputs": false,
+    "reference_peptide_cache": "reference.local.cache",
+    "reference_proteome": "references/proteome.fa",
+    "require_junction_peptide": true,
+    "require_unique_junction_peptide": true,
+    "sample_metadata": "sample_metadata.tsv",
+    "sample_metadata_lookup": {
+      "S1": {
+        "batch": "batch1",
+        "condition": "CASE",
+        "sample_id": "S1"
+      }
+    },
+    "workers": 4
+  },
+  "configuration_sha256": "85581100809b0f848ad0ac010c67880be714ea00931ede5c0f777e5e9e1e3191",
+  "input_sha256": {
+    "events/batch1/S1.FusionInspector.fusions.abridged.tsv": "2d60e7841a57d822bde21ca0b89db8641627d783f7b72f614900c4e9d36ff5de",
+    "reference.local.cache": "28329f76f35f89ce28bb8e45466342d5d81d9dfde64f434ecaebd328eac7c013",
+    "references/annotation.db": "01035dd466c23464179a629483b0c86e47bd306f8e4529cccec5eef14d5c0476",
+    "references/genome.fa": "451476b01ae0964a98a9774c45b2b1f0b89589890cf6f7f8274401db144b0487",
+    "references/proteome.fa": "6ebd56693c829c487fce730354837624c2fc742bd46b3eedd51200df1e3c1e8f",
+    "sample_metadata.tsv": "8d086373bd83a8ca3eae14db1781ee9fac8ce61b613e8e25b62495ad4f7af98e"
+  },
+  "schema_version": "pgdb-producer-run-v1",
+  "script": "fusion_pipeline.py",
+  "software_version": "0.1.0"
+}

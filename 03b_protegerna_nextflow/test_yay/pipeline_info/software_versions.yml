@@ -1,0 +1,74 @@
+{
+  "PROTEGERNA:VALIDATE:BUILD_REFERENCE_PEPTIDE_CACHE": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  },
+  "PROTEGERNA:VALIDATE:CREATE_GENCODE_DB": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  },
+  "PROTEGERNA:VALIDATE:VALIDATE_GENCODE_TRANSLATION": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  },
+  "PROTEGERNA:SPLICE:RMATS_TO_PROTEIN": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  },
+  "PROTEGERNA:SPLICE:SUPPA_TO_PROTEIN": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  },
+  "PROTEGERNA:FUSIONINSPECTOR_TO_PROTEIN": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  },
+  "PROTEGERNA:MERGE_PROTEOGENOMIC_DATABASE": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  },
+  "PROTEGERNA:PROTEOGENOMIC_FASTA_QC": {
+    "python": "3.11.17",
+    "proteogenomic_source_sha256": "b19801a02456ea1df6e68ed7f64d4c049acac46243bd54f67d9bfe10a74e1390",
+    "biopython": "1.88",
+    "gffutils": "0.14",
+    "pandas": "3.0.1",
+    "pyfaidx": "0.9.0.4",
+    "tqdm": "4.70.0"
+  }
+}

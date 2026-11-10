@@ -1,0 +1,2 @@
+ID	GeneID	geneSymbol	chr	strand	exonStart_0base	exonEnd	upstreamES	upstreamEE	downstreamES	downstreamEE	IJC_SAMPLE_1	SJC_SAMPLE_1	IJC_SAMPLE_2	SJC_SAMPLE_2	IncFormLen	SkipFormLen	PValue	FDR	IncLevel1	IncLevel2	IncLevelDifference
+1	ENSG00000000001	GENE1	chr1	+	100	130	0	60	200	263	20,25	10,15	15,20	20,25	150	100	0.001	0.01	0.7,0.8	0.4,0.5	0.3
