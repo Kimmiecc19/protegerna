@@ -1,0 +1,6 @@
+batch	dia_files	peptides_mapped_to_fusion_sequences	also_mapped_to_reference_sequence	also_mapped_to_reference_pct	fusion_junction_peptides_observed	unique_junction_peptides	unique_junction_files	unique_junction_median_spectrum_similarity	unique_junction_median_pep	report_rows_with_fusion_id	of_which_also_reference_id_pct	passing_report_rows
+2	66	4827	4788	99.19	2	GERAVLKQVHPDTGISSKAMGIMNSFVNDIFER	65 (50/15)	0.758	0.0025	300846	99.26	4013561
+3	73	4831	4796	99.28	3	GERAVLKQVHPDTGISSKAMGIMNSFVNDIFER	69 (47/22)	0.763	0.0016	320087	99.32	4256628
+4	66	4734	4699	99.26	4	GERAVLKQVHPDTGISSKAMGIMNSFVNDIFER	64 (47/17)	0.772	0.0006	285517	99.29	3800515
+5	71	4783	4747	99.25	3	GERAVLKQVHPDTGISSKAMGIMNSFVNDIFER	65 (43/22)	0.748	0.0015	311282	99.29	4125256
+6	65	4698	4661	99.21	2	GERAVLKQVHPDTGISSKAMGIMNSFVNDIFER	59 (45/14)	0.753	0.0053	275634	99.27	3683232

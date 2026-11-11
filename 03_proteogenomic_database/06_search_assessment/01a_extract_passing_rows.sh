@@ -1,5 +1,9 @@
 #!/bin/bash
 # Usage: 01a_extract_passing_rows.sh report.tsv outprefix
+# for b in 1 2 3 4 5 6; do
+#  bash 01a_extract_passing_rows.sh ../05_proteomic_search/02b_results_quantmsdiann_pgdb/pgdb_v5_batch$b/quant_tables/diann_report.tsv 01a_extract_passing_rows/v5_b$b
+#done
+
 
 report="$1"
 out_prefix="$2"

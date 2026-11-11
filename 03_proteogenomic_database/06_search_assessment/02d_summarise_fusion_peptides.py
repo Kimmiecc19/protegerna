@@ -35,9 +35,10 @@ Outputs:
   <out_prefix>.junction_peptides.tsv one row per batch and observed fusion-junction peptide
 
 Usage:
-  python 02d_summarise_fusion_peptides.py --six-dir results/06_search_assessment \
-      --pgdb-peptides results/pgdb_publication_rerun_v5/proteogenomic_peptides.tsv \
-      --out-prefix results/06_search_assessment/table_5_5_fusion_peptides
+  python 02d_summarise_fusion_peptides.py \
+  --six-dir . \
+  --batches 1 2 3 4 5 6 \
+  --out-prefix 02d_summarise_fusion_peptides/table_5_5_fusion_peptides
 
 Needs: Python 3, pandas, numpy.
 """
