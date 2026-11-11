@@ -42,7 +42,6 @@ Keep report rows passing all four q-value filters (≤ 0.01).
 - **Outputs:** 01a_extract_passing_rows/{v5,ref}_b{1..6}.pass.tsv.gz, .counts.txt
 - **Run record:** *.counts.txt
 - **Run for the dissertation:** 2026-10-27
-- **Previous name:** `six_batch_assessment/extract.sh`
 
 ```bash
 for b in 1 2 3 4 5 6; do
@@ -89,7 +88,6 @@ All reference-vs-proteogenomic search metrics (Tables 5.7, 5.9).
 - **Inputs:** {v5,ref}_bN.pass.tsv.gz; v5_id_source.tsv; small/ tables
 - **Outputs:** 02a_compare_reference_and_proteogenomic/reference_vs_v5_metrics.tsv
 - **Run for the dissertation:** 2026-10-28
-- **Previous name:** `six_batch_assessment/compare_reference_vs_v5.py`
 
 ```bash
 python 02a_compare_reference_and_proteogenomic.py . 02a_compare_reference_and_proteogenomic/reference_vs_v5_metrics.tsv   # "." = this folder; the 01a/01b/01c subfolders are found automatically
@@ -103,7 +101,6 @@ Peptides only in splice/fusion entries and absent from reference DB, UniProt and
 - **Inputs:** pass tables; v5_id_source.tsv; reference FASTAs
 - **Outputs:** 02b_find_novel_candidate_peptides/custom_only_peptides_b1to6.tsv
 - **Run for the dissertation:** 2026-10
-- **Previous name:** `six_batch_assessment/check_custom_only_peptides.py`
 
 ```bash
 python 02b_find_novel_candidate_peptides.py . ../05_proteomic_search/01_results_make_reference_database/human_reference_deduplicated.fasta ../../04_integration/data/UP000005640_9606.fasta.gz ../../04_integration/data/UP000005640_9606_additional.fasta.gz /path/to/gencode.v46.pc_translations.fa.gz 02b_find_novel_candidate_peptides/custom_only_peptides_b1to6.tsv
@@ -117,7 +114,6 @@ In-silico digest of both databases vs observed peptide lengths (Table 5.8, searc
 - **Inputs:** both FASTAs; pass tables
 - **Outputs:** 02c_compare_peptide_lengths/table_5_10_peptide_lengths.tsv
 - **Run for the dissertation:** 2026-10-28
-- **Previous name:** `chapter5_analyses/table_5_10_peptide_lengths.py`
 - **Note:** File name keeps the old table number (5.10); the table is now Table 5.8.
 
 ```bash
@@ -132,7 +128,6 @@ Peptides mapped to fusion-associated sequences per batch (Table 5.5).
 - **Inputs:** pass tables; v5_id_source.tsv; proteogenomic_peptides.tsv
 - **Outputs:** 02d_summarise_fusion_peptides/junction_peptides.tsv.gz (table_5_5_fusion_peptides.tsv not saved)
 - **Run for the dissertation:** 2026-11
-- **Previous name:** `objective3_new_scripts/06_search_assessment/02d_summarise_fusion_peptides.py`
 - **Note:** Reproduces every Table 5.5 value; save the table output.
 
 ```bash
@@ -147,7 +142,6 @@ Composition of v5 vs v7 and fusion consistency across samples.
 - **Inputs:** v5 and v7 database folders
 - **Outputs:** 02_compare_search_and_revised_databases/v5_v7_comparison.tsv
 - **Run for the dissertation:** 2026-10-28
-- **Previous name:** `05_ALS_integration/proteogenomic_db_compare_v5_v7/chapter5_analyses/compare_v5_v7_databases.py`
 - **Note:** An identical copy sits in 04_revised_database/02_compare_search_and_revised_databases.py.
 
 ```bash

@@ -42,7 +42,6 @@ Reheader per-participant raw VCFs with cohort sample names for the raw-call revi
 - **Outputs:** fixed_vcf_names/*.vcf(.gz); 01a_fixed_vcf_names/fixed_vcf_list.txt
 - **Run record:** fixed_vcf_list.txt
 - **Run for the dissertation:** 2026-09-29
-- **Previous name:** `2_SV_analysis/4_sv_analysis/code_sv_analysis_final/prep_sarek_for_review_29092026.sh`
 - **Before running:** Pass the per-participant Sarek VCF folders as arguments (controlled access), or set `INPUT_DIR_GLOB`. Reheadered VCFs go to `01a_fixed_vcf_names/fixed_vcf_names/` (override with `OUTPUT_DIR`); do not commit them.
 - **Note:** mkdir bug fixed 8 Nov 2026. The review (01b) read fixed_concat_vcf_names on the server.
 
@@ -59,7 +58,6 @@ Extract raw Manta/TIDDIT records matching each shortlisted event for every parti
 - **Outputs:** 01bc_results_raw_call_review/<set>/review_events.tsv, raw_record_matches.tsv, carrier_status.tsv, vcf_manifest.tsv
 - **Run record:** <set>/run_log.json (parameters, input MD5s)
 - **Run for the dissertation:** 2026-10-05
-- **Previous name:** `04_sv_review_extract.py / sv_review_extract.py`
 - **Before running:** The raw VCFs are controlled-access and are not in the repository; point `--input-dir` at the reheadered VCFs from `01a`.
 - **Note:** Raw VCFs are not in the repo, so this step cannot be re-run locally.
 
@@ -77,7 +75,6 @@ Split-read, discordant-pair, depth and context evidence per carrier and event; r
 - **Outputs:** 01bc_results_raw_call_review/<set>/evidence_per_{record,carrier,event}.tsv, evidence_summary.tsv, tiddit_cov_order_check.tsv
 - **Run record:** <set>/evidence_thresholds.json
 - **Run for the dissertation:** 2026-10-05
-- **Previous name:** `04_sv_review_evidence.py / sv_review_evidence.py`
 
 ```bash
 python 01c_score_raw_call_evidence.py --input-dir 01bc_results_raw_call_review/<set> --str-bed ../04_sv_prioritization/data/STRchive-disease-loci.hg38.general.bed --intersection-annotsv-files ../03_sv_annotation/02a_results_annotsv_filtered/octopusv_intersect_cohort_filtered_05102026/manta_tiddit.intersect.cohort.annotated.tsv   # defaults: --min-split 3 --min-pairs 3 --del-max-ratio 0.75 --dup-min-ratio 1.25 --max-lq 0.3 --case-n 296 --control-n 51
@@ -92,7 +89,6 @@ Re-evaluate the 50 filtered-intersection nominations under the final audit rules
 - **Outputs:** 02_results_audited_release/ (audited_candidates, primary_candidates, participant_support, integration_pairs, matching_sensitivity, raw_match_audit, consolidation_findings, summary.json)
 - **Run record:** 02_results_audited_release/input_checksums.json, release_parameters.json
 - **Run for the dissertation:** 2026-10-05
-- **Previous name:** `05_build_audited_release.py / build_audited_release.py`
 - **Note:** primary_candidates.tsv and participant_support.tsv feed Chapter 6.
 
 ```bash
@@ -108,7 +104,6 @@ Independent re-check of counts, PASS/genotype handling, matching limits and disp
 - **Outputs:** 02_results_audited_release/verification.json
 - **Run record:** verification.json
 - **Run for the dissertation:** 2026-10-05
-- **Previous name:** `05_verify_audited_release.py / verify_audited_release.py`
 
 ```bash
 python 02b_verify_audited_release.py --out-dir 02_results_audited_release --input-dir 01bc_results_raw_call_review/intersection_filtered

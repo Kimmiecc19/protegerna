@@ -40,7 +40,6 @@ Runs scripts 01–05 in order and writes run_manifest.json.
 - **Outputs:** 02_results_participant_linking/ (run.log, run_manifest.json)
 - **Run record:** 02_results_participant_linking/run_manifest.json
 - **Run for the dissertation:** 2026-10-24
-- **Previous name:** `13_run_objective4.py`
 - **Before running:** `lib/paths.py` resolves every input from this repository except the GENCODE v46 GTF: set `OBJ4_GTF=/path/to/Homo_sapiens_GRCh38_46.gtf` (or edit that line). Any other path can be overridden with `OBJ4_<NAME>`. Run `--check` first. Results go to `02_participant_linking/02_results_participant_linking/b1to6_<date>/` unless you pass `--out`.
 - **Note:** The run used the server copies (13a–13e, obj4_paths.py); names fixed in the repo copy on 8 Nov 2026.
 
@@ -58,7 +57,6 @@ Stage 1: link variant-only peptides to annotated isoform/fusion events in the sa
 - **Outputs:** 02_results_participant_linking/links_peptide_event.tsv, novel_peptides_detected.tsv, summary_stage1_feasibility.json
 - **Run record:** run_manifest.json
 - **Run for the dissertation:** 2026-10-24
-- **Previous name:** `13a_link_feasibility.py`
 - **Before running:** Run through `00_run_linking_pipeline.py`.
 
 ```bash
@@ -74,7 +72,6 @@ Stage 1b: PASS SV carriers among pooled-batch participants with cohort carrier c
 - **Outputs:** 02_results_participant_linking/sv_carriers.tsv
 - **Run record:** run_manifest.json
 - **Run for the dissertation:** 2026-10-24
-- **Previous name:** `13b_cache_sv_batch5.py`
 - **Before running:** Run through `00_run_linking_pipeline.py`.
 - **Note:** Re-run on 8 Nov with the local intersection VCF: identical to the saved sv_carriers.tsv.
 
@@ -91,7 +88,6 @@ Stage 2: SVs within 5 kb of isoform events or spanning fusion breakpoints (100 k
 - **Outputs:** 02_results_participant_linking/links_variant_event.tsv, chains_variant_event_peptide.tsv, summary.json
 - **Run record:** run_manifest.json
 - **Run for the dissertation:** 2026-10-24
-- **Previous name:** `13c_link_variant_event.py`
 - **Before running:** Run through `00_run_linking_pipeline.py`.
 
 ```bash
@@ -107,7 +103,6 @@ Stage 3: rare SVs (≤ 17 carriers) vs gene RNA and protein; tiers A/B/C.
 - **Outputs:** 02_results_participant_linking/variant_gene_rna_protein.tsv, variant_gene_rna_protein_summary.json
 - **Run record:** run_manifest.json
 - **Run for the dissertation:** 2026-10-24
-- **Previous name:** `13d_protein_rna_link.py`
 - **Before running:** Run through `00_run_linking_pipeline.py`.
 
 ```bash
@@ -123,7 +118,6 @@ Carrier-label permutation null for Stage 3 (600 permutations).
 - **Outputs:** 02_results_participant_linking/permutation_null_summary.json
 - **Run record:** run_manifest.json
 - **Run for the dissertation:** 2026-10-24
-- **Previous name:** `13e_permutation_null.py`
 - **Before running:** Run through `00_run_linking_pipeline.py`.
 - **Note:** Seed is fixed in the script (default_rng(1)).
 

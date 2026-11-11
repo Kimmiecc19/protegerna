@@ -83,7 +83,6 @@ Launcher: runs 01b once per omics domain with the domain query lists (Table 3.2)
 - **Outputs:** results/01ab_results_fetch_biotools/results_fetch_biotools_final/{domain}_fetch_biotools_sept2026.tsv (+ .functions.tsv, .publications.tsv, .manifest.json)
 - **Run record:** results/01ab_results_fetch_biotools/results_fetch_biotools_final/*_fetch_biotools_sept2026.tsv.manifest.json
 - **Run for the dissertation:** 2026-09-29
-- **Previous name:** `1_omics_tool_landscape/1_fetch_biotools/code_fetch_biotools/run_fetch_biotools_27082026.py`
 - **Before running:** Writes to `results/01ab_results_fetch_biotools/results_fetch_biotools_final/` by default. Re-fetching gives different numbers from the saved run.
 - **Note:** The manifests record the queries, counts and output MD5s.
 
@@ -100,7 +99,6 @@ bio.tools API retrieval, function/publication tables and citation counts (called
 - **Outputs:** as O1-01
 - **Run record:** as O1-01
 - **Run for the dissertation:** 2026-09-29
-- **Previous name:** `fetch_biotools_final2026.py`
 
 ```bash
 python 01b_fetch_biotools.py "[comma-separated queries]" [domain]_fetch_biotools_sept2026.tsv --citation-source dimensions
@@ -115,7 +113,6 @@ Scope classification, quality flags and candidate selection per domain (Tables 3
 - **Outputs:** results/02a_results_filter_biotools/ ({domain}_candidate_tools, _all_records_quality_flags, _all_function_operations, _filter_summary, citation/scope tables)
 - **Run record:** results/02a_results_filter_biotools/{domain}_reproducibility_manifest.json
 - **Run for the dissertation:** 2026-09-30
-- **Previous name:** `1_omics_tool_landscape/3_filter_biotools/code_filter_biotools/filter_biotools_final2026.R`
 - **Before running:** Reads the fetch TSVs from `results/01ab_results_fetch_biotools/results_fetch_biotools_final/` (only the `.functions.tsv` files and manifests are saved in the repository; the main `{domain}_fetch_biotools_sept2026.tsv` tables must be re-fetched with `01a` or copied in) and writes to `inputs.filter_results_dir` in `03_helpers/visualize_config.yaml` (`results/02a_results_filter_biotools/`).
 - **Note:** Manifest MD5 of the script (cfbba563…) differs from the current file; earlier map flagged the edits as needing confirmation.
 
@@ -131,7 +128,6 @@ Combine the per-domain filter summaries into Table 3.4.
 - **Inputs:** {domain}_filter_summary*.tsv
 - **Outputs:** results/02bc_results_edam_annotation/combined_filter_summaries_final.{csv,tsv}
 - **Run for the dissertation:** 2026-09-30
-- **Previous name:** `combine_filter_summaries.R`
 - **Before running:** Defaults: `--results-dir=results/02a_results_filter_biotools` (input) and `--output-dir=results/02bc_results_edam_annotation` (output). It reads `[omic]_filter_summary.tsv`, or the single suffixed copy (`_jan2026`) saved in the repository; run as below it reproduces the saved `combined_filter_summaries_final.csv`.
 
 ```bash
@@ -147,7 +143,6 @@ Map bio.tools function.operation annotations to the EDAM ontology snapshot.
 - **Outputs:** results/02bc_results_edam_annotation/ (all_edam_operations_mapped.tsv, edam_operation_crosswalk.tsv, edam_function_validation_sample.tsv). `all_edam_operations_mapped.tsv` is not saved in the repository; run this script to create it before `03a`.
 - **Run record:** results/02bc_results_edam_annotation/all_edam_operations_mapped.tsv.manifest.json
 - **Run for the dissertation:** 2026-09-30
-- **Previous name:** `1_omics_tool_landscape/3_filter_biotools/code_filter_biotools/map_edam_operations.py`
 
 ```bash
 python 02c_map_edam_operations.py --input "results/02a_results_filter_biotools/*_all_function_operations.tsv" --output results/02bc_results_edam_annotation/all_edam_operations_mapped.tsv --crosswalk-output results/02bc_results_edam_annotation/edam_operation_crosswalk.tsv --edam-owl results/02bc_results_edam_annotation/edam/EDAM.owl --aggregation-depth 1
@@ -162,7 +157,6 @@ Candidate-population analyses, statistics and figures (most Chapter 3 figures).
 - **Outputs:** results/03a_results_tool_analysis/*_20261005.{png,csv}
 - **Run record:** results/03a_results_tool_analysis/reproducibility_manifest_20261005.json
 - **Run for the dissertation:** 2026-10-05
-- **Previous name:** `1_omics_tool_landscape/4_tool_analysis/code_tool_analysis/visualize_biotools_final2026.R`
 - **Before running:** Uses `03_helpers/visualize_config.yaml` and the helpers in `03_helpers/` by default. Needs the 02a candidate and quality-flag TSVs (`*_candidate_tools.tsv`, `*_all_records_quality_flags.tsv`; only the multi-omics candidate TSV is saved in the repository, so re-run `02a` first) and `all_edam_operations_mapped.tsv` from `02c`. Writes to `results/03a_results_tool_analysis/` and, through `03b`, to `results/03b_results_tool_analysis_edam/`. Set `GITHUB_TOKEN` only if you refresh the GitHub cache (the saved run used the frozen cache).
 
 ```bash
@@ -178,7 +172,6 @@ EDAM coverage and curation analysis (Figure 3.4, Table 3A.1, Figure 3A.7).
 - **Outputs:** results/03b_results_tool_analysis_edam/*_20261005.{png,csv}
 - **Run record:** results/03b_results_tool_analysis_edam/edam_figure_audit_20261005.csv
 - **Run for the dissertation:** 2026-10-05
-- **Previous name:** `edam_curation_analysis_final2026.R`
 - **Before running:** Not run on its own: `03a_visualize_biotools.R` sources it and calls `run_edam_curation_analysis()`, writing to `results/03b_results_tool_analysis_edam/`.
 
 ```bash
@@ -194,7 +187,6 @@ Age-citation and registration analyses of the full retrieved population.
 - **Outputs:** results/03c_results_tool_analysis_full_population/*_full_population_20261008.{png,csv}
 - **Run record:** results/03c_results_tool_analysis_full_population/reproducibility_manifest_full_population_20261008.json
 - **Run for the dissertation:** 2026-10-08
-- **Previous name:** `visualize_age_registration_full_population.R`
 - **Before running:** Uses `03_helpers/visualize_config.yaml` and `03_helpers/` by default; needs the 02a `*_all_records_quality_flags.tsv` files (re-run `02a` first). Writes to `results/03c_results_tool_analysis_full_population/`.
 
 ```bash

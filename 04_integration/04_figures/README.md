@@ -30,7 +30,6 @@ Figures 6.1 and 6.3 (base R) from saved tables; re-themes QC, concordance and pa
 - **Dissertation:** Sections 6.3.7–6.3.8; Figure 6.1, Figure 6.3
 - **Inputs:** 01_single_layer/01e_results_sv_carrier_expression_scan_unfiltered/*_positive_control_by_length.tsv; 03_cross_layer/02_results_evaluation_table/evaluation_summary.tsv; QC rds/csv from 01_single_layer/01a_results_rna_differential_expression and 02a_results_protein_da_consortium; fgsea tables in 01_single_layer/03a_results_pathway_enrichment_{rna,protein}/results_fgsea_*_500
 - **Outputs:** 04_figures/01_results_combined_chapter6_figures/Figure_6.1_*.png/.pdf, Figure_6.3_*.png/.pdf (not saved in the repo)
-- **Previous name:** `18_retheme_and_make_chapter_figures.R + 18a_chapter_figures_base.R (figures/make_chapter6_figures.R)`
 - **Before running:** Reads the saved results of `01_single_layer/` (01a, 01e unfiltered, 02a consortium, 03a `*_500`) and `03_cross_layer/` (01, 02) from this repository; run from anywhere. The palette is `lib/thesis_palette.R`.
 - **Note:** Missing save_png/clean_pathway_label fixed 8 Nov 2026; Figures 6.1/6.3 PNGs regenerated identically before and after the fix.
 
@@ -39,6 +38,7 @@ Rscript 04_figures/01_combined_chapter6_figures.R
 ```
 
 The output folder (`results_interpretation/`) is not in the repository; the figures can be regenerated from the saved tables. Figure 6.2 (FusionInspector views) was captured from the rnafusion igv-reports and is not saved.
+Only a few examples of this script's outputs are shown.
 
 ## Data access
 

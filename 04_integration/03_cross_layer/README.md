@@ -39,7 +39,6 @@ Gene evidence matrix, RNA–protein concordance, primary-candidate carrier effec
 - **Outputs:** 01_results_cross_omics_agreement/ (gene_evidence_matrix, layer_intersections, rna_protein_concordance*, sv_candidate_carrier_effects, fusion_peptide_chains, summary.json)
 - **Run record:** summary.json
 - **Run for the dissertation:** 2026-10-22
-- **Previous name:** `14_cross_omics_agreement.py`
 - **Note:** Saved gene_evidence_matrix predates the EphA3 case fix (one row differs on re-run).
 
 ```bash
@@ -55,7 +54,6 @@ Filtered fusions whose breakpoints both lie inside a rare SV in the same partici
 - **Outputs:** 04_results_sv_fusion_overlap/ (sv_fusion_overlap*.tsv, summary.json)
 - **Run record:** summary.json
 - **Run for the dissertation:** 2026-10-22
-- **Previous name:** `17_sv_fusion_overlap.py`
 - **Note:** Re-run on 8 Nov: all four outputs byte-identical to the saved files.
 
 ```bash
@@ -70,7 +68,6 @@ pysam depth, outward-facing pairs and split reads for the six fusion-containing 
 - **Inputs:** re-obtained CRAMs of six carriers; GRCh38_full_analysis_set_plus_decoy_hla.fa
 - **Outputs:** 03_check_duplication_in_wgs/wgs_duplication_check_results.tsv; igv_wgs_duplications/<participant>/igv_snapshot.png
 - **Run for the dissertation:** 2026-11
-- **Previous name:** `dupcheck.py (genomics/wgs_duplication_check)`
 - **Before running:** Needs the CRAM files of the six carriers (controlled access) and pysam. Set `CRAM_DIR` (CRAMs found as `$CRAM_DIR/<participant>/*/*.cram`) and `WGS_REFERENCE`.
 - **Note:** Duplicate dupcheck.py removed 8 Nov 2026.
 
@@ -87,7 +84,6 @@ Single-layer vs integrated conclusion, change class and evidence level for every
 - **Outputs:** 02_results_evaluation_table/ (evaluation_full, evaluation_main_table, evaluation_summary, summary.json)
 - **Run record:** 02_results_evaluation_table/summary.json (inputs)
 - **Run for the dissertation:** 2026-11-07 (EphA3 fix, spectral review)
-- **Previous name:** `16_integration_evaluation_table.py`
 - **Note:** Seed 1. Re-run on 8 Nov: all three tables byte-identical to the saved files.
 
 ```bash

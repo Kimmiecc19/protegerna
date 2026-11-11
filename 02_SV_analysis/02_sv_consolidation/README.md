@@ -37,7 +37,6 @@ OctopuSV clean/correct (PASS, 50–100,000 bp), per-participant caller intersect
 - **Outputs:** 01_results_octopusv/{merged,stats,plots,circos}/
 - **Run record:** none (merged VCFs dated 02 Sep 2026 on the server: octopusv_merged_02092026)
 - **Run for the dissertation:** 2026-09-02
-- **Previous name:** `2_SV_analysis/2_octopusv/code_octopusv/octopusv_manta_tiddit.sh`
 - **Note:** A dated copy (octopusv_manta_tiddit_27082026.sh) was a duplicate.
 
 ```bash
@@ -51,7 +50,6 @@ OctopuSV callset figures (SV types).
 - **Dissertation:** Sections 4.2.4, 4.3.3
 - **Inputs:** 01_results_octopusv/stats/*.stats.txt; reference .fai
 - **Outputs:** <out_dir>/figures, <out_dir>/tables (default 01_results_octopusv/thesis_figures)
-- **Previous name:** `2_SV_analysis/2_octopusv/code_octopusv/octopusv_stats_plots.R`
 - **Before running:** Defaults: `stats_dir` = `01_results_octopusv/stats`, `out_dir` = `01_results_octopusv/thesis_figures`. The reference index is not in the repository: pass it as the second argument or set `GRCH38_FAI`. The palette is found automatically in `01_biotools_landscape/03_helpers/` (or set `THESIS_PALETTE`).
 - **Note:** Figure 4A.1 panels in the repo come from octopusv stat (01_results_octopusv/stats/*_sv_types.png).
 
@@ -66,7 +64,6 @@ Chapter 4 figures: length spectrum, caller concordance, audit disposition.
 - **Dissertation:** Sections 4.2.4, 4.3.3, 4.3.7; Figure 4.3, Figure 4.4, Figure 4A.2
 - **Inputs:** 01_results_octopusv/merged/*.vcf; 02c prioritisation summaries; 05_sv_audit/02_results_audited_release
 - **Outputs:** 02b_sv_workflow_figures/{figures,tables,cache}/
-- **Previous name:** `2_SV_analysis/2_octopusv/code_octopusv/sv_workflow_figures.R`
 - **Before running:** Run after steps 04 and 05. Reads `01_results_octopusv/`, `../04_sv_prioritization/02c_results_prioritise_annotsv_events/` and `../05_sv_audit/02_results_audited_release/` and writes to `02b_sv_workflow_figures/` by default; the palette is found automatically.
 - **Note:** figures/make_chapter4_figures.R is a copy of this script; 02_sv_thesis_style.R is its style helper.
 

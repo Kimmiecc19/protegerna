@@ -40,7 +40,6 @@ Build the nf-core/rnafusion references (Arriba, STAR-Fusion, FusionCatcher).
 - **Outputs:** rnafusion reference folders (server only)
 - **Run record:** 02_03_params/rnafusion_build.config
 - **Run for the dissertation:** 2025-09
-- **Previous name:** `rnafusion_build_ref.sh`
 - **Before running:** Export `COSMIC_USERNAME` and `COSMIC_PASSWD` (never write them in the script or in `02_03_params/rnafusion.json`) and set `FUSION_REF_DIR` (reference output folder). Uses `02_03_params/rnafusion_build.config`.
 - **Note:** Never store the COSMIC user name or password in this script; pass them at run time.
 
@@ -84,7 +83,6 @@ Write an nf-core/rnasplice samplesheet (sample, fastq_1, fastq_2, strandedness, 
 - **Inputs:** per-batch FASTQ folders
 - **Outputs:** samplesheet_batchN_rnasplice.csv
 - **Run for the dissertation:** 2025
-- **Previous name:** `create_rnasplice_samplesheet.py`
 - **Note:** Writes strandedness = forward. The Answer ALS libraries are reverse-stranded, which is why the rnasplice quantitative outputs were not used (Section 5.2.5).
 
 ```bash

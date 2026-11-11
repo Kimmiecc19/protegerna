@@ -1,170 +1,134 @@
-# Combined chapter 6 figure script. Figures 6.1 and 6.3 use base R; the
-# additional QC, cross-omics, and pathway figures use ggplot2 and tidyverse.
-# Run from the Objective 4 project root after installing the packages below.
+# Recreate Objective 4 thesis-palette plots from saved analysis outputs.
+# Run from the Objective 4 project root after installing ggplot2/dplyr/readr.
+# Figures 6.1 and 6.3 use the saved TSVs directly; this script does not rerun models.
+
 suppressPackageStartupMessages({
   library(ggplot2)
   library(dplyr)
   library(readr)
   library(stringr)
 })
-# Paths below are relative to 04_integration/. Find this script's folder however it is run
-# (Rscript, RStudio "Source", or source()), then work from 04_integration/.
-script_dir <- local({
-  f <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE))
-  if (length(f)) return(dirname(normalizePath(f[1])))
-  for (fr in rev(sys.frames())) if (!is.null(fr$ofile)) return(dirname(normalizePath(fr$ofile)))
-  if (requireNamespace("rstudioapi", quietly = TRUE) && rstudioapi::isAvailable()) {
-    p <- tryCatch(rstudioapi::getSourceEditorContext()$path, error = function(e) "")
-    if (nzchar(p)) return(dirname(normalizePath(p)))
-  }
-  stop("Cannot locate this script; run it with Rscript or source() it by its path.")
-})
-project_dir <- normalizePath(file.path(script_dir, ".."))   # 04_integration/
-setwd(project_dir)
-source(file.path("lib", "thesis_palette.R"))
+source(file.path("code_ALS_integration", "thesis_palette.R"))
 set_thesis_geom_defaults()
-# Result folders of the earlier steps (relative to 04_integration/)
-single  <- "01_single_layer"
-cross   <- "03_cross_layer"
-out_dir <- file.path("04_figures", "01_results_combined_chapter6_figures")
-dir.create(out_dir, recursive = TRUE, showWarnings = FALSE)
-outline <- thesis_neutral[["outline"]]
-ink <- thesis_neutral[["ink"]]
-guide <- thesis_neutral[["guide"]]
-bg <- "white"
 
-save_figure <- function(path_png, path_pdf, width, height, draw) {
-  grDevices::png(path_png, width = width, height = height, units = "in", res = 300,
-                 bg = bg, type = if (capabilities("cairo")) "cairo" else getOption("bitmapType"))
-  draw()
-  grDevices::dev.off()
-  grDevices::pdf(path_pdf, width = width, height = height, bg = bg, useDingbats = FALSE)
-  draw()
-  grDevices::dev.off()
-}
-# ggplot figures (QC, concordance, pathway plots) are saved with save_png().
+results <- "results_ALS_integration"
+fig_dir <- file.path(results, "results_interpretation")
+dir.create(fig_dir, recursive = TRUE, showWarnings = FALSE)
+theme_set(theme_thesis(base_size = 11))
+
 save_png <- function(plot, path, width = 10, height = 6) {
   ggsave(path, plot, width = width, height = height, dpi = 300, bg = "white")
 }
-# Same pathway labels as 01_single_layer/03a_pathway_enrichment.R.
 clean_pathway_label <- function(x, width = 48) {
   x <- str_replace(x, "^(REACTOME|HALLMARK|GOCC|GOBP|GOMF|WP|KEGG|HP|PID)_", "\\1: ")
   str_wrap(str_replace_all(x, "_", " "), width = width)
 }
-sig_stars <- function(p) ifelse(p < .001, "***", ifelse(p < .01, "**", ifelse(p < .05, "*", "")))
+stars <- function(p) case_when(p < 0.001 ~ "***", p < 0.01 ~ "**", p < 0.05 ~ "*", TRUE ~ "")
 
-# Figure 6.1: expected-direction positive control.
-dir_scan <- file.path(single, "01e_results_sv_carrier_expression_scan_unfiltered")
-pc <- rbind(
-  transform(read.delim(file.path(dir_scan, "intersection_positive_control_by_length.tsv")),
-            table_label = "Intersection (both callers)"),
-  transform(read.delim(file.path(dir_scan, "union_only_positive_control_by_length.tsv")),
-            table_label = "Union-only (exploratory)")
+# -----------------------------------------------------------------------------
+# Figure 6.1: positive control for the SV expression scan
+# Uses the unfiltered scan tables shown in the Objective 4 chapter.
+# -----------------------------------------------------------------------------
+pc_files <- c(
+  intersection = file.path(results, "results_sv_carrier_expression_scan_unfiltered",
+                            "intersection_positive_control_by_length.tsv"),
+  `union-only` = file.path(results, "results_sv_carrier_expression_scan_unfiltered",
+                           "union_only_positive_control_by_length.tsv")
 )
-len_levels <- c("<1kb", "1-10kb", "10-100kb")
-type_levels <- c("DEL", "DUP")
-bar_cols <- c(DEL = thesis_secondary[["mint"]], DUP = thesis_secondary[["flame"]])
+pc <- bind_rows(lapply(names(pc_files), function(nm) {
+  x <- read_tsv(pc_files[[nm]], show_col_types = FALSE)
+  x$table <- nm
+  x
+})) %>%
+  mutate(table = factor(table, levels = c("intersection", "union-only"),
+                        labels = c("Intersection (both callers)", "Union-only (exploratory)")),
+         sv_type = factor(sv_type, levels = c("DEL", "DUP"),
+                          labels = c("Deletions (expected ↓)", "Duplications (expected ↑)")),
+         len_bin = factor(len_bin, levels = c("<1kb", "1-10kb", "10-100kb")),
+         expected_pct = 100 * frac_in_expected_direction,
+         bar_height = expected_pct - 35,
+         star = stars(sign_test_p),
+         n_label = paste0("n=", format(pairs, big.mark = ",")))
 
-draw_61 <- function() {
-  old <- par(no.readonly = TRUE); on.exit(par(old))
-  par(mfrow = c(1, 2), mar = c(5.1, 4.2, 3.7, 1.2), oma = c(0.5, 0, 2.3, 0),
-      col = ink, fg = outline, bg = bg, cex = 0.95)
-  for (tbl in c("Intersection (both callers)", "Union-only (exploratory)")) {
-    d <- pc[pc$table_label == tbl, ]
-    by_type <- lapply(type_levels, function(tp) d[d$sv_type == tp, ])
-    vals <- t(sapply(by_type, function(z) z$frac_in_expected_direction[match(len_levels, z$len_bin)])) * 100
-    ns <- t(sapply(by_type, function(z) z$pairs[match(len_levels, z$len_bin)]))
-    ps <- t(sapply(by_type, function(z) z$sign_test_p[match(len_levels, z$len_bin)]))
-    # Start every column at the displayed 35% axis. A 42% result therefore
-    # rises to 42%, below the 50% reference line but above the x-axis.
-    heights <- vals - 35
-    centers <- barplot(heights, beside = TRUE, names.arg = rep("", length(len_levels)),
-                       col = bar_cols[type_levels], border = outline, lwd = 0.7,
-                       ylim = c(0, 31), axes = FALSE, xlab = "",
-                       ylab = "Pairs changing in expected direction (%)",
-                       main = tbl, cex.main = 1.0, cex.names = 0.85)
-    abline(h = seq(0, 30, 5), col = thesis_neutral[["grid"]], lwd = 0.7)
-    abline(h = 15, col = guide, lty = 2, lwd = 1.1)
-    axis(2, at = seq(0, 30, 5), labels = seq(35, 65, 5), las = 1,
-         col.axis = ink, cex.axis = 0.8)
-    axis(1, at = colMeans(centers), labels = len_levels, tick = FALSE, line = 0.7, cex.axis = 0.8)
-    mtext("SV length", side = 1, line = 3.2, cex = 0.9, col = ink)
-    box(col = outline)
-    for (j in seq_along(type_levels)) for (i in seq_along(len_levels)) {
-      text(centers[j, i], 2.5, labels = paste0("n=", format(ns[j, i], big.mark = ",")),
-           srt = 90, adj = c(0, 0.5), cex = 0.62, col = ink, xpd = NA)
-      text(centers[j, i], heights[j, i] + 1.1,
-           labels = sig_stars(ps[j, i]),
-           cex = 0.85, col = ink, xpd = NA)
-    }
-    legend("topright", legend = c("Deletions (expected decrease)", "Duplications (expected increase)"),
-           fill = bar_cols[type_levels], border = outline, bty = "n", cex = 0.69)
-  }
-  mtext("SV expression scan positive control", outer = TRUE, side = 3,
-        line = 0.6, font = 2, cex = 1.12, col = ink)
-}
-save_figure(file.path(out_dir, "Figure_6.1_SV_expression_scan_positive_control.png"),
-            file.path(out_dir, "Figure_6.1_SV_expression_scan_positive_control.pdf"),
-            11, 6.4, draw_61)
+p61 <- ggplot(pc, aes(len_bin, bar_height, fill = sv_type)) +
+  geom_hline(yintercept = 15, colour = thesis_neutral[["guide"]],
+             linetype = "dashed", linewidth = 0.45) +
+  geom_col(position = position_dodge(width = 0.82), width = 0.76,
+           colour = thesis_neutral[["outline"]], linewidth = 0.2) +
+  geom_text(aes(y = 2.5, label = n_label), position = position_dodge(width = 0.82),
+            angle = 90, hjust = 1.05, vjust = 0.5, size = 2.6, colour = thesis_neutral[["ink"]]) +
+  geom_text(aes(y = bar_height + 1.1, label = star),
+            position = position_dodge(width = 0.82), size = 3.7, colour = thesis_neutral[["ink"]]) +
+  facet_wrap(~table, nrow = 1) +
+  scale_fill_manual(values = c("Deletions (expected ↓)" = thesis_secondary[["mint"]],
+                               "Duplications (expected ↑)" = thesis_secondary[["flame"]])) +
+  scale_y_continuous(limits = c(0, 31), breaks = seq(0, 30, 5),
+                     labels = seq(35, 65, 5), expand = expansion(mult = c(0, 0))) +
+  labs(title = "SV-associated expression effects follow the expected direction",
+       subtitle = "Fraction of SV–gene pairs in the expected direction; dashed line = 50%",
+       x = "SV length", y = "Pairs changing in expected direction (%)", fill = NULL,
+       caption = NULL) +
+  theme_thesis(base_size = 10) +
+  theme(legend.position = "top", strip.text = element_text(face = "bold"),
+        plot.title = element_text(face = "bold"), plot.margin = margin(10, 12, 10, 10))
+save_png(p61, file.path(fig_dir, "Figure_6.1_SV_expression_scan_positive_control.png"), 11, 6.2)
+ggsave(file.path(fig_dir, "Figure_6.1_SV_expression_scan_positive_control.pdf"),
+       p61, width = 11, height = 6.2, bg = "white")
 
-# Figure 6.3: status changes after cross-layer evaluation.
-ev <- read.delim(file.path(cross, "02_results_evaluation_table", "evaluation_summary.tsv"),
-                 check.names = FALSE)
-category_order <- c("recurrent_fusion", "novel_peptide", "isoform_peptide", "ALS_gene_SV", "primary_SV")
-category_labels <- c("Recurrent fusions", "Novel peptides", "Isoform peptides",
-                     "SVs in ALS genes", "Primary SV candidates")
-status_order <- c("confirmed", "rejected", "reclassified", "unchanged")
-status_labels <- c("Confirmed", "Rejected", "Reclassified", "Unchanged")
-status_cols <- c(Confirmed = thesis_secondary[["mint"]],
-                 Rejected = thesis_secondary[["flame"]],
-                 Reclassified = thesis_secondary[["crimson"]],
-                 Unchanged = thesis_secondary[["brown"]])
-ev <- ev[match(category_order, ev$category), ]
-status_counts <- as.matrix(ev[, status_order])
-rownames(status_counts) <- category_labels
-colnames(status_counts) <- status_labels
-totals <- ev$total
-shares <- status_counts / totals
-
-draw_63 <- function() {
-  old <- par(no.readonly = TRUE); on.exit(par(old))
-  par(mar = c(4.4, 11.8, 3.2, 5.4), col = ink, fg = outline, bg = bg, cex = 0.9)
-  centers <- barplot(t(shares * 100), horiz = TRUE, beside = FALSE,
-                     names.arg = category_labels, las = 1, xlim = c(0, 118),
-                     col = status_cols, border = outline, lwd = 0.6,
-                     axes = FALSE, xlab = "Candidates (%)", cex.names = 0.84)
-  abline(v = seq(0, 100, 25), col = thesis_neutral[["grid"]], lwd = 0.75)
-  axis(1, at = seq(0, 100, 25), labels = seq(0, 100, 25), col.axis = ink, cex.axis = 0.8)
-  box(col = outline)
-  for (i in seq_along(category_labels)) {
-    cumulative <- 0
-    for (j in seq_along(status_order)) {
-      n <- status_counts[i, j]
-      if (n > 0) {
-        mid <- cumulative + 50 * shares[i, j]
-        text(mid, centers[i], labels = n,
-             col = ink_on(status_cols[j]), cex = 0.82, font = 1)
-      }
-      cumulative <- cumulative + 100 * shares[i, j]
-    }
-    text(102.2, centers[i], labels = paste0("n = ", format(totals[i], big.mark = ",")),
-         adj = 0, cex = 0.78, col = guide, xpd = NA)
-  }
-  legend("top", inset = c(0, -0.14), xpd = NA, horiz = TRUE,
-         legend = status_labels, fill = status_cols, border = outline,
-         bty = "n", cex = 0.79)
-  title(main = "Integration changes the interpretation of candidate evidence",
-        line = 1, cex.main = 1.05, col.main = ink)
-}
-save_figure(file.path(out_dir, "Figure_6.3_change_in_conclusion.png"),
-            file.path(out_dir, "Figure_6.3_change_in_conclusion.pdf"),
-            10.5, 5.4, draw_63)
+# -----------------------------------------------------------------------------
+# Figure 6.3: changes in evidence classification after integration
+# -----------------------------------------------------------------------------
+ev <- read_tsv(file.path(results, "results_evaluation_table_final", "evaluation_summary.tsv"),
+               show_col_types = FALSE)
+category_labels <- c(
+  primary_SV = "Primary SV candidates",
+  ALS_gene_SV = "SVs in ALS genes",
+  isoform_peptide = "Isoform peptides",
+  novel_peptide = "Novel peptides",
+  recurrent_fusion = "Recurrent fusions"
+)
+status_cols <- c("confirmed", "rejected", "reclassified", "unchanged")
+status_labels <- c(confirmed = "Confirmed", rejected = "Rejected",
+                   reclassified = "Reclassified", unchanged = "Unchanged")
+ev_long <- ev %>%
+  select(category, all_of(status_cols), total) %>%
+  tidyr::pivot_longer(all_of(status_cols), names_to = "status", values_to = "n") %>%
+  mutate(category = factor(category, levels = names(category_labels), labels = unname(category_labels)),
+         status = factor(status, levels = status_cols, labels = unname(status_labels[status_cols])),
+         count_label = if_else(n > 0, as.character(n), ""))
+status_palette <- c(
+  Confirmed = thesis_secondary[["mint"]],
+  Rejected = thesis_secondary[["flame"]],
+  Reclassified = thesis_secondary[["crimson"]],
+  Unchanged = thesis_secondary[["brown"]]
+)
+p63 <- ggplot(ev_long, aes(y = category, x = n, fill = status)) +
+  geom_col(position = "fill", colour = thesis_neutral[["outline"]], linewidth = 0.2) +
+  geom_text(aes(label = count_label, colour = status), position = position_fill(vjust = 0.5),
+            size = 3.2) +
+  geom_text(data = distinct(ev_long, category, total),
+            aes(y = category, x = 1.02, label = paste0("n = ", format(total, big.mark = ","))),
+            inherit.aes = FALSE, hjust = 0, size = 3.1, colour = thesis_neutral[["guide"]]) +
+  scale_fill_manual(values = status_palette, drop = FALSE) +
+  scale_colour_manual(values = setNames(ink_on(status_palette), names(status_palette)), guide = "none") +
+  scale_x_continuous(labels = scales::label_percent(), breaks = seq(0, 1, 0.25),
+                     limits = c(0, 1.15), expand = expansion(mult = c(0, 0))) +
+  labs(title = "Integration changes the interpretation of candidate evidence",
+       x = "Candidates (%)", y = NULL, fill = NULL,
+       caption = "Numbers within bars are candidate counts; totals are shown at right.") +
+  coord_cartesian(xlim = c(0, 1.15), clip = "off") +
+  theme_thesis(base_size = 10) +
+  theme(legend.position = "top", plot.title = element_text(face = "bold"),
+        plot.margin = margin(10, 50, 10, 10), panel.grid.major.y = element_blank())
+save_png(p63, file.path(fig_dir, "Figure_6.3_change_in_conclusion.png"), 10.5, 5.2)
+ggsave(file.path(fig_dir, "Figure_6.3_change_in_conclusion.pdf"),
+       p63, width = 10.5, height = 5.2, bg = "white")
 
 # -----------------------------------------------------------------------------
 # Rebuild DREAM and protein consortium QC plots from saved model outputs.
 # -----------------------------------------------------------------------------
-rna_qc_dir <- file.path(single, "01a_results_rna_differential_expression", "QC")
-rna_obj_path <- file.path(single, "01a_results_rna_differential_expression", "AALS_dream_voom_objects.rds")
+rna_qc_dir <- file.path(results, "results_rna_dream", "QC")
+rna_obj_path <- file.path(results, "results_rna_dream", "AALS_dream_voom_objects.rds")
 if (file.exists(rna_obj_path)) {
   obj <- readRDS(rna_obj_path)
   expr <- obj$voom$E
@@ -189,7 +153,7 @@ if (file.exists(rna_obj_path)) {
          title = "RNA sample PCA by sequencing batch") + theme_thesis()
   save_png(p, file.path(rna_qc_dir, "PCA_seq_batch.png"), 7, 5)
   for (model in c("primary_mixed_seq_batch_random", "sensitivity_fixed_seq_batch")) {
-    csv <- file.path(single, "01a_results_rna_differential_expression", model,
+    csv <- file.path(results, "results_rna_dream", model,
                      paste0("AALS_", model, "_dream_results.csv"))
     if (file.exists(csv)) {
       d <- read_csv(csv, show_col_types = FALSE)
@@ -197,12 +161,12 @@ if (file.exists(rna_obj_path)) {
         geom_histogram(bins = 50, fill = thesis_secondary[["mint"]],
                        colour = thesis_neutral[["outline"]], linewidth = 0.2) +
         labs(title = paste(model, "p-value distribution"), x = "P-value", y = "Number of genes") + theme_thesis()
-      save_png(p, file.path(single, "01a_results_rna_differential_expression", model, "pvalue_histogram.png"), 7, 5)
+      save_png(p, file.path(results, "results_rna_dream", model, "pvalue_histogram.png"), 7, 5)
     }
   }
 }
 
-prot_dir <- file.path(single, "02a_results_protein_da_consortium")
+prot_dir <- file.path(results, "results_protein_da_consortium")
 prot_qc_dir <- file.path(prot_dir, "QC")
 prot_obj_path <- file.path(prot_dir, "protein_objects.rds")
 if (file.exists(prot_obj_path)) {
@@ -243,7 +207,7 @@ if (file.exists(prot_obj_path)) {
 }
 
 # Rebuild the existing RNA–protein concordance scatter from its saved table.
-cross_dir <- file.path(cross, "01_results_cross_omics_agreement")
+cross_dir <- file.path(results, "results_cross_omics")
 cross_file <- file.path(cross_dir, "rna_protein_concordance.tsv")
 cross_summary <- file.path(cross_dir, "rna_protein_concordance_summary.json")
 if (file.exists(cross_file) && file.exists(cross_summary)) {
@@ -270,15 +234,10 @@ if (file.exists(cross_file) && file.exists(cross_summary)) {
 # Recreate fgsea and clusterProfiler summary plots from saved result tables.
 # Running-score plots retain enrichplot's original style; they are not recoloured here.
 # -----------------------------------------------------------------------------
-fgsea_dirs <- c(
-  rna = file.path("03a_results_pathway_enrichment_rna", "results_fgsea_rna_500"),
-  protein = file.path("03a_results_pathway_enrichment_protein", "results_fgsea_protein_500")
-)
-for (mode in names(fgsea_dirs)) {
-  base <- file.path(single, fgsea_dirs[[mode]])
+for (mode in c("rna", "protein")) {
+  base <- file.path(results, paste0("results_fgsea_", mode))
   omics_colour <- if (mode == "rna") thesis_primary[["maroon"]] else thesis_primary[["teal"]]
-  negative_nes_colour <- if (mode == "protein") "#7FAFB0" else "#B0909D"
-  direction_colours <- c("Positive NES" = omics_colour, "Negative NES" = negative_nes_colour)
+  direction_colours <- c("Positive NES" = omics_colour, "Negative NES" = thesis_neutral[["guide"]])
   for (category in c("broad", "disease", "targeted")) {
     val_dir <- file.path(base, "gsea_validation", category)
     plot_dir <- file.path(base, "gsea_plots", category)
@@ -303,22 +262,15 @@ for (mode in names(fgsea_dirs)) {
     if (file.exists(cp_file)) {
       d <- read_csv(cp_file, show_col_types = FALSE) %>%
         filter(!is.na(p.adjust), !is.na(Description)) %>% arrange(p.adjust) %>% slice_head(n = 20)
-      # clusterProfiler GSEA tables store the gene-set size in setSize (not Count).
-      if (!"setSize" %in% names(d) && "Count" %in% names(d)) {
-        d <- d %>% mutate(setSize = Count)
-      }
-      if (!"setSize" %in% names(d)) {
-        stop("Missing both setSize and Count in ", cp_file, call. = FALSE)
-      }
       if (nrow(d)) {
         d <- d %>% mutate(label = clean_pathway_label(Description),
                           label = factor(label, levels = rev(unique(label))),
                           direction = if_else(NES >= 0, "Positive NES", "Negative NES"))
-        dot <- ggplot(d, aes(label, setSize, size = setSize, colour = -log10(p.adjust))) +
+        dot <- ggplot(d, aes(label, Count, size = Count, colour = -log10(p.adjust))) +
           geom_point(alpha = 0.9) + coord_flip(clip = "off") +
           scale_colour_gradient(low = thesis_neutral[["muted"]], high = omics_colour,
                                 name = "−log10(adj. p)") +
-          labs(title = paste("DREAM-t ranked GSEA:", category), x = NULL, y = "Gene count", size = "Gene set size") +
+          labs(title = paste("DREAM-t ranked GSEA:", category), x = NULL, y = "Gene count", size = "Count") +
           theme_thesis(base_size = 10) + theme(axis.text.y = element_text(size = 8.5),
                                                 plot.margin = margin(10, 24, 10, 10))
         save_png(dot, file.path(plot_dir, paste0("clusterProfiler_", category, "_dotplot_top20.png")), 12, 9)

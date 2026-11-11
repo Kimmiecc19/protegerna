@@ -51,7 +51,6 @@ bigbio/quantmsdiann 2.2.0 (DIA-NN 1.8.1), reference-only database, per batch.
 - **Outputs:** 02a_results_quantmsdiann_reference/batch{1_fixed,2..6}/quant_tables/
 - **Run record:** 02_params/reference.json.json
 - **Run for the dissertation:** 2026-08-14 to 09-03; batch 1 repeated 2026-10-27
-- **Previous name:** `3_proteogenomic_database/03_run_quantmsdiann/code_quantmsdiann/aals_quantms.sh`
 - **Before running:** Set `SDRF` (per-batch SDRF, controlled access) and the container `cacheDir` in `02_params/reference.config`. Defaults: database `01_results_make_reference_database/human_reference_deduplicated.fasta`, output `02a_results_quantmsdiann_reference/batchN`. Run once per batch.
 - **Note:** Batch 1 used is batch1_fixed (27 Oct); the earlier run without carbamidomethyl is superseded.
 
@@ -68,7 +67,6 @@ quantmsdiann against the v5 proteogenomic database, per batch.
 - **Outputs:** 02b_results_quantmsdiann_pgdb/pgdb_v5_batch{1..6}/quant_tables/
 - **Run record:** 02_params/proteogenomic_v5.json (copied from pipeline_info/params_*.json)
 - **Run for the dissertation:** 2026-09
-- **Previous name:** `3_proteogenomic_database/03_run_quantmsdiann/code_quantmsdiann/aals_quantms_pgdb.sh`
 - **Before running:** As for `02a`. The database defaults to `../03_search_database/results_pgdb_publication_rerun_v5/proteogenomic_database.fasta` and the output to `02b_results_quantmsdiann_pgdb/pgdb_v5_batchN`. Run once per batch.
 - **Note:** Inputs to Chapter 6 (01b, 02b, linking).
 

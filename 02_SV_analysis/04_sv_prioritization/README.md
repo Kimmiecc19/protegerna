@@ -41,7 +41,6 @@ Per-VCF record statistics, size bins, filter counts, carrier counts and event re
 - **Outputs:** 01_results_summarise_callset_qc/{intersect,union}_{filtered,unfiltered}_annotated/
 - **Run record:** 01_results_summarise_callset_qc/*/*.manifest.json (settings and inputs)
 - **Run for the dissertation:** 2026-10
-- **Previous name:** `01_sv_qc_analysis.py / sv_qc_analysis.py`
 - **Note:** Manifests show the server version also took --metadata and --rarity options that the current script no longer has.
 
 ```bash
@@ -58,7 +57,6 @@ Consolidate AnnotSV rows per event, nominate (ALSoD Definitive/Strong/Moderate o
 - **Outputs:** 02c_results_prioritise_annotsv_events/{intersection,union_only}_{filtered,unfiltered}/
 - **Run record:** *_prioritisation_summary.json (inputs with SHA-256)
 - **Run for the dissertation:** 2026-11-07 (EphA3 case fix re-run)
-- **Previous name:** `02_annotsv_prioritization.py / build_annotsv_prioritization.py`
 - **Note:** Event tables are inputs to Chapter 6 (01e scan, evaluation table).
 
 ```bash
@@ -76,7 +74,6 @@ One row per carrier and intersection event (reference table only; 6,707 carrier 
 - **Outputs:** 03_results_build_participant_sv_table/intersection_SVs_347_participants[_filtered].{tsv,README.md,validation.json}
 - **Run record:** *.validation.json (sources with SHA-256)
 - **Run for the dissertation:** 2026-10
-- **Previous name:** `02_build_participant_sv_table.py / build_participant_intersection_table.py`
 - **Before running:** Defaults read the saved AnnotSV tables (`../03_sv_annotation/02a_results_annotsv_filtered/...05102026`, `../03_sv_annotation/02b_results_annotsv_unfiltered/...03102026`) and `data/ALS_candidate_gene_list.txt`, and write to `03_results_build_participant_sv_table/`.
 - **Note:** Import fixed on 8 Nov 2026 (now imports 02c_prioritise_annotsv_events); filtered output re-run and matched the saved TSV.
 
@@ -93,7 +90,6 @@ Earlier ALSoD gene-table download (superseded by 03_sv_annotation/01_build_alsod
 - **Inputs:** https://alsod.ac.uk
 - **Outputs:** 02ab_results_alsod_gene_list/
 - **Run for the dissertation:** 2026-02-24
-- **Previous name:** `extract_alsod.py`
 - **Note:** Kept because 02ab_results_alsod_gene_list/ came from it; the combined script gives the same gene list.
 
 ```bash

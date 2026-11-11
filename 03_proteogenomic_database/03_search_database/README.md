@@ -53,7 +53,6 @@ Build the v5 search database: GENCODE validation, fusion/rMATS/SUPPA reconstruct
 - **Outputs:** results_pgdb_publication_rerun_v5/ (proteogenomic_database.fasta 80,657 entries, MD5 3f8ed117…; metadata, mapping, summary, qc/, release_report)
 - **Run record:** results_pgdb_publication_rerun_v5/.proteogenomic_state/*.json; workflow.publication.v5.toml
 - **Run for the dissertation:** 2026-10-03
-- **Previous name:** `05_ALS_integration/proteogenomic_db_compare_v5_v7/code_proteogenomic_database_v5 (proteogenomic_workflow.py)`
 - **Before running:** `--project-dir` defaults to `03_proteogenomic_database/`, which all TOML paths are relative to. The event inputs are the saved results in `02_event_detection/`; put the reference files named in the TOML (`gencode_v46.gtf.db`, GRCh38 genome, UniProt, GENCODE translations, cRAP) in `03_proteogenomic_database/data/`. Outputs go to `03_search_database/results_pgdb_publication_rerun_v5/` (re-running overwrites the saved database). Use `--dry-run` or `--explain` first. Needs Python ≥ 3.11 and the `proteogenomic_db` package (`pip install -e 03_search_database/proteogenomic_db`).
 - **Note:** Modules in 03_search_database/proteogenomic_db/: validate_gencode_translation.py, fusiontoprotein.py, rmatstoprotein.py, suppatoprotein.py, merge_proteogenomic_database.py, proteogenomic_fasta_qc.py, release_report.py. 02_results_proteogenomic_db/ holds a second copy of the summaries.
 
@@ -69,7 +68,6 @@ Compare reconstructed fusion proteins with FusionInspector predictions (Tables 5
 - **Inputs:** fusion.biological.tsv
 - **Outputs:** results_pgdb_publication_rerun_v5/qc/fusion_prediction_concordance.md
 - **Run for the dissertation:** 2026-10
-- **Previous name:** `code_proteogenomic_database_v7/summarize_fusion_concordance.py`
 
 ```bash
 python 03_search_database/03_summarise_fusion_concordance.py 03_search_database/results_pgdb_publication_rerun_v5/fusion.biological.tsv --output 03_search_database/results_pgdb_publication_rerun_v5/qc/fusion_prediction_concordance.md

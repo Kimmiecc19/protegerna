@@ -33,7 +33,6 @@ Revised (v7) build with corrected code; comparison only, never searched.
 - **Outputs:** results_revised_database/ (30,031 sequences, MD5 e6b4632b…)
 - **Run record:** results_revised_database/.proteogenomic_state/*.json, logs/
 - **Run for the dissertation:** 2026-10
-- **Previous name:** `code_proteogenomic_database_v7`
 - **Before running:** As for `03_search_database/02_build_search_database.sh`, with `config/workflow.publication.frozen.toml`; outputs go to `04_revised_database/results_revised_database/`.
 
 ```bash

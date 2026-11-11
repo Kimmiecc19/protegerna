@@ -35,7 +35,6 @@ Download the ALSoD gene table and look up Ensembl 112 gene/transcript IDs.
 - **Inputs:** https://alsod.ac.uk (accessed 24 Feb 2026); Ensembl REST (release 112)
 - **Outputs:** 01_results_build_alsod_gene_map/alsod_gene_list.csv, alsod_gene_transcript_map_gencode_v46.csv, ALS_candidate_gene_list.txt
 - **Run for the dissertation:** 2026-02-24
-- **Previous name:** `extract_alsod.py + gene_to_ensembl.py (also kept as 04_sv_prioritization/02a_extract_alsod.py, 02b_gene_to_ensembl.py)`
 - **Note:** ALSoD changes over time; keep the saved alsod_gene_list.csv.
 
 ```bash
@@ -51,7 +50,6 @@ AnnotSV 3.5.8 on the intersection and union cohort VCFs, restricted to the 154 A
 - **Outputs:** 02a_results_annotsv_filtered/octopusv_{intersect,union}_cohort_filtered_05102026/*.annotated.{tsv,vcf}
 - **Run record:** 02a_results_annotsv_filtered/AnnotSV_octopusv_*_cohort_filtered_05102026.log
 - **Run for the dissertation:** 2026-10-05
-- **Previous name:** `2_SV_analysis/3_annotsv/code_annotsv/run_annotsv.sh`
 - **Before running:** Set `ANNOTSV_BIN_DIR` and `ANNOTATIONS` (the AnnotSV 3.5.8 install and its GRCh38 annotation folder; not in the repository). Defaults: input `../02_sv_consolidation/01_results_octopusv/merged`, gene list `../04_sv_prioritization/data/ALS_candidate_gene_list.txt`, output `02a_results_annotsv_filtered/` with run label `05102026` (unfiltered mode: `02b_results_annotsv_unfiltered/`, `03102026`).
 - **Note:** The log lists every AnnotSV argument (-candidateGenesFiltering 1, -SVminSize 50).
 
@@ -68,7 +66,6 @@ AnnotSV 3.5.8 without the gene filter.
 - **Outputs:** 02b_results_annotsv_unfiltered/octopusv_{intersect,union}_cohort_unfiltered_03102026/*.annotated.{tsv,vcf}
 - **Run record:** 02b_results_annotsv_unfiltered/AnnotSV_octopusv_*_cohort_unfiltered_03102026.log
 - **Run for the dissertation:** 2026-10-03
-- **Previous name:** `2_SV_analysis/3_annotsv/code_annotsv/run_annotsv_unfiltered.sh`
 - **Before running:** Same environment variables as `02a`; this wrapper calls `02a_run_annotsv_filtered.sh --mode unfiltered`.
 
 ```bash

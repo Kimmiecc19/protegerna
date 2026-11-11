@@ -37,7 +37,6 @@ Six artificial batches (StratifiedKFold on sex, diagnosis, sequencing and shipme
 - **Outputs:** 01_results_stratified_batches/batch_files/ (proteomic_batches.csv, transcriptomic_batches.csv, artificial_*_batch_N.csv, batch_summary_report_17062025.csv)
 - **Run record:** batch_summary_report_17062025.csv
 - **Run for the dissertation:** 2025-06-17
-- **Previous name:** `0_general/2_sample_batches/create_batches/stratify_june2025_BTC_2.py`
 - **Before running:** Reads `stratify_bdc.csv` and `stratify_btc.csv` from `00_general/01_filtering_matching_patients/` and writes tables to `01_results_stratified_batches/batch_files/` and figures to `01_results_stratified_batches/batch_figures/` (paths in the CONFIG block at the top).
 - **Note:** Earlier map: three versions of the stratification script existed; confirm this copy reproduces batch_files/ and record its seed.
 
@@ -66,7 +65,6 @@ Confirm DIA acquisition from mzML isolation windows (153 files, all DIA).
 - **Dissertation:** Section 5.2.9
 - **Inputs:** Answer ALS mzML files
 - **Outputs:** 02_results_detect_acquisition_mode/mzML_mode_summary*.csv
-- **Previous name:** `3_proteogenomic_database/03_run_quantmsdiann/code_quantmsdiann/proteomic_batch_detection/code/detect_mode.py`
 - **Note:** Notes: answerals_proteomics_mode_detection.md.
 
 ```bash

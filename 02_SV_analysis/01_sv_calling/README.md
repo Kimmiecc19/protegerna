@@ -36,7 +36,6 @@ Pair each CRAM with its CRAI and write 14 Sarek samplesheets.
 - **Inputs:** Answer ALS CRAM/CRAI, 347 participants
 - **Outputs:** 01_results_sarek_samplesheet/sarek_samplesheet_part_{1..14}.csv
 - **Run for the dissertation:** June 2025
-- **Previous name:** `2_SV_analysis/1_sarek/code_sarek/create_samplesheet_batches_June2025.py`
 
 ```bash
 python 01_create_samplesheet_batches_sarek.py <CRAM_DIR> sarek_samplesheet
@@ -51,7 +50,6 @@ nf-core/sarek 3.5.1 from prepare_recalibration: Manta + TIDDIT (+ CNVkit, unused
 - **Outputs:** per-participant Manta and TIDDIT VCFs under <SAREK>/partN/variant_calling/ (server only)
 - **Run record:** aals_sarek.json, aals_sarek.config
 - **Run for the dissertation:** 2025
-- **Previous name:** `2_SV_analysis/1_sarek/code_sarek/aals_sarek.sh`
 - **Before running:** Set the reference paths in `aals_sarek.config` (`fasta`, `fasta_fai`, `dict`, `cacheDir`) and `aals_sarek.json` (dbSNP, known indels, snpEff, VEP), and `SAREK_OUTDIR` (default `/path/to/sarek_results`). The samplesheet defaults to `01_results_sarek_samplesheet/sarek_samplesheet_part_N.csv`. Run once per samplesheet.
 - **Note:** Calls are not in the repo (controlled access).
 
@@ -67,7 +65,6 @@ Summarise Sarek CPU/memory/runtime from trace files.
 - **Inputs:** execution_trace_* files
 - **Outputs:** resource summaries
 - **Run for the dissertation:** March 2026
-- **Previous name:** `analyse_resources_final_march2026.py`
 - **Note:** No dissertation result.
 
 ```bash
