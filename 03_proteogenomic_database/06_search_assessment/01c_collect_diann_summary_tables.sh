@@ -2,7 +2,7 @@
 # 01c_collect_diann_summary_tables.sh
 #
 # Objective Three, Chapter 5 ("Quantmsdiann identification"; "Comparison with a reference-only search";
-# Tables 5.5, 5.7, 5.9).
+# Tables 5.8, 5.10, 5.12).
 #
 # Copies the small DIA-NN summary tables of every quantmsdiann search into one folder, with the names the
 # search-assessment scripts expect:

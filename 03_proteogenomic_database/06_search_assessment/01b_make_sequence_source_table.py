@@ -2,7 +2,7 @@
 """
 01b_make_sequence_source_table.py - map every search-database entry to the sources that produced it.
 
-Objective Three, Chapter 5 ("Comparison with a reference-only search"; Tables 5.5, 5.7, 5.9, 5.10).
+Objective Three, Chapter 5 ("Comparison with a reference-only search"; Tables 5.8, 5.10, 5.12, 5.13).
 
 The search database (v5) collapses identical sequences, so one entry (PGDB_U...) can come from several
 producers: the UniProt reference proteome, cRAP, rMATS, SUPPA and/or FusionInspector. This script writes one

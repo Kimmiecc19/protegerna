@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-02d_summarise_fusion_peptides.py - peptides mapped to fusion-associated sequences in each search (Table 5.5).
+02d_summarise_fusion_peptides.py - peptides mapped to fusion-associated sequences in each search (Table 5.8).
 
-Objective Three, Chapter 5 ("Quantmsdiann: peptide evidence for event-derived proteins", Table 5.5).
+Objective Three, Chapter 5 ("Quantmsdiann: peptide evidence for event-derived proteins", Table 5.8).
 
 For each proteogenomic search batch the script counts:
   DIA files                      rows of the DIA-NN stats table (small/v5_b{N}.stats.tsv)
@@ -17,7 +17,7 @@ For each proteogenomic search batch the script counts:
                                  in which it was identified (split by CASE/CTRL file prefix), and the median
                                  spectrum similarity and median PEP over its identifications
 It also reports the share of report rows with a fusion-associated identifier that also contain a
-reference-associated identifier (Table 5.5 note).
+reference-associated identifier (Table 5.8 note).
 
 Identifications are the rows passing Q.Value, Global.Q.Value, PG.Q.Value and Global.PG.Q.Value <= 0.01,
 as written by 01a_extract_passing_rows.sh: File.Name, Protein.Ids, Stripped.Sequence, Precursor.Id,
@@ -31,7 +31,7 @@ Inputs (all in the six_batch_assessment folder unless overridden):
                              (sequence_id, peptide, unique_complete_target_il_equivalent; junction rows only)
 
 Outputs:
-  <out_prefix>.tsv                   one row per batch (Table 5.5)
+  <out_prefix>.tsv                   one row per batch (Table 5.8)
   <out_prefix>.junction_peptides.tsv one row per batch and observed fusion-junction peptide
 
 Usage:

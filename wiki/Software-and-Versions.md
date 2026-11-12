@@ -21,7 +21,7 @@ Where a recorded version differs from a stated one, both are shown.
 | --- | --- | --- | --- | --- |
 | Nextflow | 25.10.4 | bigbio/quantmsdiann searches | 3 | Run (pmultiqc) |
 | Nextflow | 25.04.7 | nf-core/rnafusion run | 3 | Diss (App. 5A.2.1) |
-| Nextflow | 26.10.2 | nf-core/protegerna test run (Table 5.12) | 3 | Diss |
+| Nextflow | 26.10.2 | nf-core/protegerna test run (Table 5.15) | 3 | Diss |
 | Nextflow | ≥ 25.10.4 (required) | nf-core/protegerna | 3 | Env (README, `nextflow.config`) |
 | Nextflow | n.r. | nf-core/sarek and nf-core/rnasplice runs | 2, 3 | n.r. (the Sarek launcher has a commented-out `NXF_VER=24.04.4`) |
 | Apptainer | n.r. | Container runtime for all nf-core pipelines | 2, 3 | n.r. |

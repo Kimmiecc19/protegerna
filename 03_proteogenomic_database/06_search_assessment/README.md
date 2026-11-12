@@ -1,7 +1,7 @@
 # 06 Reference vs proteogenomic search assessment
 
 **Objective:** Objective Three: translate gene-fusion and alternative-splicing events detected in RNA-seq into a protein search database for DIA proteomics.  
-**Dissertation:** Chapter 5, Sections 5.3.8–5.3.12; tables and figures: Table 5.5, Table 5.6, Table 5.7, Table 5.8, Table 5.9, Table 5.10, Table 5.11  
+**Dissertation:** Chapter 5, Sections 5.3.8–5.3.12; tables and figures: Table 5.8, Table 5.9, Table 5.10, Table 5.11, Table 5.12, Table 5.13, Table 5.14  
 **Back to:** [objective README](../README.md)
 
 ## What this step does
@@ -14,14 +14,14 @@ composition of the v5 and v7 databases.
 
 | Script | What it does | Dissertation tables/figures |
 | --- | --- | --- |
-| `01a_extract_passing_rows.sh` | Keep report rows passing all four q-value filters (≤ 0.01) | Table 5.7 |
-| `01b_make_sequence_source_table.py` | Map each v5 entry to its producers (reference, crap, rmats, suppa, fusioninspector) | Table 5.7 |
-| `01c_collect_diann_summary_tables.sh` | Copy stats/pg/gg/unique-gene matrices and SDRFs per batch into small/ | Table 5.6, Table 5.7 |
-| `02a_compare_reference_and_proteogenomic.py` | All reference-vs-proteogenomic search metrics (Tables 5.7, 5.9) | Table 5.7, Table 5.9 |
-| `02b_find_novel_candidate_peptides.py` | Peptides only in splice/fusion entries and absent from reference DB, UniProt and GENCODE (I=L) | Table 5.10, Table 5.11 |
-| `02c_compare_peptide_lengths.py` | In-silico digest of both databases vs observed peptide lengths (Table 5.8, search-space inflation) | Table 5.8 |
-| `02d_summarise_fusion_peptides.py` | Peptides mapped to fusion-associated sequences per batch (Table 5.5) | Table 5.5 |
-| `02_compare_search_and_revised_databases.py` | Composition of v5 vs v7 and fusion consistency across samples | Section 5.3.8 |
+| `01a_extract_passing_rows.sh` | Keep report rows passing all four q-value filters (≤ 0.01) | Table 5.10 |
+| `01b_make_sequence_source_table.py` | Map each v5 entry to its producers (reference, crap, rmats, suppa, fusioninspector) | Table 5.10 |
+| `01c_collect_diann_summary_tables.sh` | Copy stats/pg/gg/unique-gene matrices and SDRFs per batch into small/ | Table 5.9, Table 5.10 |
+| `02a_compare_reference_and_proteogenomic.py` | All reference-vs-proteogenomic search metrics (Tables 5.10, 5.12) | Table 5.10, Table 5.12 |
+| `02b_find_novel_candidate_peptides.py` | Peptides only in splice/fusion entries and absent from reference DB, UniProt and GENCODE (I=L) | Table 5.13, Table 5.14 |
+| `02c_compare_peptide_lengths.py` | In-silico digest of both databases vs observed peptide lengths (Table 5.11, search-space inflation) | Table 5.11 |
+| `02d_summarise_fusion_peptides.py` | Peptides mapped to fusion-associated sequences per batch (Table 5.8) | Table 5.8 |
+| `02_compare_search_and_revised_databases.py` | Composition of v5 vs v7 and fusion consistency across samples | Section 5.3.8; Table 5.3 |
 
 ## Order of running
 
@@ -37,7 +37,7 @@ Commands are those used for the dissertation, with paths relative to this step's
 
 Keep report rows passing all four q-value filters (≤ 0.01).
 
-- **Dissertation:** Section 5.2.9; Table 5.7
+- **Dissertation:** Section 5.2.9; Table 5.10
 - **Inputs:** diann_report.tsv per batch and search
 - **Outputs:** 01a_extract_passing_rows/{v5,ref}_b{1..6}.pass.tsv.gz, .counts.txt
 - **Run record:** *.counts.txt
@@ -55,7 +55,7 @@ done
 
 Map each v5 entry to its producers (reference, crap, rmats, suppa, fusioninspector).
 
-- **Dissertation:** Section 5.2.9; Table 5.7
+- **Dissertation:** Section 5.2.9; Table 5.10
 - **Inputs:** proteogenomic_mapping.tsv, proteogenomic_metadata.tsv
 - **Outputs:** 01b_make_sequence_source_table/v5_id_source.tsv
 - **Run for the dissertation:** 2026-10
@@ -69,7 +69,7 @@ python 01b_make_sequence_source_table.py --pgdb-dir ../03_search_database/result
 
 Copy stats/pg/gg/unique-gene matrices and SDRFs per batch into small/.
 
-- **Dissertation:** Section 5.2.9; Table 5.6, Table 5.7
+- **Dissertation:** Section 5.2.9; Table 5.9, Table 5.10
 - **Inputs:** quantmsdiann quant_tables; SDRFs
 - **Outputs:** 01c_collect_diann_summary_tables/small/{ref,v5}_bN.*.tsv, sdrf_bN.tsv
 - **Run record:** checksum manifest in the output folder
@@ -82,9 +82,9 @@ bash 01c_collect_diann_summary_tables.sh --ref-root ../05_proteomic_search/02a_r
 
 ### `02a_compare_reference_and_proteogenomic.py`
 
-All reference-vs-proteogenomic search metrics (Tables 5.7, 5.9).
+All reference-vs-proteogenomic search metrics (Tables 5.10, 5.12).
 
-- **Dissertation:** Sections 5.3.10–5.3.12; Table 5.7, Table 5.9
+- **Dissertation:** Sections 5.3.11–5.3.12; Table 5.10, Table 5.12
 - **Inputs:** {v5,ref}_bN.pass.tsv.gz; v5_id_source.tsv; small/ tables
 - **Outputs:** 02a_compare_reference_and_proteogenomic/reference_vs_v5_metrics.tsv
 - **Run for the dissertation:** 2026-10-28
@@ -97,7 +97,7 @@ python 02a_compare_reference_and_proteogenomic.py . 02a_compare_reference_and_pr
 
 Peptides only in splice/fusion entries and absent from reference DB, UniProt and GENCODE (I=L).
 
-- **Dissertation:** Sections 5.3.10, 5.3.12; Table 5.10, Table 5.11
+- **Dissertation:** Sections 5.3.3, 5.3.12; Table 5.13, Table 5.14
 - **Inputs:** pass tables; v5_id_source.tsv; reference FASTAs
 - **Outputs:** 02b_find_novel_candidate_peptides/custom_only_peptides_b1to6.tsv
 - **Run for the dissertation:** 2026-10
@@ -108,13 +108,13 @@ python 02b_find_novel_candidate_peptides.py . ../05_proteomic_search/01_results_
 
 ### `02c_compare_peptide_lengths.py`
 
-In-silico digest of both databases vs observed peptide lengths (Table 5.8, search-space inflation).
+In-silico digest of both databases vs observed peptide lengths (Table 5.11, search-space inflation).
 
-- **Dissertation:** Section 5.3.9; Table 5.8
+- **Dissertation:** Section 5.3.9; Table 5.11
 - **Inputs:** both FASTAs; pass tables
 - **Outputs:** 02c_compare_peptide_lengths/table_5_10_peptide_lengths.tsv
 - **Run for the dissertation:** 2026-10-28
-- **Note:** File name keeps the old table number (5.10); the table is now Table 5.8.
+- **Note:** File name keeps the old table number (5.10); the table is now Table 5.11.
 
 ```bash
 python 02c_compare_peptide_lengths.py --ref-fasta ../05_proteomic_search/01_results_make_reference_database/human_reference_deduplicated.fasta --v5-fasta ../03_search_database/results_pgdb_publication_rerun_v5/proteogenomic_database.fasta --six-dir . --out 02c_compare_peptide_lengths/table_5_10_peptide_lengths.tsv
@@ -122,13 +122,13 @@ python 02c_compare_peptide_lengths.py --ref-fasta ../05_proteomic_search/01_resu
 
 ### `02d_summarise_fusion_peptides.py`
 
-Peptides mapped to fusion-associated sequences per batch (Table 5.5).
+Peptides mapped to fusion-associated sequences per batch (Table 5.8).
 
-- **Dissertation:** Section 5.3.4; Table 5.5
+- **Dissertation:** Section 5.3.10; Table 5.8
 - **Inputs:** pass tables; v5_id_source.tsv; proteogenomic_peptides.tsv
 - **Outputs:** 02d_summarise_fusion_peptides/junction_peptides.tsv.gz (table_5_5_fusion_peptides.tsv not saved)
 - **Run for the dissertation:** 2026-11
-- **Note:** Reproduces every Table 5.5 value; save the table output.
+- **Note:** Reproduces every Table 5.8 value; save the table output.
 
 ```bash
 python 02d_summarise_fusion_peptides.py --six-dir . --pgdb-peptides ../03_search_database/results_pgdb_publication_rerun_v5/proteogenomic_peptides.tsv --out-prefix 02d_summarise_fusion_peptides/table_5_5_fusion_peptides
@@ -148,7 +148,7 @@ Composition of v5 vs v7 and fusion consistency across samples.
 python 02_compare_search_and_revised_databases.py --v5-dir ../03_search_database/results_pgdb_publication_rerun_v5 --v7-dir ../04_revised_database/results_revised_database --fusion-table ../03_search_database/results_pgdb_publication_rerun_v5/fusion.biological.tsv --out 02_compare_search_and_revised_databases/v5_v7_comparison.tsv
 ```
 
-Python 3 with pandas and numpy. `table_5_10_peptide_lengths.tsv` keeps the table number of an earlier draft; it is now Table 5.8.
+Python 3 with pandas and numpy. `table_5_10_peptide_lengths.tsv` keeps the table number of an earlier draft; it is now Table 5.11.
 
 ## Data access
 

@@ -31,7 +31,7 @@ workflow* (methods 4.2, results 4.3, Appendix 4A). The audited candidates and ev
 | [`03_sv_annotation`](03_sv_annotation/README.md) | ALS gene list; AnnotSV annotation | 4.2.5 |
 | [`04_sv_prioritization`](04_sv_prioritization/README.md) | Callset statistics; prioritisation and tiers | 4.2.6–4.2.8, 4.3.2–4.3.5; Tables 4.3, 4.6–4.9, 4A.3, 4A.4, 4A.6 |
 | [`05_sv_audit`](05_sv_audit/README.md) | Raw-call review; audited release; verification | 4.2.9, 4.3.6–4.3.7; Tables 4.10–4.12, 4A.2, 4A.5 |
-| [`06_dashboard`](06_dashboard/README.md) | proteGErna-SV dashboard | 4.2.10, 4.3.8; Figures 4.5–4.10 |
+| [`06_dashboard`](06_dashboard/README.md) | proteGErna-SV dashboard | 4.2.10, 4.3.8, Appendix 4A.6; Figures 4.5–4.7, 4A.3–4A.5 |
 
 Run the steps in order. Each step folder has its own README with the command used for every script, its inputs and outputs, and
 what must be edited before running. Results are kept next to the scripts in folders named `NN_results_<script>`.
@@ -69,7 +69,7 @@ Objective One.
 | --- | --- | --- | --- |
 | Table 4.1 | AnnotSV ranking-score classes, adapted from the ACMG/ClinGen CNV scoring framework | `03_sv_annotation/02a_run_annotsv_filtered.sh` | Saved |
 | Table 4.2 | Manual-review tiers assigned to nominated events | `04_sv_prioritization/02c_prioritise_annotsv_events.py` | Saved |
-| Table 4.3 | Reduction of the 185 eligible filtered intersection records to exported participant–candidate pairs | `04_sv_prioritization/01_summarise_callset_qc.py`, `04_sv_prioritization/02c_prioritise_annotsv_events.py`, `05_sv_audit/02a_build_audited_release.py` | Saved |
+| Table 4.3 | Accounting chain from eligible callset records to exported participant–candidate pairs | `04_sv_prioritization/01_summarise_callset_qc.py`, `04_sv_prioritization/02c_prioritise_annotsv_events.py`, `05_sv_audit/02a_build_audited_release.py` | Saved |
 | Table 4.4 | Participants in the Answer ALS cohort before and after omics matching and filtering | `00_general/01_filtering_matching_patients/04_aals_full_merge.R`, `00_general/01_filtering_matching_patients/01_participant_filtering.R`, `00_general/01_filtering_matching_patients/02_merged_tp_mapping.R` | Saved |
 | Table 4.5 | Structural variant type counts reported in OctopuSV results | `02_sv_consolidation/01_octopusv_manta_tiddit.sh` | Saved |
 | Table 4.6 | Filtering of OctopuSV cohort records | `04_sv_prioritization/01_summarise_callset_qc.py` | Saved |
@@ -86,17 +86,17 @@ Objective One.
 | Figure 4.5 | proteGErna-SV dashboard before data import | `06_dashboard/proteGErna-SV.R` | Saved |
 | Figure 4.6 | Overview of the dashboard after importing the candidate-gene-filtered AnnotSV intersection VCF | `06_dashboard/proteGErna-SV.R` | Saved |
 | Figure 4.7 | Structural variants view with an example filter applied | `06_dashboard/proteGErna-SV.R` | Partly saved |
-| Figure 4.8 | HTML export of the filtered structural variant table | `06_dashboard/proteGErna-SV.R` | Saved |
-| Figure 4.9 | Resource search view for the gene SOD1 | `06_dashboard/proteGErna-SV.R` | Saved |
-| Figure 4.10 | Column descriptions view | `06_dashboard/proteGErna-SV.R` | Saved |
 | Table 4A.1 | Tools used in the structural-variant workflow and their outcome in the Objective One screen | `01_biotools_landscape/02a_filter_biotools.R` | Saved |
 | Table 4A.2 | Raw-call review outcomes for intersection and union-only nominations under the review-stage evidence rule | `05_sv_audit/01b_extract_raw_calls.py`, `05_sv_audit/01c_score_raw_call_evidence.py` | Saved |
 | Table 4A.3 | Illustrative filtered intersection nominations before the raw-call audit | `04_sv_prioritization/02c_prioritise_annotsv_events.py` | Saved |
 | Table 4A.4 | Illustrative filtered union-only nominations after AnnotSV prioritisation | `04_sv_prioritization/02c_prioritise_annotsv_events.py` | Saved |
 | Table 4A.5 | Matching sensitivity of the audited release for the 50 filtered intersection nominations | `05_sv_audit/02a_build_audited_release.py` | Saved |
 | Table 4A.6 | Nominations by callset and annotation run before technical review | `04_sv_prioritization/02c_prioritise_annotsv_events.py` | Saved |
-| Figure 4A.1 | OctopuSV SV-type panels (referenced in text; no caption in the 05112026 draft) | `02_sv_consolidation/01_octopusv_manta_tiddit.sh` | Saved |
-| Figure 4A.2 | SV length spectrum (referenced in text; no caption in the 05112026 draft) | `02_sv_consolidation/02b_sv_workflow_figures.R` | Saved |
+| Figure 4A.1 | Structural variant type counts reported in OctopuSV results | `02_sv_consolidation/01_octopusv_manta_tiddit.sh` | Saved |
+| Figure 4A.2 | Length distribution of structural variants by callset and SV type | `02_sv_consolidation/02b_sv_workflow_figures.R` | Saved |
+| Figure 4A.3 | HTML export of the filtered structural variant table | `06_dashboard/proteGErna-SV.R` | Saved |
+| Figure 4A.4 | Resource search view for the gene SOD1 | `06_dashboard/proteGErna-SV.R` | Saved |
+| Figure 4A.5 | Column descriptions view | `06_dashboard/proteGErna-SV.R` | Saved |
 
 ## Reproducibility notes
 

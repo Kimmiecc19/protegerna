@@ -1,7 +1,7 @@
 # 03 Proteogenomic search database (v5)
 
 **Objective:** Objective Three: translate gene-fusion and alternative-splicing events detected in RNA-seq into a protein search database for DIA proteomics.  
-**Dissertation:** Chapter 5, Sections 5.2.6–5.2.7 and 5.3.1–5.3.7; tables and figures: Table 5.1, Table 5.2, Table 5.3, Table 5.4, Figure 5.1, Figure 5.2, Figure 5.3, Table 5A.2, Table 5A.3, Table 5A.4, Table 5A.5  
+**Dissertation:** Chapter 5, Sections 5.2.6–5.2.7 and 5.3.1–5.3.7; tables and figures: Table 5.1, Table 5.2, Table 5.4, Table 5.5, Table 5.6, Table 5.7, Figure 5.1, Figure 5.2, Figure 5.3, Table 5A.2, Table 5A.3, Table 5A.4, Table 5A.5  
 **Back to:** [objective README](../README.md)
 
 ## What this step does
@@ -17,8 +17,8 @@ result is `proteogenomic_database.fasta` (80,657 entries, MD5 `3f8ed11769fcd5a62
 | Script | What it does | Dissertation tables/figures |
 | --- | --- | --- |
 | `01_build_gtf_database.py` | Build the gffutils database of the GENCODE v46 GTF that the reconstruction workflow reads | Section 5.2.6 |
-| `02_build_search_database.sh` | Build the v5 search database: GENCODE validation, fusion/rMATS/SUPPA reconstruction, merge, QC, release report | Table 5.1, Table 5.2, Figure 5.1, Figure 5.2, Figure 5.3, Table 5A.2, Table 5A.3, Table 5A.4, Table 5A.5 |
-| `03_summarise_fusion_concordance.py` | Compare reconstructed fusion proteins with FusionInspector predictions (Tables 5.3, 5.4) | Table 5.3, Table 5.4 |
+| `02_build_search_database.sh` | Build the v5 search database: GENCODE validation, fusion/rMATS/SUPPA reconstruction, merge, QC, release report | Table 5.1, Table 5.2, Table 5.4, Table 5.5, Figure 5.1, Figure 5.2, Figure 5.3, Table 5A.2, Table 5A.3, Table 5A.4, Table 5A.5 |
+| `03_summarise_fusion_concordance.py` | Compare reconstructed fusion proteins with FusionInspector predictions (Tables 5.6, 5.7) | Table 5.6, Table 5.7 |
 
 ## Order of running
 
@@ -48,7 +48,7 @@ python 03_search_database/01_build_gtf_database.py /path/to/Homo_sapiens_GRCh38_
 
 Build the v5 search database: GENCODE validation, fusion/rMATS/SUPPA reconstruction, merge, QC, release report.
 
-- **Dissertation:** Sections 5.2.6–5.2.7; Table 5.1, Table 5.2, Figure 5.1, Figure 5.2, Figure 5.3, Table 5A.2, Table 5A.3, Table 5A.4, Table 5A.5
+- **Dissertation:** Sections 5.2.6–5.2.7; Table 5.1, Table 5.2, Table 5.4, Table 5.5, Figure 5.1, Figure 5.2, Figure 5.3, Table 5A.2, Table 5A.3, Table 5A.4, Table 5A.5
 - **Inputs:** GRCh38 primary assembly (Ensembl 112); gencode_v46.gtf.db (01_build_gtf_database.py); GENCODE v46 translations; UniProt UP000005640 2026_01; cRAP; FusionInspector abridged TSVs; rMATS JC tables; SUPPA events.ioe
 - **Outputs:** results_pgdb_publication_rerun_v5/ (proteogenomic_database.fasta 80,657 entries, MD5 3f8ed117…; metadata, mapping, summary, qc/, release_report)
 - **Run record:** results_pgdb_publication_rerun_v5/.proteogenomic_state/*.json; workflow.publication.v5.toml
@@ -62,9 +62,9 @@ bash 03_search_database/02_build_search_database.sh --dry-run   # then without -
 
 ### `03_summarise_fusion_concordance.py`
 
-Compare reconstructed fusion proteins with FusionInspector predictions (Tables 5.3, 5.4).
+Compare reconstructed fusion proteins with FusionInspector predictions (Tables 5.6, 5.7).
 
-- **Dissertation:** Sections 5.2.7, 5.3.4; Table 5.3, Table 5.4
+- **Dissertation:** Sections 5.2.7, 5.3.4; Table 5.6, Table 5.7
 - **Inputs:** fusion.biological.tsv
 - **Outputs:** results_pgdb_publication_rerun_v5/qc/fusion_prediction_concordance.md
 - **Run for the dissertation:** 2026-10

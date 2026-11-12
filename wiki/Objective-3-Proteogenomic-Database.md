@@ -131,7 +131,7 @@ bash 03_search_database/02_build_search_database.sh --dry-run
 bash 03_search_database/02_build_search_database.sh
 #    --explain describes each stage; --stage NAME runs one stage only
 
-# 3. Fusion concordance with FusionInspector (Tables 5.3, 5.4)
+# 3. Fusion concordance with FusionInspector (Tables 5.6, 5.7)
 python 03_search_database/03_summarise_fusion_concordance.py \
   03_search_database/results_pgdb_publication_rerun_v5/fusion.biological.tsv \
   --output 03_search_database/results_pgdb_publication_rerun_v5/qc/fusion_prediction_concordance.md
@@ -141,7 +141,7 @@ python 03_search_database/03_summarise_fusion_concordance.py \
 > `results_pgdb_publication_rerun_v5/workflow.publication.v5.toml`.
 
 The database build:
-1. validates the coordinate, CDS-phase and translation code against GENCODE translations (Table 5.1);
+1. validates the coordinate, CDS-phase and translation code against GENCODE translations (Table 5.4);
 2. reconstructs fusion proteins from FusionInspector, and splice-derived proteins from rMATS JC tables and SUPPA `events.ioe`;
 3. merges and deduplicates exact amino-acid sequences with the UniProt reference and cRAP;
 4. runs strict FASTA QC and writes a release report.
@@ -207,19 +207,19 @@ Run this way on the saved inputs, `02a` reproduces the saved `reference_vs_v5_me
 
 | Step | Output | Description |
 | --- | --- | --- |
-| 01 | `01_results_stratified_batches/batch_files/` | `proteomic_batches.csv`, `transcriptomic_batches.csv`, per-batch files, batch statistics (Table 5.6) |
+| 01 | `01_results_stratified_batches/batch_files/` | `proteomic_batches.csv`, `transcriptomic_batches.csv`, per-batch files, batch statistics (Table 5.9) |
 | 01 | `02_results_detect_acquisition_mode/mzML_mode_summary*.csv` | DIA/DDA check per mzML |
 | 02 | `02_results_rnafusion_final/` | FusionInspector, fusion-report and Arriba results per batch |
 | 02 | `03_results_rnasplice_final/` | rMATS and SUPPA event definitions |
-| 03 | `results_pgdb_publication_rerun_v5/` | **`proteogenomic_database.fasta`** (80,657 entries, MD5 `3f8ed11769fcd5a62587b528cd2eb52a`), `proteogenomic_metadata.tsv`, `proteogenomic_mapping.tsv`, `proteogenomic_peptides.tsv`, `fusion.biological.tsv`, summary, `qc/`, release report (Tables 5.1–5.4, 5A.2–5A.5) |
+| 03 | `results_pgdb_publication_rerun_v5/` | **`proteogenomic_database.fasta`** (80,657 entries, MD5 `3f8ed11769fcd5a62587b528cd2eb52a`), `proteogenomic_metadata.tsv`, `proteogenomic_mapping.tsv`, `proteogenomic_peptides.tsv`, `fusion.biological.tsv`, summary, `qc/`, release report (Tables 5.4–5.7, 5A.2–5A.5) |
 | 04 | `results_revised_database/` | v7 database (30,031 sequences, MD5 `e6b4632b…`) |
 | 05 | `01_results_make_reference_database/` | `human_reference_deduplicated.fasta`, `crap.fasta` |
 | 05 | `02a_results_quantmsdiann_reference/batch{1_fixed,2..6}/quant_tables/` | Reference-only DIA-NN reports and matrices |
 | 05 | `02b_results_quantmsdiann_pgdb/pgdb_v5_batch{1..6}/quant_tables/` | Proteogenomic DIA-NN reports (`diann_report.tsv`, `pr_matrix`, `pg_matrix`) |
-| 06 | `02a_.../reference_vs_v5_metrics.tsv` | Identification coverage and quality (Tables 5.7, 5.9) |
-| 06 | `02b_.../custom_only_peptides_b1to6.tsv` | Peptides absent from the reference searches and UniProt (Table 5.10) |
-| 06 | `02c_.../table_5_10_peptide_lengths.tsv` | Peptide lengths (Table 5.8) |
-| 06 | `02d_.../junction_peptides.tsv.gz` | Fusion-associated peptides (Table 5.5) |
+| 06 | `02a_.../reference_vs_v5_metrics.tsv` | Identification coverage and quality (Tables 5.10, 5.12) |
+| 06 | `02b_.../custom_only_peptides_b1to6.tsv` | Peptides absent from the reference searches and UniProt (Table 5.13) |
+| 06 | `02c_.../table_5_10_peptide_lengths.tsv` | Peptide lengths (Table 5.11) |
+| 06 | `02d_.../junction_peptides.tsv.gz` | Fusion-associated peptides (Table 5.8) |
 | 06 | `02_.../v5_v7_comparison.tsv` | v5 vs v7 database comparison |
 
 Every database stage records its configuration hash and input checksums.
@@ -241,15 +241,17 @@ Every database stage records its configuration hash and input checksums.
 
 | Item | Script(s) |
 | --- | --- |
-| Tables 5.1, 5.2, 5A.2–5A.5; Figures 5.1–5.3 | `03_search_database/02_build_search_database.sh` |
-| Tables 5.3, 5.4 | `03_search_database/03_summarise_fusion_concordance.py` |
-| Table 5.5 | `06_search_assessment/02d_summarise_fusion_peptides.py` |
-| Table 5.6 | `01_sample_batches/01a_...`, `01b_validation.py`, `06/01c_collect_diann_summary_tables.sh` |
-| Tables 5.7, 5.9 | `06/01a`, `01b`, `01c`, `02a_compare_reference_and_proteogenomic.py` |
-| Table 5.8 | `06/02c_compare_peptide_lengths.py` |
-| Table 5.10 | `06/02b_find_novel_candidate_peptides.py` |
-| Table 5.11 | `06/02b` + Objective 4 (`01_single_layer/02b`, `04b`; `03_cross_layer/02_evaluation_table.py`) |
-| Table 5.12 | [nf_protegerna](nf_protegerna-Pipeline) test profile |
+| Tables 5.1, 5.2 | Reconstruction rules and `03_search_database/config/workflow.publication.v5.toml` |
+| Table 5.3 | `04_revised_database/01_build_revised_database.sh`, `02_compare_search_and_revised_databases.py` |
+| Tables 5.4, 5.5, 5A.2–5A.5; Figures 5.1–5.3 | `03_search_database/02_build_search_database.sh` |
+| Tables 5.6, 5.7 | `03_search_database/03_summarise_fusion_concordance.py` |
+| Table 5.8 | `06_search_assessment/02d_summarise_fusion_peptides.py` |
+| Table 5.9 | `01_sample_batches/01a_...`, `01b_validation.py`, `06/01c_collect_diann_summary_tables.sh` |
+| Tables 5.10, 5.12 | `06/01a`, `01b`, `01c`, `02a_compare_reference_and_proteogenomic.py` |
+| Table 5.11 | `06/02c_compare_peptide_lengths.py` |
+| Table 5.13 | `06/02b_find_novel_candidate_peptides.py` |
+| Table 5.14 | `06/02b` + Objective 4 (`01_single_layer/02b`, `04b`; `03_cross_layer/02_evaluation_table.py`) |
+| Table 5.15 | [nf_protegerna](nf_protegerna-Pipeline) test profile |
 | Table 5A.1 | `01_biotools_landscape/02a_filter_biotools.R` |
 
 ## Key literature

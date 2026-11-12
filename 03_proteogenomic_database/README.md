@@ -28,12 +28,12 @@ The Nextflow implementation (nf-core/protegerna) is in [`../03b_protegerna_nextf
 
 | Step | What it does | Dissertation |
 | --- | --- | --- |
-| [`01_sample_batches`](01_sample_batches/README.md) | Stratified batches; DIA acquisition check | 5.2.2–5.2.4; Table 5.6 |
+| [`01_sample_batches`](01_sample_batches/README.md) | Stratified batches; DIA acquisition check | 5.2.2–5.2.4; Table 5.9 |
 | [`02_event_detection`](02_event_detection/README.md) | nf-core/rnafusion and nf-core/rnasplice | 5.2.5 |
-| [`03_search_database`](03_search_database/README.md) | Build and QC the v5 search database; fusion concordance | 5.2.6–5.2.7, 5.3.1–5.3.7; Tables 5.1–5.4, 5A.2–5A.5; Figures 5.1–5.3 |
-| [`04_revised_database`](04_revised_database/README.md) | Revised v7 build for comparison | 5.2.8, 5.3.8 |
+| [`03_search_database`](03_search_database/README.md) | Build and QC the v5 search database; fusion concordance | 5.2.6–5.2.7, 5.3.1–5.3.7; Tables 5.1, 5.2, 5.4–5.7, 5A.2–5A.5; Figures 5.1–5.3 |
+| [`04_revised_database`](04_revised_database/README.md) | Revised v7 build for comparison | 5.2.8, 5.3.8; Table 5.3; Figure 5.4 |
 | [`05_proteomic_search`](05_proteomic_search/README.md) | Reference database; quantmsdiann searches | 5.2.9 |
-| [`06_search_assessment`](06_search_assessment/README.md) | Reference vs proteogenomic comparison | 5.3.8–5.3.12; Tables 5.5, 5.7–5.11 |
+| [`06_search_assessment`](06_search_assessment/README.md) | Reference vs proteogenomic comparison | 5.3.8–5.3.12; Tables 5.8, 5.10–5.14 |
 
 Each step folder has its own README with the command used for every script, its inputs and outputs, and what to edit first.
 
@@ -68,23 +68,26 @@ pip install -e 03_search_database/proteogenomic_db
 
 ## Script-to-dissertation map
 
-Figure 5.4 is a schematic; Tables 5.13 and 5A.1 come from the literature and the Objective One records.
+Figure 5.4 is a schematic; Tables 5.16 and 5A.1 come from the literature and the Objective One records.
 
 | Item | Caption | Script(s) | Status |
 | --- | --- | --- | --- |
-| Table 5.1 | Reproduction of GENCODE translations by the coordinate, CDS-phase and translation implementation | `03_search_database/02_build_search_database.sh` | Saved |
-| Table 5.2 | Candidate generation by caller, from input events to the final database | `03_search_database/02_build_search_database.sh` | Saved |
-| Table 5.3 | Reconstructed fusion proteins compared with FusionInspector peptide sequences and reading frames | `03_search_database/03_summarise_fusion_concordance.py` | Saved |
-| Table 5.4 | Fusion concordance within the DIA-eligible subset | `03_search_database/03_summarise_fusion_concordance.py` | Saved |
-| Table 5.5 | Peptides mapped to fusion-associated sequences | `06_search_assessment/02d_summarise_fusion_peptides.py` | Partly saved |
-| Table 5.6 | Composition of DIA Batches 1–6 | `01_sample_batches/01a_make_stratified_batches.py`, `01_sample_batches/01b_validation.py`, `06_search_assessment/01c_collect_diann_summary_tables.sh` | Saved |
-| Table 5.7 | Identification coverage and quantitative quality of reference-only (Ref) and proteogenomic (PG) searches of Batches 1 (B1), 2 (B2) and 3 (B3) | `06_search_assessment/01a_extract_passing_rows.sh`, `06_search_assessment/01b_make_sequence_source_table.py`, `06_search_assessment/01c_collect_diann_summary_tables.sh`, `06_search_assessment/02a_compare_reference_and_proteogenomic.py` | Saved |
-| Table 5.8 | Peptide lengths in the two search databases vs identified peptides | `06_search_assessment/02c_compare_peptide_lengths.py` | Saved |
-| Table 5.9 | Peptide and precursor overlap between the reference-only and proteogenomic searches | `06_search_assessment/02a_compare_reference_and_proteogenomic.py` | Saved |
-| Table 5.10 | Proteogenomic-search peptides absent from the reference-only searches and UniProt (first six rows) | `06_search_assessment/02b_find_novel_candidate_peptides.py` | Saved |
-| Table 5.11 | Candidate-level evidence for the six peptides across Chapters 5 and 6 | `06_search_assessment/02b_find_novel_candidate_peptides.py`, `04_integration/01_single_layer/02b_classify_peptide_sources.py`, `04_integration/01_single_layer/04b_review_novel_peptides.py`, `04_integration/03_cross_layer/02_evaluation_table.py` | Saved |
-| Table 5.12 | End-to-end smoke test of protegerna on the synthetic test dataset | `03b_protegerna_nextflow/nf_protegerna_workflow_dev/main.nf` | Saved |
-| Table 5.13 | Existing proteogenomic database strategies and their influence on workflow design | Literature review | No script |
+| Table 5.1 | Event-specific reconstruction rules for rMATS events | `03_search_database/proteogenomic_db/rmatstoprotein.py` (rules coded in the reconstruction workflow) | Workflow rules |
+| Table 5.2 | Inclusion criteria for the primary search database, by caller (search-database configuration) | `03_search_database/config/workflow.publication.v5.toml` | Configuration |
+| Table 5.3 | Differences between the search database and the revised database, and their consequences for the reported results | `04_revised_database/01_build_revised_database.sh`, `04_revised_database/02_compare_search_and_revised_databases.py` | Saved |
+| Table 5.4 | GENCODE translation concordance outcome | `03_search_database/02_build_search_database.sh` | Saved |
+| Table 5.5 | Candidate generation by caller, from input events to the final database | `03_search_database/02_build_search_database.sh` | Saved |
+| Table 5.6 | Concordance between reconstructed fusion candidates and caller predictions for all candidates | `03_search_database/03_summarise_fusion_concordance.py` | Saved |
+| Table 5.7 | Concordance between reconstructed fusion candidates and caller predictions for the DIA-eligible subset | `03_search_database/03_summarise_fusion_concordance.py` | Saved |
+| Table 5.8 | Peptides mapped to fusion-associated sequences in the proteogenomic searches of Batches 1–6 | `06_search_assessment/02d_summarise_fusion_peptides.py` | Partly saved |
+| Table 5.9 | Composition of DIA Batches 1–6 | `01_sample_batches/01a_make_stratified_batches.py`, `01_sample_batches/01b_validation.py`, `06_search_assessment/01c_collect_diann_summary_tables.sh` | Saved |
+| Table 5.10 | Identification coverage and quantitative quality of reference-only (Ref) and proteogenomic (PG) searches | `06_search_assessment/01a_extract_passing_rows.sh`, `06_search_assessment/01b_make_sequence_source_table.py`, `06_search_assessment/01c_collect_diann_summary_tables.sh`, `06_search_assessment/02a_compare_reference_and_proteogenomic.py` | Saved |
+| Table 5.11 | Length distribution of in-silico tryptic peptides in the reference-only and search databases and of the peptides identified in the reference-only and proteogenomic searches | `06_search_assessment/02c_compare_peptide_lengths.py` | Saved |
+| Table 5.12 | Peptide and precursor overlap between the reference-only and proteogenomic searches | `06_search_assessment/02a_compare_reference_and_proteogenomic.py` | Saved |
+| Table 5.13 | Proteogenomic-search peptides absent from the reference-only searches and UniProt | `06_search_assessment/02b_find_novel_candidate_peptides.py` | Saved |
+| Table 5.14 | Candidate-level evidence for the six proteogenomic-search peptides absent from the reference-only searches and UniProt | `06_search_assessment/02b_find_novel_candidate_peptides.py`, `04_integration/01_single_layer/02b_classify_peptide_sources.py`, `04_integration/01_single_layer/04b_review_novel_peptides.py`, `04_integration/03_cross_layer/02_evaluation_table.py` | Saved |
+| Table 5.15 | End-to-end smoke test of protegerna on the synthetic test dataset | `03b_protegerna_nextflow/nf_protegerna_workflow_dev/main.nf` | Saved |
+| Table 5.16 | Existing proteogenomic database strategies and their influence on workflow design | Literature review | No script |
 | Figure 5.1 | Overview of the proteogenomic database reconstruction workflow | `03_search_database/02_build_search_database.sh` | Saved |
 | Figure 5.2 | Overview of the splice-derived protein reconstruction workflow | `03_search_database/02_build_search_database.sh` | Saved |
 | Figure 5.3 | Overview of the fusion-derived protein reconstruction workflow | `03_search_database/02_build_search_database.sh` | Saved |

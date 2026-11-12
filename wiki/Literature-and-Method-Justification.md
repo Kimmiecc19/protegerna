@@ -218,7 +218,7 @@ These works justify event-specific reconstruction instead of whole-transcript tr
 | Li, H., Joh, Y. S., Kim, H., Paek, E., Lee, S.-W., & Hwang, K.-B. (2016). Evaluating the effect of database inflation in proteogenomic search on sensitive and reliable peptide identification. BMC Genomics, 17(Suppl. 13), 1031. <https://doi.org/10.1186/s12864-016-3327-5> | Database inflation reduces sensitivity. This justifies limiting the database to searchable, reference-unique candidates. | Lit 2.5 |
 | McCarthy, D. J., Humburg, P., Kanapin, A., Rivas, M. A., Gaulton, K., Cazier, J.-B., & Donnelly, P. (2014). Choice of transcripts and software has a large effect on variant annotation. Genome Medicine, 6(3), 26. <https://doi.org/10.1186/gm543> | Annotation release changes the database built from the same calls. Hence the pinned GENCODE v46 and manifests. | Lit 2.5 |
 
-### Existing tools that shaped the workflow (Table 5.13)
+### Existing tools that shaped the workflow (Table 5.16)
 
 | Reference | What it justifies | Cited in |
 | --- | --- | --- |

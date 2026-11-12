@@ -3,7 +3,7 @@
 compare_reference_vs_v5.py - reference-only vs V5 proteogenomic quantmsdiann searches (Chapter 5).
 
 Recomputes every database-comparison metric reported in Chapter 5 (text under "Comparison with a
-reference-only search" and Tables 5.9 and 5.11) for Batches 1-6, from files already in
+reference-only search" and Tables 5.10 and 5.12) for Batches 1-6, from files already in
 six_batch_assessment/:
 
   {ref,v5}_b{1..6}.pass.tsv.gz      main-report rows passing Q.Value, Global.Q.Value, PG.Q.Value and

@@ -1,7 +1,7 @@
 # 06 proteGErna-SV dashboard
 
 **Objective:** Objective Two: a reproducible workflow for structural-variant (SV) detection, consolidation, annotation, ALS-informed nomination and interactive exploration.  
-**Dissertation:** Chapter 4, Sections 4.2.10 and 4.3.8; tables and figures: Figure 4.5, Figure 4.6, Figure 4.7, Figure 4.8, Figure 4.9, Figure 4.10  
+**Dissertation:** Chapter 4, Sections 4.2.10 and 4.3.8, Appendix 4A.6; tables and figures: Figure 4.5, Figure 4.6, Figure 4.7, Figure 4A.3, Figure 4A.4, Figure 4A.5  
 **Back to:** [objective README](../README.md)
 
 ## What this step does
@@ -14,7 +14,7 @@ it with the filtered AnnotSV intersection VCF.
 
 | Script | What it does | Dissertation tables/figures |
 | --- | --- | --- |
-| `proteGErna-SV.R` | Shiny dashboard for AnnotSV-annotated VCFs (Overview, Structural variants, Column descriptions, Resource search) | Figure 4.5, Figure 4.6, Figure 4.7, Figure 4.8, Figure 4.9, Figure 4.10 |
+| `proteGErna-SV.R` | Shiny dashboard for AnnotSV-annotated VCFs (Overview, Structural variants, Column descriptions, Resource search) | Figure 4.5, Figure 4.6, Figure 4.7, Figure 4A.3, Figure 4A.4, Figure 4A.5 |
 
 ## Order of running
 
@@ -29,7 +29,7 @@ Commands are those used for the dissertation, with paths relative to this step's
 
 Shiny dashboard for AnnotSV-annotated VCFs (Overview, Structural variants, Column descriptions, Resource search).
 
-- **Dissertation:** Sections 4.2.10, 4.3.8; Figure 4.5, Figure 4.6, Figure 4.7, Figure 4.8, Figure 4.9, Figure 4.10
+- **Dissertation:** Sections 4.2.10, 4.3.8, Appendix 4A.6; Figure 4.5, Figure 4.6, Figure 4.7, Figure 4A.3, Figure 4A.4, Figure 4A.5
 - **Inputs:** manta_tiddit.intersect.cohort.annotated.vcf (filtered); sv_dashboard_helpers.R; annotsv_column_descriptions.tsv; www/
 - **Outputs:** results_dashboard_final/ (screenshots, HTML/CSV/XLSX exports)
 - **Run record:** none (no sessionInfo saved)
@@ -42,7 +42,7 @@ Rscript -e 'shiny::runApp("06_dashboard/proteGErna-SV.R", launch.browser = TRUE)
 
 Requires R ≥ 4.6 with shiny 1.14.0, shinydashboard 0.7.3, DT 0.34.0, vcfR 1.16.0, shinyjs 2.1.1, httr 1.4.8 and jsonlite 2.0.0.
 
-`results_dashboard_final/` holds the screenshots and exports used for Figures 4.5–4.10. The four `127.0.0.1_4919_*.png` files are
+`results_dashboard_final/` holds the screenshots and exports used for Figures 4.5–4.7 and Appendix Figures 4A.3–4A.5. The four `127.0.0.1_4919_*.png` files are
 unnamed screenshots; the cropped panel in Figure 4.7 is not saved.
 
 ## Data access

@@ -4,11 +4,11 @@
 # Objective Three, Chapter 5: build the SEARCH database (v5).
 # Runs the proteogenomic database workflow with the frozen configuration
 # config/workflow.publication.v5.toml. The workflow stages, in order, are:
-#   1 validate GENCODE translation   (validate_gencode_translation.py)  -> Table 5.1
+#   1 validate GENCODE translation   (validate_gencode_translation.py)  -> Table 5.4
 #   2 fusion / rMATS / SUPPA reconstruction (fusiontoprotein.py, rmatstoprotein.py, suppatoprotein.py)
 #   3-4 merge with UniProt + cRAP, DIA-suitability filter, deduplication (merge_proteogenomic_database.py)
 #   5 final FASTA QC                  (proteogenomic_fasta_qc.py)
-#   6 release report                  (release_report.py)            -> Table 5.2
+#   6 release report                  (release_report.py)            -> Table 5.5
 # The merge cannot run unless stage 1 passed.
 #
 # Every peptide-level result in Chapters 5 and 6 comes from the database this script builds.

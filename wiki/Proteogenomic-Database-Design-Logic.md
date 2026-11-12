@@ -80,7 +80,7 @@ The review found four recurring gaps:
 | Database size is seldom controlled against what a bottom-up DIA search could actually detect | Candidates are judged by the tryptic peptides a DIA search could observe |
 
 None of the reviewed database-construction tools reported direct use of FusionInspector, rMATS **and** SUPPA outputs, or a
-design for cohort-scale DIA. How individual tools informed the design (Table 5.13):
+design for cohort-scale DIA. How individual tools informed the design (Table 5.16):
 
 | Tool or strategy | Design focus | What this workflow does differently | What remains stronger in the existing tool |
 | --- | --- | --- | --- |
@@ -312,7 +312,7 @@ makes the post hoc concordance check meaningful.
 8. **Junction peptides.** In silico tryptic digestion finds peptides containing at least one donor- and one acceptor-derived
    residue, or the hybrid residue. These are compared with the reference proteome for fusion specificity.
 9. **Concordance with FusionInspector (post hoc only).** Categories: identical protein, same junction peptide, frame
-   agreement only, discordant, no caller reference (Tables 5.3–5.4).
+   agreement only, discordant, no caller reference (Tables 5.6–5.7).
 
 ## 8. Inclusion policies: what enters the search database
 
@@ -466,7 +466,7 @@ Two kinds of non-reference peptide are also distinguished:
 Other points for interpretation:
 - **A pooled database decouples peptide from participant.** Detecting a peptide in a file doesn't mean the event was called
   in that participant's RNA. Provenance tables keep fusion sample IDs and rMATS batches (SUPPA carries none), so matched-RNA
-  support can be checked, which [Objective 4](Objective-4-Multi-Omics-Integration) does (Table 5.11).
+  support can be checked, which [Objective 4](Objective-4-Multi-Omics-Integration) does (Table 5.14).
 - **Splice-derived peptides can't be attributed to their predicted event.** The libraries were reverse-stranded but
   processed as forward-stranded in nf-core/rnasplice, which invalidated the Salmon, SUPPA and rMATS quantification
   (Section 7.3.3). Splice entries therefore lack valid RNA support in these samples.

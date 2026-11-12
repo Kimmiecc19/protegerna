@@ -1,7 +1,7 @@
 # 03 Cross-layer agreement and evaluation
 
 **Objective:** Objective Four: link SVs, transcriptomic alterations and proteomic evidence within participants and grade the evidence for candidate mechanisms.  
-**Dissertation:** Chapter 6, Sections 6.2.13–6.2.15 and 6.3.7–6.3.8; tables and figures: Table 5.11, Table 6.6, Table 6.7, Table 6.12, Table 6.14, Table 6.16, Table 6.17, Figure 6.3  
+**Dissertation:** Chapter 6, Sections 6.2.13–6.2.15 and 6.3.7–6.3.8; tables and figures: Table 5.14, Table 6.6, Table 6.7, Table 6.12, Table 6.14, Table 6.16, Table 6.17, Figure 6.3  
 **Back to:** [objective README](../README.md)
 
 ## What this step does
@@ -18,7 +18,7 @@ its evidence level.
 | `01_cross_omics_agreement.py` | Gene evidence matrix, RNA–protein concordance, primary-candidate carrier effects, fusion–peptide chains | Table 6.14 |
 | `04_sv_fusion_overlap.py` | Filtered fusions whose breakpoints both lie inside a rare SV in the same participant | Table 6.16 |
 | `03_check_duplications_in_wgs.py` | pysam depth, outward-facing pairs and split reads for the six fusion-containing duplications | Table 6.16 |
-| `02_evaluation_table.py` | Single-layer vs integrated conclusion, change class and evidence level for every candidate | Table 5.11, Table 6.6, Table 6.7, Table 6.12, Table 6.14, Table 6.17, Figure 6.3 |
+| `02_evaluation_table.py` | Single-layer vs integrated conclusion, change class and evidence level for every candidate | Table 5.14, Table 6.6, Table 6.7, Table 6.12, Table 6.14, Table 6.17, Figure 6.3 |
 
 ## Order of running
 
@@ -79,7 +79,7 @@ WGS_REFERENCE=/path/to/GRCh38_full_analysis_set_plus_decoy_hla.fa CRAM_DIR=/path
 
 Single-layer vs integrated conclusion, change class and evidence level for every candidate.
 
-- **Dissertation:** Sections 6.2.14–6.2.15, 6.3.8; Table 5.11, Table 6.6, Table 6.7, Table 6.12, Table 6.14, Table 6.17, Figure 6.3
+- **Dissertation:** Sections 6.2.14–6.2.15, 6.3.8; Table 5.14, Table 6.6, Table 6.7, Table 6.12, Table 6.14, Table 6.17, Figure 6.3
 - **Inputs:** exact inputs recorded in summary.json → inputs
 - **Outputs:** 02_results_evaluation_table/ (evaluation_full, evaluation_main_table, evaluation_summary, summary.json)
 - **Run record:** 02_results_evaluation_table/summary.json (inputs)

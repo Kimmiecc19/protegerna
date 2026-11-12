@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-score_review.py - score-based spectral review of the ten novel peptide candidates (Chapter 6, Table 6.13).
+score_review.py - score-based spectral review of the ten novel peptide candidates (Chapter 6).
 
 Input: scores_b{1..6}.tsv written by extract_scores.sh from each v5 diann_report.tsv (every row of the 649
 variant-only peptides plus a systematic 1-in-150 sample of all other rows) and variant_only_peptide_classes.tsv.

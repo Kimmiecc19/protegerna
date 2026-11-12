@@ -1,7 +1,7 @@
 # 01 Sample batches and acquisition mode
 
 **Objective:** Objective Three: translate gene-fusion and alternative-splicing events detected in RNA-seq into a protein search database for DIA proteomics.  
-**Dissertation:** Chapter 5, Sections 5.2.2–5.2.4 and 5.2.9; tables and figures: Table 5.6  
+**Dissertation:** Chapter 5, Sections 5.2.2–5.2.4 and 5.2.9; tables and figures: Table 5.9  
 **Back to:** [objective README](../README.md)
 
 ## What this step does
@@ -14,8 +14,8 @@ the same participants. A second script confirms from the mzML isolation windows 
 
 | Script | What it does | Dissertation tables/figures |
 | --- | --- | --- |
-| `01a_make_stratified_batches.py` | Six artificial batches (StratifiedKFold on sex, diagnosis, sequencing and shipment batch) | Table 5.6 |
-| `01b_validation.py` | Batch balance statistics | Table 5.6 |
+| `01a_make_stratified_batches.py` | Six artificial batches (StratifiedKFold on sex, diagnosis, sequencing and shipment batch) | Table 5.9 |
+| `01b_validation.py` | Batch balance statistics | Table 5.9 |
 | `02_detect_acquisition_mode.py` | Confirm DIA acquisition from mzML isolation windows (153 files, all DIA) | Section 5.2.9 |
 
 ## Order of running
@@ -32,7 +32,7 @@ Commands are those used for the dissertation, with paths relative to this step's
 
 Six artificial batches (StratifiedKFold on sex, diagnosis, sequencing and shipment batch); BTC/BDC added round-robin.
 
-- **Dissertation:** Sections 5.2.2–5.2.4, 5.2.9; Table 5.6
+- **Dissertation:** Sections 5.2.2–5.2.4, 5.2.9; Table 5.9
 - **Inputs:** 00_general/01_filtering_matching_patients/stratify_bdc.csv, stratify_btc.csv
 - **Outputs:** 01_results_stratified_batches/batch_files/ (proteomic_batches.csv, transcriptomic_batches.csv, artificial_*_batch_N.csv, batch_summary_report_17062025.csv)
 - **Run record:** batch_summary_report_17062025.csv
@@ -48,7 +48,7 @@ python 01a_make_stratified_batches.py
 
 Batch balance statistics.
 
-- **Dissertation:** Section 5.2.9; Table 5.6
+- **Dissertation:** Section 5.2.9; Table 5.9
 - **Inputs:** proteomic_batches.csv, transcriptomic_batches.csv
 - **Outputs:** 01_results_stratified_batches/batch_files/*_batch_stats_*.csv, batch_figures/
 - **Run for the dissertation:** 2025-06

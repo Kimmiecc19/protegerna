@@ -1,7 +1,7 @@
 # 04 Revised database (v7, comparison only)
 
 **Objective:** Objective Three: translate gene-fusion and alternative-splicing events detected in RNA-seq into a protein search database for DIA proteomics.  
-**Dissertation:** Chapter 5, Sections 5.2.8 and 5.3.8  
+**Dissertation:** Chapter 5, Sections 5.2.8 and 5.3.8; tables and figures: Table 5.3, Figure 5.4; Appendix 5A.4.6 and 5A.4.8  
 **Back to:** [objective README](../README.md)
 
 ## What this step does
@@ -13,7 +13,7 @@ with the searched v5 build to show the effect of the additional filtering (Figur
 
 | Script | What it does | Dissertation tables/figures |
 | --- | --- | --- |
-| `01_build_revised_database.sh` | Revised (v7) build with corrected code | Sections 5.2.8, 5.3.8 |
+| `01_build_revised_database.sh` | Revised (v7) build with corrected code | Sections 5.2.8, 5.3.8; Table 5.3 |
 
 ## Order of running
 

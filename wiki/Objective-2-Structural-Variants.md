@@ -187,7 +187,7 @@ filter SVs, look up genes in external resources, read column descriptions and ex
 | 04 | `03_results_build_participant_sv_table/` | `intersection_SVs_347_participants[_filtered].{tsv,README.md,validation.json}` |
 | 05 | `01bc_results_raw_call_review/<set>/` | `review_events.tsv`, `raw_record_matches.tsv`, `carrier_status.tsv`, `evidence_per_{record,carrier,event}.tsv`, `evidence_summary.tsv`, `run_log.json`, `evidence_thresholds.json` |
 | 05 | `02_results_audited_release/` | `audited_candidates`, **`primary_candidates`** (24), **`participant_support`**, `integration_pairs`, `matching_sensitivity`, `summary.json`, `verification.json` (Tables 4.10–4.12, 4A.2, 4A.5) |
-| 06 | `results_dashboard_final/` | Screenshots and HTML/CSV/XLSX exports (Figures 4.5–4.10) |
+| 06 | `results_dashboard_final/` | Screenshots and HTML/CSV/XLSX exports (Figures 4.5–4.7, 4A.3–4A.5) |
 
 **Handed to Objective 4:** `manta_tiddit.intersect.cohort.vcf`, the four AnnotSV event-prioritisation tables,
 `primary_candidates.tsv` and `participant_support.tsv`.
@@ -223,7 +223,7 @@ filter SVs, look up genes in external resources, read column descriptions and ex
 | Table 4.10 | `05_sv_audit/01b_extract_raw_calls.py`, `01c_score_raw_call_evidence.py` |
 | Tables 4.11–4.12 | `05_sv_audit/02a_build_audited_release.py`, `02b_verify_audited_release.py` |
 | Figures 4.3, 4.4, 4A.2 | `02_sv_consolidation/02b_sv_workflow_figures.R` |
-| Figures 4.5–4.10 | `06_dashboard/proteGErna-SV.R` |
+| Figures 4.5–4.7, 4A.3–4A.5 | `06_dashboard/proteGErna-SV.R` |
 | Appendix 4A tables | See the [folder README](https://github.com/Kimmiecc19/protegerna/blob/main/02_SV_analysis/README.md#script-to-dissertation-map) |
 
 Each step folder README lists inputs, outputs and run records for every script.

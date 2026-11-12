@@ -2,7 +2,7 @@
 
 **Folder:** [`03b_protegerna_nextflow/nf_protegerna_workflow_dev/`](https://github.com/Kimmiecc19/protegerna/tree/main/03b_protegerna_nextflow/nf_protegerna_workflow_dev)
 **Also published at:** [github.com/Kimmiecc19/nf_protegerna](https://github.com/Kimmiecc19/nf_protegerna)
-**Dissertation:** Chapter 5, Sections 5.2.10 and 5.3.13; Table 5.12
+**Dissertation:** Chapter 5, Sections 5.2.10 and 5.3.13; Table 5.15
 
 ## Overview
 
@@ -113,7 +113,7 @@ nextflow run . -profile test \
   --proteogenomic_container /absolute/path/protegerna.sif
 ```
 
-Expected: producer records fusion **2**, rMATS **1**, SUPPA **1**; final database **4** unique sequences (Table 5.12). This
+Expected: producer records fusion **2**, rMATS **1**, SUPPA **1**; final database **4** unique sequences (Table 5.15). This
 is an integration test, not validation against a real cohort.
 
 ### 2. Production run
@@ -162,7 +162,7 @@ information, not biological QC.
 
 | Run | Command | Result |
 | --- | --- | --- |
-| 19 Oct 2026 (`tender_poincare`) | `nextflow run main.nf -profile test,docker --outdir results/test_yay` | Table 5.12: 6 synthetic records merged into 4 unique sequences |
+| 19 Oct 2026 (`tender_poincare`) | `nextflow run main.nf -profile test,docker --outdir results/test_yay` | Table 5.15: 6 synthetic records merged into 4 unique sequences |
 | 2 Nov 2026 (`grave_pauling`) | `nextflow run main.nf -profile publication -params-file assets/params.publication.yml --outdir test_publication_woohoo ...` on one participant (CASE-NEUWY079WUH FusionInspector calls with the cohort rMATS and SUPPA outputs) | 61,800 unique sequences |
 
 ## Updating the reconstruction code

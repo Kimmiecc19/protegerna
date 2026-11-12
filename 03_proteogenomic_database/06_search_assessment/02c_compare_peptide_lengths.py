@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """
-table_5_10_peptide_lengths.py - search-space inflation and Table 5.10 (Chapter 5).
+table_5_10_peptide_lengths.py - search-space inflation and Table 5.11 (Chapter 5).
 
-Reproduces the Results text under "Search-space inflation" and Table 5.10:
+Reproduces the Results text under "Search-space inflation" and Table 5.11:
   * entries in the reference-only and V5 search databases;
   * distinct in-silico tryptic peptides of each database, the overlap between them, and their
     length distribution (median, mean, % of 30 residues or longer);

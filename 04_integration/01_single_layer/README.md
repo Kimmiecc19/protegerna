@@ -1,7 +1,7 @@
 # 01 Single-layer analyses
 
 **Objective:** Objective Four: link SVs, transcriptomic alterations and proteomic evidence within participants and grade the evidence for candidate mechanisms.  
-**Dissertation:** Chapter 6, Sections 6.2.7–6.2.12 and 6.3.1–6.3.7; tables and figures: Table 5.11, Table 6.3, Table 6.5, Table 6.8, Table 6.9, Table 6.10, Table 6.11, Table 6.12, Table 6.13, Figure 6.1, Table 6A.1, Table 6A.2, Table 6A.4  
+**Dissertation:** Chapter 6, Sections 6.2.7–6.2.12 and 6.3.1–6.3.7; tables and figures: Table 5.14, Table 6.3, Table 6.5, Table 6.8, Table 6.9, Table 6.10, Table 6.11, Table 6.12, Table 6.13, Figure 6.1, Table 6A.1, Table 6A.2, Table 6A.4  
 **Back to:** [objective README](../README.md)
 
 ## What this step does
@@ -21,11 +21,11 @@ permutation check, and the score-based review of the ten novel peptide candidate
 | `01d_filter_fusions.py` | Fusion filters F1–F6, ALS vs HC Fisher tests (BH), ≥ 2-caller sensitivity, Arriba strand check | Table 6.5, Table 6.9, Table 6.10 |
 | `01e_sv_carrier_expression_scan.py` | Carrier vs non-carrier RNA scan for every SV event-gene pair | Table 6.13, Figure 6.1 |
 | `02a_protein_differential_abundance.R` | limma ~ condition + sex + batch (trend, robust), no imputation | Sections 6.2.11, 6.3.3 |
-| `02b_classify_peptide_sources.py` | Reference-explained vs variant-only precursors | Table 5.11, Table 6.11, Table 6.12 |
+| `02b_classify_peptide_sources.py` | Reference-explained vs variant-only precursors | Table 5.14, Table 6.11, Table 6.12 |
 | `03a_pathway_enrichment.R` | Preranked fgsea (and clusterProfiler) on the moderated t | Table 6A.1, Table 6A.2 |
 | `03b_pathway_label_permutation.R` | Within-batch diagnosis-label permutation for the top 15 gene sets (seed 20261014) | Table 6A.4 |
 | `04a_extract_spectral_scores.sh` | DIA-NN score columns for the variant-only peptides plus a 1-in-150 background sample | Table 6.12 |
-| `04b_review_novel_peptides.py` | Score-based spectral review of the ten novel candidates (fail if ≥ 2 dimensions flagged) | Table 5.11, Table 6.12 |
+| `04b_review_novel_peptides.py` | Score-based spectral review of the ten novel candidates (fail if ≥ 2 dimensions flagged) | Table 5.14, Table 6.12 |
 
 ## Order of running
 
@@ -131,7 +131,7 @@ Rscript 01_single_layer/02a_protein_differential_abundance.R   # set source_mode
 
 Reference-explained vs variant-only precursors; known isoform / GENCODE-only / novel candidate (I=L).
 
-- **Dissertation:** Sections 6.2.12, 6.3.5; Table 5.11, Table 6.11, Table 6.12
+- **Dissertation:** Sections 6.2.12, 6.3.5; Table 5.14, Table 6.11, Table 6.12
 - **Inputs:** v5 pr_matrix per batch; proteogenomic_mapping.tsv; UniProt canonical + isoforms; GENCODE v46 translations
 - **Outputs:** 02b_results_peptide_source_classification/ (precursor_sources.tsv, variant_only_peptides.tsv, summary.json)
 - **Run record:** summary.json
@@ -189,7 +189,7 @@ done
 
 Score-based spectral review of the ten novel candidates (fail if ≥ 2 dimensions flagged).
 
-- **Dissertation:** Sections 6.2.12, 6.3.6; Table 5.11, Table 6.12
+- **Dissertation:** Sections 6.2.12, 6.3.6; Table 5.14, Table 6.12
 - **Inputs:** scores_b{1..6}.tsv; variant_only_peptide_classes.tsv (copy of variant_only_peptides.tsv)
 - **Outputs:** 04ab_spectral_review/novel_score_review_{summary,by_batch,reference_medians}.tsv, spectral_review.tsv
 - **Run for the dissertation:** 2026-10-24

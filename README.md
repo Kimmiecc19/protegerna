@@ -44,8 +44,6 @@ Chapters 1, 2 and 7 (introduction, literature review, discussion) have no code.
   produced it.
 - Each step folder has a README with the **command used** for every script, its inputs and outputs, the run record it wrote and
   what to edit before running.
-- [`script_to_dissertation_map/`](script_to_dissertation_map/) holds the full map as a workbook (tables and figures, results
-  sections, scripts with commands and inputs, open issues).
 
 ## Repository layout
 
@@ -57,7 +55,6 @@ Chapters 1, 2 and 7 (introduction, literature review, discussion) have no code.
 | `03_proteogenomic_database/` | `01_sample_batches` → `06_search_assessment`; the database workflow package is in `03_search_database/proteogenomic_db/` |
 | `03b_protegerna_nextflow/` | nf-core/protegerna Nextflow pipeline |
 | `04_integration/` | `01_single_layer` → `04_figures`; shared `lib/` and `data/` |
-| `script_to_dissertation_map/` | Workbook mapping scripts to the dissertation |
 
 Within each step, scripts are numbered in the order they were run (`01a`, `01b`, `02`, ...). Results sit next to the scripts in
 folders named `NN_results_<script>` so that each output can be traced to the script that wrote it.
