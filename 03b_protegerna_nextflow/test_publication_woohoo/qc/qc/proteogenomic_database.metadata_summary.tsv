@@ -1,0 +1,2 @@
+metadata_label	metadata_file	n_rows	frame_status_counts	premature_stop_counts	nmd_predicted_counts	start_loss_counts	ri_orf_preserved_counts	frame_mismatch_counts	ri_boundary_fallback_counts	fusion_gene_id_collision_counts	contributing_caller_count_distribution	utr_or_noncoding_rows_detected
+proteogenomic_metadata	proteogenomic_metadata.tsv	61800										3

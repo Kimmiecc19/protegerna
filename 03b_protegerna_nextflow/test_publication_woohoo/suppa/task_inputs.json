@@ -1,0 +1,67 @@
+{
+  "options": {
+    "min_psi": 0.1,
+    "min_psi_samples": 3,
+    "keep_events_missing_psi": false,
+    "out_psi_summary_tsv": "suppa.psi.tsv",
+    "out_prot_fa": "suppa.primary.fasta",
+    "out_alt_start_prot_fa": "suppa.alternative_start.fasta",
+    "out_exploratory_orf_fa": "suppa.exploratory_orf.fasta",
+    "out_junc_fa": "suppa.junctions.fasta",
+    "out_consequence_tsv": "suppa.consequences.tsv",
+    "pad_partial_codons": false,
+    "allow_alt_start": false,
+    "allow_longest_orf": false,
+    "min_alt_orf_aa": 30,
+    "short_junction_peptides": false,
+    "junction_max_flank": 15,
+    "junction_min_flank": 7,
+    "sequence_cache_entries": 100000,
+    "workers": 4,
+    "nmd_distance_threshold_nt": 55,
+    "exclude_frameshift_from_dia": false,
+    "exclude_nmd_from_dia": true,
+    "exclude_start_loss_from_dia": true,
+    "exclude_premature_stop_from_dia": false,
+    "exclude_incomplete_cds": true,
+    "require_ri_orf_preserved": true,
+    "require_unique_event_peptide": true,
+    "quantms_conservative": true,
+    "max_missed_cleavages": 3,
+    "min_database_peptide_length": 7,
+    "max_database_peptide_length": 40,
+    "annotation_release": "GENCODE_46",
+    "organism": "Homo_sapiens"
+  },
+  "inputs": {
+    "gtf_db": "references/annotation.db",
+    "genome": "references/genome.fa",
+    "reference_proteome": "references/proteome.fa",
+    "reference_peptide_cache": "cache/reference.cache"
+  },
+  "process": "PROTEGERNA:SPLICE:SUPPA_TO_PROTEIN",
+  "cpus": 4,
+  "rows": [
+    {
+      "sample": "cohort",
+      "tool": "suppa",
+      "event_type": "IOE",
+      "path": "/home/KimberlyCC/work/nf_protegerna/tests/data_full/events.ioe",
+      "batch": "batch1",
+      "condition": "NA"
+    },
+    {
+      "sample": "cohort",
+      "tool": "suppa",
+      "event_type": "PSI",
+      "path": "/home/KimberlyCC/work/nf_protegerna/tests/data_full/suppa_local.psi",
+      "batch": "batch1",
+      "condition": "NA"
+    }
+  ],
+  "files": [
+    "inputs/row0001/events.ioe",
+    "inputs/row0002/suppa_local.psi"
+  ],
+  "sample_metadata": null
+}

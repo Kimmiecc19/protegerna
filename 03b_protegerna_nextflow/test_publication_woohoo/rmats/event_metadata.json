@@ -1,0 +1,42 @@
+{
+  "/home/KimberlyCC/work/nf_protegerna/tests/data_full/SE.MATS.JC.txt": {
+    "sample": "CASE-CTRL",
+    "tool": "rmats",
+    "event_type": "SE",
+    "path": "/home/KimberlyCC/work/nf_protegerna/tests/data_full/SE.MATS.JC.txt",
+    "batch": "batch1",
+    "condition": "CASE-CTRL"
+  },
+  "/home/KimberlyCC/work/nf_protegerna/tests/data_full/MXE.MATS.JC.txt": {
+    "sample": "CASE-CTRL",
+    "tool": "rmats",
+    "event_type": "MXE",
+    "path": "/home/KimberlyCC/work/nf_protegerna/tests/data_full/MXE.MATS.JC.txt",
+    "batch": "batch1",
+    "condition": "CASE-CTRL"
+  },
+  "/home/KimberlyCC/work/nf_protegerna/tests/data_full/RI.MATS.JC.txt": {
+    "sample": "CASE-CTRL",
+    "tool": "rmats",
+    "event_type": "RI",
+    "path": "/home/KimberlyCC/work/nf_protegerna/tests/data_full/RI.MATS.JC.txt",
+    "batch": "batch1",
+    "condition": "CASE-CTRL"
+  },
+  "/home/KimberlyCC/work/nf_protegerna/tests/data_full/A3SS.MATS.JC.txt": {
+    "sample": "CASE-CTRL",
+    "tool": "rmats",
+    "event_type": "A3SS",
+    "path": "/home/KimberlyCC/work/nf_protegerna/tests/data_full/A3SS.MATS.JC.txt",
+    "batch": "batch1",
+    "condition": "CASE-CTRL"
+  },
+  "/home/KimberlyCC/work/nf_protegerna/tests/data_full/A5SS.MATS.JC.txt": {
+    "sample": "CASE-CTRL",
+    "tool": "rmats",
+    "event_type": "A5SS",
+    "path": "/home/KimberlyCC/work/nf_protegerna/tests/data_full/A5SS.MATS.JC.txt",
+    "batch": "batch1",
+    "condition": "CASE-CTRL"
+  }
+}

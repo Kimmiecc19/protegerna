@@ -1,0 +1,25 @@
+{
+  "options": {
+    "labels": null,
+    "outdir": "qc",
+    "prefix": "proteogenomic_database",
+    "max_missed_cleavages": 3,
+    "min_peptide_length": 7,
+    "max_peptide_length": 40,
+    "min_protein_length": 6,
+    "exclude_no_eligible_peptide": false,
+    "write_filtered_fasta": true,
+    "strict_quantms": true
+  },
+  "inputs": {
+    "reference_proteome": "references/proteome.fa",
+    "fasta": [
+      "proteogenomic_database.fasta"
+    ],
+    "metadata": [
+      "proteogenomic_metadata.tsv"
+    ]
+  },
+  "process": "PROTEGERNA:PROTEOGENOMIC_FASTA_QC",
+  "cpus": 2
+}

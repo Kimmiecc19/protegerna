@@ -1,0 +1,60 @@
+{
+  "arguments": {
+    "allow_alt_start": false,
+    "allow_longest_orf": false,
+    "annotation_release": "GENCODE_46",
+    "event_files": [
+      "inputs/row0001/events.ioe"
+    ],
+    "exclude_frameshift_from_dia": false,
+    "exclude_incomplete_cds": true,
+    "exclude_nmd_from_dia": true,
+    "exclude_premature_stop_from_dia": false,
+    "exclude_start_loss_from_dia": true,
+    "genome": "references/genome.fa",
+    "gtf_db": "references/annotation.db",
+    "junction_max_flank": 15,
+    "junction_min_flank": 7,
+    "keep_events_missing_psi": false,
+    "max_database_peptide_length": 40,
+    "max_missed_cleavages": 3,
+    "min_alt_orf_aa": 30,
+    "min_database_peptide_length": 7,
+    "min_psi": 0.1,
+    "min_psi_samples": 3,
+    "nmd_distance_threshold_nt": 55,
+    "organism": "Homo_sapiens",
+    "out_alt_start_prot_fa": "suppa.alternative_start.fasta",
+    "out_consequence_tsv": "suppa.consequences.tsv",
+    "out_exploratory_orf_fa": "suppa.exploratory_orf.fasta",
+    "out_junc_fa": "suppa.junctions.fasta",
+    "out_prot_fa": "suppa.primary.fasta",
+    "out_psi_summary_tsv": "suppa.psi.tsv",
+    "pad_partial_codons": false,
+    "psi_files": [
+      "inputs/row0002/suppa_local.psi"
+    ],
+    "quantms_conservative": true,
+    "reference_peptide_cache": "reference.local.cache",
+    "reference_proteome": "references/proteome.fa",
+    "require_ri_orf_preserved": true,
+    "require_unique_event_peptide": true,
+    "sample_metadata": "sample_metadata.tsv",
+    "sequence_cache_entries": 100000,
+    "short_junction_peptides": false,
+    "workers": 4
+  },
+  "configuration_sha256": "b3bc3bc29d0738e3939caf97dd4878c59c7f02e121833952a2d8857035adb948",
+  "input_sha256": {
+    "inputs/row0001/events.ioe": "23221e3a3048f32e16bccfc811aa44113260650c879450a7771b2a32e8276154",
+    "inputs/row0002/suppa_local.psi": "cdd534eb9ebb6bbbc993bc2f83ee11b260594cb3847d4f5853aa6a8b674f5b3e",
+    "reference.local.cache": "816bca6bf87afbb0451515792d30f96cfb6fc81e11f204c8e4fc2d4ff67172c9",
+    "references/annotation.db": "f791f9ad6fabd6a68d4a73e335f529976c93b3c427a3b73ebb9fb23f9edca77b",
+    "references/genome.fa": "e49b92b3e4f321bf254c042f25b726d9931c4d74c7523e8b6bb530e63b0cfd4b",
+    "references/proteome.fa": "9d749eb81cf7085246ce3aad7e8c23b3a9858e631fa1ddbe6cfacb439ce7af4e",
+    "sample_metadata.tsv": "e61cd80ff075c7deb9560d827a3a2b5582001cd18cfae21759b822267fb17421"
+  },
+  "schema_version": "pgdb-producer-run-v1",
+  "script": "suppatoprotein.py",
+  "software_version": "0.1.0"
+}

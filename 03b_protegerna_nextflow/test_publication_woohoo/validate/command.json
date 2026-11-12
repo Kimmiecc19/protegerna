@@ -1,0 +1,16 @@
+[
+  "/opt/conda/bin/python3",
+  "/home/KimberlyCC/work/nf_protegerna/work/test_publication_woohoo/68/3290a481f507e78b65311b1c0601a0/runtime/validate_gencode_translation.py",
+  "--out_tsv",
+  "gencode_translation_concordance.tsv",
+  "--out_summary_json",
+  "gencode_translation_concordance.json",
+  "--max_mismatch_rate",
+  "0.0",
+  "--gtf_db",
+  "references/annotation.db",
+  "--genome",
+  "references/genome.fa",
+  "--gencode_protein_fasta",
+  "references/gencode/gencode.v46.pc_translations.fa"
+]

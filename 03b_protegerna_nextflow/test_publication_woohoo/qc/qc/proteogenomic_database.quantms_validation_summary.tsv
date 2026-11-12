@@ -1,0 +1,5 @@
+metric	value
+records_checked	61800
+records_passing	61800
+records_failing	0
+warning:missing_gene_symbol	240
